@@ -1,0 +1,445 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Big Brain Palace</title>
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --void: #0a0e1a;
+    --deep: #0f1626;
+    --panel: #141d33;
+    --panel-edge: #1f2b47;
+    --ink: #eef2fb;
+    --muted: #8a99bd;
+    --faint: #5a6685;
+    --cyan: #4de2ff;
+    --cyan-dim: #2a7d92;
+    --amber: #ffb648;
+    --amber-dim: #8a6526;
+    --rose: #ff6b9d;
+    --green: #5ee6a8;
+    --display: "Space Grotesk", sans-serif;
+    --body: "Inter", sans-serif;
+    --mono: "JetBrains Mono", monospace;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background:
+      radial-gradient(1200px 600px at 80% -10%, rgba(77,226,255,0.07), transparent),
+      radial-gradient(900px 500px at -10% 110%, rgba(255,182,72,0.06), transparent),
+      var(--void);
+    color: var(--ink);
+    font-family: var(--body);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ambient grid */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(77,226,255,0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(77,226,255,0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .shell { position: relative; z-index: 1; display: grid; grid-template-columns: 300px 1fr; min-height: 100vh; }
+
+  /* ---- left rail / tuner ---- */
+  .rail {
+    border-right: 1px solid var(--panel-edge);
+    background: linear-gradient(180deg, rgba(15,22,38,0.9), rgba(10,14,26,0.9));
+    backdrop-filter: blur(8px);
+    padding: 32px 22px;
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    overflow-y: auto;
+  }
+
+  .brand { display: flex; align-items: center; gap: 11px; margin-bottom: 4px; }
+  .pulse {
+    width: 9px; height: 9px; border-radius: 50%;
+    background: var(--cyan);
+    box-shadow: 0 0 0 0 rgba(77,226,255,0.7);
+    animation: pulse 2.4s infinite;
+  }
+  @keyframes pulse {
+    0% { box-shadow: 0 0 0 0 rgba(77,226,255,0.6); }
+    70% { box-shadow: 0 0 0 12px rgba(77,226,255,0); }
+    100% { box-shadow: 0 0 0 0 rgba(77,226,255,0); }
+  }
+  .brand h1 {
+    font-family: var(--display);
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+  }
+  .brand .sub {
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--cyan);
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    margin-left: 20px;
+    margin-bottom: 34px;
+  }
+
+  .tuner-label {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 14px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .tuner-label .count {
+    color: var(--amber);
+    border: 1px solid var(--amber-dim);
+    border-radius: 20px;
+    padding: 1px 8px;
+    font-size: 9px;
+  }
+
+  .weeks { display: flex; flex-direction: column; gap: 4px; }
+  .week-btn {
+    text-align: left;
+    background: transparent;
+    border: 1px solid transparent;
+    border-left: 2px solid var(--panel-edge);
+    color: var(--muted);
+    font-family: var(--mono);
+    font-size: 12px;
+    padding: 11px 14px;
+    cursor: pointer;
+    transition: all 0.18s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+  .week-btn:hover { border-left-color: var(--cyan-dim); color: var(--ink); background: rgba(77,226,255,0.04); }
+  .week-btn.active {
+    border-left-color: var(--cyan);
+    background: linear-gradient(90deg, rgba(77,226,255,0.1), transparent);
+    color: var(--ink);
+  }
+  .week-btn .wid { font-weight: 500; letter-spacing: 0.04em; }
+  .week-btn .wdate { font-size: 10px; color: var(--faint); font-family: var(--body); }
+  .week-btn.active .wid { color: var(--cyan); }
+  .week-btn.live .wid::after {
+    content: "LIVE";
+    font-size: 8px;
+    color: var(--void);
+    background: var(--cyan);
+    padding: 1px 5px;
+    border-radius: 3px;
+    margin-left: 8px;
+    letter-spacing: 0.1em;
+  }
+
+  /* ---- main ---- */
+  .main { padding: 40px 52px 80px; max-width: 1100px; }
+
+  .topbar { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 8px; flex-wrap: wrap; gap: 12px; }
+  .topbar .now {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+  }
+  .topbar .now b { color: var(--cyan); font-weight: 500; }
+
+  .headline {
+    font-family: var(--display);
+    font-size: clamp(30px, 4vw, 46px);
+    font-weight: 700;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    margin-bottom: 6px;
+    background: linear-gradient(120deg, var(--ink) 30%, var(--cyan) 130%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+  .dateline {
+    font-family: var(--mono);
+    font-size: 12px;
+    color: var(--amber);
+    letter-spacing: 0.12em;
+    margin-bottom: 40px;
+  }
+
+  /* track nav */
+  .track-nav { display: flex; gap: 6px; margin-bottom: 36px; flex-wrap: wrap; }
+  .track-pill {
+    font-family: var(--mono);
+    font-size: 11px;
+    letter-spacing: 0.06em;
+    color: var(--muted);
+    background: var(--panel);
+    border: 1px solid var(--panel-edge);
+    border-radius: 30px;
+    padding: 8px 16px;
+    cursor: pointer;
+    transition: all 0.16s ease;
+  }
+  .track-pill:hover { color: var(--ink); border-color: var(--cyan-dim); }
+  .track-pill.active { color: var(--void); background: var(--cyan); border-color: var(--cyan); font-weight: 500; }
+
+  .track { display: none; animation: rise 0.4s ease; }
+  .track.show { display: block; }
+  @keyframes rise { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+
+  .track-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid var(--panel-edge);
+  }
+  .track-head .glyph {
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--void);
+    background: var(--amber);
+    padding: 4px 9px;
+    border-radius: 5px;
+    letter-spacing: 0.1em;
+  }
+  .track-head h2 {
+    font-family: var(--display);
+    font-size: 22px;
+    font-weight: 600;
+  }
+
+  .track-body {
+    background: linear-gradient(180deg, var(--panel), var(--deep));
+    border: 1px solid var(--panel-edge);
+    border-radius: 14px;
+    padding: 28px 30px;
+    font-size: 15px;
+    color: #d5ddf0;
+    white-space: pre-wrap;
+    box-shadow: 0 20px 50px -30px rgba(0,0,0,0.8);
+  }
+
+  .sources { margin-top: 22px; }
+  .sources .slabel {
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.2em;
+    color: var(--muted);
+    text-transform: uppercase;
+    margin-bottom: 12px;
+  }
+  .source-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-family: var(--mono);
+    font-size: 11px;
+    color: var(--cyan);
+    text-decoration: none;
+    border: 1px solid var(--cyan-dim);
+    border-radius: 6px;
+    padding: 5px 10px;
+    margin: 0 6px 6px 0;
+    transition: all 0.16s ease;
+  }
+  .source-link:hover { background: rgba(77,226,255,0.1); border-color: var(--cyan); }
+  .source-link::before { content: "↗"; color: var(--amber); }
+
+  .archived-flag {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 10px;
+    letter-spacing: 0.14em;
+    color: var(--amber);
+    border: 1px solid var(--amber-dim);
+    border-radius: 4px;
+    padding: 3px 9px;
+    margin-bottom: 26px;
+  }
+
+  .empty { color: var(--muted); font-family: var(--mono); font-size: 13px; padding: 40px; text-align: center; }
+
+  footer {
+    margin-top: 60px;
+    padding-top: 24px;
+    border-top: 1px solid var(--panel-edge);
+    font-family: var(--mono);
+    font-size: 10px;
+    color: var(--faint);
+    letter-spacing: 0.1em;
+  }
+
+  @media (max-width: 860px) {
+    .shell { grid-template-columns: 1fr; }
+    .rail { position: relative; height: auto; border-right: none; border-bottom: 1px solid var(--panel-edge); }
+    .main { padding: 28px 22px 60px; }
+    .weeks { flex-direction: row; overflow-x: auto; }
+    .week-btn { min-width: 130px; border-left: none; border-top: 2px solid var(--panel-edge); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    * { animation: none !important; transition: none !important; scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="rail">
+    <div class="brand">
+      <span class="pulse"></span>
+      <h1>BIG BRAIN</h1>
+    </div>
+    <div class="sub">the palace</div>
+
+    <div class="tuner-label">
+      <span>Archive</span>
+      <span class="count" id="weekCount">0</span>
+    </div>
+    <div class="weeks" id="weeks"></div>
+  </aside>
+
+  <main class="main">
+    <div class="topbar">
+      <div class="now">SYSTEM ONLINE · <b id="clock">--:--</b> · last sync <b id="lastSync">—</b></div>
+    </div>
+
+    <h1 class="headline">This Week in the Palace</h1>
+    <div class="dateline" id="dateline">—</div>
+
+    <div id="archivedFlag"></div>
+
+    <nav class="track-nav" id="trackNav"></nav>
+    <div id="content"></div>
+
+    <footer>
+      BIG BRAIN WEEKLY DIGEST · powered by Claude · archive preserved across weeks · Big Brain Palace · built for Ileena
+    </footer>
+  </main>
+</div>
+
+<script>
+const DATA = "./data/";
+let current = null;
+
+function clock() {
+  const d = new Date();
+  document.getElementById("clock").textContent =
+    d.toLocaleTimeString("en-US", { hour: "2-digit", minute: "2-digit" });
+}
+setInterval(clock, 1000); clock();
+
+// Convert plain source list into link chips
+function renderSources(sources) {
+  if (!sources || !sources.length) return "";
+  const links = sources
+    .slice(0, 10)
+    .map(s => `<a class="source-link" href="${s.url}" target="_blank" rel="noopener">${(s.title||s.url).slice(0,48)}</a>`)
+    .join("");
+  return `<div class="sources"><div class="slabel">Sources</div>${links}</div>`;
+}
+
+function renderDigest(digest, isLive) {
+  document.getElementById("dateline").textContent =
+    `WEEK ${digest.week} · ${digest.dateLabel.toUpperCase()}`;
+  document.getElementById("lastSync").textContent = digest.dateLabel;
+
+  document.getElementById("archivedFlag").innerHTML = isLive
+    ? ""
+    : `<span class="archived-flag">◷ ARCHIVED WEEK · read-only snapshot</span>`;
+
+  const nav = document.getElementById("trackNav");
+  const content = document.getElementById("content");
+  nav.innerHTML = "";
+  content.innerHTML = "";
+
+  digest.tracks.forEach((t, i) => {
+    const pill = document.createElement("button");
+    pill.className = "track-pill" + (i === 0 ? " active" : "");
+    pill.textContent = t.label;
+    pill.onclick = () => {
+      document.querySelectorAll(".track-pill").forEach(p => p.classList.remove("active"));
+      document.querySelectorAll(".track").forEach(p => p.classList.remove("show"));
+      pill.classList.add("active");
+      document.getElementById("track-" + t.id).classList.add("show");
+    };
+    nav.appendChild(pill);
+
+    const section = document.createElement("section");
+    section.className = "track" + (i === 0 ? " show" : "");
+    section.id = "track-" + t.id;
+    const glyph = String(i + 1).padStart(2, "0");
+    section.innerHTML = `
+      <div class="track-head">
+        <span class="glyph">${glyph}</span>
+        <h2>${t.label}</h2>
+      </div>
+      <div class="track-body">${escapeHtml(t.body)}</div>
+      ${renderSources(t.sources)}
+    `;
+    content.appendChild(section);
+  });
+}
+
+function escapeHtml(s) {
+  return (s || "").replace(/[&<>]/g, c => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;" }[c]));
+}
+
+async function loadWeek(id, isLive) {
+  const res = await fetch(`${DATA}${id}.json`);
+  const digest = await res.json();
+  current = id;
+  renderDigest(digest, isLive);
+  document.querySelectorAll(".week-btn").forEach(b => b.classList.toggle("active", b.dataset.id === id));
+  window.scrollTo({ top: 0, behavior: "smooth" });
+}
+
+async function init() {
+  let index = [];
+  try {
+    const res = await fetch(`${DATA}index.json`);
+    index = await res.json();
+  } catch (e) {
+    document.getElementById("content").innerHTML =
+      `<div class="empty">No digest data found yet. Run the weekly research job to populate this terminal.</div>`;
+    return;
+  }
+
+  document.getElementById("weekCount").textContent = index.length;
+  const weeks = document.getElementById("weeks");
+
+  index.forEach((w, i) => {
+    const btn = document.createElement("button");
+    btn.className = "week-btn" + (i === 0 ? " active live" : "");
+    btn.dataset.id = w.id;
+    btn.innerHTML = `<span class="wid">${w.id}</span><span class="wdate">${w.dateLabel}</span>`;
+    btn.onclick = () => loadWeek(w.id, i === 0);
+    weeks.appendChild(btn);
+  });
+
+  if (index.length) loadWeek(index[0].id, true);
+}
+
+init();
+</script>
+</body>
+</html>

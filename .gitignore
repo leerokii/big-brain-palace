@@ -1,0 +1,13 @@
+# Secrets — never commit your real API key
+.env
+.env.local
+
+# Dependencies
+node_modules/
+
+# Netlify build/cache
+.netlify/
+
+# OS / editor cruft
+.DS_Store
+*.log

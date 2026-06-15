@@ -1,0 +1,15 @@
+{
+  "name": "big-brain-palace",
+  "version": "1.0.0",
+  "private": true,
+  "description": "A self-updating weekly research dashboard powered by Claude with web search.",
+  "type": "module",
+  "scripts": {
+    "research": "node scripts/research.mjs",
+    "serve": "npx serve ."
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}

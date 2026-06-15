@@ -1,0 +1,19 @@
+# Netlify configuration for Big Brain Palace.
+#
+# The site is a static dashboard (index.html) that reads JSON files from data/.
+# There is no build step — Netlify just serves the repo root.
+
+[build]
+  # No build command. Publish the repository root as-is.
+  command = ""
+  publish = "."
+  functions = "netlify/functions"
+
+# Scheduled functions (Option B) live in netlify/functions and declare their own
+# cron via `export const config = { schedule: ... }`. No extra config needed here.
+
+[[headers]]
+  for = "/data/*"
+  [headers.values]
+    # Digest JSON updates weekly; let browsers revalidate so new weeks show up.
+    Cache-Control = "public, max-age=300, must-revalidate"
