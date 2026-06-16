@@ -341,12 +341,10 @@ function scramble(el, finalText, dur=900){
 }
 
 /* ---------- sci-fi boot loader (slower, cinematic) ---------- */
-const QS=new URLSearchParams(location.search);
 (function(){
   const lc=document.getElementById("lc"), bar=document.getElementById("bar"), loader=document.getElementById("loader"),
         teles=[...document.querySelectorAll("#tele div")], status=document.getElementById("bootStatus");
   const pad=v=>String(v).padStart(3,"0");
-  if(QS.has("dev")){ loader.style.display="none"; kickHero(); return; } // skip intro
   let n=0;
   const t=setInterval(()=>{
     // smaller steps + slower tick => ~4s cinematic boot
@@ -532,13 +530,6 @@ async function init(){
     const d=await (await fetch(`${DATA}${index[0].id}.json`)).json();
     renderDigest(d,true);
     document.getElementById("eot").textContent=`END OF TRANSMISSION · WK ${d.week}`;
-    if(QS.has("dev")){ // dev/preview helpers only — no effect on normal load
-      document.querySelectorAll(".track").forEach(s=>s.classList.add("in"));
-      document.documentElement.style.scrollBehavior="auto";
-      if(QS.has("top")){ [".hero",".marquee",".archive-strip"].forEach(s=>{const el=document.querySelector(s); if(el) el.style.display="none";}); }
-      if(QS.has("track")){ const i=+QS.get("track")||0; const secs=document.querySelectorAll(".track");
-        if(secs[i]) requestAnimationFrame(()=>requestAnimationFrame(()=>secs[i].scrollIntoView())); }
-      if(QS.has("y")) requestAnimationFrame(()=>requestAnimationFrame(()=>scrollTo(0,+QS.get("y")||0))); }
   }
 }
 init();
