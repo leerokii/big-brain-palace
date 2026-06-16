@@ -7,8 +7,10 @@ name: Weekly Digest
 #   Repo -> Settings -> Secrets and variables -> Actions -> New repository secret
 
 on:
-  # Every Monday at 13:00 UTC. Change this line to change the schedule.
-  # Keep it in sync with netlify/functions/weekly-digest.mjs if you use Option B.
+  # Every Monday at 09:00 AM Eastern. GitHub Actions cron is UTC-only, so this
+  # is pinned in UTC: 13:00 UTC = 9:00 AM EDT (summer). After the November DST
+  # change it becomes 8:00 AM EST — change to "0 14 * * 1" then to keep 9:00 AM.
+  # Keep in sync with netlify/functions/weekly-digest.mjs if you use Option B.
   schedule:
     - cron: "0 13 * * 1"
   # Lets you trigger a run by hand from the Actions tab.

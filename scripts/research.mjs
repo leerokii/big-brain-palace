@@ -162,23 +162,27 @@ async function runTrack(track) {
   return { id: track.id, label: track.label, body: text, sources };
 }
 
-// ---- ISO week helper ----------------------------------------------------
+// ---- Edition number helper ----------------------------------------------
+// Editions are numbered sequentially from the first digest (W1), counting up
+// each week — not by ISO week-of-year. EPOCH is the Monday of edition 1.
+// Using whole weeks since EPOCH keeps it idempotent: re-running in the same
+// week yields the same number (so it overwrites, not duplicates).
 
-function isoWeek(d) {
-  const date = new Date(Date.UTC(d.getFullYear(), d.getMonth(), d.getDate()));
-  const dayNum = date.getUTCDay() || 7;
-  date.setUTCDate(date.getUTCDate() + 4 - dayNum);
-  const yearStart = new Date(Date.UTC(date.getUTCFullYear(), 0, 1));
-  const week = Math.ceil(((date - yearStart) / 86400000 + 1) / 7);
-  return { year: date.getUTCFullYear(), week };
+const EPOCH = Date.UTC(2026, 5, 15); // Mon Jun 15 2026 = edition W1
+const MS_WEEK = 7 * 24 * 60 * 60 * 1000;
+
+function edition(d) {
+  const today = Date.UTC(d.getUTCFullYear(), d.getUTCMonth(), d.getUTCDate());
+  const week = Math.max(1, Math.floor((today - EPOCH) / MS_WEEK) + 1);
+  return { year: d.getUTCFullYear(), week };
 }
 
 // ---- Main ---------------------------------------------------------------
 
 async function main() {
   const now = new Date();
-  const { year, week } = isoWeek(now);
-  const id = `${year}-W${String(week).padStart(2, "0")}`;
+  const { year, week } = edition(now);
+  const id = `${year}-W${week}`;
 
   console.log(`Running digest for ${id} ...`);
 
@@ -220,12 +224,12 @@ async function main() {
     JSON.stringify(digest, null, 2)
   );
 
-  // Rebuild the index of all weeks, newest first.
+  // Rebuild the index of all weeks, newest (highest edition number) first.
+  const weekNum = (f) => parseInt(f.match(/-W(\d+)\.json$/)[1], 10);
   const files = fs
     .readdirSync(DATA_DIR)
-    .filter((f) => /^\d{4}-W\d{2}\.json$/.test(f))
-    .sort()
-    .reverse();
+    .filter((f) => /^\d{4}-W\d+\.json$/.test(f))
+    .sort((a, b) => weekNum(b) - weekNum(a));
 
   const index = files.map((f) => {
     const d = JSON.parse(fs.readFileSync(path.join(DATA_DIR, f), "utf8"));
