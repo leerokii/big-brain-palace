@@ -135,8 +135,6 @@
 
   /* marquee / live feed ticker */
   .marquee { border-block:1px solid var(--line); padding:14px 0; background:var(--paper-2); overflow:hidden; white-space:nowrap; position:relative; display:flex; align-items:center; }
-  .marquee .feedtag { flex:none; font-family:var(--mono); font-size:10px; letter-spacing:.18em; text-transform:uppercase; color:#fff; background:var(--accent); padding:6px 14px; margin:0 22px 0 6vw; display:inline-flex; align-items:center; gap:8px; z-index:2; }
-  .marquee .feedtag::before { content:""; width:7px; height:7px; border-radius:50%; background:#fff; animation:blink 1.1s steps(1) infinite; }
   .marquee .track-m { display:inline-block; animation:scrollx 30s linear infinite; }
   .marquee span { font-family:var(--display); font-style:italic; font-size:22px; color:var(--ink-soft); margin:0 26px; }
   .marquee span b { color:var(--accent); font-style:normal; font-weight:600; }
@@ -174,6 +172,10 @@
   .track .rmeta::after { content:""; flex:1; height:1px; background:var(--line); }
   .track .body { font-size:clamp(15px,1.25vw,18px); color:var(--ink-soft); white-space:pre-wrap; line-height:1.8; }
   .track .body strong { color:var(--ink); font-weight:600; }
+  .track .body .inline-src { font-family:var(--mono); font-size:.82em; color:var(--accent); text-decoration:none;
+    border-bottom:1px solid var(--accent-soft); padding-bottom:1px; word-break:break-word; transition:all .18s ease; cursor:none; }
+  .track .body .inline-src:hover { background:rgba(181,73,31,.08); border-color:var(--accent); }
+  .track .body .inline-src::before { content:"↗ "; color:var(--gold); }
 
   /* ---------- glitch ---------- */
   @keyframes glx {
@@ -212,7 +214,7 @@
   footer .eot { font-family:var(--mono); font-size:10px; letter-spacing:.3em; text-transform:uppercase; color:var(--accent); margin-top:40px; display:flex; align-items:center; justify-content:center; gap:14px; }
   footer .eot::before, footer .eot::after { content:""; height:1px; width:min(140px,18vw); background:var(--line); }
 
-  @media (max-width:820px){ .track{grid-template-columns:1fr; gap:30px;} .track .left{position:relative; top:0;} nav .meta .pct{display:none;} .hero .htag{display:none;} #loader .tele{font-size:11px;} .marquee .feedtag{margin-left:5vw;} }
+  @media (max-width:820px){ .track{grid-template-columns:1fr; gap:30px;} .track .left{position:relative; top:0;} nav .meta .pct{display:none;} .hero .htag{display:none;} #loader .tele{font-size:11px;} }
   @media (prefers-reduced-motion:reduce){ *{animation:none!important; transition:none!important; scroll-behavior:auto;} .reveal>*{transform:none;} .fade{opacity:1; transform:none;} #loader{display:none;} body{cursor:auto;} .cursor{display:none;} .track::before,.track::after{opacity:.7;} .track .tlabel::after{width:64px;} }
 </style>
 </head>
@@ -272,7 +274,7 @@
   <div class="scroll"><span class="dot"></span> Scroll to read</div>
 </header>
 
-<div class="marquee"><span class="feedtag">Live Feed</span><div class="track-m" id="marquee"></div></div>
+<div class="marquee"><div class="track-m" id="marquee"></div></div>
 
 <section class="archive-strip">
   <span class="label">Archive</span>
@@ -347,6 +349,14 @@ function kickHero(){
 
 function esc(s){return (s||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
 
+// Turn inline source URLs (already HTML-escaped) into clickable links shown next to each bullet.
+function linkify(s){
+  return s.replace(/https?:\/\/[^\s<>"'()]+[^\s<>"'().,;:]/g, u=>{
+    const label=u.replace(/^https?:\/\/(www\.)?/,"").replace(/&amp;.*$/,"").slice(0,38);
+    return `<a class="inline-src" href="${u}" target="_blank" rel="noopener">${label}</a>`;
+  });
+}
+
 function renderSources(sources){
   if(!sources||!sources.length)return "";
   const links=sources.slice(0,12).map(s=>`<a class="source-link" href="${s.url}" target="_blank" rel="noopener">${esc((s.title||s.url).slice(0,46))}</a>`).join("");
@@ -376,7 +386,7 @@ function renderDigest(d,isLive){
       </div>
       <div class="right">
         <div class="rmeta">Decrypted · ${COORDS[i%COORDS.length].split(" / ")[0]} · Stream</div>
-        <div class="body">${esc(t.body)}</div>
+        <div class="body">${linkify(esc(t.body))}</div>
         ${renderSources(t.sources)}
       </div>`;
     wrap.appendChild(sec);
@@ -395,7 +405,7 @@ function observe(){
       if(lbl&&!lbl.dataset.scrambled){ lbl.dataset.scrambled=1; scramble(lbl, lbl.dataset.final, 800);
         if(!REDUCE){ lbl.classList.add("glitching"); setTimeout(()=>lbl.classList.remove("glitching"),760); } }
     }});
-  },{threshold:.18});
+  },{threshold:0, rootMargin:"0px 0px -10% 0px"});
   document.querySelectorAll(".track").forEach(el=>io.observe(el));
 }
 
@@ -415,6 +425,10 @@ function countTo(el,target){let n=0;const pad=v=>String(v).padStart(2,"0");const
     railScroll.textContent=pct;
     if(hgrid) hgrid.style.transform=`translateY(${sy*0.18}px)`;
     if(htag) htag.style.transform=`translateY(${sy*0.22}px)`;
+    // Reveal fallback: guarantee tall sections show even if the observer never hits its threshold.
+    document.querySelectorAll(".track:not(.in)").forEach(t=>{
+      if(t.getBoundingClientRect().top < innerHeight*0.9) t.classList.add("in");
+    });
     document.querySelectorAll(".track .num").forEach(num=>{
       const r=num.getBoundingClientRect();
       const off=(r.top-innerHeight/2)/innerHeight;
