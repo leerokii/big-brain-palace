@@ -170,8 +170,26 @@
   .track .rmeta { font-family:var(--mono); font-size:10px; letter-spacing:.22em; text-transform:uppercase; color:var(--accent); margin-bottom:20px; display:flex; align-items:center; gap:10px; }
   .track .rmeta::before { content:""; width:7px; height:7px; background:var(--accent); flex:none; }
   .track .rmeta::after { content:""; flex:1; height:1px; background:var(--line); }
-  .track .body { font-size:clamp(15px,1.25vw,18px); color:var(--ink-soft); white-space:pre-wrap; line-height:1.8; }
+  .track .body { font-size:clamp(15px,1.25vw,18px); color:var(--ink-soft); line-height:1.8; }
+  .track .body p { margin:0 0 18px; }
   .track .body strong { color:var(--ink); font-weight:600; }
+  .track .body em { font-style:italic; color:var(--ink-soft); }
+  /* markdown headings — Fraunces editorial with sci-fi accents */
+  .track .body .md-h { font-family:var(--display); color:var(--ink); line-height:1.2; letter-spacing:-.01em; }
+  .track .body .md-h1 { font-weight:480; font-size:clamp(21px,2.2vw,28px); margin:36px 0 16px; padding-bottom:12px; border-bottom:1px solid var(--line); }
+  .track .body .md-h2 { font-weight:500; font-size:clamp(17px,1.7vw,21px); margin:32px 0 12px; padding-left:14px; border-left:2px solid var(--accent); }
+  .track .body .md-h3 { font-weight:500; font-style:italic; font-size:clamp(15px,1.4vw,17px); margin:22px 0 8px; color:var(--accent); }
+  .track .body > .md-h1:first-child { margin-top:0; }
+  /* sci-fi divider */
+  .track .body hr { border:0; height:1px; margin:30px 0; background:linear-gradient(90deg,var(--accent-soft),transparent); position:relative; }
+  .track .body hr::before { content:"◆"; position:absolute; left:0; top:-7px; font-size:9px; color:var(--accent); }
+  /* lists */
+  .track .body ul.md-ul, .track .body ol.md-ol { margin:0 0 18px; padding:0; list-style:none; }
+  .track .body ul.md-ul li, .track .body ol.md-ol li { position:relative; padding-left:26px; margin-bottom:9px; }
+  .track .body ul.md-ul li::before { content:"▪"; position:absolute; left:6px; top:-1px; color:var(--accent); }
+  .track .body ol.md-ol { counter-reset:md; }
+  .track .body ol.md-ol li { counter-increment:md; }
+  .track .body ol.md-ol li::before { content:counter(md,decimal-leading-zero); position:absolute; left:0; top:.25em; font-family:var(--mono); font-size:.78em; color:var(--accent); }
   .track .body .inline-src { font-family:var(--mono); font-size:.82em; color:var(--accent); text-decoration:none;
     border-bottom:1px solid var(--accent-soft); padding-bottom:1px; word-break:break-word; transition:all .18s ease; cursor:none; }
   .track .body .inline-src:hover { background:rgba(181,73,31,.08); border-color:var(--accent); }
@@ -371,6 +389,38 @@ function linkify(s){
   });
 }
 
+// Inline markdown: **bold**, *italic*, then linkify bare URLs. Input is already HTML-escaped.
+function inlineMd(s){
+  s=s.replace(/\*\*([^*]+)\*\*/g,"<strong>$1</strong>");
+  s=s.replace(/\*([^*\n]+)\*/g,"<em>$1</em>");
+  return linkify(s);
+}
+
+// Lightweight markdown -> styled HTML for the digest bodies. Handles headings,
+// ---, bullet/ordered lists, bold/italic, and paragraphs. No external library.
+function mdToHtml(raw){
+  const lines=esc(raw).split("\n");
+  const out=[]; let para=[];
+  const flush=()=>{ if(para.length){ out.push("<p>"+inlineMd(para.join(" "))+"</p>"); para=[]; } };
+  for(let i=0;i<lines.length;i++){
+    const t=lines[i].trim();
+    if(t===""){ flush(); continue; }
+    if(/^-{3,}$/.test(t)){ flush(); out.push("<hr>"); continue; }
+    const h=t.match(/^(#{1,6})\s+(.*)$/);
+    if(h){ flush(); const lvl=h[1].length, tag=lvl<=1?"h3":lvl===2?"h4":"h5";
+      out.push(`<${tag} class="md-h md-h${lvl<=1?1:lvl===2?2:3}">`+inlineMd(h[2])+`</${tag}>`); continue; }
+    if(/^[-*]\s+/.test(t)){ flush(); const items=[];
+      while(i<lines.length&&/^[-*]\s+/.test(lines[i].trim())){ items.push("<li>"+inlineMd(lines[i].trim().replace(/^[-*]\s+/,""))+"</li>"); i++; }
+      i--; out.push('<ul class="md-ul">'+items.join("")+"</ul>"); continue; }
+    if(/^\d+[.)]\s+/.test(t)){ flush(); const items=[];
+      while(i<lines.length&&/^\d+[.)]\s+/.test(lines[i].trim())){ items.push("<li>"+inlineMd(lines[i].trim().replace(/^\d+[.)]\s+/,""))+"</li>"); i++; }
+      i--; out.push('<ol class="md-ol">'+items.join("")+"</ol>"); continue; }
+    para.push(t);
+  }
+  flush();
+  return out.join("");
+}
+
 function renderSources(sources){
   if(!sources||!sources.length)return "";
   const links=sources.slice(0,12).map(s=>`<a class="source-link" href="${s.url}" target="_blank" rel="noopener">${esc((s.title||s.url).slice(0,46))}</a>`).join("");
@@ -400,7 +450,7 @@ function renderDigest(d,isLive){
       </div>
       <div class="right">
         <div class="rmeta">Decrypted · ${COORDS[i%COORDS.length].split(" / ")[0]} · Stream</div>
-        <div class="body">${linkify(esc(stripNarration(t.body)))}</div>
+        <div class="body">${mdToHtml(stripNarration(t.body))}</div>
         ${renderSources(t.sources)}
       </div>`;
     wrap.appendChild(sec);
@@ -485,6 +535,7 @@ async function init(){
     if(QS.has("dev")){ // dev/preview helpers only — no effect on normal load
       document.querySelectorAll(".track").forEach(s=>s.classList.add("in"));
       document.documentElement.style.scrollBehavior="auto";
+      if(QS.has("top")){ [".hero",".marquee",".archive-strip"].forEach(s=>{const el=document.querySelector(s); if(el) el.style.display="none";}); }
       if(QS.has("track")){ const i=+QS.get("track")||0; const secs=document.querySelectorAll(".track");
         if(secs[i]) requestAnimationFrame(()=>requestAnimationFrame(()=>secs[i].scrollIntoView())); }
       if(QS.has("y")) requestAnimationFrame(()=>requestAnimationFrame(()=>scrollTo(0,+QS.get("y")||0))); }
