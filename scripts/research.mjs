@@ -77,13 +77,39 @@ Do not editorialize. Plain language.`,
   },
 ];
 
+// ---- Narration stripper -------------------------------------------------
+// Removes the model's search narration from the front of a briefing, leaving
+// only the briefing itself. Mirrors the same logic in index.html.
+
+const NARR =
+  /^(i'?ll\b|i will\b|i now\b|let me\b|let'?s\b|i have\b|i've\b|i need\b|here'?s (your|the)\b|here is (your|the)\b|now[,. ]|first[,. ]|good[.,! ]|searching\b|i found\b|i can see\b|okay\b|got it\b)/i;
+
+function stripNarration(body) {
+  let paras = String(body || "").split(/\n\n+/);
+  while (paras.length) {
+    const p = paras[0].trim();
+    const structured = /^(#|\*\*|\d+[.)]|-{3,}$|>|\|)/.test(p) || /https?:\/\//.test(p);
+    if (p === "---" || p === "" || (NARR.test(p) && p.length < 360 && !structured)) {
+      paras.shift();
+    } else break;
+  }
+  return paras.join("\n\n").trim();
+}
+
 // ---- API call -----------------------------------------------------------
 
 async function runTrack(track) {
   const body = {
     model: MODEL,
     max_tokens: 4000,
-    messages: [{ role: "user", content: track.prompt }],
+    messages: [
+      {
+        role: "user",
+        content:
+          track.prompt +
+          `\n\nOutput ONLY the final briefing in clean markdown. Do not narrate your search process or include lead-in lines like "I'll search…", "Let me…", or "Here's your briefing." Start directly with the briefing content.`,
+      },
+    ],
     tools: [{ type: "web_search_20250305", name: "web_search", max_uses: 8 }],
   };
 
@@ -104,13 +130,23 @@ async function runTrack(track) {
 
   const data = await res.json();
 
-  // Pull all text blocks. Web search results arrive interleaved; the model's
-  // written summary lives in the text blocks.
-  const text = (data.content || [])
+  // The final briefing lives in the text block(s) AFTER the last web search.
+  // Text emitted *between* searches is just the model narrating ("Let me
+  // search…"), so we take only what comes after the last tool block.
+  const blocks = data.content || [];
+  let lastTool = -1;
+  blocks.forEach((b, i) => {
+    if (b.type === "server_tool_use" || b.type === "web_search_tool_result") lastTool = i;
+  });
+  const answer = (lastTool >= 0 ? blocks.slice(lastTool + 1) : blocks)
     .filter((b) => b.type === "text")
     .map((b) => b.text)
     .join("\n\n")
     .trim();
+  // Fallback to all text if the answer somehow landed before the final search,
+  // then strip any leftover narration lead-in from the front.
+  const allText = blocks.filter((b) => b.type === "text").map((b) => b.text).join("\n\n").trim();
+  const text = stripNarration(answer || allText);
 
   // Collect cited source URLs from any web_search_tool_result blocks so we
   // keep a clean source list even if the prose misses one.

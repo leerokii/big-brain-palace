@@ -349,6 +349,20 @@ function kickHero(){
 
 function esc(s){return (s||"").replace(/[&<>]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;"}[c]));}
 
+// Strip the model's search narration ("I'll search…", "Let me…", "Here's your briefing.")
+// from the front of a track body, leaving only the briefing itself.
+const NARR=/^(i'?ll\b|i will\b|i now\b|let me\b|let'?s\b|i have\b|i've\b|i need\b|here'?s (your|the)\b|here is (your|the)\b|now[,. ]|first[,. ]|good[.,! ]|searching\b|i found\b|i can see\b|okay\b|got it\b)/i;
+function stripNarration(body){
+  let paras=String(body||"").split(/\n\n+/);
+  while(paras.length){
+    const p=paras[0].trim();
+    const structured=/^(#|\*\*|\d+[.)]|-{3,}$|>|\|)/.test(p) || /https?:\/\//.test(p);
+    if(p==="---" || p==="" || (NARR.test(p) && p.length<360 && !structured)){ paras.shift(); }
+    else break;
+  }
+  return paras.join("\n\n").trim();
+}
+
 // Turn inline source URLs (already HTML-escaped) into clickable links shown next to each bullet.
 function linkify(s){
   return s.replace(/https?:\/\/[^\s<>"'()]+[^\s<>"'().,;:]/g, u=>{
@@ -386,7 +400,7 @@ function renderDigest(d,isLive){
       </div>
       <div class="right">
         <div class="rmeta">Decrypted · ${COORDS[i%COORDS.length].split(" / ")[0]} · Stream</div>
-        <div class="body">${linkify(esc(t.body))}</div>
+        <div class="body">${linkify(esc(stripNarration(t.body)))}</div>
         ${renderSources(t.sources)}
       </div>`;
     wrap.appendChild(sec);
