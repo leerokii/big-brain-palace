@@ -1,0 +1,801 @@
+{
+  "id": "2026-W4",
+  "year": 2026,
+  "week": 4,
+  "generatedAt": "2026-07-06T16:19:58.347Z",
+  "dateLabel": "July 6, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "# AI PM Briefing — This Week's Most Useful Thinking\n*Framed for AI content pipelines, creator/editorial tooling, and audience automation at Vocal Media*\n\n---\n\n## 1. The real AI PM job: managing uncertainty, not shipping features\n**Framework — how the role is actually scoped**\n\nTraditional product management assumes a clean chain between requirement, release, and result. AI products rarely behave that way — you can ship the same interface twice and get different output quality because the prompt changed, the retrieval context degraded, the training data was biased, or real user behavior drifted away from the test set.\n\n The role's first responsibility is deciding whether AI belongs at all: \n\ngood AI PMs ask whether the problem has ambiguity, scale, pattern recognition, or unstructured inputs that make AI useful — and if a rules engine can solve it more clearly, faster, and with less risk, they use the rules engine.\n\n**Why it matters to you:** For Vocal's content pipelines and audience automation, this is the sharpest filter you have. Before building an AI feature (auto-tagging, story recommendations, moderation), ask what human task you're compressing and what happens when the system is wrong — annoying, expensive, or unacceptable. That distinction should shape how much guardrail and human review you scope in.\n**Source:** Figr — *12 Best AI Product Manager Tools in 2026* — https://figr.design/blog/ai-product-manager\n\n---\n\n## 2. Inside Anthropic: shipping cadence went from months to days\n**Real shipped-product story — how an AI-native team operates**\n\nIn a widely-shared conversation, Claude Code's Head of Product Cat Wu described how \n\nAI-native product development demands a shift from rigid, long-term roadmaps to rapid, weekly iteration cycles, where success requires prioritizing \"product taste\" and first-principles thinking, because the decreasing cost of writing code makes deciding what to build more valuable than the execution itself.\n\n A recurring theme: \n\nbuild products that don't yet fully work, so you're ready when the next model closes the gap.\n\n**Why it matters to you:** Vocal's editorial and creator tooling will keep getting more capable as models improve. Scope features slightly ahead of current model quality so you can ship the day a capability lands, rather than starting from scratch. Wu also flags an underrated skill — \n\nasking the model to introspect on its own mistakes\n\n — a cheap debugging move for content-generation features.\n**Source:** Lenny's Podcast / Cat Wu — https://www.lennysnewsletter.com/p/how-anthropics-product-team-moves\n\n---\n\n## 3. Measure AI products in four layers, and don't let one hide the others\n**Metrics — what \"good\" looks like**\n\nA useful mental model: measure the model, the system serving it, the product experience, and business outcomes separately. \n\nA model with 99% accuracy that costs $5 per prediction might be economically unviable; a system that's fast and cheap but only 70% accurate might frustrate users and hurt retention; features with great engagement that don't drive revenue or reduce costs are expensive distractions. The PM's job is to optimize across all four layers, making tradeoffs explicit.\n\n One trap to watch: \n\nif your AI generates text but users immediately delete it and write from scratch, high engagement numbers hide low utility.\n\n**Why it matters to you:** For creator tooling, \"used the AI headline generator\" is activity, not success — \n\nsuccess is the outcome the user came for, whether that's content published, and \"user clicked the button\" is not success.\n\n Also plan for drift: \n\nmodel performance can degrade over time as the world changes, so continuous monitoring is essential, not optional.\n\n That matters directly for audience automation, where behavior shifts constantly.\n**Source:** 5D Vision — *The Four Types of Metrics for AI Product Managers* — https://www.5dvision.com/post/metrics-for-ai-pms/\n\n---\n\n## 4. Evals are the highest-leverage skill — and they're a product exercise\n**Framework — defining quality for non-deterministic products**\n\nEvals are structured tests of AI output quality, and the design work belongs to PMs, not just engineers. \n\nFor PMs, the job is deciding on success criteria and developing the rubrics that scorers evaluate against — this is fundamentally a product exercise, essentially writing a PRD for AI behavior.\n\n The key technique: \n\nbreak \"good\" into specific dimensions and score each independently — a support response might need to be correct, empathetic, concise, and compliant, and if you lump them into a single score you'll accidentally improve tone while letting accuracy slide.\n\n Done well, \n\n\"I think it's better\" becomes \"we tested 200 cases and accuracy improved 5% without regressing tone.\"\n\n**Why it matters to you:** For Vocal's editorial and moderation tooling, \"good\" is genuinely subjective (voice, tone, brand fit). Separate rubrics let you catch when a change improves readability but weakens brand voice — exactly the tradeoffs that matter for a creator platform.\n**Source:** Braintrust — *Evals for PMs* — https://www.braintrust.dev/blog/evals-for-pms\n\n---\n\n## 5. A tactic you can run this week: build your first 25 evals from real failures\n**Concrete tactic**\n\nStart from what's actually breaking. \n\nBefore writing any evals, review your last 50–100 production interactions: what went wrong, and what did users complain about?\n\n Then \n\ncreate an eval for each failure type — if users complain about tone, write a tone eval; if the AI misses context, write a context-awareness eval; and continuously update your eval set as you discover new edge cases.\n\n The starter move recommended for AI PMs: \n\npick one tool, build your first 25 eval examples, and run them on every prompt change for two weeks — you'll be a different kind of AI PM by the end of the month.\n\n**Why it matters to you:** This is doable in a week with one of Vocal's live AI features. Pull recent outputs from a content or moderation model, cluster the complaints, and turn each into a graded test. You'll immediately catch silent regressions — \n\nwhether a 20% latency improvement quietly tanked accuracy, or a \"small prompt tweak\" silently broke 15% of your edge cases.\n\n**Source:** Productboard — *AI Evals for Product Managers* — https://www.productboard.com/blog/ai-evals-for-product-managers/\n\n---\n\n## 6. Bias and drift are product failures, not just data-science problems\n**Metrics — what to monitor for a content/audience platform**\n\nOverall accuracy hides segment failures. \n\nOverall metrics can hide important variation — a 90% success rate might mean 99% for simple queries and 50% for complex ones.\n\n The fix is slicing: \n\nset up evaluation slices — evaluate the model separately on data subsets by demographic, language, or region — and track metrics like accuracy and false-positive/negative rates per group.\n\n And separate genuine value from vanity signals: \n\nclick-through rate is a proxy for value, not value itself — teams that optimize for clicks often create clickbait AI with high engagement and low satisfaction, so always validate that proxy metrics correlate with true outcomes.\n\n**Why it matters to you:** Audience automation at Vocal will surface and recommend creator content across many communities and content types. Slicing evaluation by genre, creator segment, and language protects against a recommender that works well for some communities and quietly underserves others — and keeps you from over-optimizing engagement metrics at the expense of reader trust.\n**Source:** Product School — *Evaluation Metrics for AI Products That Drive Trust* — https://productschool.com/blog/artificial-intelligence/evaluation-metrics\n\n---\n\n*One connective thread across these: the scarce skill in AI PM work is judgment about what to build and what \"good\" means — measurement and evals are how you make that judgment concrete and defensible.*",
+      "sources": [
+        {
+          "title": "AI in Product Management Guide for 2026 for Product Leaders | Gocious",
+          "url": "https://gocious.com/blog/ai-in-product-management-guide-for-2026-for-product-leaders"
+        },
+        {
+          "title": "AI Product Management Roadmap & Frameworks: Step-by-Step Guide",
+          "url": "https://voltagecontrol.com/articles/ai-product-management-roadmap-frameworks-step-by-step-guide/"
+        },
+        {
+          "title": "Product Management in 2026: The AI PM Roadmap. | by Product Managers Club | Medium",
+          "url": "https://medium.com/@pmclub/product-management-in-2026-the-ai-pm-roadmap-cf5b9074a6f6"
+        },
+        {
+          "title": "Product Management Trends: 11 Shifts Shaping 2026",
+          "url": "https://productschool.com/blog/product-fundamentals/product-management-trends"
+        },
+        {
+          "title": "AI Product Management in 2026: A Complete Guide to the New Playbook | Tosea.ai",
+          "url": "https://tosea.ai/blog/ai-product-management-2026-playbook"
+        },
+        {
+          "title": "AI for Product Managers: Ultimate 2026 Guide to AI-Powered PM",
+          "url": "https://www.chatprd.ai/learn/ai-for-product-managers"
+        },
+        {
+          "title": "2026 State of Product Management Report: AI Adoption ...",
+          "url": "https://www.linkedin.com/posts/productplan_productmanagement-ai-productintelligenceplatform-activity-7435368644618096641-CCv-"
+        },
+        {
+          "title": "12 Best AI Product Manager Tools in 2026: A Curated Guide",
+          "url": "https://figr.design/blog/ai-product-manager"
+        },
+        {
+          "title": "AI Product Strategy 2026: Roadmap for Founders & Startups",
+          "url": "https://wearepresta.com/ai-product-strategy-2026-the-founders-guide-to-ai-native-growth/"
+        },
+        {
+          "title": "How AI Is Changing Product Management in 2026",
+          "url": "https://www.productleadership.com/blog/how-ai-is-changing-product-management/"
+        },
+        {
+          "title": "Metrics for AI Product. A Step-by-Step Guide to Defining… | by Shailesh Sharma | Agile Insider | Medium",
+          "url": "https://medium.com/agileinsider/metrics-for-ai-product-4685d5554223"
+        },
+        {
+          "title": "Evaluation Metrics for AI Products That Drive Trust",
+          "url": "https://productschool.com/blog/artificial-intelligence/evaluation-metrics"
+        },
+        {
+          "title": "KPIs for gen AI: Measuring your AI success | Google Cloud Blog",
+          "url": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive"
+        },
+        {
+          "title": "AI Metrics: How to Measure and Evaluate AI Performance | Sendbird",
+          "url": "https://sendbird.com/blog/ai-metrics-guide"
+        },
+        {
+          "title": "5 AI Product Metrics to Track: A Guide to Measuring Success | Moesif Blog",
+          "url": "https://www.moesif.com/blog/technical/api-development/5-AI-Product-Metrics-to-Track-A-Guide-to-Measuring-Success/"
+        },
+        {
+          "title": "AI Product Metrics That Actually Matter | Complete Guide 2025",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-product-metrics"
+        },
+        {
+          "title": "Metrics for AI Product",
+          "url": "https://www.technomanagers.com/p/metrics-for-ai-product"
+        },
+        {
+          "title": "Measuring the Success of AI Products: Key Metrics and Frameworks | by Harsha Srivatsa | Medium",
+          "url": "https://harsha-srivatsa.medium.com/measuring-the-success-of-ai-products-key-metrics-and-frameworks-e65f49814ed2"
+        },
+        {
+          "title": "The Four Types of Metrics for AI Product Managers - 5D Vision",
+          "url": "https://www.5dvision.com/post/metrics-for-ai-pms/"
+        },
+        {
+          "title": "20 AI Performance Metrics to Follow in Software Development",
+          "url": "https://axify.io/blog/ai-performance-metrics"
+        },
+        {
+          "title": "How Anthropic’s product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code)",
+          "url": "https://podcasts.apple.com/us/podcast/how-anthropics-product-team-moves-faster-than-anyone/id1627920305?i=1000763270413"
+        },
+        {
+          "title": "How Anthropic’s product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code) | Lenny's Podcast: Product | Career | Growth | Podwise",
+          "url": "https://podwise.ai/dashboard/episodes/7832330"
+        },
+        {
+          "title": "How Anthropic’s product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code)",
+          "url": "https://www.lennysnewsletter.com/p/how-anthropics-product-team-moves"
+        },
+        {
+          "title": "How Anthropic’s product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code) - Lenny's Podcast: Product | Career | Growth | Podcast on Spotify",
+          "url": "https://open.spotify.com/episode/7wTqD5zwl8ZitUeplapvBG"
+        },
+        {
+          "title": "How Anthropic's Product Team Moves Faster Than Anyone | Cat Wu (Lenny's Podcast) - YouTube",
+          "url": "https://www.youtube.com/watch?v=e72aZmwQiHk"
+        },
+        {
+          "title": "How Anthropic’s product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code) - YouTube",
+          "url": "https://www.youtube.com/watch?v=PplmzlgE0kg&vl=en-US"
+        },
+        {
+          "title": "How Anthropic’s product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code) - Whatfinger Startup And Small Business",
+          "url": "https://startup.whatfinger.com/2026/04/23/how-anthropics-product-team-moves-faster-than-anyone-else-cat-wu-head-of-product-claude-code/"
+        },
+        {
+          "title": "Lenny's Podcast: Cat Wu on AI and PM Role Evolution",
+          "url": "https://www.linkedin.com/posts/willfriedman_how-anthropics-product-team-moves-faster-activity-7453125336571203584-PPX4"
+        },
+        {
+          "title": "Anthropic Product Team's Unprecedented Shipping Pace ...",
+          "url": "https://www.linkedin.com/posts/lennyrachitsky_how-anthropics-product-team-moves-faster-activity-7453144198670884864-Up3F"
+        },
+        {
+          "title": "Lenny's Podcast: Product | Career | Growth - Podcast - Apple Podcasts",
+          "url": "https://podcasts.apple.com/by/podcast/lennys-podcast-product-career-growth/id1627920305"
+        },
+        {
+          "title": "Best AI Evaluation Tools for Prompt Experimentation in 2026 - Confident AI",
+          "url": "https://www.confident-ai.com/knowledge-base/compare/best-ai-evaluation-tools-for-prompt-experimentation-2026"
+        },
+        {
+          "title": "Fundamentals of AI Product Management: Prompt Engineering, AI Agents, and Eval Frameworks",
+          "url": "https://www.justanotherpm.com/blog/fundamentals-of-ai-product-management-prompt-engineering-ai-agents-and-eval-frameworks"
+        },
+        {
+          "title": "Best Free AI Product Management Templates and Resources for 2026",
+          "url": "https://www.institutepm.com/knowledge-hub/best-ai-pm-templates-resources-2026"
+        },
+        {
+          "title": "Best AI Evaluation Tools for Product Managers in 2026 | Eval Stack Guide",
+          "url": "https://www.institutepm.com/knowledge-hub/best-ai-evaluation-tools-2026"
+        },
+        {
+          "title": "Evals for PMs: A practical guide to AI product quality - Blog - Braintrust",
+          "url": "https://www.braintrust.dev/blog/evals-for-pms"
+        },
+        {
+          "title": "Best Prompt Evaluation Tools in 2026 (Tested & Compared) - Articles - Braintrust",
+          "url": "https://www.braintrust.dev/articles/best-prompt-evaluation-tools-2025"
+        },
+        {
+          "title": "12 AI PM Portfolio Projects Ranked by Hireability (2026 Edition)",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-pm-learning-by-building-projects"
+        },
+        {
+          "title": "AI Evals for Product Managers: Building Better Feedback Loops for AI Products | Productboard",
+          "url": "https://www.productboard.com/blog/ai-evals-for-product-managers/"
+        },
+        {
+          "title": "Unlock Better AI Outputs with Evals: The Missing Step for PMs Using AI",
+          "url": "https://pmprompt.com/blog/pm-ai-evals"
+        },
+        {
+          "title": "Demystifying evals for AI agents \\ Anthropic",
+          "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "# This Week in Claude & AI Automation\n\n## 1. Claude Opus 4.8 ships adaptive thinking — stop paying for thinking tokens you don't need\n\nOpus 4.8 replaces the old manual thinking budget with **adaptive thinking**, where \n\nClaude triggers reasoning only when it determines the turn needs it — responding directly on simple lookups and short agentic steps, and reasoning before answering on complex multi-step problems.\n\n The practical win for API users: \n\nfewer wasted thinking tokens at the same effort level, because the model determines per turn whether to think.\n\n It's also roughly \n\nfour times less likely than its predecessor to allow flaws in code it has written to pass unremarked.\n\n**Try this:** Update your API request to switch off the manual budget. In your JSON body, remove the old `thinking: {budget_tokens: N}` field and replace it with `\"thinking\": {\"type\": \"adaptive\"}`, then control depth with the `effort` parameter passed in the top-level `output_config` field instead. Note that \n\nthinking is off unless you explicitly set thinking: {type: \"adaptive\"} in your request.\n\n If you remove the thinking field entirely, requests run with no thinking at all.\n\n*Source: Claude Platform Docs — https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8*\n\n---\n\n## 2. Dynamic workflows: name the pattern to get sharper multi-agent orchestration\n\nDynamic workflows are now GA in Claude Code, and the key insight for daily users is architectural: \n\na workflow script holds the loop, the branching, and the intermediate results itself, so Claude's context holds only the final answer.\n\n The community has distilled six reusable coordination patterns, and \n\nprompting Claude with the right pattern by name gives the sharpest results.\n\n One underused pattern mines your own history: \n\nmine your recent sessions for corrections you keep repeating, cluster them, adversarially verify each, and distill the survivors into new CLAUDE.md rules.\n\n**Try this:** Paste this into Claude Code to auto-generate CLAUDE.md rules from your mistakes (requires CLI v2.1.154+, turn on Auto Mode first so it doesn't stop on every permission prompt):\n\n```\nCreate a workflow that improves my CLAUDE.md. Fan out subagents to mine my\nrecent Claude Code sessions in this project for corrections I gave you that\nI keep repeating. Cluster the corrections into themes. For each cluster,\nspawn a skeptic agent to adversarially verify it's a real recurring rule\nand not a one-off. Distill the survivors into concise new CLAUDE.md rules\nand show me the diff before writing.\n```\n\nAfter it runs, open `/workflows` and press `s` to save it to `.claude/workflows/` so it becomes a reusable command. **Cost warning:** \n\ndynamic workflows consume meaningfully more usage than a typical Claude Code session.\n\n*Sources: Claude Code Docs — https://code.claude.com/docs/en/workflows ; claudefa.st — https://claudefa.st/blog/guide/development/dynamic-workflows*\n\n---\n\n## 3. Structured-output schemas inside subagents — stop parsing prose between agent stages\n\nA quieter but high-leverage detail in the workflow runtime: you can force each subagent to hand back validated JSON instead of prose. \n\nYou can hand agent() a structured-output schema (a JSON Schema), which forces the subagent to return a validated object and retries if it does not match, so downstream stages get clean data instead of prose to parse.\n\n Combined with isolation control — \n\n'worktree' gives an agent its own copy of the repository, which you want when several agents edit files in parallel and must not clobber each other\n\n — this makes multi-stage pipelines far more reliable.\n\n**Try this:** When Claude generates a workflow, press `Ctrl+G` at the approval screen to open the raw JS, then confirm your `agent()` calls pass a schema, e.g.:\n\n```js\nconst result = await agent({\n  prompt: \"Analyze this module and report findings\",\n  schema: {\n    type: \"object\",\n    properties: {\n      file: { type: \"string\" },\n      issues: { type: \"array\", items: { type: \"string\" } },\n      severity: { type: \"string\", enum: [\"low\", \"med\", \"high\"] }\n    },\n    required: [\"file\", \"issues\", \"severity\"]\n  },\n  isolation: \"worktree\"   // only when agents write to the same files\n});\n```\n\nUse `isolation: 'worktree'` only for parallel file-writing agents — \n\nit adds overhead you do not need for read-only agents.\n\n*Source: claudefa.st — https://claudefa.st/blog/guide/development/dynamic-workflows*\n\n---\n\n## 4. Live Artifacts: turn a Claude Code session into a self-updating shareable page\n\nNow in beta on Team and Enterprise, Artifacts \n\nlet you say \"Build an artifact of what merged on my team this week from the PRs, grouped by project\" — Claude Code builds the page, gives you a link, and updates publish to the same URL automatically.\n\n This replaces the pattern of re-exporting status docs; the page stays live as the session works.\n\n**Try this:** From the Claude Code CLI or desktop app on a Team/Enterprise plan, run:\n\n```\nBuild an artifact of what merged on my team this week from the PRs,\ngrouped by project, with a short summary line per PR. Keep it updating\nas new PRs land.\n```\n\nOpen the returned link in your browser or the desktop app, then share it from the header. Anyone with the link sees updates in place — no re-send needed.\n\n*Source: Releasebot / Anthropic — https://releasebot.io/updates/anthropic/claude*\n\n---\n\n## 5. MCP Tool Search is why you can finally wire up dozens of servers\n\nIf you've been avoiding large MCP setups because of context bloat, that constraint is gone. Previously \n\nGitHub's MCP server alone consumes nearly a quarter of Claude Sonnet's context window before you've written a line of code\n\n, and more tools actively hurt: \n\nmore tools meant worse performance — tool selection degrades, parameter hallucination increases, attention disperses, and latency grows.\n\n MCP Tool Search fixes this via lazy loading: \n\ntraditional approach was ~77K tokens consumed before any work begins with 50+ MCP tools; with Tool Search, ~8.7K tokens, preserving 95% of the context window.\n\n**Try this:** The mechanism kicks in automatically — \n\nClaude Code checks if MCP tool descriptions exceed 10K tokens, and if exceeded, tools are marked with defer_loading: true.\n\n To take advantage, stop pruning your MCP config and instead add all the servers you actually want. Confirm it's working by running `/context` at session start; your MCP tool footprint should read a few thousand tokens, not tens of thousands. If a specific server isn't deferring, check that its combined tool descriptions cross the 10K threshold.\n\n*Source: atcyrus — https://www.atcyrus.com/stories/mcp-tool-search-claude-code-context-pollution-guide*\n\n---\n\n## 6. (Broader AI world) n8n's deterministic-gate pattern — force agents through required steps\n\nA recurring failure in production agents is reasoning their way *around* a mandatory step. The n8n team documents the fix directly: \n\nyou want an AI agent in security operations to always check a URL or file hash in VirusTotal — you don't want it to reason its way through checking them on the off chance that it might not.\n\n The pattern is to move the mandatory action out of the LLM's discretion and into deterministic workflow logic, then pair it with \n\nmanual approval gates that pause workflows at high-stakes decision points, such as contract generation or payment processing, until a human confirms.\n\n**Try this:** In n8n, restructure so the LLM decides *content*, not *whether a required action fires*. Concretely:\n\n- **Trigger:** Incoming item (webhook / email / new CRM record).\n- **Step 1 (deterministic node, not the agent):** Run the mandatory check — e.g., an HTTP Request node hitting your enrichment/validation API. This always executes.\n- **Step 2 (AI Agent node):** Feed the check's result in as context and let the agent draft the response/classification.\n- **Step 3 (IF node on confidence/severity):** Route high-stakes outputs (payments, contracts, external comms) to a human-approval branch that pauses until confirmed; auto-send only the low-risk branch.\n\nThis also enables tiered routing to cut cost: \n\nroute simple, high-volume queries to lightweight models, and complex reasoning tasks with ambiguous inputs to more capable models.\n\n*Sources: n8n Blog — https://blog.n8n.io/we-need-re-learn-what-ai-agent-development-tools-are-in-2026/ ; Chronexa — https://chronexa.io/blog/n8n-ai-agent-features-2026*",
+      "sources": [
+        {
+          "title": "What's new - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        },
+        {
+          "title": "Release notes | Claude Help Center",
+          "url": "https://support.claude.com/en/articles/12138966-release-notes"
+        },
+        {
+          "title": "Claude Updates by Anthropic - July 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "What's new in Claude Opus 4.8 - Claude Platform Docs",
+          "url": "https://platform.claude.com/docs/en/about-claude/models/whats-new-claude-4-8"
+        },
+        {
+          "title": "Introducing Claude Opus 4.8 \\ Anthropic",
+          "url": "https://www.anthropic.com/news/claude-opus-4-8"
+        },
+        {
+          "title": "Every Claude Code Update From March 2026, Explained",
+          "url": "https://www.builder.io/blog/claude-code-updates"
+        },
+        {
+          "title": "New features and Claude as agent provider preview in JetBrains IDEs - GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-06-22-new-features-and-claude-as-agent-provider-preview-in-jetbrains-ides/"
+        },
+        {
+          "title": "A complete list of Claude's new features - by Khe Hy",
+          "url": "https://khemaridh.substack.com/p/a-complete-list-of-claudes-new-features"
+        },
+        {
+          "title": "Claude Code June 2026: 10 New Features Devs Need to Know",
+          "url": "https://www.sitepoint.com/claude-code-june-2026-10-new-features-devs-need-to-know/"
+        },
+        {
+          "title": "Claude News | Latest Claude News - NewsNow",
+          "url": "https://www.newsnow.com/us/Science/AI/Claude"
+        },
+        {
+          "title": "Claude Updates by Anthropic - July 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - July 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Claude Changed: The July 2026 Way to Use it - by Opinion AI",
+          "url": "https://emergingai.substack.com/p/claude-changed-the-july-2026-way"
+        },
+        {
+          "title": "Claude Code Guide 2026: 25 Features with Examples + Demo - MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/06/14/claude-code-guide-2026-25-features-with-examples-demo/"
+        },
+        {
+          "title": "Best Claude MCP Plugins: Top 7 Tools for 2026 | Fastio",
+          "url": "https://fast.io/resources/claude-mcp-plugins/"
+        },
+        {
+          "title": "Introducing the Model Context Protocol \\ Anthropic",
+          "url": "https://www.anthropic.com/news/model-context-protocol"
+        },
+        {
+          "title": "50+ Best MCP Servers for Claude Code in 2026",
+          "url": "https://claudefa.st/blog/tools/mcp-extensions/best-addons"
+        },
+        {
+          "title": "Claude MCP: How to Configure MCP Servers in Claude Code and Claude Desktop - Novita",
+          "url": "https://blogs.novita.ai/claude-mcp-configuration-guide/"
+        },
+        {
+          "title": "What is MCP Tool Search? The Claude Code feature that fixes",
+          "url": "https://www.atcyrus.com/stories/mcp-tool-search-claude-code-context-pollution-guide"
+        },
+        {
+          "title": "Best Atlassian Server MCP Server for Claude Code (July 2026) | Claude Directory",
+          "url": "https://www.claudedirectory.org/mcp-servers/atlassian"
+        },
+        {
+          "title": "Orchestrate subagents at scale with dynamic workflows - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/workflows"
+        },
+        {
+          "title": "Introducing dynamic workflows | Claude by Anthropic",
+          "url": "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code"
+        },
+        {
+          "title": "How to Use Claude Code Dynamic Workflows: Spawning Hundreds of Parallel Sub-Agents | MindStudio",
+          "url": "https://www.mindstudio.ai/blog/claude-code-dynamic-workflows-parallel-sub-agents"
+        },
+        {
+          "title": "Dynamic Workflows in Claude Code: How They Work",
+          "url": "https://claudefa.st/blog/guide/development/dynamic-workflows"
+        },
+        {
+          "title": "Claude Code Dynamic Workflows: How to Run Hundreds of Parallel Agents (2026)",
+          "url": "https://www.aimadetools.com/blog/claude-code-dynamic-workflows-guide/"
+        },
+        {
+          "title": "How to Use Claude Fable 5 Dynamic Workflows for Parallel Sub-Agent Execution | MindStudio",
+          "url": "https://www.mindstudio.ai/blog/claude-fable-5-dynamic-workflows-parallel-sub-agents"
+        },
+        {
+          "title": "Claude Code Dynamic Workflows: How to Orchestrate 1,000 Subagents on a Real Codebase | Build This Now",
+          "url": "https://www.buildthisnow.com/blog/guide/development/claude-code-dynamic-workflows"
+        },
+        {
+          "title": "Trying Dynamic Workflow in Claude Code",
+          "url": "https://azukiazusa.dev/en/blog/claude-code-dynamic-workflow/"
+        },
+        {
+          "title": "Claude Dynamic Workflows: How to Run Hundreds of Parallel Sub-Agents",
+          "url": "https://emergingai.substack.com/p/claude-dynamic-workflows-how-to-run"
+        },
+        {
+          "title": "Claude Code Dynamic Workflows: Official Step-by-Step Guide",
+          "url": "https://agentpedia.codes/blog/claude-opus-4-8-claude-code-workflows"
+        },
+        {
+          "title": "The 100 Best AI Agent Skills in 2026: The Definitive Guide — AGNT.gg",
+          "url": "https://agnt.gg/articles/100-best-ai-agent-skills"
+        },
+        {
+          "title": "Context Engineering for AI Coding Agents: 9 Techniques for 2026",
+          "url": "https://www.fundesk.io/context-engineering-techniques-ai-coding-agents-2026"
+        },
+        {
+          "title": "Best Claude Code setups for ai & agent development (July 2026) | Claude Directory",
+          "url": "https://www.claudedirectory.org/for/ai-agent-development"
+        },
+        {
+          "title": "Context Engineering AI: How To Build Smarter LLM Agents In 2026",
+          "url": "https://mem0.ai/blog/context-engineering-ai-agents-guide"
+        },
+        {
+          "title": "GitHub - muratcankoylan/Agent-Skills-for-Context-Engineering: A comprehensive collection of Agent Skills for context engineering, multi-agent architectures, and production agent systems. Use when building, optimizing, or debugging agent systems that require effective context management. · GitHub",
+          "url": "https://github.com/muratcankoylan/agent-skills-for-context-engineering"
+        },
+        {
+          "title": "Knowledge Activation: AI Skills as the Institutional Knowledge Primitive for Agentic Software Development",
+          "url": "https://arxiv.org/pdf/2603.14805"
+        },
+        {
+          "title": "n8n.io - AI workflow automation platform",
+          "url": "https://n8n.io/"
+        },
+        {
+          "title": "Build Custom AI Agents With Logic & Control | n8n Automation Platform",
+          "url": "https://n8n.io/ai-agents/"
+        },
+        {
+          "title": "Best 9 n8n AI agent workflow automation examples in 2026 | Jotform Blog",
+          "url": "https://www.jotform.com/ai/agents/n8n-ai-agent-workflow-example/"
+        },
+        {
+          "title": "n8n Guide 2026: Features & Workflow Automation Deep Dive",
+          "url": "https://hatchworks.com/blog/ai-agents/n8n-guide/"
+        },
+        {
+          "title": "N8N AI Agents Features 2026: The Complete Founder's Guide",
+          "url": "https://chronexa.io/blog/n8n-ai-agent-features-2026"
+        },
+        {
+          "title": "n8n AI: Complete Guide to Agents & Workflows 2026 - Alex Harte",
+          "url": "https://www.alexanderharte.com/n8n-ai-agents-workflows-guide/"
+        },
+        {
+          "title": "n8n: Open-Source AI Workflow Automation Revolution in 2026 ...",
+          "url": "https://www.youtube.com/watch?v=neNDxdtiFXw"
+        },
+        {
+          "title": "We need to re-learn what AI agent development tools are in 2026 – n8n Blog",
+          "url": "https://blog.n8n.io/we-need-re-learn-what-ai-agent-development-tools-are-in-2026/"
+        },
+        {
+          "title": "AI Agents with n8n: Build & Deploy in 2026 | MyDigipal",
+          "url": "https://mydigipal.com/en/blog/ai-agents-n8n-automation"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "# This Week in AI: A Global Briefing\n\n## 1. China forces ByteDance and Alibaba to pull consumer AI \"companion\" agents\nChina's Cyberspace Administration and four partner agencies are enforcing new rules that take effect July 15, and the two biggest consumer AI apps are complying by shutting features off entirely. \n\nByteDance's Doubao and Alibaba's Qwen are disabling custom AI agent features ahead of China's Interim Measures on anthropomorphic AI interaction services; the rules target bots offering sustained emotional interaction while sparing workplace and productivity agents, and Tencent pulled a similar Yuanbao feature in June.\n\n The rules are demanding enough that the companies chose to kill the products rather than retrofit them: \n\nthe measures require anti-addiction systems, mandatory usage notifications, and instant-exit mechanisms that are architecturally incompatible with how persistent-memory agents are designed.\n\n Why it matters: Beijing is drawing a regulatory line between \"the agent that does your work and the agent that keeps you company,\" and one analysis notes \n\nit solves a problem both the EU and US have wrestled with for two years — how to keep enterprise agents productive while cutting off the emotional dependency risk in consumer products\n\n, making it a template other regulators may study.\n**Region: China** — Source: TechNode, https://technode.com/2026/07/06/bytedances-doubao-and-alibabas-qwen-to-shut-down-ai-agent-features-on-july-15/ · The Next Web, https://thenextweb.com/news/china-humanlike-ai-agent-rules\n\n## 2. A global push to make AI companies pay publishers for news\nBeyond one-off licensing deals, policymakers are exploring \"statutory licensing\" — laws that would automatically compel AI firms to pay for the content they use. \n\nA new set of proposals is emerging that has received far less attention in U.S. journalism circles: statutory licensing, with policymakers in Europe, Indonesia, Latin America and at the World Intellectual Property Organization exploring versions of these laws that would require AI companies to pay publishers for the content they use.\n\n The context is that current approaches are patchy: \n\npublishers like Axel Springer and News Corp are striking individual content-sharing deals with AI companies — arrangements that help some outlets but may do little for the broader news ecosystem.\n\n Why it matters for a media company: Europe's licensing tradition could make it the testing ground, and \n\nEurope has a longer tradition of licensing regimes and collection agencies, which may make statutory licensing easier to implement there — and if Europe updates its laws, perhaps the so-called \"Brussels Effect\" will influence policymakers in other parts of the world.\n\n**Region: EU / International** — Source: Poynter, https://www.poynter.org/business-work/2026/ai-pay-for-news-statutory-licensing/\n\n## 3. EU AI Act deadlines slip, but chatbot and content-labeling rules still hit in 2026\nThe EU agreed to soften and stagger parts of its landmark AI law, easing pressure on high-risk systems while keeping transparency rules largely on track. \n\nOn 7 May 2026, negotiators from the Council, Parliament, and Commission reached a provisional agreement on the Digital Omnibus on AI — the first set of amendments to the EU AI Act since its adoption — reflecting a mix of pragmatic timeline extensions, focused simplification measures, and a small number of substantive policy changes.\n\n Crucially for anyone deploying AI in Europe: \n\nobligations for use-based high-risk systems are postponed from 2 August 2026 to 2 December 2027\n\n, but \n\nthe transparency obligations for chatbots take effect in August 2026, and the deferral for AI-generated content labeling is only four months, to December 2, 2026.\n\n Why it matters: penalties are steep — \n\nfor non-compliance with prohibited AI practices, fines can reach up to EUR 35 million or 7% of total worldwide annual turnover, whichever is higher.\n\n A media company using chatbots or publishing AI-generated content in the EU faces near-term compliance obligations even as the broader timeline relaxes.\n**Region: EU** — Source: Global Policy Watch (Covington), https://www.globalpolicywatch.com/2026/06/eu-ai-act-update-timeline-relief-targeted-simplification-and-new-prohibitions-2/\n\n## 4. Washington moves from watching frontier AI to sitting inside it\nTwo US developments this week point to a much closer government hand in frontier AI. First, on models: \n\nthe Trump administration ordered Anthropic to disable Claude Fable 5 and Mythos 5 globally, citing cybersecurity jailbreak concerns, and since Anthropic cannot verify users' nationalities in real time, both models went offline for all customers worldwide.\n\n Second, on policy: \n\nTrump signed an executive order asking AI companies to voluntarily provide frontier models to the federal government up to 30 days before public release for cybersecurity benchmarking, and directing agencies to create an AI cybersecurity clearinghouse to share vulnerability information.\n\n Context for why this is notable: \n\na prior version of the order had required a 90-day review window and was pulled in May after Trump expressed concern it could stifle US AI competitiveness against China.\n\n Why it matters: taken together, these mark a shift toward the US government embedding itself in the frontier-model release process, with direct effects felt as far as Japan, where \n\nthe government and megabanks MUFG, SMBC, and Mizuho are set to gain access to Anthropic's Claude Mythos within two weeks.\n\n**Region: US** — Source: Crescendo AI, https://www.crescendo.ai/news/latest-ai-news-and-updates\n\n## 5. Gulf states race to put \"agentic\" AI into production\nThe UAE and Saudi Arabia are moving from AI ambition to large-scale deployment faster than most of the world, backed by sovereign wealth and government mandates. \n\nAccording to Confluent's 2026 Data Streaming Report, 38 per cent of organisations in both countries have agentic AI solutions running in production, placing the Gulf among the global leaders — and unlike traditional AI, agentic AI can analyse information, make decisions and execute actions with minimal human intervention.\n\n This sits alongside a government push: the UAE recently \n\napproved the establishment of the Artificial Intelligence and Data Authority, the single national body responsible for data, artificial intelligence and digital government, reporting directly to the Cabinet.\n\n Why it matters: the region is building both the infrastructure and the institutions to be a genuine AI hub, though risks remain — Gulf enterprises cite \n\ninsufficient infrastructure for real-time data processing, concerns about data lineage and quality, and shortages of AI and data-related skills\n\n as major obstacles. For a media company, the Gulf's investment in Arabic-language AI and \"the future of media in the AI era\" makes it a market worth watching.\n**Region: Gulf (UAE / Saudi Arabia)** — Source: Khaleej Times, https://www.khaleejtimes.com/business/tech/uae-saudi-arabia-lead-global-race-to-put-autonomous-ai-to-work · Gulf Business, https://gulfbusiness.com/en/2026/uae/uae-to-establish-new-ai-authority-how-will-it-reshape-digital-government/\n\n---\n*Note: Some source articles (notably the Gulf deployment data and EU AI Act analysis) predate this week but describe developments that remain the current state of play. The China agent shutdowns, the Anthropic model orders, and the statutory-licensing push are all this-week stories.*",
+      "sources": [
+        {
+          "title": "AI Updates Today (July 2026) – Latest AI Model Releases",
+          "url": "https://llm-stats.com/llm-updates"
+        },
+        {
+          "title": "OpenAI News | OpenAI",
+          "url": "https://openai.com/news/"
+        },
+        {
+          "title": "LLM News Today (July 2026) – AI Model Releases",
+          "url": "https://llm-stats.com/ai-news"
+        },
+        {
+          "title": "New Models Today — AI & LLM Releases Last 24 Hours | Price Per Token",
+          "url": "https://pricepertoken.com/news/model-releases"
+        },
+        {
+          "title": "The Latest AI News and Breakthroughs That Matter Most | News",
+          "url": "https://www.crescendo.ai/news/latest-ai-news-and-updates"
+        },
+        {
+          "title": "The latest AI news we announced in June 2026",
+          "url": "https://blog.google/innovation-and-ai/technology/ai/google-ai-updates-june-2026/"
+        },
+        {
+          "title": "AI News — Weekly AI Newsletter for Professionals | AI Weekly",
+          "url": "https://aiweekly.co/"
+        },
+        {
+          "title": "AI News & Artificial Intelligence | TechCrunch",
+          "url": "https://techcrunch.com/category/artificial-intelligence/"
+        },
+        {
+          "title": "AI News Today July 4 2026: 15 Biggest Stories",
+          "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-4-2026"
+        },
+        {
+          "title": "Artificial intelligence: Latest News and Updates | South China Morning Post",
+          "url": "https://www.scmp.com/topics/artificial-intelligence"
+        },
+        {
+          "title": "Beyond DeepSeek: China's Diverse Open-Weight AI ...",
+          "url": "https://hai.stanford.edu/policy/beyond-deepseek-chinas-diverse-open-weight-ai-ecosystem-and-its-policy-implications"
+        },
+        {
+          "title": "China-linked actors target more than technology as AI competition with U.S. intensifies",
+          "url": "https://www.cnbc.com/2026/07/01/china-ai-cyberattacks-startups-insider-risks-espionage.html"
+        },
+        {
+          "title": "AI Act | Shaping Europe's digital future - European Union",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+        },
+        {
+          "title": "AI Act Update: EU Resolves to Change Rules and Extend Deadlines",
+          "url": "https://www.lw.com/en/insights/ai-act-update-eu-resolves-to-change-rules-and-extend-deadlines"
+        },
+        {
+          "title": "Implementation Timeline | EU Artificial Intelligence Act",
+          "url": "https://artificialintelligenceact.eu/implementation-timeline/"
+        },
+        {
+          "title": "EU AI Act Update: Timeline Relief, Targeted Simplification, and New Prohibitions",
+          "url": "https://www.globalpolicywatch.com/2026/06/eu-ai-act-update-timeline-relief-targeted-simplification-and-new-prohibitions-2/"
+        },
+        {
+          "title": "EU Artificial Intelligence Act | Up-to-date developments and analyses of the EU AI Act",
+          "url": "https://artificialintelligenceact.eu/"
+        },
+        {
+          "title": "Governance and enforcement of the AI Act | Shaping Europe’s digital future",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/ai-act-governance-and-enforcement"
+        },
+        {
+          "title": "Enforcement / fines in the European Union - AI Laws of the World",
+          "url": "https://intelligence.dlapiper.com/artificial-intelligence/?t=08-enforcement&c=EU"
+        },
+        {
+          "title": "News/Media Alliance signs AI licensing deal to unlock recurring RAG revenue for small and mid-sized publishers",
+          "url": "https://digiday.com/media/news-media-alliance-signs-ai-licensing-deal-to-unlock-recurring-rag-revenue-for-small-and-mid-sized-publishers/"
+        },
+        {
+          "title": "A timeline of the major deals between publishers and AI tech companies in 2025",
+          "url": "https://digiday.com/media/a-timeline-of-the-major-deals-between-publishers-and-ai-tech-companies-in-2025/"
+        },
+        {
+          "title": "Digiday Scorecard: Publishers rate Big Tech’s AI licensing deals",
+          "url": "https://digiday.com/media/publishers-scorecard-for-big-techs-ai-licensing-deals/"
+        },
+        {
+          "title": "News/Media Alliance Strikes Content Licensing Deal with Bria AI - Futureweek",
+          "url": "https://futureweek.com/news-media-alliance-strikes-content-licensing-deal-with-bria-ai/"
+        },
+        {
+          "title": "Who's suing AI and who's signing: Microsoft signs Australian Copilot deal, US local newspapers sue",
+          "url": "https://pressgazette.co.uk/platforms/news-publisher-ai-deals-lawsuits-openai-google/"
+        },
+        {
+          "title": "News Corp. strikes $50M-per-year AI licensing deal with Meta",
+          "url": "https://finance.yahoo.com/news/news-corp-strikes-50m-per-174929826.html"
+        },
+        {
+          "title": "Media Briefing: Publishers cautiously count AI licensing as notable revenue amid programmatic strain, in Q1 earnings",
+          "url": "https://digiday.com/media/media-briefing-publishers-cautiously-count-ai-licensing-as-notable-revenue-amid-programmatic-strain-in-q1-earnings/"
+        },
+        {
+          "title": "Meta enters AI licensing fray, striking deals with People Inc., USA Today Co. and more - Digiday",
+          "url": "https://digiday.com/media/meta-enters-ai-licensing-fray-striking-deals-with-people-inc-usa-today-co-and-more/"
+        },
+        {
+          "title": "A new global push would make AI companies pay for news - Poynter",
+          "url": "https://www.poynter.org/business-work/2026/ai-pay-for-news-statutory-licensing/"
+        },
+        {
+          "title": "China AI Companion Law Arrives July 15: Doubao and Qwen Agent Data Will Be Deleted",
+          "url": "https://www.techtimes.com/articles/319703/20260704/china-ai-companion-law-arrives-july-15-doubao-qwen-agent-data-will-deleted.htm"
+        },
+        {
+          "title": "China's AI companion rules force Doubao, Qwen shutdowns",
+          "url": "https://thenextweb.com/news/china-humanlike-ai-agent-rules"
+        },
+        {
+          "title": "China's AI companion rules force Doubao, Qwen shutdowns - ChinaTechNews.com",
+          "url": "https://www.chinatechnews.com/2026/07/05/124959-chinas-ai-companion-rules-force-doubao-qwen-shutdowns"
+        },
+        {
+          "title": "China’s AI companion rules: what Beijing is really going after",
+          "url": "https://www.artificialintelligence-news.com/news/china-ai-companion-rules/"
+        },
+        {
+          "title": "China forces ByteDance and Alibaba to disable humanlike AI agents | AIntelligenceHub",
+          "url": "https://aintelligencehub.com/articles/china-anthropomorphic-rules-doubao-qwen"
+        },
+        {
+          "title": "ByteDance's Doubao and Alibaba's Qwen to shut down AI agent features on July 15 · TechNode",
+          "url": "https://technode.com/2026/07/06/bytedances-doubao-and-alibabas-qwen-to-shut-down-ai-agent-features-on-july-15/"
+        },
+        {
+          "title": "ByteDance and Alibaba to disable humanlike AI custom agents as new rules loom | South China Morning Post",
+          "url": "https://www.scmp.com/tech/big-tech/article/3359482/bytedance-and-alibaba-disable-humanlike-ai-custom-agents-new-rules-loom"
+        },
+        {
+          "title": "ByteDance and Alibaba Are Killing Custom AI Companions Before China's New Law Bites - Startup Fortune",
+          "url": "https://startupfortune.com/bytedance-and-alibaba-are-killing-custom-ai-companions-before-chinas-new-law-bites/"
+        },
+        {
+          "title": "China’s AI Companions Vanish Ahead of New Rules - Artiverse",
+          "url": "https://www.artiverse.ca/chinas-ai-companions-vanish-ahead-of-new-rules/"
+        },
+        {
+          "title": "Digg",
+          "url": "https://digg.com/tech/2c8fo2cw"
+        },
+        {
+          "title": "Sheikh Hamdan announces Dubai AI Week 2026: Double the scale, global participation expected",
+          "url": "https://gulfnews.com/amp/story/technology/bjcu2yn-hamdan-bin-mohammed-directs-dubai-week-return-1.500106123"
+        },
+        {
+          "title": "UAE Aligns With Saudi Arabia, Qatar, Bahrain, Oman and Kuwait as July 9 2026, Visa Deadline Signals New Phase in Gulf Travel Compliance - Travel And Tour World",
+          "url": "https://www.travelandtourworld.com/news/article/6j2l8gid9m4w/"
+        },
+        {
+          "title": "UAE to Shift 50% of Government Services to Autonomous AI Within Two Years, Aiming to Lead Global Agentic AI Adoption",
+          "url": "https://gulfnews.com/uae/government/uae-to-move-50-of-government-services-to-ai-within-two-years-1.500516798"
+        },
+        {
+          "title": "AI is reshaping hiring in Saudi Arabia faster than anywhere else",
+          "url": "https://gulfbusiness.com/en/2026/artificial-intelligence/ai-is-reshaping-hiring-in-saudi-arabia-faster-than-anywhere-else/"
+        },
+        {
+          "title": "AI Arrives In The Middle East: US Strikes A Deal with UAE and KSA",
+          "url": "https://newsletter.semianalysis.com/p/ai-arrives-in-the-middle-east-us-strikes-a-deal-with-uae-and-ksa"
+        },
+        {
+          "title": "UAE to establish new AI authority: How will it reshape digital government?",
+          "url": "https://gulfbusiness.com/en/2026/uae/uae-to-establish-new-ai-authority-how-will-it-reshape-digital-government/"
+        },
+        {
+          "title": "UAE, Saudi Arabia lead global race to put autonomous AI to work | Khaleej Times",
+          "url": "https://www.khaleejtimes.com/business/tech/uae-saudi-arabia-lead-global-race-to-put-autonomous-ai-to-work"
+        },
+        {
+          "title": "AI for Gulf Startups: What UAE & Saudi Founders Need (2026)",
+          "url": "https://www.kalviumlabs.ai/blog/ai-for-gulf-market-uae-saudi-startups/"
+        },
+        {
+          "title": "Building the AI Gulf: How Saudi Arabia, the UAE and the Gulf States Are Turning Oil Wealth into an Artificial-Intelligence Future | Medium",
+          "url": "https://medium.com/@azha.khan.6/building-the-ai-gulf-how-saudi-arabia-the-uae-and-the-gulf-states-are-turning-oil-wealth-into-an-11992f0c0783"
+        },
+        {
+          "title": "The Middle East war is testing the Gulf's ambitions to become an AI hub",
+          "url": "https://www.cnbc.com/2026/05/24/middle-east-war-testing-gulfs-ambitions-to-become-ai-hub.html"
+        }
+      ]
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "# Cross-Spectrum Political Briefing — Week of July 6, 2026\n\nFour stories dominated this week, all with direct 2026 midterm relevance: a Supreme Court mail-in ballot ruling, Trump's July 4 address, a wave of progressive/DSA primary wins, and the Alabama redistricting fight over the Voting Rights Act.\n\n---\n\n## STORY 1: Supreme Court upholds late-arriving mail ballots (Watson v. RNC)\n\n**What actually happened (factual anchor):** On June 29, 2026, the Supreme Court ruled 5–4 in *Watson v. Republican National Committee* that federal law does not bar states from counting mail-in ballots that are postmarked by Election Day but received afterward. \n\nThe court ruled that mail-in ballots cast and postmarked by Election Day can be counted if they are received after Election Day.\n\n \n\nJustice Amy Coney Barrett authored the majority opinion, joined by Chief Justice John Roberts and the three liberal justices.\n\n The case concerned a Mississippi law allowing a five-day grace period; the ruling lets Mississippi and roughly a dozen other states keep such grace periods.\n\n### 1. PROGRESSIVE framing\n**Rep. Jennifer McClellan (D-VA) official statement** — *press release / advocacy* — https://mcclellan.house.gov/media/press-releases/mcclellan-statement-supreme-court-watson-v-republican-national-committee\nThe left frames the ruling as a democratic victory protecting ballot access. \n\nMcClellan called it \"a victory in the generational fight to expand access to voting.\"\n\n The argument emphasizes voters whose ballot delivery is outside their control: \n\nthe Court preserved easier access to the ballot box, especially for servicemembers and military families who must cast their vote while serving abroad, noting that for over 80 years mail-in voting has enabled citizens to overcome barriers, and that receipt deadlines put a factor beyond a voter's control in the hands of the Postal Service.\n\n### 2. NEUTRAL framing\n**CBS News** — *news reporting* — https://www.cbsnews.com/news/supreme-court-mail-ballots-mississippi-law-watson-v-rnc/\nWire-style reporting lays out the split and the legal reasoning without endorsing either side. \n\nThe high court split 5 to 4 in finding that Mississippi's measure does not conflict with federal statutes that set Election Day as the Tuesday after the first Monday in November.\n\n It notes the majority's textualist logic: \n\nBarrett wrote that the power over elections \"was not lodged in this Court. The election-day statutes say nothing about ballot receipt, and we cannot add to the words Congress chose.\"\n\n It also reports the administration's response — \n\nTrump urged Congress to pass the SAVE America Act, which would impose stringent voting rules, including eliminating mail ballots with some exceptions, and set voter ID and proof-of-citizenship requirements.\n\n### 3. CONSERVATIVE framing\n**The Daily Caller (Trey Trainor)** — *opinion / commentary* — https://dailycaller.com/2026/06/30/supreme-court-watson-v-rnc-congress-election-law-trey-trainor/\nThe right frames the ruling as a textualist error with no logical stopping point. \n\nThe author argues that after the ruling, every state legislature knows it can push ballot-receipt deadlines as far out as it wants and allow mail-in voting to expand without limit.\n\n He amplifies Alito's dissent: \n\nthe opinion has no limiting principle, with Alito calling it \"Pandora's box\"; the case involved Mississippi's five-day grace period, but nothing in the reasoning depends on that number — Washington State already counts ballots arriving twenty-one days after the election, raising the question of what stops a state from scrapping receipt deadlines altogether.\n\n*Note on a recurring factual claim:* Trump publicly called the decision \"a tremendous loss\" and has long tied mail voting to fraud. As neutral outlets note, \n\nTrump frequently criticizes mail voting, claiming without evidence that it leads to election fraud.\n\n The conservative *legal* argument here is about statutory interpretation of \"Election Day,\" which is a genuine dispute; the separate claim that mail voting causes widespread fraud is not supported by evidence and should not be conflated with the legal reasoning.\n\n---\n\n## STORY 2: Trump's July 4 / America 250 address\n\n**What actually happened (factual anchor):** On the night of July 4, 2026, after a weather delay, President Trump delivered a roughly 30–37 minute speech on the National Mall marking the 250th anniversary of U.S. independence, followed by a large fireworks display. \n\nThe address blended patriotic tributes to the nation's history with campaign-style messaging and several themes likely to dominate the lead-up to the midterm elections; the president honored veterans from several generations, including World War II veterans.\n\n \n\nHe renewed his support for the SAVE America Act, highlighted Second Amendment rights, and repeated warnings about what he described as a growing communist threat.\n\n### 1. PROGRESSIVE / mainstream-critical framing\n**NPR** — *news reporting* — https://www.npr.org/2026/07/04/nx-s1-5882179/washingtons-july-4-heat-cancellations\nLeft-leaning and mainstream framing emphasizes the break from tradition. \n\nNPR reported Trump marked the anniversary \"while also praising his war in Iran, railing against 'communists,' and vowing to restrict mail-in ballots.\"\n\n The framing stresses the partisan character of the moment: \n\nhe warned against communism, which he likened to cancer that must be cut out, and vowed to pass the SAVE America Act, which is stalled in Congress and would require proof of citizenship and ID to vote and bar most mail-in ballots.\n\n### 2. NEUTRAL framing\n**AP (via PBS NewsHour)** — *news reporting* — https://www.pbs.org/newshour/nation/trump-hails-u-s-exceptionalism-before-veering-into-darkly-political-speech-to-usher-in-america-250\nWire reporting notes both the celebratory and the political elements, with historical comparison. \n\nThe AP reported Trump ushered in the anniversary with soaring rhetoric about American exceptionalism before veering into a darkly political speech with warnings about a threat of communism.\n\n It provides the comparative context factually: \n\nthe speech swerved from the typically apolitical, unifying speeches past presidents like Gerald Ford or Ronald Reagan have delivered during earlier high-profile Independence Day celebrations.\n\n### 3. CONSERVATIVE framing\n**Fox News** — *news reporting (with celebratory tone)* — https://www.foxnews.com/politics/top-highlights-trumps-late-night-july-4-address-no-dream-history-bigger\nThe right frames the speech as a stirring, historic patriotic address. \n\nFox reported Trump delivered a 37-minute speech after a weather delay, lit up by a Guinness world-record-setting fireworks display.\n\n The framing foregrounds uplift and veterans' tributes: \n\nTrump credited the nation's enduring freedom to the \"culture and character\" of the American people and urged citizens to celebrate with \"joyful hearts and soaring spirits,\" calling it \"only the beginning of the Golden Age of America.\"\n\n*Note on a disputed factual claim:* Trump described the D.C. crowd as roughly 350,000 people. \n\nTrump estimated in his speech that a crowd of 350,000 was cut to 150,000 for the fireworks display.\n\n These are the president's own figures, not independently verified; some outlets disputed the attendance and noted empty seats and weather-driven departures. Report crowd size as a claim, not an established fact.\n\n---\n\n## STORY 3: Progressive / DSA candidates win Democratic primaries\n\n**What actually happened (factual anchor):** On June 30, 2026, in Colorado's Democratic primary, 29-year-old democratic socialist Melat Kiros defeated 15-term Rep. Diana DeGette in the 1st Congressional District (Denver). \n\nVoters chose a 29-year-old lawyer and doctoral student over a 15-term incumbent; Kiros won 51.3% to DeGette's 41.7%.\n\n This followed a week earlier when three candidates backed by NYC Mayor Zohran Mamdani won New York congressional primaries. \n\nA pair of DSA candidates won their congressional primaries in New York and unseated five-term Rep. Adriano Espaillat.\n\n In the same Colorado cycle, Sen. John Hickenlooper defeated a progressive challenger, and progressive Manny Rutinel won a competitive swing-district primary.\n\n### 1. PROGRESSIVE framing\n**Axios Denver** — *news reporting / analysis* — https://www.axios.com/local/denver/2026/07/01/colorado-democratic-primary-results-takeaways\nThe left frames these wins as a generational and ideological realignment, not a fluke. \n\nAxios reported Colorado progressives \"flexed their muscle,\" scoring marquee wins up and down the ballot, suggesting Democrats aren't just rebuking Trump but increasingly demanding a more confrontational brand of politics.\n\n The framing casts these candidates as durable rather than protest votes: \n\nthe results delivered a message that progressive challengers — propelled by younger voters eager for fresh leadership — are no longer just protest candidates.\n\n### 2. NEUTRAL framing\n**Roll Call** — *news reporting* — https://rollcall.com/2026/07/01/social-democrats-primary-wins-give-trump-new-midterms-attack-lines/\nStraight reporting notes both the momentum and the electoral risk. \n\nThe wins collectively handed the president a new brush to try painting every Democratic incumbent as too left-leaning, and Trump is unlikely to drop the line after Kiros defeated DeGette.\n\n It also reports the internal-party stakes evenhandedly: \n\nTrump's attack lines have been partly economic at a time when polls give him low marks on the economy, and some Republicans fear those concerns could cost the GOP the House majority.\n\n### 3. CONSERVATIVE framing\n**Fox News** — *news reporting (quoting GOP sources)* — https://www.foxnews.com/politics/mamdani-backed-socialist-wins-new-york-expose-growing-rift-democratic-establishment-insurgent-left\nThe right frames the wins as evidence Democr",
+      "sources": [
+        {
+          "title": "The Hill - covering Congress, Politics, Political Campaigns and Capitol Hill",
+          "url": "https://thehill.com/"
+        },
+        {
+          "title": "Politics : NPR",
+          "url": "https://www.npr.org/sections/politics/"
+        },
+        {
+          "title": "News – The White House",
+          "url": "https://www.whitehouse.gov/news/"
+        },
+        {
+          "title": "07/02/2026 | Video | C-SPAN.org",
+          "url": "https://www.c-span.org/event/washington-journal/07-02-2026/444605"
+        },
+        {
+          "title": "U.S. News and National Top Stories : NPR",
+          "url": "https://www.npr.org/sections/national/"
+        },
+        {
+          "title": "Politics and Government News",
+          "url": "https://www.cnbc.com/politics/"
+        },
+        {
+          "title": "2026 Midterms: Latest News, Updates and Results of the Midterm Elections | NBC News",
+          "url": "https://www.nbcnews.com/politics/2026-election"
+        },
+        {
+          "title": "Election 2026: Results, news and analysis | CNN Politics",
+          "url": "https://www.cnn.com/election/2026"
+        },
+        {
+          "title": "2026 United States elections - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_elections"
+        },
+        {
+          "title": "United States Congress elections, 2026 - Ballotpedia",
+          "url": "https://ballotpedia.org/United_States_Congress_elections,_2026"
+        },
+        {
+          "title": "The Supreme Court, Mail-in Voting, Campaign Spending, and the 2026 Midterm Elections | Council on Foreign Relations",
+          "url": "https://www.cfr.org/articles/the-supreme-court-mail-in-voting-campaign-spending-and-the-2026-midterm-elections"
+        },
+        {
+          "title": "When Are the 2026 Midterm Elections? And What is Their Purpose? | U.S. Vote Foundation",
+          "url": "https://www.usvotefoundation.org/when-are-2026-midterm-elections-and-what-their-purpose"
+        },
+        {
+          "title": "What could the Supreme Court’s decision in Watson v. RNC mean for mail voting?",
+          "url": "https://bipartisanpolicy.org/article/what-could-the-supreme-courts-decision-in-watson-v-rnc-mean-for-mail-voting/"
+        },
+        {
+          "title": "Watson v. RNC: A Bittersweet Supreme Court Win for Mail Voting - Bloomberg",
+          "url": "https://www.bloomberg.com/opinion/articles/2026-07-05/watson-v-rnc-a-bittersweet-supreme-court-win-for-mail-voting"
+        },
+        {
+          "title": "Watson v. Republican National Committee - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/Watson_v._Republican_National_Committee"
+        },
+        {
+          "title": "Watson v. Republican National Committee (Election Law) (24-1260) | SCOTUSblog",
+          "url": "https://www.scotusblog.com/cases/watson-v-republican-national-committee/"
+        },
+        {
+          "title": "McClellan Statement on Supreme Court Watson v. Republican National Committee Decision Affirming Legitimacy of Mail-In Voting | Congresswoman Jennifer McClellan",
+          "url": "https://mcclellan.house.gov/media/press-releases/mcclellan-statement-supreme-court-watson-v-republican-national-committee"
+        },
+        {
+          "title": "The Supreme Court Got It Wrong in Watson v. RNC — Now Congress Must Act | The Daily Caller",
+          "url": "https://dailycaller.com/2026/06/30/supreme-court-watson-v-rnc-congress-election-law-trey-trainor/"
+        },
+        {
+          "title": "Watson v. RNC: A recap for journalists of this mail-in voting case",
+          "url": "https://journalistsresource.org/politics-and-government/mail-in-voting-watson-v-rnc-recap/"
+        },
+        {
+          "title": "What the Watson v. Republican National Committee Decision Means for the 2026 Midterm Elections - R Street Institute",
+          "url": "https://www.rstreet.org/commentary/what-watson-v-rnc-means-for-2026-midterms/"
+        },
+        {
+          "title": "24-1260 Watson v. Republican National Committee (06/29/ ...",
+          "url": "https://www.supremecourt.gov/opinions/25pdf/24-1260_g3cn.pdf"
+        },
+        {
+          "title": "Supreme Court says states can count mail ballots that arrive after Election Day - CBS News",
+          "url": "https://www.cbsnews.com/news/supreme-court-mail-ballots-mississippi-law-watson-v-rnc/"
+        },
+        {
+          "title": "Trump addresses nation and fireworks light up National Mall after storm delay : NPR",
+          "url": "https://www.npr.org/2026/07/04/nx-s1-5882179/washingtons-july-4-heat-cancellations"
+        },
+        {
+          "title": "Trump, Mamdani give contrasting July 4th speeches. And, U.S. faces Belgium in World Cup",
+          "url": "https://www.npr.org/2026/07/06/g-s1-132097/up-first-newsletter-america-250-trump-democrats-iran-israel-world-cup-folarin-balogun"
+        },
+        {
+          "title": "Trump Humiliated by Empty Seats at Speech",
+          "url": "https://www.thedailybeast.com/trump-humiliated-by-empty-seats-at-speech/"
+        },
+        {
+          "title": "America250: Photos Show Trump Rally Compared to Previous Presidential July 4 Event - Newsweek",
+          "url": "https://www.newsweek.com/america-250-donald-trump-rally-joe-biden-july-comparison-12158621"
+        },
+        {
+          "title": "Trump Crows about July 4th Crowds — After Dismal Attendance at Great American State Fair",
+          "url": "https://www.mediaite.com/politics/trump-crows-about-july-4th-crowds-after-dismal-attendance-at-great-american-state-fair/"
+        },
+        {
+          "title": "Donald Trump’s America 250 Bash Goes Dark as Guests Ordered to Leave",
+          "url": "https://www.thedailybeast.com/donald-trumps-america-250-bash-goes-dark-as-guests-ordered-to-leave/"
+        },
+        {
+          "title": "Trump fashions America’s 250th anniversary in his own image - The Washington Post",
+          "url": "https://www.washingtonpost.com/politics/2026/07/04/trumps-vision-americas-250th-puts-him-center/"
+        },
+        {
+          "title": "Trump touts America as ‘nation of winners,’ slams communism in July Fourth speech",
+          "url": "https://www.nbcnews.com/news/us-news/live-blog/america-250-july-4-trump-live-updates-rcna352956"
+        },
+        {
+          "title": "America 250 celebrations; Trump’s July Fourth speech | CNN",
+          "url": "https://www.cnn.com/2026/07/04/us/live-news/july-4-trump-speech-america-250"
+        },
+        {
+          "title": "Donald Trump celebrates America’s 250th anniversary in weather-delayed, sometimes partisan speech",
+          "url": "https://thehill.com/homenews/administration/5953811-trump-celebrates-americas-250th-birthday/"
+        },
+        {
+          "title": "Supreme Court Allows GOP Map in Alabama: Voting Rights Impact | politics | informed, clearly",
+          "url": "https://informedclearly.com/en/politics/54097/supreme-court-alabama-gop-map-voting-rights-2026"
+        },
+        {
+          "title": "Supreme Court allows Alabama to use congressional map that eliminates a majority-Black district",
+          "url": "https://www.nbcnews.com/politics/supreme-court/supreme-court-allows-alabama-congress-map-eliminate-black-district-rcna346920"
+        },
+        {
+          "title": "Redistricting in Alabama: Why Case is Headed to Supreme Court After Judges Block Map - Newsweek",
+          "url": "https://www.newsweek.com/judges-alabama-map-freeze-possible-supreme-court-challenge-11993642"
+        },
+        {
+          "title": "Court blocks Alabama Republicans’ congressional map",
+          "url": "https://thehill.com/regulation/court-battles/5894918-alabama-republican-congressional-map-blocked/"
+        },
+        {
+          "title": "Federal court blocks Alabama from using GOP-drawn congressional map",
+          "url": "https://www.nbcnews.com/politics/2026-election/federal-court-blocks-alabama-using-gop-drawn-congressional-map-rcna346917"
+        },
+        {
+          "title": "2026 Colorado Primary Live Results - 270toWin",
+          "url": "https://www.270towin.com/2026-election-results-live/state/colorado/primary/"
+        },
+        {
+          "title": "Colorado primaries: Democratic incumbents battle progressive challengers in congressional races",
+          "url": "https://www.nbcnews.com/politics/2026-election/live-blog/colorado-primary-elections-senate-governor-house-live-updates-rcna352414"
+        },
+        {
+          "title": "Colorado primary results show progressives' strength - Axios Denver",
+          "url": "https://www.axios.com/local/denver/2026/07/01/colorado-democratic-primary-results-takeaways"
+        },
+        {
+          "title": "Newcomer Melat Kiros unseats longtime Rep. Diana DeGette in Colorado Democratic primary | Colorado Newsline",
+          "url": "https://coloradonewsline.com/2026/06/30/melat-kiros-diana-degette-colorado-primary-results/"
+        },
+        {
+          "title": "Progressives Notch Another Big Win in Colorado Primary Elections | National News | U.S. News",
+          "url": "https://www.usnews.com/news/national-news/articles/2026-07-01/progressives-notch-another-big-win-in-colorado-primary-elections"
+        },
+        {
+          "title": "FOR INSIDERS | Democrats grapple with left-wing primary wins",
+          "url": "https://thehill.com/homenews/campaign/5952255-democratic-party-dsa-midterm-primaries/"
+        },
+        {
+          "title": "Democratic socialists’ primary wins give Trump new midterms attack lines",
+          "url": "https://rollcall.com/2026/07/01/social-democrats-primary-wins-give-trump-new-midterms-attack-lines/"
+        },
+        {
+          "title": "Trump uses 'communist' label on Democrats ahead of midterms",
+          "url": "https://thehill.com/homenews/administration/5946435-trump-democrats-communists-midterms/"
+        },
+        {
+          "title": "Progressive Democrats Continue to Shape Midterms - Newsweek",
+          "url": "https://www.newsweek.com/progressive-democrats-continue-to-shape-midterms-12145645"
+        },
+        {
+          "title": "Opinion | Democrats are drawing the wrong conclusion from the Mamdani insurgency",
+          "url": "https://www.ms.now/opinion/zohran-mamdani-democrats-criticism-primaries-socialism"
+        },
+        {
+          "title": "Democrats downplay divisions after left wing delivers stunning victories in New York",
+          "url": "https://thehill.com/homenews/campaign/5939231-democrats-downplay-ny-losses/"
+        },
+        {
+          "title": "House Democrat: Idea of Democratic Party going hard left 'frankly overblown'",
+          "url": "https://thehill.com/homenews/campaign/5945883-democratic-socialists-rising-influence/"
+        },
+        {
+          "title": "Mamdani-backed socialist wins in New York expose growing rift between Democratic establishment, insurgent left",
+          "url": "https://www.foxnews.com/politics/mamdani-backed-socialist-wins-new-york-expose-growing-rift-democratic-establishment-insurgent-left"
+        },
+        {
+          "title": "Trump delivers America 250 speech after lightning delay on the Mall | Fox News",
+          "url": "https://www.foxnews.com/politics/top-highlights-trumps-late-night-july-4-address-no-dream-history-bigger"
+        },
+        {
+          "title": "America 250 kicks off in nation's capital as Americans brave weather to celebrate Independence Day | Live Updates from Fox News Digital",
+          "url": "https://www.foxnews.com/live-news/america-250-independence-day-trump-july-4"
+        },
+        {
+          "title": "Trump delivers Mount Rushmore speech to mark America's 250th birthday | Fox News",
+          "url": "https://www.foxnews.com/us/trumps-mount-rushmore-address-features-28-minutes-iconic-words-23-minutes-dazzling-light-fireworks"
+        },
+        {
+          "title": "America 250 celebrations; Trump’s July Fourth speech | CNN",
+          "url": "https://www.cnn.com/2026/07/04/us/live-news/july-4-trump-speech-america-250"
+        },
+        {
+          "title": "Donald Trump’s July 4 Speech: Read Full Text of 'Salute to America' Remarks - Newsweek",
+          "url": "https://www.newsweek.com/donald-trumps-july-4-speech-read-full-salute-to-250-remarks-12151781"
+        },
+        {
+          "title": "Trump hails U.S. exceptionalism before veering into darkly political speech to usher in America's 250th anniversary",
+          "url": "https://www.cnbc.com/amp/2026/07/04/trump-makes-darkly-political-speech-to-usher-in-uss-250-anniversary.html"
+        },
+        {
+          "title": "Trump touts America as ‘nation of winners,’ slams communism in July Fourth speech",
+          "url": "https://www.nbcnews.com/news/us-news/live-blog/america-250-july-4-trump-live-updates-rcna352956"
+        },
+        {
+          "title": "Trump hails U.S. exceptionalism before veering into darkly political speech to usher in America 250 | PBS News",
+          "url": "https://www.pbs.org/newshour/nation/trump-hails-u-s-exceptionalism-before-veering-into-darkly-political-speech-to-usher-in-america-250"
+        }
+      ]
+    }
+  ]
+}
