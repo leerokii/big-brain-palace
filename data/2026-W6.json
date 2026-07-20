@@ -1,0 +1,585 @@
+{
+  "id": "2026-W6",
+  "year": 2026,
+  "week": 6,
+  "generatedAt": "2026-07-20T15:10:43.858Z",
+  "dateLabel": "July 20, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "# This Week's AI Product Thinking — Briefing for the AI Automations PM\n\nFramed for Vocal Media's world: AI content pipelines, creator and editorial tooling, and audience automation.\n\n---\n\n### 1. Judge your AI features by whether they finish real work, not by clicks\n**Framework / metrics.** \n\nIn 2024, many teams defined AI success as the percentage of users who clicked the AI button. That was fine for the experimentation phase, but it is not enough now — your measures of success need to be closer to real work.\n\n The piece pushes outcome-based targets instead, for example \n\naiming for \"customers who use the assistant open 30 percent fewer how-to tickets than those who do not\"\n\n rather than a raw usage goal.\n\n**Why it matters:** For Vocal's editorial and creator tooling, a \"% of creators who tried the AI draft assistant\" metric will flatter you and teach you nothing. Reframe every automation goal around the manual work it removes — hours saved per story, fewer revision cycles, faster time to publish — so you can tell real value from novelty. This distinction between output quality and workflow outcome is echoed elsewhere: \n\noutput metrics answer how good the response is, outcome metrics answer whether the user got the job done, and AI product metrics prioritize outcome measurement because value is created at the workflow level, not the response level.\n\n**Source:** Mind the Product — *The 2026 AI product strategy guide* — https://www.mindtheproduct.com/the-2026-ai-product-strategy-huide-how-to-plan-budget-and-build-without-buying-into-the-hype/\n\n---\n\n### 2. The unit-economics trap: a shipped-product cautionary tale\n**Real shipped-product story.** The same guide recounts Latitude's AI game, where \n\nmonthly AI costs climbed into the hundreds of thousands of dollars — the business was effectively subsidizing its most loyal users, so the more people played and the longer their stories, the worse the unit economics looked.\n\n The fix: \n\nthey shifted to a flexible, model-agnostic setup, bringing in cheaper models for many turns and reserving premium models for moments where quality mattered most.\n\n**Why it matters:** Audience automation and content generation at Vocal run at scale, so a feature that's delightful per use can quietly destroy margin as adoption grows. Apply the article's \"Latitude test\" to your roadmap: \n\nask whether, if a heavy user runs a feature 100 times a day, your margin on that user goes up or down — and if it goes down without a convincing plan to fix it, treat the idea as unfinished.\n\n**Source:** Mind the Product — https://www.mindtheproduct.com/the-2026-ai-product-strategy-huide-how-to-plan-budget-and-build-without-buying-into-the-hype/\n\n---\n\n### 3. Treat quality as tiers, and build a real eval suite before you scale\n**Real shipped-product story + measurement.** Productboard's Ravi Mehta describes launching their first generative feature (Pulse) too early: \n\nhe admits they did not have quality out of the gate, were premature with their first foray into generative AI, and launched before the quality was consistent enough to build user trust.\n\n The correction became a repeatable method — \n\nthinking about AI quality in tiers rather than as a binary, because without explicit frameworks to measure those thresholds, you are guessing.\n\n Those lessons then fed their next product: \n\nthey fixed the quality issues and applied rigorous evals, stricter quality gates, and systematic improvement before each release stage.\n\n**Why it matters:** Before you ship an AI editorial or creator tool, define quality tiers (\"good enough to auto-publish\" vs. \"needs human review\" vs. \"block\") and an eval set that tests each. It's also permission to move: \n\nthe teams that ship great AI products aren't the ones who knew all the answers from day one — they're the ones who learned fastest from what didn't work.\n\n**Source:** Ravi on Product — *Building AI Products: Lessons from Productboard Spark* — https://blog.ravi-mehta.com/p/building-ai-products-lessons-from\n\n---\n\n### 4. How AI PM roles are actually being scoped — and where you likely sit\n**Role scoping.** A recruiter's field guide argues the AI PM title splits into distinct jobs: \n\nthe assistant/copilot PM who owns a customer-facing LLM surface, the AI platform PM who owns the internal model and tooling layer, the ML feature PM who ships model-powered features inside a non-AI product, and the AI ops PM who deploys AI to a non-engineering team.\n\n The core of the job is owning failure, not the demo: \n\na standard PM ships a feature that works or it doesn't, but an AI PM ships a feature that works 94% of the time — and the other 6% is a customer reading something untrue on a Tuesday afternoon; owning that gap is the role.\n\n The tell for maturity: \n\nthe people who have done it talk about eval sets and rollback plans before they talk about the model; the ones who haven't lead with the demo.\n\n**Why it matters:** Your \"AI Automations\" title spans the ML feature PM and AI ops archetypes — model-powered content features plus automation for editorial/audience teams. That's a useful anchor: \n\nfeature work ships the most measurable revenue and is usually the smartest first AI hire a non-AI SaaS company can make, because the surface is contained and the metric is obvious.\n\n Pick contained surfaces with obvious metrics first.\n\n**Source:** KORE1 — *AI Product Manager Job Description Template (2026)* and *How to Hire an AI Product Manager* — https://www.kore1.com/ai-product-manager-job-description-template/\n\n---\n\n### 5. Domain experts write the best evals — use rubrics you already trust\n**Framework + real teams.** Teresa Torres' study of AI product teams found that non-engineers can own evaluation when it's grounded in domain knowledge. At the education company eSpark, \n\nnon-engineering team members started writing eval code in Python with LLM assistance, and the former-teacher learning design team brought pedagogical expertise that shaped how they evaluated quality.\n\n Their method was simply to reuse what they knew: \n\nas former teachers, they asked how they used to score student work, created rubrics, and — since they already knew how to design rubrics to evaluate student output — it was natural to design rubrics to evaluate LLM output.\n\n A broader pattern across these teams: \n\nAI products are being built by small teams where everyone understands multiple disciplines and nobody is precious about staying in their lane.\n\n**Why it matters:** Vocal's editors already have a quality bar for stories. Turn that editorial standard into a written rubric and use it as your eval set — your existing editorial judgment is a hidden asset for measuring AI content quality, and you don't need to wait for a data scientist to start.\n\n**Source:** Product Talk — *Lessons from 9 AI Product Teams* — https://www.producttalk.org/learning-from-8-ai-product-teams/\n\n---\n\n### 6. Tactic for this week: sharpen the user and hunt for \"blocked workflows\"\n**A tactic you can apply now.** One 2026 playbook argues the highest-leverage PM work has moved upstream to product judgment, and offers a concrete discovery move: \n\ndon't say \"knowledge workers\" — say \"equity research analyst preparing an investment committee deck\" or \"product marketer preparing a launch narrative\"; the sharper the user, the sharper the product.\n\n Paired with that: \n\navoid vague pain points and look for blocked workflows instead.\n\n**Why it matters:** This week, take one fuzzy request (\"help creators write better\") and rewrite it as a specific person hitting a specific wall — e.g., \"a first-time Vocal creator who has a finished draft but can't write a headline or teaser that earns reads.\" Then define the one thing the automation must get right the first time, since \n\nthe framework's key question is: what must work the first time?\n\n This gives your next feature a testable target instead of a slogan.\n\n**Source:** Tosea.ai — *AI Product Management in 2026: The New Playbook* — https://tosea.ai/blog/ai-product-management-2026-playbook\n\n---\n\n**One thread across all six:** measure the work removed (not the button clicked), watch cost-per-use as adoption scales, and build a written eval/rubric before you ship. For Vocal, your editorial standards and creator workflows are the raw material for both your metrics and your evals.",
+      "sources": [
+        {
+          "title": "AI in Product Management Guide for 2026 for Product Leaders | Gocious",
+          "url": "https://gocious.com/blog/ai-in-product-management-guide-for-2026-for-product-leaders"
+        },
+        {
+          "title": "AI Product Strategy 2026: Roadmap for Founders & Startups",
+          "url": "https://wearepresta.com/ai-product-strategy-2026-the-founders-guide-to-ai-native-growth/"
+        },
+        {
+          "title": "AI Product Management in 2026: A Complete Guide to the New Playbook | Tosea.ai",
+          "url": "https://tosea.ai/blog/ai-product-management-2026-playbook"
+        },
+        {
+          "title": "AI for Product Managers: Ultimate 2026 Guide to AI-Powered PM",
+          "url": "https://www.chatprd.ai/learn/ai-for-product-managers"
+        },
+        {
+          "title": "Product Management Trends: 11 Shifts Shaping 2026",
+          "url": "https://productschool.com/blog/product-fundamentals/product-management-trends"
+        },
+        {
+          "title": "The Ultimate AI Product Manager Roadmap (2026)",
+          "url": "https://www.productcompass.pm/p/ai-product-manager-roadmap-2026"
+        },
+        {
+          "title": "Evaluation Metrics for AI Products That Drive Trust",
+          "url": "https://productschool.com/blog/artificial-intelligence/evaluation-metrics"
+        },
+        {
+          "title": "AI Metrics: How to Measure and Evaluate AI Performance | Sendbird",
+          "url": "https://sendbird.com/blog/ai-metrics-guide"
+        },
+        {
+          "title": "20 AI Performance Metrics to Follow in Software Development",
+          "url": "https://axify.io/blog/ai-performance-metrics"
+        },
+        {
+          "title": "KPIs for gen AI: Measuring your AI success | Google Cloud Blog",
+          "url": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive"
+        },
+        {
+          "title": "Metrics for AI Product. A Step-by-Step Guide to Defining… | by Shailesh Sharma | Agile Insider | Medium",
+          "url": "https://medium.com/agileinsider/metrics-for-ai-product-4685d5554223"
+        },
+        {
+          "title": "AI Agent Evaluation Metrics: A 2026 Guide",
+          "url": "https://aiagentsquare.com/blog/ai-agent-evaluation-metrics"
+        },
+        {
+          "title": "AI Evaluation Metrics 2026: Tested by Conversation Experts",
+          "url": "https://masterofcode.com/blog/ai-agent-evaluation"
+        },
+        {
+          "title": "The AI Product Success Metrics Interview: Your Complete Guide",
+          "url": "https://www.news.aakashg.com/p/ai-success-metrics-interview"
+        },
+        {
+          "title": "ai product metrics for product managers: how to measure ai systems",
+          "url": "https://newsletter.iamprayerson.com/p/ai-product-metrics-for-product-managers"
+        },
+        {
+          "title": "Evaluating Agentic AI: Success Metrics and Benchmarks – The Complete 2026 Guide – MHTECHIN is real or fake",
+          "url": "https://www.mhtechin.com/support/evaluating-agentic-ai-success-metrics-and-benchmarks-the-complete-2026-guide/"
+        },
+        {
+          "title": "How to Hire an AI Product Manager: 2026 Guide - KORE1",
+          "url": "https://www.kore1.com/how-to-hire-ai-product-manager-2026/"
+        },
+        {
+          "title": "What Is an AI Product Manager? Role Overview, Skills & How to Hire One (May 2026)",
+          "url": "https://www.paraform.com/blog/what-is-ai-product-manager"
+        },
+        {
+          "title": "The Truth About AI Product Managers In 2026",
+          "url": "https://www.mbassett.com/blog/ai-product-managers-2026/"
+        },
+        {
+          "title": "How to Become an AI Product Manager in 2026",
+          "url": "https://www.eleken.co/blog-posts/ai-product-manager"
+        },
+        {
+          "title": "2026 How to Become an AI Product Manager: Education, Salary, and Job Outlook | Research.com",
+          "url": "https://research.com/advice/how-to-become-an-ai-product-manager-education-salary-and-job-outlook"
+        },
+        {
+          "title": "AI Product Jobs in 2026: What 12,400 Postings Reveal",
+          "url": "https://axialsearch.com/insights/ai-product-management-jobs"
+        },
+        {
+          "title": "How AI is Changing the Product Manager Role in 2026 | Codebasics",
+          "url": "https://codebasics.io/blog/how-ai-is-changing-the-product-manager-role-in-2026"
+        },
+        {
+          "title": "AI Product Manager Job Description Template (2026) - KORE1",
+          "url": "https://www.kore1.com/ai-product-manager-job-description-template/"
+        },
+        {
+          "title": "AI Product Manager: Skills, Roles & Strategy for 2026",
+          "url": "https://fonzi.ai/blog/ai-product-management"
+        },
+        {
+          "title": "AI Product Manager Salary Guide 2026 - KORE1",
+          "url": "https://www.kore1.com/ai-product-manager-salary-guide/"
+        },
+        {
+          "title": "AI Product Management in 2026: A Complete Guide to the New Playbook | Tosea.ai",
+          "url": "https://tosea.ai/blog/ai-product-management-2026-playbook"
+        },
+        {
+          "title": "The 2026 AI product strategy guide: How to plan, budget, and build without buying into the hype",
+          "url": "https://www.mindtheproduct.com/the-2026-ai-product-strategy-huide-how-to-plan-budget-and-build-without-buying-into-the-hype/"
+        },
+        {
+          "title": "Building AI Products: Lessons from Productboard Spark",
+          "url": "https://blog.ravi-mehta.com/p/building-ai-products-lessons-from"
+        },
+        {
+          "title": "How to Build an AI Product in 2026: A Practical Guide",
+          "url": "https://gloriumtech.com/how-to-build-ai-products-guide/"
+        },
+        {
+          "title": "AI Product Strategy 2026: Roadmap for Founders & Startups",
+          "url": "https://wearepresta.com/ai-product-strategy-2026-the-founders-guide-to-ai-native-growth/"
+        },
+        {
+          "title": "Lessons from 9 AI Product Teams: Emerging Themes from Just Now Possible",
+          "url": "https://www.producttalk.org/learning-from-8-ai-product-teams/"
+        },
+        {
+          "title": "AI in Early-Stage Product Development: 2026 Guide",
+          "url": "https://www.ai-infra-link.com/ai-in-early-stage-product-development-boost-innovation-speed/"
+        },
+        {
+          "title": "AI in Product Design: How to Build AI-Enabled Teams (in 2026)",
+          "url": "https://loopstudio.dev/ai-in-product-design/"
+        },
+        {
+          "title": "AI Product Strategy in 2026: From Features to Capabilities | JetSoftPro",
+          "url": "https://jetsoftpro.com/blog/ai-product-strategy-2026"
+        },
+        {
+          "title": "Building My First AI Product: 6 Lessons from My 90-Day Deep Dive",
+          "url": "https://www.producttalk.org/ai-playbook/"
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "# This Week in Claude & AI Automation\n\n## 1. Claude Code Dynamic Workflows: move orchestration out of the model and into a script\n\nClaude Code now lets you fan out to hundreds of subagents from a JavaScript script it writes for you, rather than improvising delegation turn by turn. \n\nA workflow moves the plan into code. With subagents, skills, and agent teams, Claude is the orchestrator that decides turn by turn what to spawn next; a workflow script instead holds the loop, the branching, and the intermediate results itself, so Claude's context holds only the final answer.\n\n The key win beyond scale is quality: \n\na workflow can have independent agents adversarially review each other's findings before they're reported, or draft a plan from several angles and weigh them against each other, so you get a more trustworthy result than a single pass.\n\n**Try this:** Update to Claude Code v2.1.154+ (`claude --version`). On Pro, enable it in the **Dynamic workflows** row in `/config`. Then run the built-in one to see the pattern before writing your own:\n```\n/deep-research How do the last three quarters of our competitors' pricing changes compare, cross-checking each claim against at least two independent sources?\n```\n\nThis is the built-in workflow for investigating a question across many sources — agents work through phases in the background while your session stays free, and you get one report at the end instead of a turn-by-turn transcript.\n\n To trigger a one-off workflow on any task, include the phrase \"use a workflow\" in your prompt. Note the permission behavior: \n\nthe subagents a workflow spawns always run in acceptEdits mode and inherit your tool allowlist regardless of your session's mode — file edits are auto-approved, while shell commands, web fetches, and MCP tools that aren't in your allowlist can still prompt you mid-run.\n\n Add the commands your agents need to the allowlist before a long run.\n\n**Source:** Claude Code Docs — https://code.claude.com/docs/en/workflows\n\n---\n\n## 2. Live MCP data inside published artifacts\n\nPublished artifacts are no longer static snapshots. \n\nA published artifact can now call MCP connectors each time someone views it, so a dashboard shows live data and can take actions on demand rather than a snapshot from the session that built it — and each call runs through the viewing account's own connections, with viewers approving access before the page's first connector call.\n\n This means you can ship a Claude-built dashboard to a colleague and it pulls *their* data through *their* auth, not yours.\n\n**Try this:** In a Claude Code or Claude session with an MCP connector configured (e.g., a database, GitHub, or an analytics MCP), build a dashboard artifact and prompt:\n```\nBuild a dashboard artifact that pulls live data through the [connector name] MCP each time it's viewed, not a one-time snapshot. On first load, request the viewer's connector access, then render the current open-issues count and a 7-day trend chart. Publish it with a shareable link and confirm the viewer's own connection is used for each call.\n```\nThis week also shipped \n\npublic sharing links, editor roles for shared editing on Team and Enterprise plans, and artifacts created from Claude Tag sessions.\n\n**Source:** Releasebot / Claude Code updates — https://releasebot.io/updates/anthropic/claude-code\n\n---\n\n## 3. Scope subagent tools tightly — and use the SubagentStop hook as a gate\n\nThe production pattern that's holding up isn't \"spin up ten agents\"; it's tight per-agent tool scoping plus an output gate. \n\nPer-subagent scope, per-subagent tools: a research subagent gets read-only file tools and web search, a writer subagent gets Edit and Bash but not network — tight scopes mean one bad subagent cannot poison the rest.\n\n The newer, less-known lever: \n\nthe SubagentStop hook fires when a subagent finishes and before its summary reaches the lead, and in 2026 the hook payload includes hookSpecificOutput.additionalContext, so you can extend the subagent's turn with new context instead of treating the hook as a binary error.\n\n Keep concurrency realistic — \n\nthree to five concurrent subagents is the sweet spot for most jobs; beyond that you spend more time merging summaries than you save by running them in parallel.\n\n**Try this:** Drop a scoped, read-only reviewer into `.claude/agents/security-auditor.md`:\n```markdown\n---\nname: security-auditor\ndescription: Read-only security review of changed files. Invoke before merging auth or payment changes.\ntools: Read, Grep, Glob\nmodel: opus\n---\nYou are a security auditor. Review only the files provided for injection flaws,\nauth bypasses, unsafe deserialization, secrets in code, and missing input validation.\nDo NOT modify any files. Return findings as:\n- SEVERITY (critical/high/medium/low) | FILE:LINE | issue | suggested fix\nIf no issues, return \"No findings.\" Keep the summary under 300 words.\n```\n\nThis mirrors the pattern teams use: security-auditor runs on Opus and gets only Read, Grep, Glob — subtle pattern recognition is where Opus pulls away from Sonnet, and a Read/Grep/Glob toolset is enough.\n\n**Source:** Totalum — https://www.totalum.app/blog/claude-code-subagents-totalum\n\n---\n\n## 4. MCP goes stateless (2026-07-28 spec ships this month) — mint explicit handles instead of relying on sessions\n\nThe next MCP spec finalizes July 28 and is the biggest change since launch. \n\nThe 2026-07-28 release removes the initialize/initialized handshake and the Mcp-Session-Id header that pinned a client to one server instance; protocol version, client info, and capabilities now travel inline in a _meta field on each request, so any server instance can serve any request and a remote MCP server can run behind a plain round-robin load balancer without sticky sessions.\n\n If your server holds state, the migration pattern is explicit: \n\nservers that need to carry state across calls can mint an explicit handle (a basket_id, a browser_id) from a tool and have the model pass it back as an ordinary argument on later calls.\n\n**Try this:** Audit your MCP servers now. For any tool that assumed a persistent session, refactor to return a handle and accept it back. Concrete shape — split one stateful call into two:\n```\nTool: create_cart  -> returns { \"cart_id\": \"c_8f2a\" }\nTool: add_to_cart  -> args: { \"cart_id\": \"c_8f2a\", \"sku\": \"ABC\", \"qty\": 2 }\n```\nThen follow the migration order: \n\nupgrade the SDK — wait for your language's Tier-1 SDK to ship RC support during the ten-week window, then bump it.\n\n There's no fire drill on the date itself: \n\nthe RC ships a formal deprecation policy for the first time, with features moving Active → Deprecated → Removed and a minimum twelve-month window between deprecation and removal.\n\n**Source:** Model Context Protocol Blog — https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/\n\n---\n\n## 5. (Non-Claude) n8n's in-canvas AI Assistant builds and debugs workflows from plain language\n\nFor the broader automation world: n8n shipped an agent that constructs the automation itself, not just runs inside one. \n\nThe n8n AI Assistant is a new chat-based agent that lives right inside n8n and builds workflows for you from plain language — it can create, edit, test, and troubleshoot workflows using natural language.\n\n \n\nIt's available in Preview on n8n cloud from version 2.29.9; you describe what you want to automate, and it can plan the workflow, build it in your selected project, test it, and help you fix errors.\n\n**Try this:** In n8n Cloud (v2.29.9+), open the AI Assistant and paste a trigger-and-action spec so it builds a runnable flow rather than a vague sketch:\n```\nBuild this workflow in my \"Ops\" project and test it:\nTRIGGER: New row added to the \"Leads\" Google Sheet.\nSTEPS:\n1. Call the Anthropic node (Claude) to score the lead 1-10 for fit using the row's company size and industry, and return JSON {score, reason}.\n2. IF score >= 7: create a task in Asana assigned to me with the reason in the description.\n3. ELSE: append the row to a \"Nurture\" sheet.\n4. On any node error, send me a Slack DM with the row and the error.\nThen run it against a test row and show me where it fails.\n```\nOne durable gotcha when your flow uses an AI Agent node: \n\nif the agent runs more than 10 steps without finishing it hits the default step limit and returns an error — increase the \"Max Iterations\" setting (15–20 is reasonable) for complex tasks.\n\n**Source:** n8n Community — https://community.n8n.io/t/introducing-the-ai-assistant-the-workflow-building-agent-inside-n8n/302667\n\n---\n\n## 6. Retire \"think step by step\" — treat your Claude Project prompt like production code\n\nA shift worth internalizing if your habits date from 2024: explicit chain-of-thought scaffolding is now often counterproductive on frontier models. \n\nFrontier guides confirm that modern models operate with native, always-on internal planning mechanisms that map out multi-step solutions before producing their first visible response, rendering the \"clever\" hacks of 2023 obsolete.\n\n The real failure mode has moved: \n\nmost agent failures aren't model failures anymore — they're context failures. You retrieved the wrong documents, you stuffed too much history into the window, you forgot to include the tool definitions. The prompt itself was fine.\n\n The practical framing: \n\nLangChain formalised four strategies — write (persist context externally), select (retrieve what's relevant via RAG), compress (summarise and compact), and isolate (separate contexts for different agents).\n\n**Try this:** Stop appending \"think step by step\" and instead harden your Claude Project instructions as a persistent, curated context block — \n\nif you use Claude Projects you're already doing context engineering: your project system prompt is persistent instruction plus curated context applied to every conversation, and it's worth treating like production code because functionally it is.\n\n A reusable Project-instructions skeleton:\n```\nROLE: [who Claude is acting as, one line]\nINPUTS YOU WILL RECEIVE: [exact shape/fields of what gets pasted in]\nSOURCES OF TRUTH: [which attached files/connectors are authoritative; ignore prior training when they conflict]\nOUTPUT CONTRACT: [exact format, sections, length limits]\nDO NOT: [named failure modes you've actually hit before]\nWHEN UNSURE: state the assumption explicit",
+      "sources": [
+        {
+          "title": "Claude Updates by Anthropic - July 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "What's new - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        },
+        {
+          "title": "Release notes | Claude Help Center",
+          "url": "https://support.claude.com/en/articles/12138966-release-notes"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - July 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Anthropic Release Notes - July 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "Anthropic’s new Claude feature is quietly selling you on AI | TechCrunch",
+          "url": "https://techcrunch.com/2026/07/09/anthropics-new-claude-feature-is-quietly-selling-you-on-ai/"
+        },
+        {
+          "title": "Claude Features 2026: Projects, Artifacts, Memory, Computer Use, Skills, MCP - Suprmind",
+          "url": "https://suprmind.ai/hub/claude/features/"
+        },
+        {
+          "title": "Claude Platform release notes - Claude Platform Docs",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "title": "Claude Developer Platform Updates by Anthropic - July 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+        },
+        {
+          "title": "Claude Changed: The July 2026 Way to Use it - by Opinion AI",
+          "url": "https://emergingai.substack.com/p/claude-changed-the-july-2026-way"
+        },
+        {
+          "title": "The 2026-07-28 MCP Specification Release Candidate | Model Context Protocol Blog",
+          "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/"
+        },
+        {
+          "title": "MCP Goes Stateless: What the 2026 Release Candidate ...",
+          "url": "https://mcpplaygroundonline.com/blog/mcp-stateless-2026-release-candidate"
+        },
+        {
+          "title": "MCP Roundup: 20+ Launches, Demos, and Integrations This Week | by Agen.cy | Medium",
+          "url": "https://medium.com/@agencyai/mcp-roundup-20-launches-demos-and-integrations-this-week-795bff311609"
+        },
+        {
+          "title": "MCP release notes | Speakeasy",
+          "url": "https://www.speakeasy.com/mcp/release-notes/"
+        },
+        {
+          "title": "mcp-tool-shop",
+          "url": "https://mcptoolshop.com/"
+        },
+        {
+          "title": "Even More External MCP Tools, Agent Skills, and the MCP App!! — Amplitude Changelog",
+          "url": "https://amplitude.com/releases/even-more-external-mcp-tools-agent-skills-and-the-mcp-app"
+        },
+        {
+          "title": "Tools - Model Context Protocol",
+          "url": "https://modelcontextprotocol.io/specification/2025-06-18/server/tools"
+        },
+        {
+          "title": "Model Context Protocol (MCP) for Project Management Tools ...",
+          "url": "https://quire.io/blog/p/project-management-tools-with-mcp.html"
+        },
+        {
+          "title": "Chrome DevTools (MCP) for your AI agent | Blog | Chrome for Developers",
+          "url": "https://developer.chrome.com/blog/chrome-devtools-mcp"
+        },
+        {
+          "title": "Claude Code Subagents and Multi-Agent Workflows (2026)",
+          "url": "https://explainx.ai/blog/claude-code-subagents-multi-agent-workflows-2026"
+        },
+        {
+          "title": "Beyond One-Shot Prompts: 5 Claude Code Workflow Patterns Explained | MindStudio",
+          "url": "https://www.mindstudio.ai/blog/claude-code-agentic-workflow-patterns"
+        },
+        {
+          "title": "Orchestrate subagents at scale with dynamic workflows - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/workflows"
+        },
+        {
+          "title": "Claude Code: Dynamic Workflows vs Subagents -- Which Pattern to Pick",
+          "url": "https://aiagentsfirst.com/claude-code-dynamic-workflows-vs-subagents"
+        },
+        {
+          "title": "Claude Code Dynamic Workflows vs Agent Teams vs Sub-Agents: Which Should You Use? | MindStudio",
+          "url": "https://www.mindstudio.ai/blog/claude-code-dynamic-workflows-vs-agent-teams-vs-sub-agents"
+        },
+        {
+          "title": "Navigating Claude Code: Subagents Done Right | HackerNoon",
+          "url": "https://hackernoon.com/navigating-claude-code-subagents-done-right"
+        },
+        {
+          "title": "Claude Code Subagents: A 2026 Practical Guide - Tembo.io",
+          "url": "https://www.tembo.io/blog/claude-code-subagents"
+        },
+        {
+          "title": "Claude Code Agent Teams, Subagents, and MCP: The 2026 Playbook - Developers Digest",
+          "url": "https://www.developersdigest.tech/blog/claude-code-agent-teams-subagents-2026"
+        },
+        {
+          "title": "What Is a Workflow? Claude Code's Multi-Agent Orchestration, Explained - ClaudeWorld",
+          "url": "https://claude-world.com/articles/what-is-a-workflow-multi-agent-orchestration/"
+        },
+        {
+          "title": "Claude Code subagents: the 2026 production playbook - Totalum Blog",
+          "url": "https://www.totalum.app/blog/claude-code-subagents-totalum"
+        },
+        {
+          "title": "The Evolution of Prompt Engineering to Context Design in 2026",
+          "url": "https://www.sdggroup.com/en/insights/blog/the-evolution-of-prompt-engineering-to-context-design-in-2026"
+        },
+        {
+          "title": "The Non-Developer’s Guide to Prompt Engineering in 2026",
+          "url": "https://excellentprompts.substack.com/p/no-prompt-engineering-is-not-dead"
+        },
+        {
+          "title": "Context Engineering AI: How To Build Smarter LLM Agents In 2026",
+          "url": "https://mem0.ai/blog/context-engineering-ai-agents-guide"
+        },
+        {
+          "title": "Top AI Prompt Engineering Trends in 2026 Guide",
+          "url": "https://solguruz.com/blog/ai-prompt-engineering-trends/"
+        },
+        {
+          "title": "Context Engineering Guide 2026: GPT-5, Claude 4.6, Gemini Prompts That Work",
+          "url": "https://www.the-ai-corner.com/p/context-engineering-guide-2026"
+        },
+        {
+          "title": "Mise en Place for Agentic Coding: Deliberate Preparation as Context Engineering Methodology",
+          "url": "https://arxiv.org/pdf/2605.05400"
+        },
+        {
+          "title": "Context Engineering: From Prompts to Corporate Multi-Agent Architecture",
+          "url": "https://arxiv.org/pdf/2603.09619"
+        },
+        {
+          "title": "Prompt Engineering Best Practices 2026 | Thomas Wiegold Blog",
+          "url": "https://thomas-wiegold.com/blog/prompt-engineering-best-practices-2026/"
+        },
+        {
+          "title": "The Ultimate Guide to Prompt Engineering in 2026 | Lakera – Protecting AI teams that disrupt the world.",
+          "url": "https://www.lakera.ai/blog/prompt-engineering-guide"
+        },
+        {
+          "title": "Introducing the AI Assistant: the workflow-building agent inside n8n! - Community Highlights - n8n Community",
+          "url": "https://community.n8n.io/t/introducing-the-ai-assistant-the-workflow-building-agent-inside-n8n/302667?tl=en"
+        },
+        {
+          "title": "n8n.io - AI workflow automation platform",
+          "url": "https://n8n.io/"
+        },
+        {
+          "title": "Build Custom AI Agents With Logic & Control | n8n Automation Platform",
+          "url": "https://n8n.io/ai-agents/"
+        },
+        {
+          "title": "How to Build AI Agents and Automate Workflows with n8n (2026 Guide)",
+          "url": "https://www.entrans.ai/blog/build-ai-agents-automate-workflows-n8n"
+        },
+        {
+          "title": "n8n AI Agent: The Complete Guide (2026)",
+          "url": "https://www.aihandbook.io/guides/n8n-ai-agent/"
+        },
+        {
+          "title": "Build an AI Agent with n8n — Step-by-Step Guide (2026)",
+          "url": "https://www.aitooldiscovery.com/how-to/build-ai-agent-n8n"
+        },
+        {
+          "title": "n8n AI Agents: The Ultimate Beginner’s Guide to Building Powerful Automated Workflows in 2026",
+          "url": "https://webtooltip.com/artificial-intelligence/n8n-ai-agents-guide/"
+        },
+        {
+          "title": "Enterprise AI agent development tools 2026",
+          "url": "https://n8n.io/reports/2026-ai-agent-development-tools/"
+        },
+        {
+          "title": "n8n Guide 2026: Features & Workflow Automation Deep Dive",
+          "url": "https://hatchworks.com/blog/ai-agents/n8n-guide/"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "# This Week in AI: Industry Briefing\n\n## 1. China's Moonshot AI unveils Kimi K3, its most powerful open model yet — at the World AI Conference in Shanghai\n🌏 *China*\n\nAt the World Artificial Intelligence Conference in Shanghai, Beijing-based startup Moonshot AI unveiled the latest version of its Kimi large language model, which promises performance close to Anthropic's Fable 5 — one of the most powerful publicly available models today — at a fraction of the cost. Moonshot says Kimi K3, the largest open-weight model ever released, performed competitively with Fable 5 and substantially outperformed Anthropic's Opus 4.8 and OpenAI's GPT-5.6 Sol.\n\n Technically, \n\nit is a 2.8-trillion-parameter sparse Mixture-of-Experts model that handles text, images, and video natively, supports a 1-million-token context window, and uses weight quantization to bring storage down to roughly 1.4 TB — manageable enough for multi-node self-hosting.\n\n The bigger context: Chinese systems are gaining real commercial traction abroad because they undercut US rivals on price. \n\nChinese systems routinely dominate the weekly leaderboards on OpenRouter, a marketplace that lets developers mix and match models — and as of this week, all of the top five most-used models are from Chinese companies: Tencent, Xiaomi, DeepSeek, MiniMax, and z.ai.\n\n This matters for a media company because cheaper, capable open models change the economics of building in-house AI tools.\n**Source:** Fortune — https://fortune.com/2026/07/17/china-moonshot-kimi-k3-markets-china-ai/\n\n## 2. Xi Jinping stakes a claim on global AI rules, pushing open source against US controls\n🌏 *China / International*\n\nPresident Xi Jinping used the rise of China's AI models to stake his claim on shaping the technology's global rules, even as their growing power stirs security concerns in Washington and Beijing alike. Emphasizing safety and equality, Xi made a sweeping call for international cooperation in his debut at the World AI Conference in Shanghai.\n\n \n\nHe affirmed that China will remain committed to releasing models on an open-source basis, and added a dig against Washington's attempt to slap controls on the release of frontier models.\n\n The context is a widening split between the US approach — which increasingly leans on export controls and government safety reviews — and China's positioning of openness as both a values pitch and a competitive strategy. \n\nHe addressed tech and government leaders as Chinese models win over companies worldwide, with their share of US firms' AI usage nearing a record 60% on OpenRouter.\n\n For anyone tracking the industry, this is the clearest signal yet that AI governance is becoming a geopolitical contest, not just a technical one.\n**Source:** Bloomberg — https://www.bloomberg.com/news/articles/2026-07-16/china-s-ai-ascendance-gives-xi-a-stage-and-a-security-dilemma\n\n## 3. EU AI Act enforcement powers over general-purpose AI go live August 2\n🇪🇺 *EU*\n\nThe EU is about two weeks out from a significant regulatory milestone. \n\nThe obligations governing general-purpose AI models applied in law from August 2, 2025, but the European Commission's AI Office had no formal power to sanction non-compliance — that changes on August 2, 2026, when its enforcement powers enter application and it can request documentation, evaluate models directly, order corrective measures, restrict or withdraw models from the EU market, and impose fines.\n\n \n\nFines can reach up to 3% of global annual turnover or €15 million, whichever is higher, under Article 101 of the AI Act.\n\n Crucially, a separate reform package softened parts of the law but left this deadline intact: \n\non June 16, 2026, the European Parliament granted final approval to the \"Digital Omnibus\" amendments, pushing the AI Act's high-risk obligations out by 12 to 16 months — but the transparency duties in Article 50 and the Commission's general-purpose AI enforcement powers were left untouched.\n\n \n\nThose Article 50 duties include chatbot disclosure, AI-content marking, and deepfake labeling.\n\n For a media company, the content-marking and labeling rules are the part that reaches directly into everyday publishing operations.\n**Source:** ComplianceHub — https://compliancehub.wiki/eu-ai-act-gpai-enforcement-august-2026-readiness/\n\n## 4. France's competition authority builds its own AI agents to probe market concentration\n🇫🇷 *France / EU*\n\nFrance's competition regulator took an unusually hands-on approach to studying the fast-growing AI agent market. \n\nThe authority published a 3,700-page advisory opinion finding that OpenAI, Google, and Anthropic together control more than 84% of the AI agent market.\n\n \n\nThe inquiry, which started in January 2026, saw regulators build and deploy their own AI agents, running them through 550 shopping-related prompts to see how these systems actually behave.\n\n The concern goes beyond chatbots: \n\nthe market has quietly shifted from simple chatbots to autonomous agents capable of reasoning through problems and coordinating real-world actions, and the authority worries that, left unchecked, this could pull the broader digital economy into the orbit of a small number of vertically integrated tech giants.\n\n This matters because agents that can browse, compare, and transact on a user's behalf could reshape how audiences reach publisher content — potentially another layer between readers and media sites.\n**Source:** AI Weekly Pulse — https://inkandalgorithms.systeme.io/ai-weekly-pulse-4-ai-model-releases-july-2026\n\n## 5. AI funding stays hot globally — including India, the Gulf, and Europe\n🌍 *US / India / Gulf / Europe*\n\nThe money flowing into AI remains enormous and increasingly international. \n\nGlobal venture funding reached a record $510 billion in the first half of 2026, surpassing the $440 billion invested in all of 2025.\n\n This month's deals show the geographic spread: \n\nroughly $1 billion was raised across eight AI startups on a single day (July 15), spanning healthcare, infrastructure, voice AI, and coding platforms, with activity across the United States, India, Dubai, Saudi Arabia, and Israel.\n\n Notable non-US rounds include \n\nNew Zealand's Halter raising $220 million at a $2 billion valuation — the country's largest VC raise ever — for solar-powered AI cattle collars,\n\n and \n\nEurope's Helsing raising $1.8 billion.\n\n But the concentration is stark: \n\nOpenAI and Anthropic alone accounted for $217 billion — 43% of all startup funding in H1 — underscoring how a small handful of frontier AI companies is reshaping venture markets.\n\n For a media reader, the signal is that AI capital is now global and structural, not a US-only story.\n**Source:** Crunchbase News — https://news.crunchbase.com/venture/global-startup-exits-ipo-ma-soar-ai-q2-h1-2026/\n\n---\n\n*Note on sourcing: several items draw on aggregators and trade newsletters. Where a story is significant to your work — especially the EU AI Act deadline and the France competition opinion — it's worth confirming against primary sources (the European Commission's own guidance and the Autorité de la concurrence) before acting on it.*",
+      "sources": [
+        {
+          "title": "AI Updates Today (July 2026) – Latest AI Model Releases",
+          "url": "https://llm-stats.com/llm-updates"
+        },
+        {
+          "title": "LLM News Today (July 2026) – AI Model Releases",
+          "url": "https://llm-stats.com/ai-news"
+        },
+        {
+          "title": "New Models Today — AI & LLM Releases Last 24 Hours | Price Per Token",
+          "url": "https://pricepertoken.com/news/model-releases"
+        },
+        {
+          "title": "Latest AI Model Releases — July 2026",
+          "url": "https://aireleasetracker.com/latest"
+        },
+        {
+          "title": "AI Model Release Tracker: New LLM Launches, Updated Daily | AI Flash Report",
+          "url": "https://aiflashreport.com/model-releases.html"
+        },
+        {
+          "title": "AI Model Releases Timeline | DemandSphere",
+          "url": "https://www.demandsphere.com/research/demandsphere-radar/ai-frontier-model-tracker/releases/"
+        },
+        {
+          "title": "AI Breakthroughs July 2026 | KERSAI",
+          "url": "https://kersai.com/ai-breakthroughs-july-2026/"
+        },
+        {
+          "title": "AI News This Week: AI model releases July 2026 | AI Weekly Pulse #4",
+          "url": "https://inkandalgorithms.systeme.io/ai-weekly-pulse-4-ai-model-releases-july-2026"
+        },
+        {
+          "title": "OpenAI’s advanced GPT-5.6 models to be publicly released - Nextgov/FCW",
+          "url": "https://www.nextgov.com/artificial-intelligence/2026/07/openais-advanced-gpt-56-models-be-available-public/414651/"
+        },
+        {
+          "title": "Artificial intelligence: Latest News and Updates | South China Morning Post",
+          "url": "https://www.scmp.com/topics/artificial-intelligence"
+        },
+        {
+          "title": "Markets may have just experienced their second DeepSeek shock, this time thanks to a Chinese AI lab named after a Pink Floyd album | Fortune",
+          "url": "https://fortune.com/2026/07/17/china-moonshot-kimi-k3-markets-china-ai/"
+        },
+        {
+          "title": "China’s AI Ascendance Gives Xi a Stage and a Security Dilemma - Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-07-16/china-s-ai-ascendance-gives-xi-a-stage-and-a-security-dilemma"
+        },
+        {
+          "title": "China's Moonshot AI unveils Kimi K3 that rivals OpenAI, Anthropic - CNBC",
+          "url": "https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html"
+        },
+        {
+          "title": "This July, China will host the 2026 World #AI Conference ...",
+          "url": "https://www.facebook.com/globaltimesnews/posts/this-july-china-will-host-the-2026-world-ai-conference-and-high-level-meeting-on/1551762606995941/"
+        },
+        {
+          "title": "News/Media Alliance Strikes Content Licensing Deal with Bria AI - Futureweek",
+          "url": "https://futureweek.com/news-media-alliance-strikes-content-licensing-deal-with-bria-ai/"
+        },
+        {
+          "title": "AI Licensing Deals: A New Revenue Stream for Publishers",
+          "url": "https://www.playwire.com/blog/ai-licensing-deals-a-new-revenue-stream-for-publishers"
+        },
+        {
+          "title": "A new global push would make AI companies pay for news - Poynter",
+          "url": "https://www.poynter.org/business-work/2026/ai-pay-for-news-statutory-licensing/"
+        },
+        {
+          "title": "News/Media Alliance signs AI licensing deal to unlock recurring RAG revenue for small and mid-sized publishers",
+          "url": "https://digiday.com/media/news-media-alliance-signs-ai-licensing-deal-to-unlock-recurring-rag-revenue-for-small-and-mid-sized-publishers/"
+        },
+        {
+          "title": "AI Content Licensing Deals: June 2026 Update - by Rob Kelly",
+          "url": "https://mediaandthemachine.substack.com/p/ai-content-licensing-deals-june-2026"
+        },
+        {
+          "title": "AI Copyright Licensing 2026: Publisher Deals Reshaping the Industry | AI Copyright Legal",
+          "url": "https://aicopyrightlegal.com/blog/ai-copyright-licensing-2026-publisher-deals"
+        },
+        {
+          "title": "A timeline of the major deals between publishers and AI tech companies in 2025",
+          "url": "https://digiday.com/media/a-timeline-of-the-major-deals-between-publishers-and-ai-tech-companies-in-2025/"
+        },
+        {
+          "title": "Media Briefing: Publishers cautiously count AI licensing as notable revenue amid programmatic strain, in Q1 earnings",
+          "url": "https://digiday.com/media/media-briefing-publishers-cautiously-count-ai-licensing-as-notable-revenue-amid-programmatic-strain-in-q1-earnings/"
+        },
+        {
+          "title": "Digiday Scorecard: Publishers rate Big Tech’s AI licensing deals",
+          "url": "https://digiday.com/media/publishers-scorecard-for-big-techs-ai-licensing-deals/"
+        },
+        {
+          "title": "AI Content Licensing in 2026: Why Most Publishers Will Never See a Deal, and What to Do Instead",
+          "url": "https://notioncue.com/blog/ai-content-licensing-training-data-deals-publishers-2026"
+        },
+        {
+          "title": "The Middle East’s Big Bet on Artificial Intelligence and Data Security | Crowell & Moring LLP",
+          "url": "https://www.crowell.com/en/insights/client-alerts/the-middle-easts-big-bet-on-artificial-intelligence-and-data-security"
+        },
+        {
+          "title": "AI Laws in Asia & Gulf 2026: China, Korea, Japan, UAE, Saudi | MaboaSoft",
+          "url": "https://maboasoft.com/blog/ai-regulation-asia-gulf/"
+        },
+        {
+          "title": "UAE and Saudi Arabia prioritize investments in data streaming platforms to fuel AI",
+          "url": "https://www.consultancy-me.com/news/13836/uae-and-saudi-arabia-prioritize-investments-in-data-streaming-platforms-to-fuel-ai"
+        },
+        {
+          "title": "Gulf AI infrastructure and the limits of technological sovereignty",
+          "url": "https://www.iiss.org/publications/strategic-comments/2026/06/gulf-ai-infrastructure-and-the-limits-of-technological-sovereignty/"
+        },
+        {
+          "title": "What the Iran War Is Costing Joint Gulf-U.S. Ambitions for AI | CSIS",
+          "url": "https://www.csis.org/analysis/what-iran-war-costing-joint-gulf-us-ambitions-ai"
+        },
+        {
+          "title": "UAE, Saudi Arabia lead global race to put autonomous AI to work | Khaleej Times",
+          "url": "https://www.khaleejtimes.com/business/tech/uae-saudi-arabia-lead-global-race-to-put-autonomous-ai-to-work"
+        },
+        {
+          "title": "AI, the Gulf, and the US: A Primer - Middle East Institute",
+          "url": "https://mei.edu/report/ai-the-gulf-and-the-us-a-primer/"
+        },
+        {
+          "title": "Sheikh Hamdan announces Dubai AI Week 2026: Double the scale, global participation expected",
+          "url": "https://gulfnews.com/amp/story/technology/bjcu2yn-hamdan-bin-mohammed-directs-dubai-week-return-1.500106123"
+        },
+        {
+          "title": "For Saudi Arabia, Qatar, and the UAE, Investment in AI Is Partly About U.S. Protection",
+          "url": "https://foreignpolicy.com/2026/02/23/gulf-states-investment-ai-american-protection-qatar-uae-saudi/"
+        },
+        {
+          "title": "Gulf states head to India AI Impact Summit 2026",
+          "url": "https://www.middleeastainews.com/p/gulf-states-head-to-india-ai-impact"
+        },
+        {
+          "title": "AI Act | Shaping Europe's digital future - European Union",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+        },
+        {
+          "title": "EU AI Act Deadlines 2026-2027: Compliance Calendar + Fines",
+          "url": "https://www.legiscope.com/blog/eu-ai-act-timeline-deadlines.html"
+        },
+        {
+          "title": "EU Artificial Intelligence Act | Up-to-date developments and analyses of the EU AI Act",
+          "url": "https://artificialintelligenceact.eu/"
+        },
+        {
+          "title": "Latest wave of obligations under the EU AI Act take effect: Key considerations | DLA Piper",
+          "url": "https://www.dlapiper.com/en-us/insights/publications/2025/08/latest-wave-of-obligations-under-the-eu-ai-act-take-effect"
+        },
+        {
+          "title": "Guidelines for providers of general-purpose AI models | Shaping Europe’s digital future",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/guidelines-gpai-providers"
+        },
+        {
+          "title": "EU AI Act GPAI Enforcement Goes Live August 2, 2026: A Readiness Guide for AI Governance Teams | ComplianceHub.Wiki",
+          "url": "https://compliancehub.wiki/eu-ai-act-gpai-enforcement-august-2026-readiness/"
+        },
+        {
+          "title": "EU AI Act 2026: GPAI Enforcement & 3% Fines Begin",
+          "url": "https://beam.ai/agentic-insights/eu-ai-act-enforcement-august-2-2026-gpai-fines"
+        },
+        {
+          "title": "Timeline for the Implementation of the EU AI Act | AI Act Service Desk",
+          "url": "https://ai-act-service-desk.ec.europa.eu/en/ai-act/timeline/timeline-implementation-eu-ai-act"
+        },
+        {
+          "title": "Enforcement of Chapter V under the EU AI Act | EU Artificial Intelligence Act",
+          "url": "https://artificialintelligenceact.eu/enforcement-of-chapter-v-under-the-eu-ai-act/"
+        },
+        {
+          "title": "The EU AI Act: What Actually Applies From August 2026",
+          "url": "https://www.digitalapplied.com/blog/eu-ai-act-august-2026-transparency-obligations-agency-checklist"
+        },
+        {
+          "title": "AI Startup Funding Announcements - Scouts by Yutori",
+          "url": "https://scouts.yutori.com/68f22e10-d5fe-4e94-b1c8-9c6218cfdb2c"
+        },
+        {
+          "title": "The Week’s 10 Biggest Funding Rounds: AI, Energy And Biotech Lead The Way",
+          "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-energy-biotech-joulent/"
+        },
+        {
+          "title": "AI Startup Funding News Today – Latest Deals & Rounds 2026",
+          "url": "https://aifundingtracker.com/ai-startup-funding-news-today/"
+        },
+        {
+          "title": "50 Top AI Funded Startups (June 2026)",
+          "url": "https://aifundingtracker.com/top-50-ai-startups/"
+        },
+        {
+          "title": "Latest AI Startup Funding News and VC Investment Deals - 2026 | News",
+          "url": "https://www.crescendo.ai/news/latest-vc-investment-deals-in-ai-startups"
+        },
+        {
+          "title": "July 2026 VC News: Mega AI Funds, New Fund Closes, and Infrastructure Scale Rounds — venturecapitaltracker.com",
+          "url": "https://venturecapitaltracker.com/2026-july-2026-global-vc-news-roundup-ai-fund-closes/"
+        },
+        {
+          "title": "AI Agent Startup Funding July 2026: Trends & Analysis | AI Funding",
+          "url": "https://aifunding.me/insights/ai-agent-funding-july-2026"
+        },
+        {
+          "title": "AI Startup Funding Trends 2026: Data, Rounds & What's Next",
+          "url": "https://qubit.capital/blog/ai-startup-fundraising-trends"
+        },
+        {
+          "title": "Crunchbase Data: Global Startup Investment Hit Record $510B In H1 2026 As AI Boom Accelerates Funding And Exits",
+          "url": "https://news.crunchbase.com/venture/global-startup-exits-ipo-ma-soar-ai-q2-h1-2026/"
+        },
+        {
+          "title": "AI Startup Funding Stages in 2026: A Stage-by-Stage Guide",
+          "url": "https://www.designrush.com/agency/business-consulting/trends/ai-startup-funding-stages"
+        }
+      ]
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "This track could not be generated this week.",
+      "sources": [],
+      "error": true
+    }
+  ]
+}
