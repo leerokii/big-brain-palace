@@ -1,0 +1,913 @@
+{
+  "id": "2026-W7",
+  "year": 2026,
+  "week": 7,
+  "generatedAt": "2026-07-27T15:41:12.199Z",
+  "dateLabel": "July 27, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "# AI PM Weekly Briefing — Vocal Media\n\n*Framed for AI content pipelines, creator/editorial tooling, and audience automation. Bias toward building AI product judgment.*\n\n---\n\n### 1. Evals are the new PRDs (Amplitude's build-in-public account)\nAmplitude's team describes a three-phase approach where \n\nevaluations become the new PRDs, first using evals to define the core use cases and requirements that guide how AI agents are built, tuned, and improved, then empowering the broadest set of SMEs and product teams to create and maintain them.\n\n They also warn that \n\nteams building AI products need more humans in the loop, not fewer, to handle the complexity of evals, integrations, and the constant iteration required to ship real value.\n\n**Why it matters:** For Vocal's content pipelines, this reframes your job — instead of writing a spec and handing off, you write the definition of \"good output\" and grow it as new failure modes appear. It also argues against thin, fully-autonomous editorial automation with no review layer.\n\n**Source:** Amplitude — https://amplitude.com/blog/ai-product-learnings-2025\n\n---\n\n### 2. A real shipped-product story: Productboard Spark\nThis is a candid post-mortem-plus-playbook. The author admits \n\nthey did not have quality out of the gate with their first generative AI product, launched before quality was consistent enough to build user trust, and that expectations outpaced what the technology could deliver.\n\n The fix, applied to their next product: \n\nrigorous evals, stricter quality gates, and systematic improvement before each release stage.\n\n To decide readiness, they \n\nused a combination of engaged user metrics and AI quality evaluation scores to measure quality and determine when they were ready to move between thresholds.\n\n**Why it matters:** A concrete model for how to stage a creator-facing AI feature — pair user engagement signals with quality scores as gates, rather than shipping on a good demo. Directly relevant to launching editorial or audience-automation tools where a bad first impression erodes creator trust.\n\n**Source:** Ravi Mehta's blog — https://blog.ravi-mehta.com/p/building-ai-products-lessons-from\n\n---\n\n### 3. How to measure AI success: the four-layer pyramid\nThis guide organizes AI measurement into layers. \n\nEffective AI product measurement requires four distinct layers, each serving a different purpose — think of them as a pyramid: start at the top with user outcomes and only dig deeper to diagnose issues. These are your north star metrics, answering \"did we solve the user's problem?\"\n\n The key discipline: \n\ndefine success precisely — \"user clicked the button\" is not success, it's activity; success is the outcome they came for.\n\n It centers on Task Success Rate and User Acceptance Rate (how often users act on AI suggestions).\n\n**Why it matters:** For Vocal, \"content generated\" is activity; \"content published and kept by the creator\" is the real outcome. User Acceptance Rate is a clean north-star candidate for any AI drafting or editing feature.\n\n**Source:** Institute of Product Management — https://www.institutepm.com/knowledge-hub/ai-product-metrics\n\n---\n\n### 4. Framework: link evals to business impact (don't measure in a vacuum)\nA practical method for connecting model quality to real results. Start with critical user journeys, then \n\nmap each desired outcome to leading and lagging metrics: leading metrics are your evaluation metrics (response accuracy on a curated test set, latency, hallucination rate), and lagging metrics are the business KPIs these drive (user satisfaction ratings, conversion rate, support ticket volume).\n\n Also useful: \n\nconnect outcomes to behavior — if the AI's suggestion was accepted, log success; if users ignored or reversed it, log failure. That links evals to business impact.\n\n**Why it matters:** Gives you a defensible way to argue for AI investment to leadership — you can tie a hallucination-rate improvement to a downstream editorial or audience metric instead of reporting model stats no one can interpret.\n\n**Source:** Product School — https://productschool.com/blog/artificial-intelligence/evaluation-metrics\n\n---\n\n### 5. How the AI PM role is actually being scoped\nUseful for understanding your own mandate and career path. One recruiter observes that \n\nan AI product manager in 2026 is one of four working roles: the copilot PM who owns a customer-facing LLM surface, the AI platform PM who owns the internal model and tooling layer, the ML feature PM who ships model-powered features inside a non-AI product, or the AI ops PM who deploys AI to a non-engineering team.\n\n The bar for hiring: \n\ngrading model-evaluation fluency, data instincts, and the willingness to kill a feature that demos beautifully and fails in production — pattern recognition on shipped product work matters more than the logo on the resume.\n\n**Why it matters:** Your Vocal role blends the \"ML feature PM\" and \"AI ops PM\" archetypes (creator tooling plus internal editorial/audience automation). Knowing which surfaces you own — and building an eval-set story around them — is how the role is judged industry-wide.\n\n**Source:** KORE1 — https://www.kore1.com/how-to-hire-ai-product-manager-2026/\n\n---\n\n### 6. Tactic to apply this week: the 30-minute eval\nA lightweight, repeatable habit. The recipe: \n\nchoose one AI feature your team has shipped in the past month, schedule 30 minutes this week to run an evaluation, and don't wait for perfect conditions or more comprehensive data — use what you have.\n\n It names three traps to avoid: \n\nthe Dashboard Trap (tracking engagement while ignoring whether the AI actually works), the Technical Handoff (assuming model metrics like F1 translate to user value — they often don't), and the Ship-and-Hope Method (relying on user complaints to surface issues).\n\n A complementary version: \n\npick one AI feature, define what \"good\" means for five to ten real inputs, and run an eval — you'll learn more from one run than from weeks of manual testing.\n\n**Why it matters:** This is the single most actionable item here. Pick one live Vocal feature (a headline generator, a tagging model, a recommendation surface), define \"good\" on ~10 real creator examples, and run it before Friday. It converts \n\n\"I think it's better\" into \"we tested 200 cases and accuracy improved 5% without regressing tone.\"\n\n**Sources:** Sid Saladi (Substack) — https://sidsaladi.substack.com/p/pms-30-minute-ai-evals-a-lightweight · Braintrust — https://www.braintrust.dev/blog/evals-for-pms",
+      "sources": [
+        {
+          "title": "AI for Product Managers: Ultimate 2026 Guide to AI-Powered PM",
+          "url": "https://www.chatprd.ai/learn/ai-for-product-managers"
+        },
+        {
+          "title": "AI in Product Management Guide for 2026 for Product Leaders | Gocious",
+          "url": "https://gocious.com/blog/ai-in-product-management-guide-for-2026-for-product-leaders"
+        },
+        {
+          "title": "Product Management Trends: 11 Shifts Shaping 2026",
+          "url": "https://productschool.com/blog/product-fundamentals/product-management-trends"
+        },
+        {
+          "title": "The Ultimate AI Product Manager Roadmap (2026)",
+          "url": "https://www.productcompass.pm/p/ai-product-manager-roadmap-2026"
+        },
+        {
+          "title": "AI Product Strategy 2026: Roadmap for Founders & Startups",
+          "url": "https://wearepresta.com/ai-product-strategy-2026-the-founders-guide-to-ai-native-growth/"
+        },
+        {
+          "title": "AI Product Management in 2026: A Complete Guide to the New Playbook | Tosea.ai",
+          "url": "https://tosea.ai/blog/ai-product-management-2026-playbook"
+        },
+        {
+          "title": "Measuring the Success of AI Products: Key Metrics and Frameworks | by Harsha Srivatsa | Medium",
+          "url": "https://harsha-srivatsa.medium.com/measuring-the-success-of-ai-products-key-metrics-and-frameworks-e65f49814ed2"
+        },
+        {
+          "title": "KPIs for gen AI: Measuring your AI success | Google Cloud Blog",
+          "url": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive"
+        },
+        {
+          "title": "Evaluation Metrics for AI Products That Drive Trust",
+          "url": "https://productschool.com/blog/artificial-intelligence/evaluation-metrics"
+        },
+        {
+          "title": "5 AI Product Metrics to Track: A Guide to Measuring Success | Moesif Blog",
+          "url": "https://www.moesif.com/blog/technical/api-development/5-AI-Product-Metrics-to-Track-A-Guide-to-Measuring-Success/"
+        },
+        {
+          "title": "Council Post: The New Success Metrics Every AI Product Leader Needs",
+          "url": "https://www.forbes.com/councils/forbestechcouncil/2025/12/01/the-new-success-metrics-every-ai-product-leader-needs/"
+        },
+        {
+          "title": "AI Metrics: How to Measure and Evaluate AI Performance | Sendbird",
+          "url": "https://sendbird.com/blog/ai-metrics-guide"
+        },
+        {
+          "title": "AI Product Metrics That Actually Matter | Complete Guide 2025",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-product-metrics"
+        },
+        {
+          "title": "Key Metrics to Measure the Success of Your AI UX",
+          "url": "https://f1studioz.com/blog/key-metrics-to-measure-the-success-of-your-ai-ux/"
+        },
+        {
+          "title": "What is the Scope of Product Management With AI in 2026?",
+          "url": "https://www.masaischool.com/blog/what-is-the-scope-of-product-management-with-ai-in-2026/"
+        },
+        {
+          "title": "2026 How to Become an AI Product Manager: Education, Salary, and Job Outlook | Research.com",
+          "url": "https://research.com/advice/how-to-become-an-ai-product-manager-education-salary-and-job-outlook"
+        },
+        {
+          "title": "How AI is Changing the Product Manager Role in 2026 | Codebasics",
+          "url": "https://codebasics.io/blog/how-ai-is-changing-the-product-manager-role-in-2026"
+        },
+        {
+          "title": "How to Hire for an AI Product Manager in May 2026",
+          "url": "https://www.paraform.com/blog/how-to-hire-ai-product-manager"
+        },
+        {
+          "title": "How to Hire an AI Product Manager: 2026 Guide - KORE1",
+          "url": "https://www.kore1.com/how-to-hire-ai-product-manager-2026/"
+        },
+        {
+          "title": "How to Become an AI Product Manager in 2026",
+          "url": "https://www.eleken.co/blog-posts/ai-product-manager"
+        },
+        {
+          "title": "What Is an AI Product Manager? Role Overview, Skills & How to Hire One (May 2026)",
+          "url": "https://www.paraform.com/blog/what-is-ai-product-manager"
+        },
+        {
+          "title": "AI Product Manager Job Description Template (2026) - KORE1",
+          "url": "https://www.kore1.com/ai-product-manager-job-description-template/"
+        },
+        {
+          "title": "The Truth About AI Product Managers In 2026",
+          "url": "https://www.mbassett.com/blog/ai-product-managers-2026/"
+        },
+        {
+          "title": "AI Evals for Product Managers by Catalina Turlea and Madalina Turlea on Maven",
+          "url": "https://maven.com/madalina-turlea/ai-evals-for-product-managers"
+        },
+        {
+          "title": "PM’s 30-Minute AI Evals: A Lightweight, Repeatable Recipe",
+          "url": "https://sidsaladi.substack.com/p/pms-30-minute-ai-evals-a-lightweight"
+        },
+        {
+          "title": "AI Evals Course for Product Teams & Leaders",
+          "url": "https://productschool.com/certifications/ai-evals"
+        },
+        {
+          "title": "What We Learned Building AI Products in 2025",
+          "url": "https://amplitude.com/blog/ai-product-learnings-2025"
+        },
+        {
+          "title": "When Evals Become the Product: A Field Guide for Shipping AI Agents That Don’t Collapse in Production | by Workday Life | Medium",
+          "url": "https://workdaylifeblog.medium.com/when-evals-become-the-product-a-field-guide-for-shipping-ai-agents-that-dont-collapse-in-a5994be57215"
+        },
+        {
+          "title": "AI Evals for Product Managers: Building Better Feedback Loops for AI Products | Productboard",
+          "url": "https://www.productboard.com/blog/ai-evals-for-product-managers/"
+        },
+        {
+          "title": "Building AI Products: Lessons from Productboard Spark",
+          "url": "https://blog.ravi-mehta.com/p/building-ai-products-lessons-from"
+        },
+        {
+          "title": "Evals for PMs: A practical guide to AI product quality - Blog - Braintrust",
+          "url": "https://www.braintrust.dev/blog/evals-for-pms"
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "# This Week in Claude & AI Automation\n\n## 1. Live artifacts now call MCP connectors on every view — build a self-updating dashboard from one prompt\n\nAnthropic shipped the missing piece in Claude Code's July 13–17 update. \n\nA published Claude Code Artifact can now call MCP connectors every time someone views it, so the page shows live data — and can even take actions — instead of a frozen snapshot from the session that built it.\n\n \n\nArtifacts use the viewers' own MCP connectors, so creators don't need to re-run sessions to refresh, and viewers can only see the data they have access to.\n\n**Try this** — In a Cowork/Claude Code session with your GitHub (or HubSpot/Linear/Stripe) connector active, paste:\n\n> `Build a dashboard artifact of our open pull requests that pulls the live list through my GitHub connector when the page loads. For each connector block, include fallback copy if the connector isn't connected. Prefer SVG and CSS over inlined PNGs to stay under the render cap.`\n\nTwo gotchas worth knowing before you ship: \n\na connector-backed dashboard cannot be a public link on any plan\n\n, and \n\nread-only SQL queries can still trigger per-call Allow/Deny gates when a tool like execute_sql is classified as write-capable — treat connector tool permissions as per-artifact-context, not guaranteed to inherit global \"Always Allow\" settings.\n\n**Source:** Claude Code Docs / Digital Applied — https://code.claude.com/docs/en/artifacts · https://www.digitalapplied.com/blog/live-client-dashboards-claude-artifacts-mcp\n\n---\n\n## 2. Subagent nesting caps changed three times in four days — audit your background spend\n\nIf you run fan-out workflows, the guardrails just moved under you. \n\nOn July 21, version 2.1.217 capped concurrently-running subagents at 20 and stopped subagents from spawning nested subagents at all. On July 24, version 2.1.219 reinstated nesting at a default depth of 3.\n\n Critically, \n\na budget-cap bug that let background agents spend past the limit got fixed\n\n in the same window — meaning anything you ran under `--max-budget-usd` before July 21 may have overspent.\n\n**Try this** — Two concrete actions:\n1. Audit spend from any background-agent runs made under `--max-budget-usd` **before July 21, 2026**, since the cap wasn't enforced then.\n2. To lock nesting back down for predictable cost, set in your `settings.json`:\n\n```json\n{ \"env\": { \"CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH\": \"1\" } }\n```\n\nSubagents can now spawn nested subagents up to depth 3 by default; set CLAUDE_CODE_MAX_SUBAGENT_SPAWN_DEPTH=1 to disable nesting.\n\n**Source:** Digital Applied / Claude Code Changelog — https://www.digitalapplied.com/blog/claude-code-subagent-depth-limits-budget-caps-2026\n\n---\n\n## 3. Undocumented \"observer agents\" — a watchdog subagent that flags drift while a worker runs\n\nThis one isn't in the docs or changelog. \n\nClaude Code observer agents are a new subagent role that watches another agent while it works and speaks up only when something is going wrong. Anthropic shipped the feature into the binary sometime in early July 2026, gated it behind an experimental flag, and said nothing.\n\n The pattern: a worker does the task, and \n\nthe observer reads a read-only feed of everything the worker does\n\n to catch it going off-track.\n\n**Try this** — Get the flag name exactly right (early write-ups botch it). In `settings.json`:\n\n```json\n{ \"env\": { \"CLAUDE_CODE_EXPERIMENTAL_OBSERVER_AGENTS\": \"1\" } }\n```\n\nEarly write-ups have been dropping the CODE_ segment and calling it CLAUDE_EXPERIMENTAL_OBSERVER_AGENTS, which does nothing. The real variable is CLAUDE_CODE_EXPERIMENTAL_OBSERVER_AGENTS.\n\n Then \n\nattach an observer through the front matter of the agent you want watched — the watched agent declares a single field naming its observer's type.\n\n One caveat: \n\na server-side gate (tengu_observer_agents_enabled) is on by default, but Anthropic can flip it for a cohort or kill it entirely from the server, so treat availability as provisional.\n\n**Source:** ClaudeFast — https://claudefa.st/blog/guide/agents/observer-agents\n\n---\n\n## 4. The generate → grade → regenerate loop — a rubric second-pass that lifts output quality with no model change\n\nThis is a shipping automation pattern, not a think-piece. \n\nOnce your task agent finishes, that output gets handed to a separate grading agent. The grading agent reads the output, reads your rubric, and scores how well the output matches. If the score is below threshold, it can flag the specific issues and kick the task back for another run.\n\n Anthropic's Outcomes feature reported \n\n+8.4% task success on .docx outputs and +10.1% on .pptx outputs\n\n from this loop alone. But you don't need the managed platform — \n\nyou don't need managed agents to implement the generate-grade-regenerate loop.\n\n**Try this** — Wire this as a second Claude call after your generation step:\n\n> `You are a grading agent. Score the OUTPUT below against each rubric criterion independently. For each, return PASS/FAIL and one sentence of evidence.`\n> `Rubric:`\n> `1. The CSV contains a \"price\" column with only numeric values, no currency symbols.`\n> `2. Every section header from the OUTLINE appears as an H2.`\n> `3. No claim is stated without a cited source line.`\n> `If any criterion FAILS, output \"REVISE:\" followed by a bullet list of exactly what to fix. If all PASS, output \"APPROVED\".`\n> `OUTPUT: {{paste output}}`\n\nThe rule that makes it work: \n\nwrite \"The CSV contains a price column with numeric values,\" not \"the data looks good.\" Vague criteria produce noisy evaluations because the grader scores each one independently.\n\n And to validate before production, \n\ngenerate a few outputs manually, grade them yourself, then run the grading agent and see if it agrees. If it doesn't, the rubric needs work.\n\n**Source:** MindStudio / InventiveHQ — https://www.mindstudio.ai/blog/claude-outcomes-feature-rubric-grading-agent-powerpoint-quality · https://inventivehq.com/blog/claude-agents-outcomes-rubric-grading\n\n---\n\n## 5. (Broader AI world) MCP goes stateless July 28 — your servers get simpler to scale, and a 12-month clock starts\n\nNot Claude-specific: the protocol underneath most agent tooling is having its biggest revision. \n\nThe release candidate is available today and the final specification ships on July 28, 2026.\n\n The practical win: \n\na remote MCP server that previously needed sticky sessions, a shared session store, and deep packet inspection at the gateway can now run behind a plain round-robin load balancer, route traffic on an Mcp-Method header, and let clients cache tools/list responses.\n\n Nothing breaks immediately — but \n\nit starts a 12-month deprecation clock for older protocol versions still running in production.\n\n**Try this** — Concrete migration steps if you operate an MCP server:\n1. Install the beta SDK now — \n\nbeta releases of the Python, TypeScript, Go, and C# SDKs are available with support for the 2026-07-28 spec.\n\n2. \n\nMigrate off initialize / Mcp-Session-Id to the new _meta envelope.\n\n3. \n\nCheck your auth implementation against the tightened OAuth and OIDC guidance.\n\nIf you're on the GitHub MCP server you're already covered — \n\nall tier 1 SDKs have preserved backwards compatibility and shipped beta support, so you don't need to do anything to maintain support.\n\n**Source:** Model Context Protocol Blog / GitHub Changelog — https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/ · https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification/\n\n---\n\n## 6. Voice mode now inherits your text model — run Opus reasoning by voice\n\nQuick but genuinely useful daily-driver change. \n\nWith the new update, voice mode picks the last model people used in the text chat and uses its fastest version by default\n\n, and \n\nusers can choose between Opus, Sonnet, and Haiku models\n\n — a shift from the old Haiku-only voice that \n\nprovided quick responses but wasn't well suited for complex work.\n\n The beta also lets you \n\ntalk through real work, switch models mid-conversation, and move from conversation to doing.\n\n**Try this** — Before starting a voice session on something that needs reasoning (planning, debugging logic, drafting strategy), open a text chat and switch the model selector to **Opus** first — voice will inherit it. For quick factual back-and-forth, leave it on Haiku/Sonnet so you get faster responses. You can also switch models mid-conversation without restarting.\n\n**Source:** TechCrunch — https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/",
+      "sources": [
+        {
+          "title": "Anthropic updates Claude voice mode with more capable models | TechCrunch",
+          "url": "https://techcrunch.com/2026/07/23/anthropic-updates-claude-voice-mode-with-more-capable-models/"
+        },
+        {
+          "title": "Anthropic’s new Claude feature is quietly selling you on AI | TechCrunch",
+          "url": "https://techcrunch.com/2026/07/09/anthropics-new-claude-feature-is-quietly-selling-you-on-ai/"
+        },
+        {
+          "title": "What's new - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        },
+        {
+          "title": "Claude Updates by Anthropic - July 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - July 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Claude Release Notes",
+          "url": "https://novalinium.com/claude-releases/"
+        },
+        {
+          "title": "Anthropic Release Notes - July 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "Claude Features 2026: Projects, Artifacts, Memory, Computer Use, Skills, MCP - Suprmind",
+          "url": "https://suprmind.ai/hub/claude/features/"
+        },
+        {
+          "title": "Agent Teams Workflow - claude-code-ultimate-guide",
+          "url": "https://github.com/FlorianBruniaux/claude-code-ultimate-guide/blob/main/guide/workflows/agent-teams.md"
+        },
+        {
+          "title": "Claude Code Adds Dynamic Workflows for Parallel Agent Coordination - InfoQ",
+          "url": "https://www.infoq.com/news/2026/06/dynamic-workflows-claude-code/"
+        },
+        {
+          "title": "Claude Code Guide 2026: 25 Features with Examples + Demo - MarkTechPost",
+          "url": "https://www.marktechpost.com/2026/06/14/claude-code-guide-2026-25-features-with-examples-demo/"
+        },
+        {
+          "title": "Code with Claude 2026: 5 New Agent Features Anthropic Just Shipped | MindStudio",
+          "url": "https://www.mindstudio.ai/blog/code-with-claude-2026-new-agent-features"
+        },
+        {
+          "title": "The Ultimate Guide to Building Your Agentic AI Workflow With Claude Cowork",
+          "url": "https://aimaker.substack.com/p/claude-cowork-review-agentic-ai-guide"
+        },
+        {
+          "title": "10 Claude Code Best Practices for Agentic Coding: A 2026 Guide | Jul 02, 2026",
+          "url": "https://www.openhands.dev/blog/claude-code-best-practices-agentic-coding"
+        },
+        {
+          "title": "Custom AI Agents & Agentic Workflows with Claude Code: The 2026 Expert Guide | Ramlit Limited",
+          "url": "https://www.ramlit.com/blog/custom-ai-agents-agentic-workflows-claude-code-2026-guide"
+        },
+        {
+          "title": "What's new - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        },
+        {
+          "title": "Claude Code Put Guardrails on Its Own Agent Fleets",
+          "url": "https://www.digitalapplied.com/blog/claude-code-subagent-depth-limits-budget-caps-2026"
+        },
+        {
+          "title": "Claude Code Changelog (July 2026)",
+          "url": "https://www.gradually.ai/en/changelogs/claude-code/"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - July 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Anthropic Release Notes - July 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "Claude Code Observer Agents: The Hidden Watchdog",
+          "url": "https://claudefa.st/blog/guide/agents/observer-agents"
+        },
+        {
+          "title": "The 2026-07-28 MCP Specification Release Candidate | Model Context Protocol Blog",
+          "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/"
+        },
+        {
+          "title": "GitHub MCP Server supports the next MCP specification - GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification/"
+        },
+        {
+          "title": "Beta SDKs for the 2026-07-28 MCP Spec Release Candidate Are Here | Model Context Protocol Blog",
+          "url": "https://blog.modelcontextprotocol.io/posts/sdk-betas-2026-07-28/"
+        },
+        {
+          "title": "MCP’s Upcoming 2026 Release Is a Big Deal | by balaji bal | Jun, 2026 | Medium",
+          "url": "https://medium.com/@balajibal/mcps-upcoming-2026-release-is-a-big-deal-1d15990f121f"
+        },
+        {
+          "title": "MCP Hits 10,000+ Servers as Biggest Update Ships [2026] – Tech Insider Ireland",
+          "url": "https://tech-insider.org/ie/model-context-protocol-mcp-update-2026/"
+        },
+        {
+          "title": "MCP 2026-07-28 Release Candidate: Business Guide | ForkPoint",
+          "url": "https://agenticstorefront.com/blog/mcp-2026-release-candidate-explained/"
+        },
+        {
+          "title": "MCP 2026-07-28: From Local Tool to Distributed Protocol - Agentic AI Foundation (AAIF)",
+          "url": "https://aaif.io/blog/mcp-2026-07-28-whats-changing-and-how-to-migrate"
+        },
+        {
+          "title": "Best MCP Servers in 2026: 12 Picks for Claude Code, Cursor, and Codex - Totalum Blog",
+          "url": "https://www.totalum.app/blog/best-mcp-servers-2026"
+        },
+        {
+          "title": "MCP Is Growing Up - Agentic AI Foundation (AAIF)",
+          "url": "https://aaif.io/blog/mcp-is-growing-up"
+        },
+        {
+          "title": "How to Enable Agent Teams in Claude Code (Experimental Feature) | BSWEN",
+          "url": "https://docs.bswen.com/blog/2026-02-09-enable-agent-teams/"
+        },
+        {
+          "title": "Orchestrate teams of Claude Code sessions - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/agent-teams"
+        },
+        {
+          "title": "Claude Code experimental agent teams is here | DeepakNess",
+          "url": "https://deepakness.com/raw/claude-code-agent-teams/"
+        },
+        {
+          "title": "Claude Code Observer Agents: The Hidden Watchdog",
+          "url": "https://claudefa.st/blog/guide/agents/observer-agents"
+        },
+        {
+          "title": "claude-code-ultimate-guide/guide/workflows/agent-teams.md at main · FlorianBruniaux/claude-code-ultimate-guide",
+          "url": "https://github.com/FlorianBruniaux/claude-code-ultimate-guide/blob/main/guide/workflows/agent-teams.md"
+        },
+        {
+          "title": "Claude Code Agent Teams: Multi-Agent Development Guide | Lushbinary",
+          "url": "https://lushbinary.com/blog/claude-code-agent-teams-multi-agent-development-guide/"
+        },
+        {
+          "title": "claude code",
+          "url": "https://docs.ai.it.ufl.edu/docs/navigator_toolkit/integrations/claude_code"
+        },
+        {
+          "title": "Rubric-Based Evaluations & LLM-as-a-Judge — Methodologies, Biases, and Empirical Validation in Domain-Specific Contexts. | by Adnan Masood, PhD. | Medium",
+          "url": "https://medium.com/@adnanmasood/rubric-based-evals-llm-as-a-judge-methodologies-and-empirical-validation-in-domain-context-71936b989e80"
+        },
+        {
+          "title": "Autorubric: Unifying Rubric-based LLM Evaluation",
+          "url": "https://arxiv.org/pdf/2603.00077"
+        },
+        {
+          "title": "SPARD: Self-Paced Curriculum for RL Alignment via Integrating Reward Dynamics and Data Utility",
+          "url": "https://arxiv.org/pdf/2604.07837"
+        },
+        {
+          "title": "Claude Outcomes Feature Improved PowerPoint Quality 10.1%: How Rubric-Grading Agents Work | MindStudio",
+          "url": "https://www.mindstudio.ai/blog/claude-outcomes-feature-rubric-grading-agent-powerpoint-quality"
+        },
+        {
+          "title": "The prompt optimization loop: How to improve prompts through iterative evaluation - Articles - Braintrust",
+          "url": "https://www.braintrust.dev/articles/prompt-optimization-loop"
+        },
+        {
+          "title": "Rubrics and Scoring: Measure Quality Instead of Guessing: Prompt Engineering Guide (2026) | Edugators",
+          "url": "https://www.edugators.com/prompt-engineering-course/evaluation-prompt-testing/rubrics-and-scoring-measure-quality-instead-of-guessing"
+        },
+        {
+          "title": "Claude's Outcomes Feature: Rubric Grading That Knows When an Agent Is Done",
+          "url": "https://inventivehq.com/blog/claude-agents-outcomes-rubric-grading"
+        },
+        {
+          "title": "Recursive Self-Improvement in AI: From Bounded Self-Refinement to Autonomous Research Loops",
+          "url": "https://arxiv.org/pdf/2607.07663"
+        },
+        {
+          "title": "Grade Like a Human: Rethinking Automated Assessment with Large Language   Models",
+          "url": "https://arxiv.org/pdf/2405.19694"
+        },
+        {
+          "title": "Efficiently Aligning Language Models with Online Natural Language Feedback",
+          "url": "https://arxiv.org/pdf/2605.04356"
+        },
+        {
+          "title": "Share session output as artifacts - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/artifacts"
+        },
+        {
+          "title": "Claude Artifacts MCP Connectors — July 2026",
+          "url": "https://explainx.ai/blog/claude-artifacts-mcp-connectors-july-2026"
+        },
+        {
+          "title": "Build live dashboards with Claude Cowork",
+          "url": "https://pietromontaldo.substack.com/p/build-live-dashboards-with-claude"
+        },
+        {
+          "title": "Claude.ai Artifacts for Live Analytics Dashboards | Coupler.io Blog",
+          "url": "https://blog.coupler.io/claude-ai-artifacts/"
+        },
+        {
+          "title": "Claude Live Artifacts - The 30-Minute Dashboard: A Cross-AI Workflow - Duke Digital Media Community",
+          "url": "https://sites.duke.edu/ddmc/2026/04/24/claude-live-artifacts-the-30-minute-dashboard-a-cross-ai-workflow/"
+        },
+        {
+          "title": "Build Live Client Dashboards with Claude Code Artifacts",
+          "url": "https://www.digitalapplied.com/blog/live-client-dashboards-claude-artifacts-mcp"
+        },
+        {
+          "title": "ClaudeDevs on X: \"Claude Code artifacts can now call MCP connectors, letting you build dashboards and apps that can fetch information and take actions for each viewer on demand. Available on Pro, Max, Team, and Enterprise plans. Not available on publicly-shared artifacts. https://t.co/FcvtiOqv0J\" / X",
+          "url": "https://x.com/ClaudeDevs/status/2077489907350856038"
+        },
+        {
+          "title": "Claude Live Artifacts: What They Are and How to Use Them — ShareDuo",
+          "url": "https://www.shareduo.com/blog/claude-live-artifacts"
+        },
+        {
+          "title": "Claude Live Artifacts: 5 Templates in 15 Minutes | FindSkill.ai — Learn AI for Your Job",
+          "url": "https://findskill.ai/blog/claude-live-artifacts-5-templates-15-minutes/"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "# This Week in AI: A Global Briefing\n\n## 1. China's Moonshot AI ships Kimi K3, a cheaper open model that's rattling the US industry\n**Region: China / International**\n\nChinese startup Moonshot AI released Kimi K3, and it has quickly become one of the week's biggest stories in the industry. \n\nMoonshot says the model closes the gap with leading US offerings and surpasses OpenAI and Anthropic's most capable systems on some benchmarks; while it still trails Anthropic's Claude Fable 5 and OpenAI's GPT 5.6 Sol overall, it beat models that sit just behind the leaders on benchmarks including coding and general agents.\n\n The significance is less about raw scores than economics and openness: \n\nthe release of a powerful open-source model by a Chinese startup has fueled accusations of theft while forcing uncomfortable discussions about whether American tech could face an existential challenge, because it can be accessed at a fraction of the cost.\n\n Real adoption is already following — \n\nChinese AI systems are gaining ground worldwide because they are more affordable and increasingly efficient, and US companies like Coinbase say they're switching to Chinese models to trim costs.\n\n*Source: CNBC — https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html*\n\n## 2. News Corp countersues Brave over AI scraping — a test case for publisher rights\n**Region: US / International (WSJ, The Times of London, Australian titles)**\n\nRupert Murdoch's News Corp filed a countersuit against browser-and-search company Brave, a case that media companies everywhere should watch. \n\nNews Corp accused the search engine of \"flagrant theft\" for allegedly scraping and reselling copyrighted Wall Street Journal and New York Post articles to AI companies, and is seeking an injunction, damages, and up to $150,000 per infringement.\n\n \n\nIn its complaint, News Corp alleged Brave masks its web crawlers so publishers cannot detect or block them, and delivers \"summaries\" that are verbatim or near-verbatim copied content to enterprise customers, primarily AI companies.\n\n The case matters because it could set precedent for the whole publisher-AI dispute: \n\nthe countersuit is designed in part to establish a legal precedent that could reshape licensing negotiations, and if the court rules Brave's activities exceed fair use, it would strengthen publishers demanding payment for AI training data.\n\n Notably, News Corp is fighting and dealing at once — \n\nit has also struck a US$150 million deal with Meta, showing the company is pressing its legal claims while monetizing some AI use on its own terms.\n\n*Source: Semafor — https://www.semafor.com/article/07/21/2026/newscorp-accuses-search-engine-brave-of-ai-copyright-infringement*\n\n## 3. France's competition regulator built its own AI agents to audit the market\n**Region: EU (France)**\n\nIn an unusually hands-on move, France's Autorité de la concurrence published a major opinion on the AI-agents market. \n\nOn 17 July 2026 the authority adopted Opinion 26-A-05 on the competitive functioning of the AI agents sector — its first contribution to move downstream from model training to the deployment layer, where \"agentic\" AI tools reason, plan and execute multi-step tasks with limited human intervention.\n\n What sets it apart methodologically is that \n\nthe inquiry, which started in January 2026, saw regulators build and deploy their own AI agents, running them through 550 shopping-related prompts to see how these systems actually behave in the wild.\n\n The concentration findings are stark and directly relevant to any business relying on these tools: \n\nthe advisory opinion found that OpenAI, Google, and Anthropic together control more than 84% of the AI agent market.\n\n Regulators flagged risks including \n\nplatformisation, disintermediation and algorithmic collusion, and called for full enforcement of existing rules, interoperability and open standards.\n\n*Source: MLex — https://www.mlex.com/mlex/artificial-intelligence/articles/2502571*\n\n## 4. Gulf states go operational: UAE and Saudi Arabia move from AI ambition to deployment\n**Region: Gulf (UAE, Saudi Arabia)**\n\nThe Gulf's AI story this week shifted from spending headlines to actual production use. \n\nAccording to Confluent's 2026 Data Streaming Report, 38 percent of organisations in both the UAE and Saudi Arabia have agentic AI solutions running in production, placing the Gulf among global leaders in translating AI ambition into operational reality.\n\n Underpinning this is heavy state strategy and infrastructure: \n\nthe UAE has invested through its National AI Strategy and a growing ecosystem of AI institutions, while Saudi Arabia continues to accelerate investment under Vision 2030.\n\n The regional consulting and data-centre push remains active this week, with \n\nDeloitte Middle East describing how AI is changing the game for regional consulting amid geopolitical uncertainty and rising competition, tied to data centre investments and the wider AI push in the region.\n\n For media and creator businesses, the takeaway is that the Gulf is emerging as a serious market and infrastructure hub outside the traditional US–China axis.\n*Source: Khaleej Times — https://www.khaleejtimes.com/business/tech/uae-saudi-arabia-lead-global-race-to-put-autonomous-ai-to-work*\n\n## 5. Databricks raises ~$3B at a $188B valuation, betting on AI governance and agents\n**Region: US**\n\nOn the funding side, data and AI platform Databricks closed one of the week's largest rounds. \n\nDatabricks closed a strategic funding round led by Coatue, raising roughly $3 billion and pushing its valuation to $188 billion — up from $134 billion previously.\n\n The money is targeted rather than general: \n\nthe funds are going toward three product areas — Unity AI Gateway, which handles governance across multiple AI systems; Genie, which connects data to automated actions; and Lakebase, built for AI agent workloads.\n\n The direction reflects where enterprise demand is heading — \n\nthe valuation jump reflects sustained enterprise demand for AI infrastructure, with product focus squarely on governance, cost control, and agentic tooling.\n\n For media companies weighing their own AI stacks, it's a signal that the market is now pricing in \"control and orchestration\" layers, not just raw models.\n*Source: AI Weekly Pulse (Ink & Algorithms) — https://inkandalgorithms.systeme.io/ai-weekly-pulse-4-ai-model-releases-july-2026*",
+      "sources": [
+        {
+          "title": "AI News This Week: AI model releases July 2026 | AI Weekly Pulse #4",
+          "url": "https://inkandalgorithms.systeme.io/ai-weekly-pulse-4-ai-model-releases-july-2026"
+        },
+        {
+          "title": "LLM News Today (July 2026) – AI Model Releases",
+          "url": "https://llm-stats.com/ai-news"
+        },
+        {
+          "title": "AI News — Today's Top Stories, Tracked & Ranked | AI Weekly",
+          "url": "https://aiweekly.co/"
+        },
+        {
+          "title": "AI News Today July 21 2026: 16 Biggest Stories",
+          "url": "https://www.buildfastwithai.com/blogs/ai-news-today-july-21-2026"
+        },
+        {
+          "title": "AI Updates Today (July 2026) – Latest AI Model Releases",
+          "url": "https://llm-stats.com/llm-updates"
+        },
+        {
+          "title": "New Models Today — AI & LLM Releases Last 24 Hours | Price Per Token",
+          "url": "https://pricepertoken.com/news/model-releases"
+        },
+        {
+          "title": "The Latest AI News and Breakthroughs That Matter Most | News",
+          "url": "https://www.crescendo.ai/news/latest-ai-news-and-updates"
+        },
+        {
+          "title": "AI Stacked",
+          "url": "https://nordicaiweekly.substack.com/p/nordic-data-and-ai-weekly-all-sorts/comments"
+        },
+        {
+          "title": "Two Weeks of Generative AI News Highlights - Gemini, Grok, Mistral, Microsoft, and More",
+          "url": "https://synthedia.substack.com/p/two-weeks-of-generative-ai-news-highlights"
+        },
+        {
+          "title": "How a Chinese AI model put Big Tech on notice",
+          "url": "https://www.nbcnews.com/tech/tech-news/china-ai-open-source-model-kimi-moonshot-rcna588683"
+        },
+        {
+          "title": "Xi’s ‘AI communism’ sparks new era for Made in China",
+          "url": "https://www.yahoo.com/news/politics/articles/xi-ai-communism-sparks-era-070000139.html"
+        },
+        {
+          "title": "Artificial intelligence: Latest News and Updates | South China Morning Post",
+          "url": "https://www.scmp.com/topics/artificial-intelligence"
+        },
+        {
+          "title": "China's Moonshot AI unveils Kimi K3 that rivals OpenAI, Anthropic",
+          "url": "https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html"
+        },
+        {
+          "title": "A firsthand look at China’s sprint to AI greatness",
+          "url": "https://www.nbcnews.com/world/china/first-hand-look-chinas-sprint-ai-greatness-rcna589126"
+        },
+        {
+          "title": "Cheaper, open and intelligent: Chinese AI models gain ground as they make inroads in the U.S.",
+          "url": "https://www.washingtontimes.com/news/2026/jul/26/chinese-ai-models-gain-ground-make-inroads-us/"
+        },
+        {
+          "title": "Inside China’s big AI show: Robot police, dancing humanoids and a roof collapse",
+          "url": "https://www.nbcnews.com/tech/tech-news/china-world-ai-conference-robot-police-chips-xi-rcna588339"
+        },
+        {
+          "title": "Weekly China AI News from August 19, 2024 to August 25, 2024",
+          "url": "https://recodechinaai.substack.com/p/chinas-humanoid-robot-former-huawei/comments"
+        },
+        {
+          "title": "Weekly China AI News from July 1st, 2024 to July 14th, 2024",
+          "url": "https://recodechinaai.substack.com/p/inside-chinas-largest-ai-show-self/comments"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/huawei-all-in-on-ai-platforms-mandate/comments"
+        },
+        {
+          "title": "AI Artifical Intelligence Act | Euronews",
+          "url": "https://www.euronews.com/tag/ai-act"
+        },
+        {
+          "title": "The EU AI Act – the current state of play | Travers Smith",
+          "url": "https://www.traverssmith.com/knowledge/knowledge-container/the-eu-ai-act-the-current-state-of-play/"
+        },
+        {
+          "title": "EU agrees to amend AI Act, clarifies overlap with machinery rules | IAPP",
+          "url": "https://iapp.org/news/a/eu-agrees-to-amend-ai-act-clarifies-overlap-with-machinery-rules"
+        },
+        {
+          "title": "AI Act Update: EU Resolves to Change Rules and Extend Deadlines",
+          "url": "https://www.lw.com/en/insights/ai-act-update-eu-resolves-to-change-rules-and-extend-deadlines"
+        },
+        {
+          "title": "EU Artificial Intelligence Act | Up-to-date developments and analyses of the EU AI Act",
+          "url": "https://artificialintelligenceact.eu/"
+        },
+        {
+          "title": "AI Act reloaded? What the latest AI Act changes mean in practice | Stibbe",
+          "url": "https://www.stibbe.com/publications-and-insights/ai-act-reloaded-what-the-latest-ai-act-changes-mean-in-practice"
+        },
+        {
+          "title": "AI Act | Shaping Europe's digital future - European Union",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+        },
+        {
+          "title": "EU AI Act Update: Timeline Relief, Targeted Simplification, and New Prohibitions",
+          "url": "https://www.globalpolicywatch.com/2026/05/eu-ai-act-update-timeline-relief-targeted-simplification-and-new-prohibitions/"
+        },
+        {
+          "title": "EU AI Act Update: Timeline Relief, Targeted Simplification, and New Prohibitions | Inside Privacy",
+          "url": "https://www.insideprivacy.com/artificial-intelligence/eu-ai-act-update-timeline-relief-targeted-simplification-and-new-prohibitions/"
+        },
+        {
+          "title": "EU AI Act Omnibus Agreement — Postponed High-Risk Deadlines and Other Key Changes - Gibson Dunn",
+          "url": "https://www.gibsondunn.com/eu-ai-act-omnibus-agreement-postponed-high-risk-deadlines-and-other-key-changes/"
+        },
+        {
+          "title": "Exclusive: Meta strikes multiple AI deals with news publishers",
+          "url": "https://www.axios.com/2025/12/05/meta-ai-deals-news-publishers"
+        },
+        {
+          "title": "AI Deals and Lawsuits | Platforms and Publishers",
+          "url": "https://tow.cjr.org/ai-deals-lawsuits/"
+        },
+        {
+          "title": "To Survive the AI Age, Publishers Are Finally Working Together - Columbia Journalism Review",
+          "url": "https://www.cjr.org/tow_center/surviving-ai-publishers-banding-together-united-kingdom-spur-alliance-standards-usage-rights.php"
+        },
+        {
+          "title": "News Publishers with AI Partnerships in 2026 - BuzzStream",
+          "url": "https://www.buzzstream.com/blog/partnerships-in-ai/"
+        },
+        {
+          "title": "A timeline of the major deals between publishers and AI tech companies in 2025",
+          "url": "https://digiday.com/media/a-timeline-of-the-major-deals-between-publishers-and-ai-tech-companies-in-2025/"
+        },
+        {
+          "title": "News/Media Alliance signs AI licensing deal to unlock recurring RAG revenue for small and mid-sized publishers",
+          "url": "https://digiday.com/media/news-media-alliance-signs-ai-licensing-deal-to-unlock-recurring-rag-revenue-for-small-and-mid-sized-publishers/"
+        },
+        {
+          "title": "Who's suing AI and who's signing: News Corp sues Brave, Microsoft signs Australian Copilot deal",
+          "url": "https://pressgazette.co.uk/platforms/news-publisher-ai-deals-lawsuits-openai-google/"
+        },
+        {
+          "title": "meta strikes multiple ai deals with news publishers axios reports ce7d51dcdf8ef526",
+          "url": "https://in.marketscreener.com/news/meta-strikes-multiple-ai-deals-with-news-publishers-axios-reports-ce7d51dcdf8ef526"
+        },
+        {
+          "title": "Media Insider: Publishers Are Cautious About AI, Twitter’s Top Advertisers Pull Ad Dollars",
+          "url": "https://mediablog.prnewswire.com/tag/artificial-intelligence/page/3"
+        },
+        {
+          "title": "Meta strikes multiple AI deals with news publishers, Axios reports",
+          "url": "https://www.aol.com/articles/meta-strikes-multiple-ai-deals-130949358.html"
+        },
+        {
+          "title": "Saudi Arabia, UAE See AI Buildup as Key to Post-Oil Power - Bloomberg",
+          "url": "https://www.bloomberg.com/news/newsletters/2025-05-19/saudi-arabia-uae-see-ai-buildup-as-key-to-post-oil-power"
+        },
+        {
+          "title": "UAE, Saudi Arabia lead global race to put autonomous AI to work | Khaleej Times",
+          "url": "https://www.khaleejtimes.com/business/tech/uae-saudi-arabia-lead-global-race-to-put-autonomous-ai-to-work"
+        },
+        {
+          "title": "Middle East AI News | Carrington Malin | Substack",
+          "url": "https://www.middleeastainews.com/t/saudi-arabia"
+        },
+        {
+          "title": "Middle East Artificial Intelligence News | AGBI",
+          "url": "https://www.agbi.com/sectors/ai/"
+        },
+        {
+          "title": "Watch Charife: UAE & Saudi Arabia Race to Upskill for AI - Bloomberg",
+          "url": "https://www.bloomberg.com/news/videos/2026-07-27/charife-uae-saudi-arabia-race-to-upskill-for-ai-video"
+        },
+        {
+          "title": "UAE government unveils first AI Agents; Qiddiya to deploy Google AI",
+          "url": "https://www.middleeastainews.com/p/uae-government-unveils-first-ai-agents"
+        },
+        {
+          "title": "UAE, Saudi Arabia leadership highlighted in Stanford AI Index",
+          "url": "https://www.middleeastainews.com/p/uae-saudi-arabia-leadership-highlighted"
+        },
+        {
+          "title": "SDAIA News & Updates",
+          "url": "https://sdaia.gov.sa/en/MediaCenter/News/Pages/default.aspx"
+        },
+        {
+          "title": "AI in Arabia - Your guide to AI in the Arab world",
+          "url": "https://aiinarabia.com/"
+        },
+        {
+          "title": "News Corp Is Suing Brave Over AI Scraping As a New Internet Battlefield Emerges | IBTimes",
+          "url": "https://www.ibtimes.com/news-corp-suing-brave-over-ai-scraping-new-internet-battlefield-emerges-3805620"
+        },
+        {
+          "title": "News Corp accuses search engine Brave of AI copyright infringement",
+          "url": "https://www.semafor.com/article/07/21/2026/newscorp-accuses-search-engine-brave-of-ai-copyright-infringement"
+        },
+        {
+          "title": "The Wall Street Journal's Parent Company Sues The Browser Brave Over Its AI | Cord Cutters News",
+          "url": "https://cordcuttersnews.com/the-wall-street-journals-parent-company-sues-the-browser-brave-over-its-ai/"
+        },
+        {
+          "title": "News Corp accuses search engine Brave of AI copyright infringement | Editor and Publisher",
+          "url": "https://www.editorandpublisher.com/stories/news-corp-accuses-search-engine-brave-of-ai-copyright-infringement,262712"
+        },
+        {
+          "title": "News Corp Countersues Brave, Calls AI Content Scraping ‘Flagrant Theft’ — BigGo Finance",
+          "url": "https://finance.biggo.com/news/68591eca-76b1-4cb3-82dc-68c8110c8c46"
+        },
+        {
+          "title": "News Corp countersues Brave over AI scraping of news articles | Prism News",
+          "url": "https://www.prismnews.com/news/news-corp-countersues-brave-over-ai-scraping-of-news"
+        },
+        {
+          "title": "We did not have Brave clashing with Rupert Murdoch on our 2025 bingo card, but there it is",
+          "url": "https://www.theregister.com/2025/03/13/brave_news_corp_content/"
+        },
+        {
+          "title": "News Corp sued by Brave Software, a Google search engine rival",
+          "url": "https://www.aol.com/news-corp-sued-brave-software-164419092.html"
+        },
+        {
+          "title": "ai startup perplexity fires back 123929332",
+          "url": "https://www.aol.com/entertainment/ai-startup-perplexity-fires-back-123929332.html"
+        },
+        {
+          "title": "The French Competition Authority issues an opinion on the competitive functioning of the AI agents sector, identifying platformisation, disintermediation and algorithmic collusion risks and calling for full enforcement of existing rules, interoperability and open standards – Concurrences",
+          "url": "https://www.concurrences.com/en/bulletin/news-issues/july-2026-iv/the-french-competition-authority-issues-an-opinion-on-the-competitive-136457"
+        },
+        {
+          "title": "AI News This Week: AI model releases July 2026 | AI Weekly Pulse #4",
+          "url": "https://inkandalgorithms.systeme.io/ai-weekly-pulse-4-ai-model-releases-july-2026"
+        },
+        {
+          "title": "Emergence of AI agents needs close scrutiny, French antitrust enforcers say | MLex | Specialist news and analysis on legal risk and regulation",
+          "url": "https://www.mlex.com/mlex/artificial-intelligence/articles/2502571"
+        },
+        {
+          "title": "AI laws and regulations in France| CMS Expert Guide",
+          "url": "https://cms.law/en/int/expert-guides/ai-regulation-scanner/france"
+        },
+        {
+          "title": "AI Watch: Global regulatory tracker - France | White & Case LLP",
+          "url": "https://www.whitecase.com/insight-our-thinking/ai-watch-global-regulatory-tracker-france"
+        },
+        {
+          "title": "AI Regulatory Horizon Tracker - France - Bird & Bird",
+          "url": "https://www.twobirds.com/en/capabilities/artificial-intelligence/ai-legal-services/ai-regulatory-horizon-tracker/france"
+        },
+        {
+          "title": "Best AI Compliance Tools for France (2026): The Complete GDPR and EU A",
+          "url": "https://frenchcomplianceinstitute.com/blogs/news/ai-compliance-tools-france"
+        },
+        {
+          "title": "The French Competition Authority’s Public Consultation regarding Conversational Agents: An Opportunity for All the Stakeholders to Explain the Market to the Regulator - The Platform Law Blog",
+          "url": "https://the-platform-law.com/2026/02/24/the-french-competition-authoritys-public-consultation-regarding-conversational-agents-an-opportunity-for-all-the-stakeholders-to-explain-the-market-to-the-regulator/"
+        }
+      ]
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "# Cross-Spectrum Political Briefing — Week of July 20–27, 2026\n\nThree stories dominated the week, all with direct 2026 midterm relevance: the escalating US–Iran war, the administration's new replacement tariffs, and a court filing in which the government conceded it canceled clean-energy grants concentrated in Democratic states. For each, the neutral factual anchor comes first, followed by the three framings.\n\n---\n\n## Story 1: The US–Iran war escalates as Congress splits on war powers\n\n**What actually happened (factual anchor):** \n\nA US bombing campaign against Iran continued for roughly 13 consecutive nights after a ceasefire agreement collapsed earlier in July.\n\n \n\nOn Thursday, the Senate voted 47-49 to kill a joint War Powers Act resolution that would have forced Trump to end hostilities, while the House earlier that day cleared, 214-208, a concurrent resolution aimed at pushing Trump to abandon the war.\n\n \n\nEven if both chambers passed similar measures, the concurrent resolutions lack the force of law.\n\n \n\nGas prices rose again, with the national average for a gallon reaching $4.11 on Saturday, up 11 cents in a week.\n\n By week's end, strikes appeared paused amid renewed diplomacy.\n\n### 1. Progressive framing\n**The New Republic — opinion/commentary** — https://newrepublic.com/post/213486/trump-iran-war-horrible-new-reason-worry\nThe left-leaning read emphasizes strategic futility and personal impulsiveness. \n\nThe piece cites Wall Street Journal reporting that at a White House meeting Trump launched into a tirade against Iranian leaders and is worried the war is \"consuming his presidency,\" with an official saying Trump sees few good options besides continuing daily strikes.\n\n \n\nIt argues the strikes aren't having much impact militarily or psychologically, pointing to satellite images showing Iran rebuilding damaged sites quickly.\n\n The framing: an open-ended war of choice with no exit, driven by ego rather than strategy.\n\n### 2. Neutral framing\n**CNN — news reporting (live blog)** — https://www.cnn.com/2026/07/26/world/live-news/iran-war-trump\n\nWire-style reporting notes strikes appeared to remain paused after nearly two weeks of nightly bombing and Iranian attacks on US allies, with UN Ambassador Mike Waltz saying Trump is giving talks \"some space.\"\n\n \n\nIt reports Waltz acknowledged \"a lot of stockpiles are depleted\" while insisting the US has \"everything that it needs,\" and that Joint Chiefs Chairman Gen. Dan Caine had raised concerns about munition levels needed for a major escalation.\n\n### 3. Conservative framing\n**National Review — opinion/commentary** — https://www.nationalreview.com/2026/07/a-war-restrained-by-the-people/\nNotably, a leading conservative outlet is critical rather than cheerleading. \n\nThe piece's thesis is that Trump's ambitions are being checked by the American voter.\n\n Separately, the traditionally conservative Wall Street Journal editorial board has argued from a hawkish direction — that Trump's on-and-off approach signals weakness and that Iran believes it can outlast a president who no longer wants the fight (https://thehill.com/homenews/media/5874592-trump-iran-us-response-ceasefire/, opinion). Note these two conservative critiques point in opposite directions: one says the war is too unpopular to sustain; the other says Trump hasn't been forceful enough.\n\n---\n\n## Story 2: New \"replacement\" tariffs take effect on 60 trading partners\n\n**What actually happened (factual anchor):** \n\nSixty trading partners, including all of America's most important ones, now face tariffs of 10% to 12.5%, with the new duties taking effect at 12:01 a.m. ET Friday.\n\n \n\nThe tariffs cover trading partners accounting for 99% of America's imports and replace expiring temporary tariffs in place since February.\n\n \n\nThe new levies replace stopgap tariffs imposed after the Supreme Court struck down Trump's global \"Liberation Day\" tariffs in February, and were issued under Section 301 of the Trade Act of 1974.\n\n \n\nThe administration says the 60 economies failed \"to impose and effectively enforce a prohibition on the importation of goods produced with forced labor.\"\n\n### 1. Progressive framing\n**NPR — news reporting** — https://www.npr.org/2026/07/24/nx-s1-5905783/trump-tariff-trade-global-canada\nNPR's account (framed neutrally but emphasizing legal defiance) leads with the president's reaction to the courts. \n\nIt reports that on the day the Supreme Court ruled against a broad swath of Trump's tariffs he was visibly angry and determined to enact more anyway, saying \"Other alternatives will now be used to replace the ones that the court incorrectly rejected.\"\n\n \n\nIt notes those \"alternatives\" referred to other laws the administration might use after the Supreme Court said the president's preferred IEEPA route was unlawful.\n\n The progressive-adjacent read: an end-run around a Supreme Court loss.\n\n### 2. Neutral framing\n**NBC News — news reporting** — https://www.nbcnews.com/business/economy/trump-tariffs-60-countries-forced-labor-rcna588972\n\nThe US trade representative announced a wave of tariffs on dozens of economies to replace Trump's temporary 10% tariff, which expired at midnight ET.\n\n \n\nNBC notes that in February the Supreme Court struck down most of Trump's tariffs imposed under IEEPA, ruling the administration exceeded its authority.\n\n \n\nIt gives the opposing side directly: key trading partners such as the EU strongly rejected the forced-labor accusation, with EU foreign policy chief Kaja Kallas comparing EU and US labor laws.\n\n### 3. Conservative framing\n**ABC News — news reporting** — https://abcnews.com/Business/trump-set-impose-sweeping-tariffs-60-trade-partners/story?id=135020049\nThe framing most favorable to the administration foregrounds its stated legal rationale. \n\nUS Trade Representative Jamieson Greer said the 10% to 12.5% tariffs were aimed at combatting \"forced labor\" violations.\n\n \n\nThe finding of wrongdoing followed an investigation under Section 301 of the Trade Act of 1974, which permits levies in response to an adverse trade policy taken up by another country.\n\n \n\nThis framing also stresses that a series of exemptions would significantly ease the measure's impact.\n\n**One factual caution for the reader on all sides:** the \"forced labor\" justification is the administration's stated legal hook to survive court review after IEEPA was struck down; the affected partners include long-standing allies like Canada and the UK, and the EU disputes the characterization. Treat the forced-labor rationale as a contested legal claim, not an established finding.\n\n---\n\n## Story 3: Administration concedes clean-energy grants were canceled in states that voted against Trump\n\n**What actually happened (factual anchor):** \n\nIn a court filing this month responding to a lawsuit by University of California researchers, the administration acknowledged that it terminated nearly 300 federal research grants, and that the filing was made in response to the cancellation challenge.\n\n \n\nThe Energy Department sent OMB a list of more than 600 grants it recommended canceling from recipients in states where Kamala Harris won and that have two senators caucusing with Democrats, and OMB ultimately terminated 284 grants in October 2025.\n\n \n\nA DOE lawyer conceded that, with one exception, the 284 terminated grants were in states that voted for Harris with two Democratic-caucusing senators, and acknowledged none were included based on \"any programmatic, statutory, cost-reduction or performance-based factor.\"\n\n### 1. Progressive framing\n**The New Republic — opinion/commentary** — https://newrepublic.com/post/213526/trump-team-admits-defunding-states-didnt-vote-for-him\nThe progressive read casts this as an admission of political retaliation. \n\nIt notes OMB Director Russ Vought called the money \"Green New Scam funding to fuel the Left's climate agenda\" and singled out projects in 16 blue states, and that only a month earlier Energy Secretary Chris Wright had angrily told a House committee the cuts \"did not involve politics,\" calling the accusation \"bullshit.\"\n\n \n\nThe framing's core point: a DOE lawyer then \"conceded the obvious.\"\n\n### 2. Neutral framing\n**NBC News — news reporting** — https://www.nbcnews.com/politics/trump-administration/trump-administration-concedes-canceled-research-grants-blue-states-rcna589129\n\nNBC reports that from a list of more than 2,300 awards, OMB identified 284 to terminate in October 2025, and that a DOE official wrote that with one exception the terminated grants were in states that awarded electoral votes to Harris and have two Democratic-caucusing senators.\n\n \n\nIt also reports that a remaining 340 grants proposed for termination were ultimately not canceled.\n\n### 3. Conservative framing\n**Reason — opinion/commentary (libertarian)** — https://reason.com/2026/07/27/the-energy-department-admits-the-omb-canceled-grants-solely-to-punish-trumps-political-opponents/\nNotably, the libertarian-right outlet does not defend the move — it condemns it. \n\nReason recounts that DOE recommended canceling 624 clean-energy grants approved under Biden, and OMB winnowed the list to 284, all but one awarded to projects in states represented by Democratic senators that voted for Harris.\n\n \n\nIt quotes Energy Secretary Chris Wright insisting \"No decisions were made on politics\" and calling the charge \"bullshit,\" then concludes that while that may have been true of DOE's original list, it was not true of the terminations OMB approved.\n\n A pro-administration defense on the merits (that the grants were wasteful \"Green New Scam\" spending) exists via Vought's public statements, but the factual admission in the filing undercuts the claim that the final selection was apolitical.\n\n**One factual caution for the reader on all sides:** The administration's public defense — that this was simply cutting wasteful clim",
+      "sources": [
+        {
+          "title": "Washington Week with The Atlantic | Season 2026 | Washington Week with The Atlantic full episode, 7/24/26 | PBS",
+          "url": "https://www.pbs.org/video/washington-week-with-the-atlantic-full-episode-72426-Q3V3cT/"
+        },
+        {
+          "title": "The Hill - covering Congress, Politics, Political Campaigns and Capitol Hill",
+          "url": "https://thehill.com/"
+        },
+        {
+          "title": "Headlines for July 15, 2026 | Democracy Now!",
+          "url": "https://www.democracynow.org/2026/7/15/headlines"
+        },
+        {
+          "title": "Politics : NPR",
+          "url": "https://www.npr.org/sections/politics/"
+        },
+        {
+          "title": "Politics - The Washington Post",
+          "url": "https://www.washingtonpost.com/politics/"
+        },
+        {
+          "title": "News – The White House",
+          "url": "https://www.whitehouse.gov/news/"
+        },
+        {
+          "title": "Politics News: Latest on Trump Administration, Congress, Elections and More | NBC News",
+          "url": "https://www.nbcnews.com/politics"
+        },
+        {
+          "title": "journal editorial report",
+          "url": "https://www.foxnews.com/category/shows/journal-editorial-report?page=37"
+        },
+        {
+          "title": "2026 midterms",
+          "url": "https://www.npr.org/tags/g-s1-100949/2026-midterms/archive"
+        },
+        {
+          "title": "2026 Midterms: Latest News, Updates and Results of the Midterm Elections | NBC News",
+          "url": "https://www.nbcnews.com/politics/2026-election"
+        },
+        {
+          "title": "2026 Midterm Election News · The Floridian",
+          "url": "https://floridianpress.com/category/elections/2026-midterm-election/"
+        },
+        {
+          "title": "2026 midterms are 100 days away as both parties battle for Congress | Fox News",
+          "url": "https://www.foxnews.com/politics/100-day-sprint-midterms-kicks-off-republicans-democrats-clash-control-across-country"
+        },
+        {
+          "title": "United States Congress elections, 2026 - Ballotpedia",
+          "url": "https://ballotpedia.org/United_States_Congress_elections,_2026"
+        },
+        {
+          "title": "Democrats favored to win House, underdogs in Senate 100 days out",
+          "url": "https://thehill.com/homenews/campaign/5987178-midterm-forecast-house-senate/"
+        },
+        {
+          "title": "100 days out from Election Day, our insider shares his intel",
+          "url": "https://www.axios.com/2026/07/26/midterm-election-outlook-100-days"
+        },
+        {
+          "title": "With just a few primary elections to go, the competitive Senate map keeps shifting",
+          "url": "https://www.npr.org/2026/07/27/nx-s1-5907379/2026-midterm-election-senate-races"
+        },
+        {
+          "title": "Watch CBS News",
+          "url": "https://www.cbsnews.com/video/what-early-polls-are-projecting-as-politicians-look-ahead-to-2026-midterm-elections"
+        },
+        {
+          "title": "Watch CBS News",
+          "url": "https://www.cbsnews.com/video/democrats-take-more-aggressive-approach-as-2026-midterm-elections-come-into-focus"
+        },
+        {
+          "title": "2026 election",
+          "url": "https://www.pbs.org/newshour/classroom/tag/2026-election"
+        },
+        {
+          "title": "July 24, 2026 — Escalation in Iran war nears 2-week mark | CNN",
+          "url": "https://edition.cnn.com/2026/07/24/world/live-news/iran-war-trump"
+        },
+        {
+          "title": "July 26, 2026 – UN envoy Waltz says Trump giving talks ‘some space;’ Iran condemns Ukrainian attacks | CNN",
+          "url": "https://www.cnn.com/2026/07/26/world/live-news/iran-war-trump"
+        },
+        {
+          "title": "July 23, 2026 — Oil tops $100 a barrel, Houthi attack in Red Sea marks new escalation | CNN",
+          "url": "https://www.cnn.com/2026/07/23/world/live-news/iran-war-trump"
+        },
+        {
+          "title": "Congress splits on war powers resolutions to force Trump to abandon Iran war",
+          "url": "https://www.cnbc.com/2026/07/23/congress-pushes-war-powers-resolutions-tells-trump-to-abandon-iran-war.html"
+        },
+        {
+          "title": "Trump threatens a major escalation in Iran after 13 straight nights of strikes",
+          "url": "https://www.npr.org/2026/07/24/g-s1-135417/us-iran-war-updates"
+        },
+        {
+          "title": "February 28, 2026",
+          "url": "https://www.coons.senate.gov/news/press-releases/senator-coons-statement-on-iran-strikes"
+        },
+        {
+          "title": "Press Releases",
+          "url": "https://www.kim.senate.gov/?p=32156"
+        },
+        {
+          "title": "US Senate to vote on resolution to curb Trump's Iran war powers",
+          "url": "https://www.aol.com/articles/us-senate-vote-resolution-curb-172838015.html"
+        },
+        {
+          "title": "March 1, 2026",
+          "url": "https://www.whitehouse.senate.gov/news/release/whitehouse-statement-on-trumps-attack-on-iran"
+        },
+        {
+          "title": "Federal court blocks Texas from using new congressional map for 2026 elections - CBS News",
+          "url": "https://www.cbsnews.com/news/texas-congressional-map-2026-judge-blocks/"
+        },
+        {
+          "title": "Federal Court Blocks Texas Gerrymander - Democracy Docket",
+          "url": "https://www.democracydocket.com/news-alerts/federal-court-blocks-texas-gerrymander-for-2026-appeal-expected/"
+        },
+        {
+          "title": "Texas GOP House map blocked by federal judges",
+          "url": "https://thehill.com/regulation/court-battles/5611065-texas-republican-redistricting-challenge/"
+        },
+        {
+          "title": "Federal judges block Texas congressional map drawn to help GOP in 2026 midterms | PBS News",
+          "url": "https://www.pbs.org/newshour/politics/federal-judges-block-texas-congressional-map-drawn-to-help-gop-in-2026-midterms"
+        },
+        {
+          "title": "Federal judges block Texas from using redrawn congressional map",
+          "url": "https://www.foxnews.com/politics/federal-judges-block-texas-from-using-redrawn-congressional-map.amp"
+        },
+        {
+          "title": "Print Print    Close Close",
+          "url": "https://www-ak-ms.foxnews.com/politics/federal-judges-block-texas-from-using-redrawn-congressional-map.print"
+        },
+        {
+          "title": "Federal judges block Texas from using its new US House map in the 2026 midterms",
+          "url": "https://www.aol.com/articles/federal-judges-block-texas-using-181527976.html"
+        },
+        {
+          "title": "Federal judges block Texas’ new US House map in 2026 midterms, citing racial discrimination",
+          "url": "https://www.aol.com/articles/federal-judges-block-texas-us-183038487.html"
+        },
+        {
+          "title": "federal judges block texas congressional map drawn to help gop in 2026 midterms",
+          "url": "https://www.pbs.org/newshour/amp/politics/federal-judges-block-texas-congressional-map-drawn-to-help-gop-in-2026-midterms"
+        },
+        {
+          "title": "Federal court blocks Texas from using new congressional gerrymander in 2026 midterms",
+          "url": "https://www.yahoo.com/news/articles/federal-court-blocks-texas-using-180858247.html"
+        },
+        {
+          "title": "A defiant Trump imposes replacement tariffs on biggest US trading partners - OPB",
+          "url": "https://www.opb.org/article/2026/07/24/new-tariffs-trump/"
+        },
+        {
+          "title": "A defiant Trump imposes replacement tariffs on biggest U.S. trading partners",
+          "url": "https://www.npr.org/2026/07/24/nx-s1-5905783/trump-tariff-trade-global-canada"
+        },
+        {
+          "title": "A defiant Trump imposes replacement tariffs on biggest U.S. trading partners | KPBS Public Media",
+          "url": "https://www.kpbs.org/news/politics/2026/07/24/a-defiant-trump-imposes-replacement-tariffs-on-biggest-u-s-trading-partners"
+        },
+        {
+          "title": "Trump set to impose sweeping tariffs on 60 trade partners - ABC News",
+          "url": "https://abcnews.com/Business/trump-set-impose-sweeping-tariffs-60-trade-partners/story?id=135020049"
+        },
+        {
+          "title": "U.S. sets new tariffs at 10% to 12.5% on 60 trade partners",
+          "url": "https://www.nbcnews.com/business/economy/trump-tariffs-60-countries-forced-labor-rcna588972"
+        },
+        {
+          "title": "Trump’s New Tariffs Countries Map | National News | U.S. News",
+          "url": "https://www.usnews.com/news/national-news/articles/2026-07-24/trumps-new-tariffs-countries-map"
+        },
+        {
+          "title": "Trump imposes 'sweeping' new tariffs on 60 trade partners as global duties expire",
+          "url": "https://www.cnbc.com/2026/07/23/trump-tariffs-trade-deadline.html"
+        },
+        {
+          "title": "Free Trial",
+          "url": "https://www.marketbeat.com/articles/trump-announces-90-day-negotiating-period-with-mexico-on-tariffs-after-call-with-its-leader-2025-07-31"
+        },
+        {
+          "title": "Free Trial",
+          "url": "https://www.marketbeat.com/articles/the-latest-us-inflation-ticked-higher-last-month-as-trumps-latest-tariff-deadline-nears-2025-07-31"
+        },
+        {
+          "title": "July 11, 2025 10:09 AM",
+          "url": "https://www.newsonair.gov.in/trump-to-impose-35-tariff-on-canada-starting-august-1"
+        },
+        {
+          "title": "Trump administration concedes that it canceled research grants in blue states",
+          "url": "https://www.nbcnews.com/politics/trump-administration/trump-administration-concedes-canceled-research-grants-blue-states-rcna589129"
+        },
+        {
+          "title": "Trump administration admits it canceled clean-energy grants in states that voted for Kamala Harris | CNN Politics",
+          "url": "https://www.cnn.com/2026/07/25/politics/trump-administration-grants-democratic-states"
+        },
+        {
+          "title": "Trump administration admits it canceled grants from Harris voters - UPI.com",
+          "url": "https://www.upi.com/Top_News/US/2026/07/25/trump-harris-grants-slashed/9091785015286/"
+        },
+        {
+          "title": "Trump Administration Admits Canceling Grants to States That Didn't Vote for Him - GV Wire",
+          "url": "https://gvwire.com/2026/07/24/trump-administration-admits-canceling-grants-to-states-that-didnt-vote-for-him/"
+        },
+        {
+          "title": "\"Trump Administration Admits Canceling Grants to States That Did Not Vote for Him\" - Election Law Blog",
+          "url": "https://electionlawblog.org/?p=157593"
+        },
+        {
+          "title": "The Energy Department admits the OMB canceled grants 'solely' to punish Trump's political opponents",
+          "url": "https://reason.com/2026/07/27/the-energy-department-admits-the-omb-canceled-grants-solely-to-punish-trumps-political-opponents/"
+        },
+        {
+          "title": "Trump Team Admits He’s Been Defunding States That Didn’t Vote for Him | The New Republic",
+          "url": "https://newrepublic.com/post/213526/trump-team-admits-defunding-states-didnt-vote-for-him"
+        },
+        {
+          "title": "Court says Trump admin illegally blocked billions in clean energy grants to Democratic states",
+          "url": "https://www.yahoo.com/news/articles/court-says-trump-admin-illegally-222529467.html"
+        },
+        {
+          "title": "Court says Trump admin illegally blocked billions in clean energy grants to Democratic states",
+          "url": "https://www.aol.com/articles/court-says-trump-admin-illegally-222529467.html"
+        },
+        {
+          "title": "Trump Just Gave Us a Horrible New Reason to Worry About the Iran War | The New Republic",
+          "url": "https://newrepublic.com/post/213486/trump-iran-war-horrible-new-reason-worry"
+        },
+        {
+          "title": "Donald Trump disputes Wall Street Journal editorial board's criticism of Iran ceasefire",
+          "url": "https://thehill.com/homenews/media/5825588-donald-trump-wall-street-journal-editorial-board-iran-criticism/"
+        },
+        {
+          "title": "Wall Street Journal editorial board: Trump sending wrong signal to Iran",
+          "url": "https://www.yahoo.com/news/articles/wall-street-journal-editorial-board-204905499.html"
+        },
+        {
+          "title": "Donald Trump's Iran approach criticized in Wall Street Journal editorial",
+          "url": "https://thehill.com/homenews/media/5874592-trump-iran-us-response-ceasefire/"
+        },
+        {
+          "title": "Donald Trump disputes Wall Street Journal editorial on Iran",
+          "url": "https://thehill.com/homenews/administration/5842972-trump-iran-wall-street-journal/"
+        },
+        {
+          "title": "Wall Street Journal board warns Trump against ‘economic bailout’ in Iran deal",
+          "url": "https://thehill.com/homenews/media/5894035-wall-street-journal-board-donald-trump-us-iran-deal/"
+        },
+        {
+          "title": "Wall Street Journal Flips Trump's Own Iran Taunt Back On Him | HuffPost Latest News",
+          "url": "https://www.huffpost.com/entry/wall-street-journal-donald-trump-iran_n_6a4217b9e4b0f4826b462241"
+        },
+        {
+          "title": "2026 Iran war",
+          "url": "https://en.wikipedia.org/wiki/2026_Iran_war"
+        },
+        {
+          "title": "Trump’s Iran War Faces Growing Public Opposition | National Review",
+          "url": "https://www.nationalreview.com/2026/07/a-war-restrained-by-the-people/"
+        },
+        {
+          "title": "Iran Gets Back on Trump’s Bad Side | National Review",
+          "url": "https://www.nationalreview.com/2026/07/iran-gets-back-on-trumps-bad-side/"
+        }
+      ]
+    }
+  ]
+}
