@@ -1,0 +1,893 @@
+{
+  "id": "2026-W8",
+  "year": 2026,
+  "week": 8,
+  "generatedAt": "2026-08-03T15:41:49.918Z",
+  "dateLabel": "August 3, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "# This Week's AI Product Management Briefing\n*Framed for an AI Automations PM at Vocal Media: content pipelines, creator/editorial tooling, audience automation.*\n\n---\n\n### 1. Measure impact, not \"AI button\" clicks\nThe industry has moved past the phase where teams shipped an \"AI feature\" and counted how many users tried it. \n\nThe 2024 landscape was about experimentation — every company added an \"AI button\" and measured success by how many users clicked it. In 2026, that phase is over, and product leaders are being held accountable for demonstrable return on AI investment.\n\n \n\nTeams now track outcomes like \"customers using the AI assistant open 30% fewer support tickets\" or \"AI-guided onboarding reduces time-to-value by 40%\" — a shift from usage metrics to impact metrics that changes how AI PMs prioritize, build, and evaluate features.\n\n**Why it matters:** For your work, this means defining success for a content pipeline or audience-automation feature as a business outcome (e.g., editorial hours saved, creator publish rate, story completion rate), not \"how many creators clicked the AI tool.\" Set that outcome target before you build.\n**Source:** Institute of Product Management — https://www.institutepm.com/knowledge-hub/ai-reshaping-pm-role-2026\n\n---\n\n### 2. Track two sets of metrics at once: product and model\nAn AI PM has to hold both the user outcome and the model's technical behavior in view. \n\nThe PM sets the evaluation framework — including offline testing, A/B experiments, and edge-case checks — and tracks two sets of metrics simultaneously: standard product outcomes such as retention, engagement, and revenue, alongside model metrics such as precision, recall, latency, and hallucination rate.\n\n After launch, the job doesn't stop: \n\nthe manager plans staged rollouts, watches for model drift as real-world data shifts the model's behavior, and decides when to retrain.\n\n**Why it matters:** A creator tool that summarizes or tags content can look great in a demo but hallucinate on 15% of real inputs. Owning both metric sets lets you catch that before it erodes creator trust, and drift-watching matters because content and slang shift fast in a media product.\n**Source:** Wrike — https://www.wrike.com/product-management-guide/ai-product-management/\n\n---\n\n### 3. Real shipped story: quality in tiers, not pass/fail\nRavi Mehta's write-up on Productboard's AI products is honest about launching too early. \n\nThe team admits they didn't have quality out of the gate with their first generative feature, launched before the quality was consistent enough to build user trust, and were premature given it was their first foray into generative AI.\n\n Their key learning: \n\nthink about AI quality in tiers rather than as a binary, using an explicit framework to measure thresholds — because without one, you're guessing.\n\n**Why it matters:** For editorial and creator tooling, \"good enough to ship\" is a judgment call you'll make often. Defining quality tiers (e.g., safe to auto-publish vs. needs human review vs. block) gives your team a shared, defensible bar instead of vibes.\n**Source:** Ravi on Product — https://blog.ravi-mehta.com/p/building-ai-products-lessons-from\n\n---\n\n### 4. How AI PM roles are being scoped: the role is splitting\nMultiple sources point to the same structural shift in what AI PMs are hired to do. \n\nThe \"great reshuffling\" in product management is not random — there is a consistent structural pattern: the PM role is splitting into two tracks, and the compensation gap between them is widening.\n\n The dividing line is judgment: \n\nAI can surface scoring frameworks and weighted matrices, but it cannot weigh a market timing decision against a technical risk against a team capacity constraint against a CEO priority where the weights are not fixed and the data is incomplete — this is judgment work, and judgment is not yet automatable.\n\n One implication for how these roles are structured: \n\nthe highest-leverage roles should have small scopes and high decision authority — the inverse of traditional feature PMs — and push PMs closer to the edges of the organization, into sales and customer success where signals are weak and interpretation is everything.\n\n**Why it matters:** Early in your role, invest visibly in the judgment work — prioritization calls, quality bars, stakeholder alignment with editorial and creator teams — not just shipping volume. That's the track that compounds.\n**Sources:** Institute of Product Management — https://www.institutepm.com/knowledge-hub/ai-reshaping-pm-role-2026 · My PM Interview — https://www.mypminterview.com/p/the-pm-role-rewritten-by-ai\n\n---\n\n### 5. Evals are becoming the defining AI PM skill — and you own prioritization\nWriting evals is moving from a nice-to-have to a core competency. \n\nAs Kevin Weil, CPO of OpenAI, put it: \"Writing evals is going to become a core skill for product managers. It is such a critical part of making a good product with AI.\"\n\n The division of labor is clear: \n\nPMs own eval prioritization — engineers can run evals, but only PMs can decide which examples matter most for the business, because the eval set is a product spec written in test cases.\n\n An eval itself is simpler than it sounds: \n\nyou give the AI a set of representative inputs, score the output on multiple dimensions through a quantitative metric (usually a 0–1 score), and track changes across iterations to measure improvements or regressions.\n\n**Why it matters:** For an audience-automation or content-tagging pipeline, your eval set encodes what \"correct\" means for Vocal's editorial standards. That's product work only you can define — engineers can't guess which creator inputs matter most.\n**Source:** Mind the Product — https://www.mindtheproduct.com/how-to-implement-effective-ai-evaluations/ · Institute of Product Management (eval tooling) — https://www.institutepm.com/knowledge-hub/best-ai-evaluation-tools-2026\n\n---\n\n### 6. Tactic for this week: run a bottom-up error analysis\nThis is the single most concrete thing to apply right now. \n\nError analysis is described as the highest-ROI AI product development activity: you look at the data, label LLM logs, and classify the errors into failure modes, repeating until no new significant failure modes emerge.\n\n The starting move is to look at real outputs: \n\nreview your last 50–100 production interactions and ask what went wrong and what users complained about.\n\n Then group and prioritize: \n\nderive a heatmap of the errors you observe to support prioritization — it gives a clear, visual indication of where the most frequent and impactful issues are concentrated — and use it to derive evals based on the actual issues, by frequency and severity.\n\n Keep the first eval narrow: \n\nstart simple — pick one failure mode (like tone or accuracy) and write a focused eval for just that dimension.\n\n**Why it matters:** In one afternoon you can pull ~50–100 real outputs from a Vocal content or automation feature, sort the failures into 3–4 buckets, and walk into your next planning meeting with a data-backed priority instead of an opinion. \n\nPick one AI feature, define what \"good\" means for five to ten real inputs, and run an eval — you'll learn more from one run than from weeks of manual testing.\n\n**Sources:** Product Compass — https://www.productcompass.pm/p/evaluating-ai-products-error-analysis · Braintrust — https://www.braintrust.dev/blog/evals-for-pms · Productboard — https://www.productboard.com/blog/ai-evals-for-product-managers/",
+      "sources": [
+        {
+          "title": "AI Product Management: The 2026 Guide | Wrike",
+          "url": "https://www.wrike.com/product-management-guide/ai-product-management/"
+        },
+        {
+          "title": "Mastering Metrics for Product Managers in 2026: The Ultimate Guide",
+          "url": "https://www.aakashg.com/metrics-for-product-managers/"
+        },
+        {
+          "title": "AI in Product Management Guide for 2026 for Product Leaders | Gocious",
+          "url": "https://gocious.com/blog/ai-in-product-management-guide-for-2026-for-product-leaders"
+        },
+        {
+          "title": "AI Product Manager Metrics: How to Evaluate AI Product Management in 2026",
+          "url": "https://prodmoh.com/blog/how-to-evaluate-ai-product-management"
+        },
+        {
+          "title": "AI Product Management in 2026: Trends, Tools, and What's Changed | Institute of AI Product Management",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-product-management-2026"
+        },
+        {
+          "title": "AI evals for product managers: the complete guide for 2026 — Lovelaice Resources",
+          "url": "https://www.lovelaice.com/resources/ai-evals-for-product-managers-complete-guide-2026"
+        },
+        {
+          "title": "Best AI Evaluation Tools for Product Managers in 2026 | Eval Stack Guide",
+          "url": "https://www.institutepm.com/knowledge-hub/best-ai-evaluation-tools-2026"
+        },
+        {
+          "title": "The AI PM Career Path in 2026 — What to Learn, What's Obsolete, and Where the Jobs Are - FourWeekMBA",
+          "url": "https://fourweekmba.com/ai-pm-career-path-2026-builder-pm-skills/"
+        },
+        {
+          "title": "The Great Reshuffling: How AI Is Polarizing the Product Manager Role in 2026",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-reshaping-pm-role-2026"
+        },
+        {
+          "title": "AI Product Manager: Real Role or Buzzword?",
+          "url": "https://productschool.com/blog/artificial-intelligence/guide-ai-product-manager"
+        },
+        {
+          "title": "The PM Career Framework for AI (Part 3): AI Labs to Founding",
+          "url": "https://theskip.substack.com/p/the-pm-career-framework-for-ai-part-81a"
+        },
+        {
+          "title": "Why PM Credentials Are Worth More in an AI Workflow",
+          "url": "https://projectmanagementacademy.net/resources/blog/pm-credentials-ai-workflow/"
+        },
+        {
+          "title": "How to Delegate to AI Agents as a PM (2026)",
+          "url": "https://www.ideaplan.io/blog/how-to-delegate-to-ai-agents-as-a-product-manager"
+        },
+        {
+          "title": "(PDF) The Future of Project Leadership: What AI Means for PMOs in 2026 and Beyond",
+          "url": "https://www.researchgate.net/publication/407442370_The_Future_of_Project_Leadership_What_AI_Means_for_PMOs_in_2026_and_Beyond"
+        },
+        {
+          "title": "The PM Role, Rewritten by AI",
+          "url": "https://www.mypminterview.com/p/the-pm-role-rewritten-by-ai"
+        },
+        {
+          "title": "Rethinking Build-Measure-Learn in 2026 When Everyone Can Ship",
+          "url": "https://userpilot.com/blog/build-measure-learn/"
+        },
+        {
+          "title": "The PM's Playbook for Shipping AI Features That Actually Work in Production",
+          "url": "https://www.oreilly.com/radar/the-pms-playbook-for-shipping-ai-features-that-actually-work-in-production/"
+        },
+        {
+          "title": "What Ecommerce Leaders Told Us About the State of Delivery in 2026 - ShipStation",
+          "url": "https://www.shipstation.com/blog/what-ecommerce-leaders-told-us-about-the-state-of-delivery-in-2026/"
+        },
+        {
+          "title": "Inside AI-pilled engineering teams: Five lessons for scaling without losing the plot - Bessemer Venture Partners",
+          "url": "https://www.bvp.com/atlas/inside-ai-pilled-engineering-teams-five-lessons-for-scaling-without-losing-the-plot"
+        },
+        {
+          "title": "How Product is Changing in 2026 — Ant Murphy",
+          "url": "https://www.antmurphy.me/newsletter/how-product-is-changing-in-2026"
+        },
+        {
+          "title": "The Agentic Product Stack in 2026: How Teams Are Shipping AI “Operators” Without Breaking Trust, Cost, or Control",
+          "url": "https://icmd.app/article/the-agentic-product-stack-in-2026-how-teams-are-shipping-ai-operators-without-br-1779153812284"
+        },
+        {
+          "title": "Building AI Products: Lessons from Productboard Spark",
+          "url": "https://blog.ravi-mehta.com/p/building-ai-products-lessons-from"
+        },
+        {
+          "title": "AI Product Management in 2026: A Complete Guide to the New Playbook | Tosea.ai",
+          "url": "https://tosea.ai/blog/ai-product-management-2026-playbook"
+        },
+        {
+          "title": "I Tried Shipping a Feature Every Day for 30 Days Using AI Tools. Here’s What Broke. | by Hafiq Iqmal | Mar, 2026 | Medium",
+          "url": "https://hafiqiqmal93.medium.com/i-tried-shipping-a-feature-every-day-for-30-days-using-ai-tools-heres-what-broke-98d2cecc1e98"
+        },
+        {
+          "title": "A guide on implementing effective AI evaluations",
+          "url": "https://www.mindtheproduct.com/how-to-implement-effective-ai-evaluations/"
+        },
+        {
+          "title": "AI Evals: Getting started with Evals — A practical guide leveraging bottom-up error analysis and an LLM Judge | by Stephan Beyer | Medium",
+          "url": "https://medium.com/@STB_90/getting-started-with-evals-a-step-by-step-guide-leveraging-bottom-up-error-analysis-and-llm-judge-3d9b755824a7"
+        },
+        {
+          "title": "Beyond vibe checks: A PM’s complete guide to evals",
+          "url": "https://www.lennysnewsletter.com/p/beyond-vibe-checks-a-pms-complete"
+        },
+        {
+          "title": "AI Evals for Product Managers: Building Better Feedback Loops for AI Products | Productboard",
+          "url": "https://www.productboard.com/blog/ai-evals-for-product-managers/"
+        },
+        {
+          "title": "PM’s 30-Minute AI Evals: A Lightweight, Repeatable Recipe",
+          "url": "https://sidsaladi.substack.com/p/pms-30-minute-ai-evals-a-lightweight"
+        },
+        {
+          "title": "AI Evals: How to Find The Right AI Product Metrics",
+          "url": "https://www.productcompass.pm/p/evaluating-ai-products-error-analysis"
+        },
+        {
+          "title": "Evals for PMs: A practical guide to AI product quality - Blog - Braintrust",
+          "url": "https://www.braintrust.dev/blog/evals-for-pms"
+        },
+        {
+          "title": "How can product managers build effective AI evaluations for their applications using the strategies highlighted in the latest AI evals framework? | 2025 Guide | GenAI PM",
+          "url": "https://genaipm.com/ai-pm-insights/how-can-product-managers-build-effective-ai-evaluations-for-their-applications-u"
+        },
+        {
+          "title": "AI Evals for PMs: Everything You Need to Know to Get Started ...",
+          "url": "https://www.news.aakashg.com/p/ai-evals"
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "# This Week's AI Automation Digest\n\n## 1. Published Claude Code artifacts can now call MCP connectors on every view\nAnthropic shipped this in the July 13–17 update window: \n\na published Claude Code Artifact can now call MCP connectors every time someone views it, so the page shows live data — and can even take actions — instead of a frozen snapshot from the session that built it.\n\n \n\nBuild an artifact once, then it pulls live data via MCP; artifacts use the viewers' own MCP connectors, so creators don't need to re-run sessions to refresh, and viewers can only see the data they have access to.\n\n One critical gotcha for agencies: \n\na connector-backed dashboard cannot be a public link on any plan.\n\n**Try this** — In Claude Code (v2.1.209+, Pro/Max/Team/Enterprise), with your GitHub connector already authorized, paste:\n> `Build a dashboard artifact of our open pull requests that pulls the live list through my GitHub connector when the page loads. Group by author, show age in days, and flag any PR older than 7 days in red. Publish it and give me the share link for my team (internal, not public).`\n\nThen approve the connector access prompt on first view. Swap GitHub for Linear/Notion/Slack/HubSpot as needed. Requirements confirmed: \n\nConnector calls from artifacts are available on Pro, Max, Team, and Enterprise plans and require Claude Code v2.1.209 or later.\n\n**Source:** Claude Code Docs — https://code.claude.com/docs/en/artifacts\n\n---\n\n## 2. \"Thin prompts, thick artifacts\" — a reframe for how you brief Claude\nJust before the MCP-artifacts launch, Anthropic's Thariq Shihipar posted a framework that pairs directly with the feature above. \n\nHours before the ClaudeDevs MCP post, Thariq Shihipar posted his thin prompts, thick artifacts, thin skills framework.\n\n The idea: \n\nthe HTML file stays the durable spec; connectors supply the moving parts.\n\n Instead of stuffing a paragraph of requirements into a prompt, you keep the prompt short and let a reusable HTML artifact hold the structure.\n\n**Try this** — Use the thin-prompt pattern against a thick artifact you keep and reuse. Paste this exact thin prompt (per the framework's own example):\n> `Build a dashboard artifact of our open pull requests. Pull the live list through my GitHub connector when the page loads.`\n\nThe discipline: your requirements live in the artifact's HTML/CSS layout (the durable spec you refine over time), not in ever-longer prompts. \n\nThariq has advocated HTML over Markdown for agent output — tables, CSS, interactive controls, shareability.\n\n**Source:** explainx.ai — https://explainx.ai/blog/claude-artifacts-mcp-connectors-july-2026\n\n---\n\n## 3. MCP 2026-07-28 shipped final — the stateless-core rewrite is now live\nThis is the biggest protocol change since launch and it published on schedule. \n\nThe 2026-07-28 specification published as final on July 28, 2026, after a ten-week release-candidate validation window that began on May 21; it replaces 2025-11-25 as the current version.\n\n The headline change: \n\nthe spec removes protocol-level sessions and the Mcp-Session-Id header from Streamable HTTP; list endpoints no longer vary per connection, and servers that need cross-call state mint explicit handles passed as ordinary tool arguments — removing the sticky routing and shared session stores that horizontal deployments previously needed.\n\n Nothing breaks overnight: \n\nservers and clients on 2025-11-25 keep working, and anything deprecated stays in the spec for at least twelve months.\n\n**Try this** — If you run remote MCP servers, do these four migration steps now:\n1. \n\nReview any MCP servers or clients you operate for assumptions about sessions and initialisation handshakes.\n\n2. \n\nAssess whether your current workflows should move to explicit handle-based state passing.\n\n3. \n\nCheck your auth implementation against the tightened OAuth and OIDC guidance.\n\n4. \n\nRevisit tool schemas to take advantage of fuller JSON Schema support.\n\nIf you consume MCP via Tier 1 SDKs, you're covered automatically: \n\nsince all tier 1 SDKs have preserved backwards compatibility and have already shipped beta support, you don't need to do anything to maintain support.\n\n**Source:** Model Context Protocol Blog — https://blog.modelcontextprotocol.io/posts/2026-07-28/\n\n---\n\n## 4. Fleet mode: trigger hundreds of parallel subagents by phrasing, not config\nClaude Code's highest-scale orchestration isn't a setting you toggle — it's invoked by how you describe the task. \n\nIn June 2026 Anthropic upgraded the pattern with Dynamic Workflows, where the lead agent can plan and fan out tens to hundreds of parallel subagents in a single session.\n\n The key mental shift: \n\navailable in research preview for Max, Team, and Enterprise plans, it allows the orchestrator to dynamically spawn tens to hundreds of subagents in a single session — Fleet mode is not something you configure, it is something you trigger by describing a task at the right scale.\n\n**Try this** — For a whole-codebase sweep, paste a task scoped wide enough to force fan-out:\n> `Perform a full security audit of this codebase. Check every file in src/ for the following vulnerability classes: SQL injection, XSS, CSRF, insecure direct object reference, and missing authentication checks. Return one deduplicated report grouped by vulnerability class, with file path and line number for each finding.`\n\nClaude Code's orchestrator will decompose this into subagent batches, run them in parallel waves, collect findings, deduplicate, and assemble the final report — the same pattern applies to codebase migrations at scale, large test-writing sweeps, and dependency audits.\n\n Watch the cost: \n\nmultiple parallel subagents each consume tokens, and a workflow with ten subagents running in parallel can consume ten times the tokens of a single-agent workflow for the same wall-clock time.\n\n For hand-built pipelines (not fleet mode), the practical ceiling differs — \n\ndon't fan out 50 subagents in parallel; you'll hit rate limits and the parent will spend half its tokens just orchestrating. Cap at 3-5 concurrent for most pipelines.\n\n**Source:** explainX.ai — https://explainx.ai/blog/claude-code-subagents-multi-agent-workflows-2026\n\n---\n\n## 5. (Non-Claude) n8n's model-swappable agents + scheduled triggers, and its production gaps\nFrom the broader automation world: n8n now treats the LLM as a hot-swappable node, which matters given the year's provider volatility. \n\nOne of n8n's architectural bets is treating the LLM model as an interchangeable node — not a structural dependency; you connect OpenAI, Anthropic, Google Gemini, Mistral, or a self-hosted model via Ollama, and if the vendor changes pricing, token limits, or terms, you swap the LLM node without rebuilding orchestration.\n\n n8n also now ships templates: \n\nin July 2026, n8n offers five prebuilt agents accessible directly from the AI Agent node via the \"pre-built agents\" option, which imports a complete workflow into the canvas with credential setup instructions.\n\n But treat them as scaffolding — \n\ntemplates do not include HITL on tool calls, escalation timeouts, Postgres logging, or monitoring; they are starting points, not deliverables.\n\n**Try this** — Convert any chat-triggered agent into an unattended scheduled worker with one node swap:\n1. In your n8n workflow, delete the **Chat Trigger** node.\n2. Add a **Schedule Trigger** node in its place and set your cadence (e.g., Cron `0 6 * * *` for daily 6 AM).\n3. Wire it into the existing **AI Agent** node input. Per the pattern: \n\nreplace the Chat Trigger with a Schedule Trigger and your agent runs automatically at whatever interval you define — every morning at 6 AM, every hour, every Monday.\n\n4. Before production, manually add the four things templates omit: human-in-the-loop approval on write/delete tool calls, escalation timeouts, Postgres logging, and monitoring.\n\n**Source:** BOVO Digital — https://www.bovo-digital.tech/en/blog/n8n-ai-agents-production-human-in-the-loop-2026\n\n---\n\n## 6. Zapier MCP as a universal connector for Claude's live dashboards\nA practical bridge for the many tools that don't ship a native MCP: route them through Zapier. \n\nConnecting Zapier MCP provides access to over 9,000 external applications.\n\n Once connected, \n\nafter setup, use these tools in prompts exactly like native connectors.\n\n Note the platform requirement: \n\navoid using the browser because live features only work in the desktop app.\n\n**Try this** — Setup steps, then the prompt:\n1. \n\nGo to zapier.com/mcp and sign in to your Zapier account; click to add a new MCP server, set the client to Cowork; pick the apps you want to connect and choose what actions Claude can take (read only, or read + create).\n\n2. Test the connection first — \n\nalways test your connection with a simple email search before building complex layouts.\n\n3. Then paste this exact build prompt (works for LinkedIn, Airtable, Calendly, etc. via Zapier):\n> `Build a content dashboard. Use Zapier MCP to pull LinkedIn post data from the last 14 days. Show impressions, reactions, and comments per post, sorted by engagement rate. Below the table, flag any post where a comment includes the words 'sponsor', 'partnership', or 'collab' so I can reply fast.`\n\nThat prompt is the working example from the source; \n\nwithout MCP, this dashboard doesn't exist — with it, it takes one prompt and a few minutes of setup.\n\n**Source:** AI Fire — https://www.aifire.co/p/live-claude-artifacts-complete-guide-to-master-this-feature\n\n---\n\n*Note on scope: several sources here are third-party blogs/newsletters rather than primary Anthropic docs. Items 1 and 3",
+      "sources": [
+        {
+          "title": "What's new - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        },
+        {
+          "title": "Claude Code June 2026: 10 New Features Devs Need to Know",
+          "url": "https://www.sitepoint.com/claude-code-june-2026-10-new-features-devs-need-to-know/"
+        },
+        {
+          "title": "The Complete Guide to Every Claude Update in Q1 2026 (Tested by Two AI Builders)",
+          "url": "https://aimaker.substack.com/p/anthropic-claude-updates-q1-2026-guide"
+        },
+        {
+          "title": "Claude Features 2026: Projects, Artifacts, Memory, Computer Use, Skills, MCP - Suprmind",
+          "url": "https://suprmind.ai/hub/claude/features/"
+        },
+        {
+          "title": "Claude Updates by Anthropic - July 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "ClaudeLog - Claude Code Docs, Guides, Tutorials & Best Practices",
+          "url": "https://claudelog.com/claude-news/"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - July 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "MCP’s Upcoming 2026 Release Is a Big Deal | by balaji bal | Jun, 2026 | Medium",
+          "url": "https://medium.com/@balajibal/mcps-upcoming-2026-release-is-a-big-deal-1d15990f121f"
+        },
+        {
+          "title": "The 2026-07-28 MCP Specification Release Candidate | Model Context Protocol Blog",
+          "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28-release-candidate/"
+        },
+        {
+          "title": "GitHub MCP Server supports the next MCP specification - GitHub Changelog",
+          "url": "https://github.blog/changelog/2026-07-23-github-mcp-server-supports-the-next-mcp-specification/"
+        },
+        {
+          "title": "MCP 2026: The Biggest Protocol Revision Since Launch (a.k.a. “MCP 2.0”) | by Vishnu Bhargav | Medium",
+          "url": "https://medium.com/@vishnubhargavsitra/mcp-2026-the-biggest-protocol-revision-since-launch-a-k-a-mcp-2-0-3ebff4e91167"
+        },
+        {
+          "title": "MCP 2026-07-28 spec: what changed, what breaks · Stacktree",
+          "url": "https://stacktr.ee/blog/mcp-2026-spec-changes"
+        },
+        {
+          "title": "The 2026-07-28 Specification | Model Context Protocol Blog",
+          "url": "https://blog.modelcontextprotocol.io/posts/2026-07-28/"
+        },
+        {
+          "title": "MCP Is Growing Up - Agentic AI Foundation (AAIF)",
+          "url": "https://aaif.io/blog/mcp-is-growing-up"
+        },
+        {
+          "title": "MCP 2026-07-28: From Local Tool to Distributed Protocol - Agentic AI Foundation (AAIF)",
+          "url": "https://aaif.io/blog/mcp-2026-07-28-whats-changing-and-how-to-migrate"
+        },
+        {
+          "title": "Claude Code Workflows: Deterministic Multi-Agent Orchestration | alexop.dev",
+          "url": "https://alexop.dev/posts/claude-code-workflows-deterministic-orchestration/"
+        },
+        {
+          "title": "Claude Code Subagents and Multi-Agent Workflows (2026)",
+          "url": "https://explainx.ai/blog/claude-code-subagents-multi-agent-workflows-2026"
+        },
+        {
+          "title": "Claude Code Subagents: The Complete 2026 Guide to Agent Teams, skills-hub.ai",
+          "url": "https://skills-hub.ai/blog/claude-code-subagents-2026"
+        },
+        {
+          "title": "Graph Engineering with Claude Code: Subagents as an Agent Graph",
+          "url": "https://www.aibuilderclub.com/blog/graph-engineering-with-claude-code"
+        },
+        {
+          "title": "Claude Code Dynamic Workflows: The Complete Guide - Developers Digest",
+          "url": "https://www.developersdigest.tech/blog/claude-code-dynamic-workflows-guide"
+        },
+        {
+          "title": "Claude Code subagents: the 2026 production playbook - Totalum Blog",
+          "url": "https://www.totalum.app/blog/claude-code-subagents-totalum"
+        },
+        {
+          "title": "Claude Agent SDK in 2026: Complete Guide to Plans, Credits, and Shipping to Production - Totalum Blog",
+          "url": "https://www.totalum.app/blog/claude-agent-sdk-totalum-2026"
+        },
+        {
+          "title": "Prompt Engineering is Dead — Context Engineering Is the Only Skill That Pays in Late 2026 | by Next Level Dev | May, 2026 | Artificial Intelligence in Plain English",
+          "url": "https://ai.plainenglish.io/prompt-engineering-is-dead-context-engineering-is-the-only-skill-that-pays-in-late-2026-6ba9c8e9d456?gi=6bd49ee62b23"
+        },
+        {
+          "title": "The Evolution of Prompt Engineering to Context Design in 2026",
+          "url": "https://www.sdggroup.com/en/insights/blog/the-evolution-of-prompt-engineering-to-context-design-in-2026"
+        },
+        {
+          "title": "Prompt Engineering Is Dead for AI Agents — Here Is What Actually Works — Context Engineering | by Darshandagaa | Towards AI",
+          "url": "https://pub.towardsai.net/prompt-engineering-is-dead-for-ai-agents-here-is-what-actually-works-541ceda072de?gi=bb268afb809a"
+        },
+        {
+          "title": "AI Context Engineering in 2026: Why Prompt Engineering Is No Longer Enough",
+          "url": "https://sombrainc.com/blog/ai-context-engineering-guide"
+        },
+        {
+          "title": "Context Engineering: A Practitioner Methodology for Structured Human-AI Collaboration",
+          "url": "https://arxiv.org/pdf/2604.04258"
+        },
+        {
+          "title": "Context Engineering: A Practical Guide for AI Agents (2026) | Sourcegraph",
+          "url": "https://sourcegraph.com/blog/context-engineering"
+        },
+        {
+          "title": "Context Engineering: The 2026 Playbook for AI Agents",
+          "url": "https://cruxdigits.nl/blog/context-engineering-ai-agents-2026/"
+        },
+        {
+          "title": "Prompt Engineering Best Practices 2026 | Thomas Wiegold Blog",
+          "url": "https://thomas-wiegold.com/blog/prompt-engineering-best-practices-2026/"
+        },
+        {
+          "title": "Share session output as artifacts - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/artifacts"
+        },
+        {
+          "title": "Build live dashboards with Claude Cowork",
+          "url": "https://pietromontaldo.substack.com/p/build-live-dashboards-with-claude"
+        },
+        {
+          "title": "I built a Claude dashboard that organizes my daily work",
+          "url": "https://patrickschaber.substack.com/p/i-built-a-claude-dashboard-that-organizes"
+        },
+        {
+          "title": "Claude Live Artifacts - The 30-Minute Dashboard: A Cross-AI Workflow - Duke Digital Media Community",
+          "url": "https://sites.duke.edu/ddmc/2026/04/24/claude-live-artifacts-the-30-minute-dashboard-a-cross-ai-workflow/"
+        },
+        {
+          "title": "Claude Artifacts MCP Connectors — July 2026",
+          "url": "https://explainx.ai/blog/claude-artifacts-mcp-connectors-july-2026"
+        },
+        {
+          "title": "How I use Claude to build Live Dashboard. Without any code.",
+          "url": "https://vibeproductmarketing.substack.com/p/build-live-artifact-dashboards-claude"
+        },
+        {
+          "title": "Live Claude Artifacts: Complete Guide to Master This Feature",
+          "url": "https://www.aifire.co/p/live-claude-artifacts-complete-guide-to-master-this-feature"
+        },
+        {
+          "title": "ClaudeDevs on X: \"Claude Code artifacts can now call MCP connectors, letting you build dashboards and apps that can fetch information and take actions for each viewer on demand. Available on Pro, Max, Team, and Enterprise plans. Not available on publicly-shared artifacts. https://t.co/FcvtiOqv0J\" / X",
+          "url": "https://x.com/ClaudeDevs/status/2077489907350856038"
+        },
+        {
+          "title": "Build Live Client Dashboards with Claude Code Artifacts",
+          "url": "https://www.digitalapplied.com/blog/live-client-dashboards-claude-artifacts-mcp"
+        },
+        {
+          "title": "Claude Live Artifacts: 5 Templates in 15 Minutes | FindSkill.ai — Learn AI for Your Job",
+          "url": "https://findskill.ai/blog/claude-live-artifacts-5-templates-15-minutes/"
+        },
+        {
+          "title": "n8n AI Agents Tutorial: Master System & User Prompts (2026) | Width.ai",
+          "url": "https://www.width.ai/post/n8n-ai-agents-tutorial-master-system-user-prompts-2026"
+        },
+        {
+          "title": "We need to re-learn what AI agent development tools are in 2026 – n8n Blog",
+          "url": "https://blog.n8n.io/we-need-re-learn-what-ai-agent-development-tools-are-in-2026/"
+        },
+        {
+          "title": "How to Build AI Agents with n8n: Complete 2026 Guide",
+          "url": "https://strapi.io/blog/build-ai-agents-n8n"
+        },
+        {
+          "title": "n8n Release Notes - July 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/n8n"
+        },
+        {
+          "title": "n8n AI Agents in Production 2026: HITL &… | BOVO Digital",
+          "url": "https://www.bovo-digital.tech/en/blog/n8n-ai-agents-production-human-in-the-loop-2026"
+        },
+        {
+          "title": "How To Build AI Agents With N8n In 2026 (No-Code | AIWiner",
+          "url": "https://aiwiner.com/how-to-build-ai-agents-n8n-2026/"
+        },
+        {
+          "title": "How to Build an AI Agent with n8n in 2026 (No Code Required",
+          "url": "https://nicktimes.com/how-to-build-ai-agent-n8n-2026/"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "# AI Industry Briefing — Week of August 3, 2026\n\n## 1. EU starts enforcing AI Act transparency rules — chatbots and deepfakes must now be labeled\n*Region: EU*\n\nThe European Union began enforcing key provisions of its Artificial Intelligence Act on Aug. 2, requiring companies to disclose when people are interacting with AI and to label certain AI-generated or manipulated content.\n\n In practice, \n\nchatbots, AI agents and digital avatars must clearly inform users that they are dealing with an automated system rather than a person, and deepfake images, video and audio must be labeled with machine-readable markings that allow automated detection.\n\n This is the first wave of \"live\" obligations under the world's first comprehensive AI law, though \n\nenforcement is divided among the European Commission's AI Office, national regulators and the European Data Protection Supervisor, while separate rules for high-risk AI systems have been delayed until 2027 and 2028.\n\n For a media company, this matters directly: any AI-assisted content, chatbots, or synthetic media reaching EU audiences now carries disclosure and labeling duties, and vertically integrated AI providers face tighter oversight because \n\nthe AI Office gained expanded supervisory powers extending beyond general-purpose models to the systems built on them, consolidating oversight in Brussels rather than across twenty-seven national regulators.\n\nSource: The AI Insider — https://theaiinsider.tech/2026/08/03/eu-begins-enforcing-ai-act-as-transparency-rules-take-effect/\n\n## 2. Cheap Chinese open-weight models split Silicon Valley and Washington\n*Region: China / US*\n\nOpen, freely available Chinese AI models have become a genuine strategic fault line this week. \n\nThe bigger split is over free, open-weight Chinese AI models such as Moonshot AI's Kimi K3, which are powerful enough to stand in for expensive products from OpenAI and Anthropic.\n\n The disagreement runs through the US industry itself: \n\nMicrosoft, Nvidia, Palantir and Meta signed a letter urging lawmakers not to restrict open models, while OpenAI and Anthropic call the Chinese models a security risk.\n\n The tension is sharpened by hardware news, as \n\na report this week that China has begun mass-producing specialty chips key to the AI boom set off a selloff that erased $1 trillion in market value from other chip manufacturers.\n\n Why it matters: cheap, capable open models lower the cost of building AI products (including for publishers and creator platforms), but they also put US policymakers in a bind, with \n\nTreasury Secretary Scott Bessent suggesting sanctions on Chinese AI firms over alleged IP theft even as startup founders lobby Commerce not to cut off access.\n\nSource: Boing Boing (citing The Guardian) — https://boingboing.net/2026/08/02/china-tech-rattles-silicon-valley.html\n\n## 3. The US wants Asia on its AI stack — but China's cheaper models are winning the region\n*Region: China / Asia-Pacific*\n\nThe AI race is increasingly being fought over which countries adopt whose technology, and Asia is the main battleground. \n\nThe world's largest continent is becoming the center of the artificial intelligence race between the U.S. and China.\n\n Washington's export push has landed softly: \n\nearlier this month Politico cited three former officials reporting the Commerce Department had received a less-than-expected 78 applications for the American AI Exports Program,\n\n though an ITA spokesperson later said application volume \"exceeded our expectations.\" Meanwhile Beijing is courting developing markets, with \n\nXi Jinping announcing China would provide developing countries with 5,000 AI training opportunities and seminars, while developing AI application cooperation centers with Southeast Asia and other regions.\n\n As one analyst put it, \n\nwhile the U.S. and China compete fiercely in AI technology and diplomacy through distinct approaches, they ultimately cannot fully decouple from one another.\n\n For media companies operating internationally, this shapes which AI tools, languages, and platforms dominate in fast-growing markets.\nSource: CNBC — https://www.cnbc.com/2026/07/30/us-wants-asia-to-use-its-ai-but-china-dominates-cheaper-models.html\n\n## 4. UAE and India build a \"sovereign\" AI supercomputer to bypass Big Tech clouds\n*Region: Gulf / India*\n\nAbu Dhabi's G42 and the Indian government have finalized plans for a large sovereign AI system, part of a broader push by governments to own their AI infrastructure rather than rent it. \n\nG42 and the Government of India finalized the commercial framework for Condor Galaxy India, an 8-exaflop AI supercomputer powered by 64 Cerebras CS-3 systems, supporting research, government and enterprise AI workloads under Indian data jurisdiction.\n\n The strategic logic is explicit: \n\nIndia is partnering with the UAE to ease the grip of Amazon, Microsoft, and Google on AI computing, since any government wanting to use AI today typically rents computing power from one of those three.\n\n The deal also reflects Gulf ambitions to lead in \"sovereign AI,\" where \n\nthe UAE's Falcon H1 and Saudi Arabia's ALLaM helped the region claim four of the ten leading positions on a 2026 sovereignty index.\n\n For media firms, sovereign compute and locally governed models are becoming the backbone for AI services in these fast-growing markets.\nSource: Middle East AI News — https://www.middleeastainews.com/p/uae-government-unveils-first-ai-agents\n\n## 5. NYT-led publishers seek court sanctions against OpenAI, alleging destroyed evidence\n*Region: US (with international relevance)*\n\nThe copyright fight that could reshape how AI companies use news content escalated sharply. \n\nThe New York Times, the New York Daily News, and 15 other media organizations filed a motion asking a Manhattan federal judge to impose sanctions on OpenAI, alleging the company withheld and destroyed evidence central to a high-stakes copyright lawsuit.\n\n At the core is a claim that \n\nOpenAI misled the court by asserting it lacked the capability to search its systems for copyrighted material — a claim the publishers say was false, given that OpenAI had conducted exactly such searches before any of the news organizations sued.\n\n OpenAI denies wrongdoing, with a spokesperson saying the publishers are making \n\n\"blatantly false allegations\" and that the company will keep \"defending our users' privacy and the long-established principles of fair use.\"\n\n Why it matters for publishers everywhere: the stakes are large and precedent-setting — \n\nin the largest copyright settlement so far, Anthropic agreed to pay book authors $1.5 billion for training its Claude chatbot on their works without authorization\n\n — and the underlying question is \n\nwhether AI chatbots are unfairly competing as an information source, draining web traffic without doing the journalistic work of gathering news.\n\nSource: Quartz (citing AP) — https://qz.com/new-york-times-openai-sanctions-copyright-lawsuit-071026\n\n---\n*Note: Several of these stories are days to a few weeks old; the EU AI Act enforcement (Aug 2) and the China open-model/chip tensions are the freshest developments this week. If you'd like, I can dig deeper on any single item or refresh a specific thread.*",
+      "sources": [
+        {
+          "title": "AI News This Week: AI model releases July 2026 | AI Weekly Pulse #4",
+          "url": "https://inkandalgorithms.systeme.io/ai-weekly-pulse-4-ai-model-releases-july-2026"
+        },
+        {
+          "title": "AI Updates Today (August 2026) – Latest AI Model Releases",
+          "url": "https://llm-stats.com/llm-updates"
+        },
+        {
+          "title": "LLM News Today (August 2026) – AI Model Releases",
+          "url": "https://llm-stats.com/ai-news"
+        },
+        {
+          "title": "AI Model Release Tracker | Evertune",
+          "url": "https://www.evertune.ai/resources/ai-model-tracker"
+        },
+        {
+          "title": "AI Model Release Tracker: New LLM Launches, Updated Weekly | AI Flash Report",
+          "url": "https://aiflashreport.com/model-releases.html"
+        },
+        {
+          "title": "ai models weekly summary",
+          "url": "https://aimodels.substack.com/p/ai-models-weekly-summary"
+        },
+        {
+          "title": "ai can taste 4d models nobel prizes",
+          "url": "https://aisearch.substack.com/p/ai-can-taste-4d-models-nobel-prizes"
+        },
+        {
+          "title": "China AI models split Silicon Valley and the White House",
+          "url": "https://boingboing.net/2026/08/02/china-tech-rattles-silicon-valley.html"
+        },
+        {
+          "title": "Artificial intelligence: Latest News and Updates | South China Morning Post",
+          "url": "https://www.scmp.com/topics/artificial-intelligence"
+        },
+        {
+          "title": "China's Moonshot AI unveils Kimi K3 that rivals OpenAI, Anthropic",
+          "url": "https://www.cnbc.com/2026/07/17/moonshot-ai-kimi-k3-model-openai-anthropic-china.html"
+        },
+        {
+          "title": "The U.S. wants Asia to use its AI — but China dominates cheaper models",
+          "url": "https://www.cnbc.com/2026/07/30/us-wants-asia-to-use-its-ai-but-china-dominates-cheaper-models.html"
+        },
+        {
+          "title": "A firsthand look at China’s sprint to AI greatness",
+          "url": "https://www.nbcnews.com/world/china/first-hand-look-chinas-sprint-ai-greatness-rcna589126"
+        },
+        {
+          "title": "AI | South China Morning Post",
+          "url": "https://www.scmp.com/news/china-future-tech/ai"
+        },
+        {
+          "title": "Weekly China AI News from August 19, 2024 to August 25, 2024",
+          "url": "https://recodechinaai.substack.com/p/chinas-humanoid-robot-former-huawei/comments"
+        },
+        {
+          "title": "Weekly China AI News from July 1st, 2024 to July 14th, 2024",
+          "url": "https://recodechinaai.substack.com/p/inside-chinas-largest-ai-show-self/comments"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/huawei-all-in-on-ai-platforms-mandate/comments"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/is-tsmc-producing-huaweis-ai-chip/comments"
+        },
+        {
+          "title": "EU AI Act News 2026: New Deadlines & Business Impact",
+          "url": "https://www.lumenova.ai/blog/eu-ai-act-delays-july-2026/"
+        },
+        {
+          "title": "EU AI Act Update: Timeline Relief, Targeted Simplification, and New Prohibitions | Inside Privacy",
+          "url": "https://www.insideprivacy.com/artificial-intelligence/eu-ai-act-update-timeline-relief-targeted-simplification-and-new-prohibitions/"
+        },
+        {
+          "title": "EU AI Act: What Actually Applies on 2 August 2026 - Technology Org",
+          "url": "https://www.technology.org/2026/07/17/eu-ai-act-what-actually-applies-on-2-august-2026/"
+        },
+        {
+          "title": "AI Act | Shaping Europe's digital future - European Union",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+        },
+        {
+          "title": "EU agrees to amend AI Act, clarifies overlap with machinery rules | IAPP",
+          "url": "https://iapp.org/news/a/eu-agrees-to-amend-ai-act-clarifies-overlap-with-machinery-rules"
+        },
+        {
+          "title": "EU AI Act Update: Timeline Relief, Targeted Simplification, and New Prohibitions | Inside Global Tech",
+          "url": "https://www.insideglobaltech.com/2026/05/28/eu-ai-act-update-timeline-relief-targeted-simplification-and-new-prohibitions/"
+        },
+        {
+          "title": "Artificial Intelligence: Council and Parliament agree to simplify and streamline rules - Consilium",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/"
+        },
+        {
+          "title": "EU Begins Enforcing AI Act as Transparency Rules Take Effect",
+          "url": "https://theaiinsider.tech/2026/08/03/eu-begins-enforcing-ai-act-as-transparency-rules-take-effect/"
+        },
+        {
+          "title": "Media Briefing: AI visibility is becoming publishers’ newest currency",
+          "url": "https://digiday.com/media/media-briefing-ai-visibility-is-becoming-publishers-newest-currency/"
+        },
+        {
+          "title": "AI Deals and Lawsuits | Platforms and Publishers",
+          "url": "https://tow.cjr.org/ai-deals-lawsuits/"
+        },
+        {
+          "title": "Publishers Are Losing Their Readers to AI. The Washington Post's Tech Arm Built a Solution",
+          "url": "https://www.prnewswire.com/news-releases/publishers-are-losing-their-readers-to-ai-the-washington-posts-tech-arm-built-a-solution-302823047.html"
+        },
+        {
+          "title": "AI News — Today's Top Stories, Tracked & Ranked | AI Weekly",
+          "url": "https://aiweekly.co/"
+        },
+        {
+          "title": "News Publishers with AI Partnerships in 2026 - BuzzStream",
+          "url": "https://www.buzzstream.com/blog/partnerships-in-ai/"
+        },
+        {
+          "title": "Publishing News & Trends in Publisher Marketing [Adweek]",
+          "url": "https://www.adweek.com/category/publishing/"
+        },
+        {
+          "title": "The state of AI in media | How AI is transforming the business side of publishing - Digiday",
+          "url": "https://digiday.com/sponsored/the-state-of-ai-in-media/"
+        },
+        {
+          "title": "Bold call: AI will rewrite publishers’ websites in 2026",
+          "url": "https://digiday.com/media/bold-call-ai-will-rewrite-publishers-websites-in-2026/"
+        },
+        {
+          "title": "Top AI & Big Data Publications to Follow in 2026",
+          "url": "https://certainly.io/blog/top-ai-big-data-publications"
+        },
+        {
+          "title": "AI May Be Making Publishing Easier, But It’s Still Not Easy",
+          "url": "https://www.publishersweekly.com/pw/by-topic/international/international-book-news/article/100926-ai-may-be-making-publishing-easier-but-it-s-still-not-easy.html"
+        },
+        {
+          "title": "The Week’s 10 Biggest Funding Rounds: AI, Energy And Biotech Lead The Way",
+          "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-energy-biotech-joulent/"
+        },
+        {
+          "title": "The Week’s 10 Biggest Funding Rounds: No Summer Doldrums As Dollars Still Flow To AI",
+          "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-defense-fintech-robotics/"
+        },
+        {
+          "title": "The Week’s 10 Biggest Funding Rounds: AI Drives Another Spree Of Megadeals",
+          "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-marketing-robotics-baseten/"
+        },
+        {
+          "title": "Crunchbase Data: Global Startup Investment Hit Record $510B In H1 2026 As AI Boom Accelerates Funding And Exits",
+          "url": "https://news.crunchbase.com/venture/global-startup-exits-ipo-ma-soar-ai-q2-h1-2026/"
+        },
+        {
+          "title": "AI Startup Funding Announcements - Scouts by Yutori",
+          "url": "https://scouts.yutori.com/68f22e10-d5fe-4e94-b1c8-9c6218cfdb2c"
+        },
+        {
+          "title": "Latest AI Startup Funding News and VC Investment Deals - 2026 | News",
+          "url": "https://www.crescendo.ai/news/latest-vc-investment-deals-in-ai-startups"
+        },
+        {
+          "title": "OpenAI raises $122 billion to accelerate the next phase of AI | OpenAI",
+          "url": "https://openai.com/index/accelerating-the-next-phase-ai/"
+        },
+        {
+          "title": "50 Top AI Funded Startups (July 2026)",
+          "url": "https://aifundingtracker.com/top-50-ai-startups/"
+        },
+        {
+          "title": "AI Arrives In The Middle East: US Strikes A Deal with UAE and KSA",
+          "url": "https://newsletter.semianalysis.com/p/ai-arrives-in-the-middle-east-us-strikes-a-deal-with-uae-and-ksa"
+        },
+        {
+          "title": "UAE government unveils first AI Agents; Qiddiya to deploy Google AI",
+          "url": "https://www.middleeastainews.com/p/uae-government-unveils-first-ai-agents"
+        },
+        {
+          "title": "Invent a Better Everyday | Abu Dhabi, UAE | G42 | UAE to Deploy 8 Exaflop Supercomputer in India to Strengthen Local Sovereign AI Infrastructure",
+          "url": "https://www.g42.ai/resources/news/uae-deploy-8-exaflop-supercomputer-india-strengthen-local-sovereign-ai-infrastructure"
+        },
+        {
+          "title": "UAE, Saudi Arabia lead global race to put autonomous AI to work | Khaleej Times",
+          "url": "https://www.khaleejtimes.com/business/tech/uae-saudi-arabia-lead-global-race-to-put-autonomous-ai-to-work"
+        },
+        {
+          "title": "UAE wealth funds set for new investments in India | ZAWYA",
+          "url": "https://www.zawya.com/en/business/uae-wealth-funds-set-for-new-investments-in-india-416654"
+        },
+        {
+          "title": "India, UAE partner on AI sovereignty to bypass Google, Microsoft - Rest of World",
+          "url": "https://restofworld.org/2026/india-uae-g42-cerebras-ai-sovereignty/"
+        },
+        {
+          "title": "UAE and Saudi Arabia prioritize investments in data streaming platforms to fuel AI",
+          "url": "https://www.consultancy-me.com/news/13836/uae-and-saudi-arabia-prioritize-investments-in-data-streaming-platforms-to-fuel-ai"
+        },
+        {
+          "title": "UAE and Saudi Arabia dominate global Sovereign AI index",
+          "url": "https://techchannel.news/uae-and-saudi-arabia-dominate-global-sovereign-ai-index/"
+        },
+        {
+          "title": "September 13, 2024 10:26 PM",
+          "url": "https://newsonair.gov.in/billion-dollar-dreams-india-uae-tech-alliance-is-shaping-the-future-of-innovation"
+        },
+        {
+          "title": "New York Times, publishers seek sanctions against OpenAI",
+          "url": "https://qz.com/new-york-times-openai-sanctions-copyright-lawsuit-071026"
+        },
+        {
+          "title": "NYT and Publishers Demand Sanctions Against OpenAI, Alleging Evidence Cover-Up in Copyright Battle — BigGo Finance",
+          "url": "https://finance.biggo.com/news/2dd1642f-4fda-4e4f-b583-65989eb318c9"
+        },
+        {
+          "title": "News outlets seek sanctions against OpenAI in copyright battle | Euronews",
+          "url": "https://www.euronews.com/next/2026/07/09/news-outlets-seek-sanctions-against-openai-in-copyright-battle"
+        },
+        {
+          "title": "NYT-Led Publishers Escalate Copyright Fight, Seek Court Sanctions Against OpenAI - Benzinga",
+          "url": "https://www.benzinga.com/markets/private-markets/26/07/60398590/new-york-times-led-publishers-escalate-copyright-fight-seek-court-sanctions-against-openai"
+        },
+        {
+          "title": "News outlets ask judge to sanction OpenAI in copyright case",
+          "url": "https://thenextweb.com/news/news-outlets-openai-sanctions-copyright-fight"
+        },
+        {
+          "title": "New York Times and Other News Outlets Accuse OpenAI of Lying in Discovery, Demand Legal Sanctions Against AI Giant",
+          "url": "https://variety.com/2026/digital/news/new-york-times-news-outlets-accuse-openai-of-lying-lawsuit-1236805648/"
+        },
+        {
+          "title": "New York Times and other publishers ask court to penalize OpenAI",
+          "url": "https://www.inquirer.com/business/openai-new-york-times-media-companies-lawsuits-withhold-evidence-20260710.html"
+        },
+        {
+          "title": "www.malaymail.com",
+          "url": "https://www.malaymail.com/news/world/2024/11/30/canadian-media-firms-sue-openai-allege-copyright-breaches-in-ai-training-data/158454"
+        },
+        {
+          "title": "Canadian news companies challenge OpenAI over alleged copyright breaches",
+          "url": "https://www.aol.com/news/major-canadian-news-media-companies-160546550.html"
+        }
+      ]
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "# This Week's US Political Briefing — Read Across the Spectrum\n*Election-season edition. Sources dated late July–August 3, 2026.*\n\n---\n\n## STORY 1: Todd Blanche confirmed toward permanent Attorney General after GOP holdouts flip\n\n**What actually happened (factual anchor):** \n\nOn Monday, August 3, Republican Senators John Cornyn (Texas) and Thom Tillis (North Carolina) announced they will support acting Attorney General Todd Blanche's confirmation, hours after Blanche issued a formal order terminating the roughly $1.8 billion \"anti-weaponization fund\" and clarifying the scope of a Justice Department agreement not to audit Trump, his family, or his businesses. Those issues had been the senators' key sticking points.\n\n \n\nDays earlier, the Judiciary Committee had postponed a key vote, throwing the nomination into jeopardy with the Senate about to break for August recess.\n\n Blanche has run the department in an acting capacity since April 2026.\n\n**PROGRESSIVE framing**\n- *The Washington Post* — **Opinion/editorial.** https://www.washingtonpost.com/opinions/2026/07/24/todd-blanche-attorney-general-nomination-deserves-senate-rejection/\n- The editorial argues the nomination should be rejected. \n\nIt frames the question as whether a handful of Senate Republicans will admit that Trump's attorney general nominee deserves rejection.\n\n The progressive read emphasizes Blanche's role as Trump's former personal attorney and worries about DOJ independence, a concern reinforced at his hearing when, as reporting noted, \n\nhis comments gave a nod to an ongoing Democratic concern that his personal relationship with Trump affects his ability to serve the American people, and the IRS lawsuit settlement did not help assuage those concerns.\n\n**NEUTRAL framing**\n- *CNN* — **News reporting.** https://www.cnn.com/2026/07/29/politics/todd-blanche-nomination-cornyn\n- \n\nThe delay of the Judiciary Committee vote threw the nomination into serious jeopardy, with just days left before the Senate's August recess; if the White House couldn't reach a deal with holdout Sen. John Cornyn, a vote could stall indefinitely or be pushed to fall at the earliest.\n\n \n\nThe GOP holds a 12-10 edge on the panel, giving Blanche a narrow path in a party-line vote at best, as Democrats are solidly opposed — which gave significant power to Cornyn and Tillis, two votes with a few months left after being forced out or primaried by Trump.\n\n**CONSERVATIVE framing**\n- *House Judiciary Committee Republicans* — **Opinion/advocacy (official GOP statement).** https://judiciary.house.gov/media/in-the-news/confirm-todd-blanche\n- The conservative case is that Blanche is highly qualified and refocused the department. \n\nThe argument holds Blanche has the experience, expertise, and character needed, and that as deputy and acting AG he pointed DOJ away from what Republicans call the \"lawfare\" of the Biden administration and back toward its core mission.\n\n *Note on a factual claim:* the same statement asserts \n\nhomicides are down, with \"the lowest murder rate since 1900.\"\n\n That specific superlative is a political claim that cannot be verified from these sources and should be treated as an assertion, not established fact.\n\n---\n\n## STORY 2: Michigan's Democratic Senate primary — progressive El-Sayed vs. moderate Stevens (votes August 4)\n\n**What actually happened (factual anchor):** \n\nAbdul El-Sayed, Rachel Howard, Mallory McMorrow, Haley Stevens, and Travis Zollner are running in the Democratic primary for U.S. Senate in Michigan on August 4, 2026\n\n (McMorrow suspended her campaign earlier). \n\nWhoever wins is set to face Republican Mike Rogers, the presumptive nominee, in one of the most competitive Senate races of the 2026 midterms.\n\n \n\nThe RealClearPolitics polling average shows El-Sayed leading Stevens 50.5% to 40.3%.\n\n**PROGRESSIVE framing**\n- *The Hill* — **News reporting.** https://thehill.com/homenews/campaign/5997606-el-sayed-leads-stevens-michigan-senate-poll/\n- The progressive-favorable read notes momentum for the left's candidate. \n\nProgressive Abdul El-Sayed is leading Rep. Haley Stevens by 15 points ahead of the primary, with 54% to Stevens's 39% in an Emerson survey.\n\n El-Sayed's coalition and issue set are central to this framing: \n\nhe draws strong backing among voters under 50 and progressives attracted to Medicare for All, reducing corporate influence in politics, and direct challenges to establishment priorities.\n\n \n\nHe has earned endorsements from Rep. Alexandria Ocasio-Cortez and Sen. Bernie Sanders.\n\n**NEUTRAL framing**\n- *Newsweek* — **News reporting.** https://www.newsweek.com/abdul-el-sayed-chances-haley-stevens-michigan-primary-debate-12253368\n- \n\nMichigan's Senate race is expected to be among the most competitive of 2026, and the outcome of the August 4 Democratic primary between Stevens and El-Sayed could prove critical; Republican Mike Rogers is the presumptive GOP nominee.\n\n The neutral account also flags the age split driving results: \n\nvoters under 50 break for El-Sayed by 42 points, the gap tightens among voters in their 50s, and voters over 60 flip to Stevens by 14 points.\n\n**CONSERVATIVE / moderate-Democratic framing**\n- *The Hill* — **News reporting (reporting the electability critique).** https://thehill.com/homenews/campaign/5997606-el-sayed-leads-stevens-michigan-senate-poll/\n- The right and party moderates emphasize general-election risk. \n\nThe moderate faction has become increasingly anxious about El-Sayed securing the nomination, worrying his progressive politics may hinder his chances against Rogers.\n\n Polling is cited to support this: \n\none Michigan survey showed Rogers beating El-Sayed by 10 points in a hypothetical matchup, while Stevens narrowly edged out Rogers.\n\n Note this cuts against El-Sayed's polling lead in the *primary* — the two claims are about different contests and both can be true.\n\n---\n\n## STORY 3: US–Iran war and the war-powers fight over Congress's role\n\n**What actually happened (factual anchor):** \n\nThe conflict is five months old, and a ceasefire signed in June fell apart.\n\n \n\nTrump said at a Friday Cabinet meeting the US would keep \"hitting them very hard,\" and earlier in the week US and Saudi fighter aircraft struck sites in Iraq after Iranian-backed militias launched drones toward Saudi Arabia.\n\n \n\nThe Wall Street Journal reported Trump had ordered the Pentagon to launch fresh strikes on Iran as soon as this weekend.\n\n On July 23, \n\nthe US House voted 214 to 208 to halt Trump's war in Iran absent congressional approval.\n\n \n\nEven if it passed the Senate it would not compel the administration to end the war, because concurrent resolutions lack the force of law; a Senate effort failed 47 to 49.\n\n**PROGRESSIVE framing**\n- *NPR* — **News reporting.** https://www.npr.org/2026/07/23/nx-s1-5904515/congress-iran-war-powers-vote\n- The progressive read stresses that Congress, not the president, holds war authority. \n\nThe House approved a resolution to remove US forces from hostilities with Iran, reflecting growing frustration over the war and over lawmakers' ability to conduct oversight; though not legally binding, it was a symbolic rebuke over a war Congress never authorized.\n\n Progressive leaders make the constitutional case directly: \n\nRep. Pramila Jayapal argued Trump exceeded his authority under Article I, saying Congress alone has the power to declare war and troops cannot be put at risk based on any president's opinion unilaterally.\n\n**NEUTRAL framing**\n- *CNN* — **News reporting.** https://www.cnn.com/2026/08/01/world/live-news/iran-war-trump\n- \n\nOfficials from mediating nations, including Qatar and Pakistan, have been working to stave off a new escalation, including an effort to let commercial traffic resume through the Strait of Hormuz.\n\n \n\nTrump suggested ongoing strikes were unlikely to end soon, telegraphing a strategy to continue attacks until Iran returns to negotiations, though he has repeatedly threatened to escalate against infrastructure without following through, amid signs the conflict is widening regionally.\n\n**CONSERVATIVE framing**\n- *Fox News* — **News reporting.** https://www.foxnews.com/politics/trump-says-losers-schumer-dems-would-have-criticized-any-decision-he-made-iran\n- The conservative framing casts the war-powers push as partisan and defends executive authority. \n\nTrump argued Democrats would have criticized any decision he made — that if he acted it's \"no good,\" and if he hadn't they'd have said he should have.\n\n Republican leaders frame the strikes as justified deterrence: \n\nSenate Majority Leader John Thune praised Trump for acting to deter Iran from expanding its nuclear program and supporting terrorist groups.\n\n Notably, the anti-war position is not purely partisan — \n\nRepublican Reps. Thomas Massie, Brian Fitzpatrick, Tom Barrett, and Warren Davidson crossed party lines to support the war-powers resolution.\n\n---\n\n## STORY 4: The national redistricting battle heading into the midterms\n\n**What actually happened (factual anchor):** Both parties have redrawn congressional maps mid-decade to gain seats. \n\nTexas was the first state to meet Trump's demands",
+      "sources": [
+        {
+          "title": "Politics - The Washington Post",
+          "url": "https://www.washingtonpost.com/politics/"
+        },
+        {
+          "title": "2026 United States House of Representatives election in Alaska",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_Alaska"
+        },
+        {
+          "title": "2026 United States Senate special election in Florida",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida"
+        },
+        {
+          "title": "Politics News: Latest on Trump Administration, Congress, Elections and More | NBC News",
+          "url": "https://www.nbcnews.com/politics"
+        },
+        {
+          "title": "2026 Florida elections",
+          "url": "https://en.wikipedia.org/wiki/2026_Florida_elections"
+        },
+        {
+          "title": "2026 United States Senate election in Minnesota",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota"
+        },
+        {
+          "title": "2026 United States House of Representatives elections in Florida",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Florida"
+        },
+        {
+          "title": "PBS News: News, Analysis, Top Headlines, Live Coverage",
+          "url": "https://www.pbs.org/newshour/"
+        },
+        {
+          "title": "Election 2026: Results, news and analysis | CNN Politics",
+          "url": "https://www.cnn.com/election/2026"
+        },
+        {
+          "title": "Politics and Government News",
+          "url": "https://www.cnbc.com/politics/"
+        },
+        {
+          "title": "2026 Midterms: Latest News, Updates and Results of the Midterm Elections | NBC News",
+          "url": "https://www.nbcnews.com/politics/2026-election"
+        },
+        {
+          "title": "2026 midterm election: Latest updates, news and commentary about the midterms",
+          "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/"
+        },
+        {
+          "title": "The 2026 Midterm Elections: What Every American Needs to Know Right Now – Breaking AC News",
+          "url": "https://breakingac.com/news-from-our-partners/2026/jul/30/the-2026-midterm-elections-what-every-american-needs-to-know-right-now/"
+        },
+        {
+          "title": "Election 2026: Results, news and analysis | CNN Politics",
+          "url": "https://www.cnn.com/election/2026"
+        },
+        {
+          "title": "United States Congress elections, 2026 - Ballotpedia",
+          "url": "https://ballotpedia.org/United_States_Congress_elections,_2026"
+        },
+        {
+          "title": "100 days out from Election Day, our insider shares his intel",
+          "url": "https://www.axios.com/2026/07/26/midterm-election-outlook-100-days"
+        },
+        {
+          "title": "Watch CBS News",
+          "url": "https://www.cbsnews.com/video/what-early-polls-are-projecting-as-politicians-look-ahead-to-2026-midterm-elections"
+        },
+        {
+          "title": "Watch CBS News",
+          "url": "https://www.cbsnews.com/video/democrats-take-more-aggressive-approach-as-2026-midterm-elections-come-into-focus"
+        },
+        {
+          "title": "2026 election",
+          "url": "https://www.pbs.org/newshour/classroom/tag/2026-election"
+        },
+        {
+          "title": "LIVE UPDATES",
+          "url": "https://www.foxnews.com/elections/2022/midterm-results/state/connecticut"
+        },
+        {
+          "title": "El-Sayed Takes Lead Over Stevens Days Before Michigan Primary - Newsweek",
+          "url": "https://www.newsweek.com/el-sayed-lead-stevens-michigan-primary-poll-12273776"
+        },
+        {
+          "title": "United States Senate election in Michigan, 2026 (August 4 Democratic primary) - Ballotpedia",
+          "url": "https://ballotpedia.org/United_States_Senate_election_in_Michigan,_2026_(August_4_Democratic_primary)"
+        },
+        {
+          "title": "Michigan Democratic Senate Primary Winner Predictions & O... 2026 | Polymarket",
+          "url": "https://polymarket.com/event/michigan-democratic-senate-primary-winner"
+        },
+        {
+          "title": "2026 Michigan Senate - Democratic Primary (August 4)",
+          "url": "https://www.realclearpolling.com/polls/senate/democratic-primary/2026/michigan"
+        },
+        {
+          "title": "Abdul El-Sayed Chances Against Haley Stevens: Final Michigan Senate Primary Polls - Newsweek",
+          "url": "https://www.newsweek.com/abdul-el-sayed-chances-haley-stevens-final-michigan-polls-12271848"
+        },
+        {
+          "title": "El-Sayed's Chances Against Stevens in Michigan Primary After Debate - Newsweek",
+          "url": "https://www.newsweek.com/abdul-el-sayed-chances-haley-stevens-michigan-primary-debate-12253368"
+        },
+        {
+          "title": "New poll shows El-Sayed, Stevens statistically tied in Michigan’s Democratic U.S. Senate primary • Michigan Advance",
+          "url": "https://michiganadvance.com/2026/07/08/new-poll-shows-el-sayed-stevens-statistically-tied-in-michigans-democratic-u-s-senate-primary/"
+        },
+        {
+          "title": "Michigan Senate race latest: Stevens, El-Sayed new poll, shots traded | FOX 2 Detroit",
+          "url": "https://www.fox2detroit.com/news/haley-stevens-abdul-el-sayed-poll-michigan-senate-race-latest"
+        },
+        {
+          "title": "Abdul El-Sayed leads Haley Stevens by 15 points in Michigan Senate primary: Poll",
+          "url": "https://thehill.com/homenews/campaign/5997606-el-sayed-leads-stevens-michigan-senate-poll/"
+        },
+        {
+          "title": "Michigan 2026 Poll: Abdul El-Sayed Leads Haley Stevens for Democratic US Senate Nomination - Emerson Polling",
+          "url": "https://emersoncollegepolling.com/michigan-2026-poll-abdul-el-sayed-leads-haley-stevens-for-democratic-us-senate-nomination/"
+        },
+        {
+          "title": "Federal court blocks Texas from using new congressional map for 2026 elections - CBS News",
+          "url": "https://www.cbsnews.com/news/texas-congressional-map-2026-judge-blocks/"
+        },
+        {
+          "title": "Federal court blocks Texas from using new congressional gerrymander in 2026 midterms",
+          "url": "https://www.votebeat.org/texas/2025/11/18/redistricting-ruling-lawsuit-el-paso-court-2026-midterms/"
+        },
+        {
+          "title": "Texas GOP House map blocked by federal judges",
+          "url": "https://thehill.com/regulation/court-battles/5611065-texas-republican-redistricting-challenge/"
+        },
+        {
+          "title": "Federal judges block Texas congressional map drawn to help GOP in 2026 midterms | PBS News",
+          "url": "https://www.pbs.org/newshour/politics/federal-judges-block-texas-congressional-map-drawn-to-help-gop-in-2026-midterms"
+        },
+        {
+          "title": "Federal judges block Texas from using redrawn congressional map",
+          "url": "https://www.foxnews.com/politics/federal-judges-block-texas-from-using-redrawn-congressional-map.amp"
+        },
+        {
+          "title": "Federal judges block Texas from using its new US House map in the 2026 midterms",
+          "url": "https://www.aol.com/articles/federal-judges-block-texas-using-181527976.html"
+        },
+        {
+          "title": "federal judges block texas congressional map drawn to help gop in 2026 midterms",
+          "url": "https://www.pbs.org/newshour/amp/politics/federal-judges-block-texas-congressional-map-drawn-to-help-gop-in-2026-midterms"
+        },
+        {
+          "title": "Federal judges block Texas’ new US House map in 2026 midterms, citing racial discrimination",
+          "url": "https://www.aol.com/articles/federal-judges-block-texas-us-183038487.html"
+        },
+        {
+          "title": "Federal court blocks Texas from using new congressional gerrymander in 2026 midterms",
+          "url": "https://www.yahoo.com/news/articles/federal-court-blocks-texas-using-180858247.html"
+        },
+        {
+          "title": "Todd Blanche’s AG prospects uncertain as 2 key GOP votes hold out - ABC News",
+          "url": "https://abcnews.com/Politics/todd-blanches-ag-prospects-uncertain-2-key-gop/story?id=135135864"
+        },
+        {
+          "title": "Key committee vote for Todd Blanche postponed in major blow to his nomination as Trump’s attorney general | CNN Politics",
+          "url": "https://www.cnn.com/2026/07/29/politics/todd-blanche-nomination-cornyn"
+        },
+        {
+          "title": "Trump open to delaying Blanche nomination until Tillis and Cornyn depart",
+          "url": "https://www.axios.com/2026/07/30/trump-blanche-nomination-tillis-cornyn"
+        },
+        {
+          "title": "Vote on Blanche’s AG nomination postponed amid standoff with Republican holdouts - The Washington Post",
+          "url": "https://www.washingtonpost.com/national-security/2026/07/29/blanches-ag-nomination-doubt-critical-republican-remains-unsatisfied/"
+        },
+        {
+          "title": "Todd Blanche AG nomination in jeopardy as John Cornyn, Thom Tillis remain uncommitted",
+          "url": "https://thehill.com/newsletters/morning-report/5998751-todd-blanche-confirmation-delay-cornyn-tillis-gop-scorn/"
+        },
+        {
+          "title": "Todd Blanche's confirmation is stalled because of John Cornyn and Thom Tillis",
+          "url": "https://slate.com/news-and-politics/2026/07/senate-republicans-cornyn-tillis-spines-trump.html"
+        },
+        {
+          "title": "Todd Blanche",
+          "url": "https://en.wikipedia.org/wiki/Todd_Blanche"
+        },
+        {
+          "title": "Cornyn, Tillis throw their support behind Blanche for attorney general",
+          "url": "https://www.ms.now/news/cornyn-tillis-throw-their-support-behind-blanche-for-attorney-general"
+        },
+        {
+          "title": "August 1, 2026 — US-Iran war; State Department warns US citizens across the Middle East | CNN",
+          "url": "https://www.cnn.com/2026/08/01/world/live-news/iran-war-trump"
+        },
+        {
+          "title": "July 31, 2026 — Trump touts progress on Gaza peace effort as war with Iran drags on | CNN",
+          "url": "https://www.cnn.com/2026/07/31/world/live-news/iran-war-trump"
+        },
+        {
+          "title": "Iran war updates: Trump says negotiations with Tehran to begin Monday | US-Israel war on Iran News | Al Jazeera",
+          "url": "https://www.aljazeera.com/news/liveblog/2026/8/2/iran-war-live-tehran-warns-of-decisive-response-to-any-us-aggression"
+        },
+        {
+          "title": "Gulf nations brace for ‘disruptions’ as Trump warns of fresh strikes on Iran",
+          "url": "https://www.ms.now/news/gulf-iran-war-trump-hormuz"
+        },
+        {
+          "title": "March 7, 2026 6:19 PM",
+          "url": "https://www.newsonair.gov.in/west-asia-conflict-enters-eighth-day-as-united-states-israel-and-iran-launch-fresh-airstrikes"
+        },
+        {
+          "title": "Newsletter Newsletters Events Events Podcasts Videos Africanews",
+          "url": "https://euronews.com/2026/03/02/trump-says-iran-war-may-last-four-weeks-or-less-as-strikes-escalate"
+        },
+        {
+          "title": "Print Print    Close Close",
+          "url": "https://www.foxnews.com/politics/trump-pledges-avenge-fallen-us-service-members-tensions-iran-intensify.print"
+        },
+        {
+          "title": "Sunday's world stories",
+          "url": "https://www.axios.com/world/2026/03/01"
+        },
+        {
+          "title": "House rebukes Trump in vote to restrict his Iran war powers | CNN Politics",
+          "url": "https://www.cnn.com/2026/07/23/politics/trump-iran-war-powers"
+        },
+        {
+          "title": "Opinion | Trump’s Iran attack latest chapter in Congress’s loss of war power - The Washington Post",
+          "url": "https://www.washingtonpost.com/opinions/2026/07/26/trumps-iran-attack-latest-chapter-congresss-loss-war-power/"
+        },
+        {
+          "title": "For a 2nd time, House approves resolution to end the war in Iran in a rebuke to Trump",
+          "url": "https://www.npr.org/2026/07/23/nx-s1-5904515/congress-iran-war-powers-vote"
+        },
+        {
+          "title": "Print Print    Close Close",
+          "url": "https://www-ak-ms.foxnews.com/politics/longtime-trump-critic-reveals-why-she-thinks-iran-actions-wrong.print"
+        },
+        {
+          "title": "states newsroom us israel strike iran democrats call for immediate vote on trump war powers",
+          "url": "https://democraticwhip.house.gov/newsroom/in-the-news/states-newsroom-us-israel-strike-iran-democrats-call-for-immediate-vote-on-trump-war-powers"
+        },
+        {
+          "title": "Print Print    Close Close",
+          "url": "https://www.foxnews.com/politics/trump-says-losers-schumer-dems-would-have-criticized-any-decision-he-made-iran.print"
+        },
+        {
+          "title": "top house dems force vote reining trumps iran war powers",
+          "url": "https://khanna.house.gov/media/in-the-news/top-house-dems-force-vote-reining-trumps-iran-war-powers"
+        },
+        {
+          "title": "Dems eyeing 2028 split on criticism of attacks on Iran",
+          "url": "https://www.axios.com/2026/03/01/democrats-2028-iran-war"
+        },
+        {
+          "title": "Congress to vote on Trump’s war powers in aftermath of Iran strikes",
+          "url": "https://www.aol.com/articles/congress-vote-trump-war-powers-210003523.html"
+        },
+        {
+          "title": "Trump Administration Amps Up Pressure On Senate To Confirm Todd Blanche As Attorney General",
+          "url": "https://time.com/article/2026/07/31/trump-administration-amps-up-pressure-on-senate-to-confirm-todd-blanche-as-attorney-general/"
+        },
+        {
+          "title": "It Looks Like Todd Blanche's AG Nomination Won't Be Sunk in Committee",
+          "url": "https://townhall.com/news/mattvespa/2026/08/03/it-looks-like-todd-blanches-ag-nomination-wont-be-sunk-in-committee-n2680555"
+        },
+        {
+          "title": "Todd Blanche",
+          "url": "https://en.wikipedia.org/wiki/Todd_Blanche"
+        },
+        {
+          "title": "Takeaways from Todd Blanche's confirmation hearing for attorney general",
+          "url": "https://www.npr.org/2026/07/15/nx-s1-5895105/todd-blanche-senate-confirmation-attorney-general-takeaways"
+        },
+        {
+          "title": "ICYMI: Calls for Blanche’s Attorney General Confirmation Continue to Roll In | United States Senate Committee on the Judiciary",
+          "url": "https://www.judiciary.senate.gov/press/rep/releases/icymi-calls-for-blanches-attorney-general-confirmation-continue-to-roll-in"
+        },
+        {
+          "title": "Senate Judiciary Committee holds confirmation hearing for acting AG Todd Blanche",
+          "url": "https://thehill.com/homenews/senate/5970491-blanche-ag-confirmation-cornyn-anti-weaponization/"
+        },
+        {
+          "title": "Blanche to face skeptics in GOP after judge’s scathing criticism - The Washington Post",
+          "url": "https://www.washingtonpost.com/national-security/2026/07/14/blanche-aims-sway-gop-skeptics-attorney-general-nominee-faces-senate-test/"
+        },
+        {
+          "title": "Confirm Todd Blanche | House Judiciary Committee Republicans",
+          "url": "https://judiciary.house.gov/media/in-the-news/confirm-todd-blanche"
+        },
+        {
+          "title": "Opinion | Todd Blanche's attorney general nomination deserves a Senate rejection - The Washington Post",
+          "url": "https://www.washingtonpost.com/opinions/2026/07/24/todd-blanche-attorney-general-nomination-deserves-senate-rejection/"
+        }
+      ]
+    }
+  ]
+}
