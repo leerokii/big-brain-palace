@@ -1,0 +1,865 @@
+{
+  "id": "2026-W10",
+  "year": 2026,
+  "week": 10,
+  "generatedAt": "2026-08-17T13:37:37.725Z",
+  "dateLabel": "August 17, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "# AI PM Weekly Briefing — For Vocal Media Automations\n\nSix items chosen to sharpen judgment for AI content pipelines, editorial/creator tooling, and audience automation. Ordered so you can act on the last one this week.\n\n---\n\n### 1. Measure whether the work got done, not whether the model sounded good\n**Framework — outcome vs. output metrics.** For AI features, the quality of a single generation is a weak signal of value. \n\nHigh-quality outputs can still fail to produce value if they do not integrate into the user's workflow or require additional effort to validate and apply, while outputs with minor imperfections can still improve productivity if they reduce the amount of work required.\n\n**Why it matters:** For a creator drafting tool or an editorial assistant, \"did the writer publish?\" beats \"was the draft grammatically clean?\" \n\nAI product metrics prioritize outcome measurement because value is created at the workflow level, not at the response level.\n\n The practical additions to track are \n\nsignals such as verification effort, correction behavior, and workflow completion.\n\n Watch acceptance rates too — \n\nif your AI generates recommendations that users consistently ignore, you don't have a model problem—you have a value problem.\n\n**Source:** *AI Product Metrics for Product Managers* — https://newsletter.iamprayerson.com/p/ai-product-metrics-for-product-managers\n\n---\n\n### 2. Evals are the PM's job, and they start with how the product fails\n**Framework — error analysis before metrics.** An eval is a repeatable test of AI output against a definition of \"good\" that you write. The common trap is starting with fashionable off-the-shelf scores. \n\nBefore you can improve your AI product, you must understand how it fails. The surface area for what you could evaluate is infinite. The most common mistake is to start by measuring ready-made, fashionable metrics like \"hallucination\" or \"toxicity,\" which often leads to tracking scores that don't correlate with the actual problems your users face.\n\n**Why it matters:** This is squarely a PM responsibility, not an engineering one. \n\nAI evals are more about product judgment than technical implementation — product managers define what \"good\" looks like based on user needs and business context, while engineers implement the testing infrastructure, and the framework is written in plain English, not code.\n\n For editorial tooling where \"hollow but correct\" content is a real failure mode, only your definition of quality catches it — \n\nresponses that are technically correct but somehow hollow, where guidance that used to feel expert now feels generic, and no test caught this.\n\n**Source:** *Building eval systems that improve your AI product* (Lenny's Newsletter, w/ Hamel Husain & Shreya Shankar) — https://www.lennysnewsletter.com/p/building-eval-systems-that-improve\n\n---\n\n### 3. A shipped-product story: the AI agent that lied\n**Real-world lessons.** A team shipped an LLM tutoring agent and watched it confidently mislead a student. \n\nThe worst part about hallucinations is that the model is very confident about being right; when you start working with LLMs you're surprised how often it happens, and you need to be ready because it WILL happen in production.\n\n Their fixes were concrete: \n\nthey switched to a better model for conversations and added more context to the prompts.\n\n**Why it matters:** Vocal serves creators and readers who trust published content. A confidently wrong summary or fact-insert in an editorial pipeline is a trust event, not a bug ticket. The team also learned that grounding assumptions need testing — \n\ninitially they assumed they didn't need RAG and simply always added some documents to the context,\n\n a shortcut worth questioning before you scale a content-grounding feature.\n\n**Source:** *Shipping an AI Agent that Lies to Production* (Three Dots Labs) — https://threedots.tech/post/ai-agent-that-lies/\n\n---\n\n### 4. What \"good\" looks like now: absorption, not adoption\n**Metrics maturity — the ROI reckoning.** The industry has moved from experimenting to proving value, and most measurement doesn't hold up. \n\nMIT's NANDA initiative found that roughly 95% of enterprise generative AI pilots delivered no measurable impact on the P&L — a gap traced not to model quality but to weak workflow integration and the absence of systems that learn over time.\n\n**Why it matters:** The better bar for audience automation and creator tools isn't logins or seats. \n\nThe better standard is absorption, not adoption — a login is not value; work that changes because of the tool is.\n\n And it changes how you report: \n\na credible update no longer starts with what the team shipped, but with what the business got back, what was learned, and whether the initiative still deserves funding.\n\n Frame your automation wins this way in reviews.\n\n**Source:** *Product Management in 2026: From Experimentation to the Reckoning* (Metis Strategy) — https://www.metisstrategy.com/product-management-ai-value-measurement/\n\n---\n\n### 5. How AI PM roles are actually being scoped\n**Role definition across the industry.** The title is fragmenting into distinct jobs. One recruiter frames it as \n\none of four working roles: the copilot PM who owns a customer-facing LLM surface, the AI platform PM who owns the internal model and tooling layer, the ML feature PM who ships model-powered features inside a non-AI product, or the AI ops PM who deploys AI to a non-engineering team.\n\n Vocal's mix — creator-facing tools plus internal editorial and audience automation — likely spans the first, third, and fourth.\n\n**Why it matters:** The screening bar has risen and eval fluency is now central. Hiring managers are grading \n\nmodel-evaluation fluency, data instincts, and the willingness to kill a feature that demos beautifully and fails in production.\n\n A note on positioning: \n\nroles that just \"added AI features\" are being absorbed into standard PM work — if your value proposition is 'I added AI features to our product,' that's no longer differentiated.\n\n The durable specializations are \n\nagentic AI, fine-tuning and evaluation, and domain-specific AI product expertise.\n\n A genuinely new surface worth watching: \n\ndedicated PM roles for the human feedback and evaluation pipeline — a surface that barely existed three years ago.\n\n**Source:** *How to Hire an AI Product Manager: 2026 Guide* (KORE1) and *AI PM Job Market in 2026* (Institute PM) — https://www.kore1.com/how-to-hire-ai-product-manager-2026/ · https://www.institutepm.com/knowledge-hub/ai-pm-job-market-2026\n\n---\n\n### 6. Do this week: build one small eval and run it on every change\n**Applicable tactic.** Pick a single AI feature in your pipeline (say, the auto-summary or headline generator). \n\nDefine what \"good\" means for five to ten real inputs and run an eval — you'll learn more from one run than from weeks of manual testing.\n\n Make the criteria specific, not vague; e.g., for a \"summarize this post\" task, check that it keeps the author's key claim, adds no facts, and stays under a length limit. \n\nThis granularity is essential — vague criteria produce vague evaluations.\n\n**Why it matters:** This gives you a repeatable regression check that catches silent quality drops from prompt or model changes. A simple weekly ritual builds team alignment: \n\nrun weekly demos where the team executes the golden dataset scripts live, reviews results together, and tracks scores over time — this creates accountability, surfaces regressions quickly, and builds shared understanding of what quality means.\n\n To scale it, \n\npick one tool, build your first 25 eval examples, and run them on every prompt change for two weeks — you will be a different kind of AI PM by the end of the month.\n\n**Source:** *Evals for PMs: A practical guide to AI product quality* (Braintrust) and *Best AI Evaluation Tools for PMs in 2026* (Institute PM) — https://www.braintrust.dev/blog/evals-for-pms · https://www.institutepm.com/knowledge-hub/best-ai-evaluation-tools-2026\n\n---\n\n**One thread across all six:** for AI content and audience tools, your edge is defining what \"good\" means and proving real work changed — not shipping more generations. Start with item 6 this week.",
+      "sources": [
+        {
+          "title": "ai product metrics for product managers: how to measure ai systems",
+          "url": "https://newsletter.iamprayerson.com/p/ai-product-metrics-for-product-managers"
+        },
+        {
+          "title": "Mastering Metrics for Product Managers in 2026: The Ultimate Guide",
+          "url": "https://www.aakashg.com/metrics-for-product-managers/"
+        },
+        {
+          "title": "AI Product Manager Metrics: How to Evaluate AI Product Management in 2026",
+          "url": "https://prodmoh.com/blog/how-to-evaluate-ai-product-management"
+        },
+        {
+          "title": "How to Answer AI Product Evaluation and Metrics Questions | 2026 AI PM Interview Guide",
+          "url": "https://www.crackpminterview.com/p/answer-ai-product-evaluation-metrics-questions"
+        },
+        {
+          "title": "AI evals for product managers: the complete guide for 2026 — Lovelaice Resources",
+          "url": "https://www.lovelaice.com/resources/ai-evals-for-product-managers-complete-guide-2026"
+        },
+        {
+          "title": "AI Product Metrics That Actually Matter | Complete Guide 2025",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-product-metrics"
+        },
+        {
+          "title": "AI Product Manager: Role, Skills & Hiring (May 2026)",
+          "url": "https://www.paraform.com/blog/what-is-ai-product-manager"
+        },
+        {
+          "title": "How to Become an AI Product Manager in 2026 | SkillScouter",
+          "url": "https://skillscouter.com/how-to-become-an-ai-product-manager/"
+        },
+        {
+          "title": "The Great Reshuffling: How AI Is Polarizing the Product Manager Role in 2026",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-reshaping-pm-role-2026"
+        },
+        {
+          "title": "9 skills every AI PM needs to get hired in 2026! - YouTube",
+          "url": "https://www.youtube.com/watch?v=U4ga6I3S3rM"
+        },
+        {
+          "title": "How to Hire an AI Product Manager: 2026 Guide - KORE1",
+          "url": "https://www.kore1.com/how-to-hire-ai-product-manager-2026/"
+        },
+        {
+          "title": "AI PM Job Market in 2026: Where Demand Is Concentrating and What It Pays",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-pm-job-market-2026"
+        },
+        {
+          "title": "AI Product Manager Roadmap 2026: Skills, Tools, Career Path",
+          "url": "https://www.nextbyrahul.tech/blog/ai-product-manager-roadmap-2026"
+        },
+        {
+          "title": "AI Hiring Trends 2026: What CTOs Need to Know",
+          "url": "https://www.kaam.work/blog/ai-hiring-trends"
+        },
+        {
+          "title": "The 2026 AI product strategy guide: How to plan, budget, and build without buying into the hype",
+          "url": "https://www.mindtheproduct.com/the-2026-ai-product-strategy-huide-how-to-plan-budget-and-build-without-buying-into-the-hype/"
+        },
+        {
+          "title": "AI Product Launches News | August, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/ai-product-launches-news-august-2026/"
+        },
+        {
+          "title": "The PM's Playbook for Shipping AI Features That Actually Work in Production",
+          "url": "https://www.oreilly.com/radar/the-pms-playbook-for-shipping-ai-features-that-actually-work-in-production/"
+        },
+        {
+          "title": "AI Product Strategy in 2026: From Features to Capabilities | JetSoftPro",
+          "url": "https://jetsoftpro.com/blog/ai-product-strategy-2026"
+        },
+        {
+          "title": "Product Management in 2026: From Experimentation to the Reckoning - Metis Strategy",
+          "url": "https://www.metisstrategy.com/product-management-ai-value-measurement/"
+        },
+        {
+          "title": "Shipping an AI Agent that Lies to Production: Lessons Learned | Three Dots Labs blog",
+          "url": "https://threedots.tech/post/ai-agent-that-lies/"
+        },
+        {
+          "title": "AI Product Management in 2026: A Complete Guide to the New Playbook | Tosea.ai",
+          "url": "https://tosea.ai/blog/ai-product-management-2026-playbook"
+        },
+        {
+          "title": "AI Product Strategy 2026: Roadmap for Founders & Startups",
+          "url": "https://wearepresta.com/ai-product-strategy-2026-the-founders-guide-to-ai-native-growth/"
+        },
+        {
+          "title": "Evals for PMs: A practical guide to AI product quality - Blog - Braintrust",
+          "url": "https://www.braintrust.dev/blog/evals-for-pms"
+        },
+        {
+          "title": "Spec-Driven Evals for Product Managers: How to Measure What Your AI Actually Does | by Bala Keelapudi | Medium",
+          "url": "https://technologuy.medium.com/spec-driven-evals-for-product-managers-how-to-measure-what-your-ai-actually-does-1e50c1972cb1"
+        },
+        {
+          "title": "Best AI Evaluation Tools for Product Managers in 2026 | Eval Stack Guide",
+          "url": "https://www.institutepm.com/knowledge-hub/best-ai-evaluation-tools-2026"
+        },
+        {
+          "title": "AI Evals Course for Product Teams & Leaders",
+          "url": "https://productschool.com/certifications/ai-evals"
+        },
+        {
+          "title": "Mastering AI Evals: A Complete Guide for PMs",
+          "url": "https://www.productcompass.pm/p/ai-evals"
+        },
+        {
+          "title": "AI Evals for Product Managers: Building Better Feedback Loops for AI Products | Productboard",
+          "url": "https://www.productboard.com/blog/ai-evals-for-product-managers/"
+        },
+        {
+          "title": "Building eval systems that improve your AI product",
+          "url": "https://www.lennysnewsletter.com/p/building-eval-systems-that-improve"
+        },
+        {
+          "title": "Demystifying evals for AI agents \\ Anthropic",
+          "url": "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents"
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "# This Week in Claude & AI Automation\n\n## 1. Claude Code now runs cloud sessions on your own hardware\n\nClaude Code v2.1.224, released August 7, 2026, adds self-hosted environments. A single command, `claude self-hosted-runner`, turns your own machines or containers into the compute layer where Claude Code sessions execute. Web, mobile, desktop, and scheduled routine sessions can all run on infrastructure your team provisions and controls, rather than on Anthropic-managed cloud.\n\n \n\nAll communication is outbound HTTPS from your network with no inbound connections required, and repository checkouts, build artifacts, and secrets stay in your infrastructure—though prompts, responses, and tool results are still sent to Anthropic for inference.\n\n**Try this** (Linux/macOS host or container; Team/Enterprise plan; Owner/admin must first enable \"Allow self-hosted environments\" in the Cloud environments admin page):\n1. In claude.ai admin settings → Cloud environments → create an environment and copy the one-time environment secret.\n2. On your host, run:\n```bash\nmkdir -p /etc/claude\n(umask 077 && cat > /etc/claude/environment-secret)   # paste secret, then Ctrl-D\nmkdir -p /data/claude-runner\nclaude self-hosted-runner \\\n  --environment-secret-file /etc/claude/environment-secret \\\n  --base-dir /data/claude-runner\n```\n3. \n\nWithin a few seconds the environment's status on the admin page flips from \"No runners deployed\" to \"Healthy.\" Starting a session from claude.ai/code and picking that environment routes it to your runner.\n\n (Or run `claude self-hosted-runner setup` for the guided interactive walkthrough, which also writes a cheat sheet to `./runner-setup/CHEAT-SHEET.md`.)\n\n**Source:** claudcod.com / claude.com — https://claudcod.com/blog/claude-code-self-hosted-runner/\n\n---\n\n## 2. Programmatic Tool Calling: let Claude orchestrate tools in code, not round-trips\n\nProgrammatic tool calling allows Claude to write code that calls your tools programmatically within a code execution container, rather than requiring round trips through the model for each tool invocation. This reduces latency for multi-tool workflows and decreases token consumption by allowing Claude to filter or process data before it reaches the model's context window.\n\n \n\nOn agentic search benchmarks like BrowseComp and DeepSearchQA, adding programmatic tool calling on top of basic search tools improved performance by an average of 11% while using 24% fewer input tokens.\n\n**Try this** (API/dev platform; requires the code execution tool enabled). Add `allowed_callers` to the tools you want Claude to invoke from a script instead of one at a time, and describe the output format so it can parse results:\n```json\n{\n  \"name\": \"get_expenses\",\n  \"description\": \"Returns a JSON array of {employee_id, amount, category} expense line items for a given employee_id.\",\n  \"allowed_callers\": [\"code_execution_20250825\"],\n  \"input_schema\": {\n    \"type\": \"object\",\n    \"properties\": { \"employee_id\": { \"type\": \"string\" } },\n    \"required\": [\"employee_id\"]\n  }\n}\n```\nSet the beta header \n\n`advanced-tool-use-2025-11-20` for the Anthropic API (LiteLLM auto-detects the `allowed_callers` field and adds it).\n\n Claude will then write one script that loops the 20 lookups and returns only the filtered result, instead of 20 separate inference passes.\n\n**Source:** LiteLLM docs / Anthropic Engineering — https://docs.litellm.ai/docs/providers/anthropic_programmatic_tool_calling\n\n---\n\n## 3. Tool Search Tool: stop burning context loading every MCP tool upfront\nWith a handful of MCP servers connected, \n\na five-server setup can put 58 tools consuming roughly 55K tokens into context before the conversation even starts—add Jira (~17K tokens alone) and you approach 100K+ token overhead.\n\n \n\nThe Tool Search Tool flips this by letting you defer tool loading using a single parameter, `defer_loading: true`, so Claude discovers tools dynamically when needed, preserving up to 95% of your context window.\n\n \n\nIn internal testing, Opus 4.5 improved from 79.5% to 88.1% on MCP evaluations with Tool Search Tool enabled.\n\n**Try this** (API today; a tracked request exists to expose it in Claude Code via `.claude/settings.json`). Mark the tools you don't want front-loaded:\n```json\n{\n  \"name\": \"search_database\",\n  \"description\": \"Search the customer database by name, email, or account ID.\",\n  \"defer_loading\": true,\n  \"input_schema\": { \"...\": \"...\" }\n}\n```\nKeep 3–5 high-frequency tools loaded normally and set `defer_loading: true` on the long tail. Rule of thumb: \n\nuse it any time your tool definitions exceed 10K tokens.\n\n**Source:** Anthropic Engineering — https://www.anthropic.com/engineering/advanced-tool-use\n\n---\n\n## 4. MCP 2026-07-28: MCP servers are now stateless HTTP workloads\n\nThe MCP 2026-07-28 spec is live, moving the Model Context Protocol to a stateless core with standardized extensions and hardened auth.\n\n \n\nThis is one of the most significant spec releases to date: the protocol moves from a bidirectional stateful model to a request/response model, so servers can now deploy on serverless and edge infrastructure.\n\n \n\nMCP Apps and Tasks now ship under a versioned extensions framework, giving developers a formal path to add capabilities like interactive UIs and long-running work.\n\n**Try this** — the concrete win is deployment. If you maintain an MCP server, migrate it to the stateless request/response model so you can host it on serverless/edge (e.g., a Netlify or Cloudflare-style function) with no session-management code to work around. Steps: (1) drop your persistent-session/bidirectional handling; (2) implement each tool call as an independent HTTP request/response; (3) add OAuth/OIDC auth per the new spec; (4) if you want an in-chat UI or background jobs, adopt the versioned MCP Apps / Tasks extensions rather than custom protocol changes. \n\nExplore the spec and SDKs to get started; support is rolling out across Claude products.\n\n**Source:** Claude by Anthropic — https://claude.com/blog/bringing-mcp-2026-07-28-to-claude\n\n---\n\n## 5. Skills vs. Hooks vs. Subagents: pick the right primitive in Claude Code\nA recurring failure mode is stuffing everything into one giant prompt or one bloated agent. The clean 2026 division: \n\nSkills give Claude Code repeatable expertise (\"how we ship a Next.js feature here\"), Hooks give it deterministic side effects (\"run prettier on every save\"), and Subagents give it isolated context windows (\"hand this sub-task to a fresh agent\").\n\n \n\nSubagents return only the final answer to the parent\n\n—which is what keeps a long code review or deep research task from polluting your main context.\n\n**Try this** — a copyable Hook setup. \n\nCommon 2026 hooks: PreToolUse blocking writes outside the repo, PostToolUse running prettier after every file edit, on-Stop running the test suite, redact-secrets on every shell command; configure in `settings.json` or as scripts in `.claude/hooks/`.\n\n Add this to `.claude/settings.json` to auto-format after every edit:\n```json\n{\n  \"hooks\": {\n    \"PostToolUse\": [\n      {\n        \"matcher\": \"Edit|Write\",\n        \"hooks\": [\n          { \"type\": \"command\", \"command\": \"npx prettier --write \\\"$CLAUDE_FILE_PATH\\\"\" }\n        ]\n      }\n    ]\n  }\n}\n```\nAnd to install a Skill: \n\ndrop a folder into `~/.claude/skills/` (or `.claude/skills/` in your repo), write a `SKILL.md`, restart Claude Code, and the Skill is live.\n\n**Source:** Totalum Blog — https://www.totalum.app/blog/claude-code-skills-totalum\n\n---\n\n## 6. (Non-Claude) n8n's AI Agent node can now call remote MCP servers directly\nThe broader ecosystem is converging on MCP as the connective tissue, not just Anthropic's products. \n\nTwo mid-2026 n8n additions matter for solo builders: the MCP Client Tool lets the AI Agent node use tools exposed by remote MCP servers directly, and there's also a standalone MCP Client node, so any step in the workflow—not just an agent—can call an MCP server.\n\n The winning pattern here is not full autonomy: \n\nthe part solo builders should care about is repeatable decisions with visible runs\n\n, plus manual approval gates on sensitive steps.\n\n**Try this** — a concrete agent workflow with a human gate:\n- **Trigger:** Chat/Webhook node receives an inbound support or lead message.\n- **Action 1:** AI Agent node (backed by your LLM) with an **MCP Client Tool** pointed at your CRM's MCP server.\n- **Action 2:** Agent drafts the enrichment/response and proposes the CRM write as structured output.\n- **Action 3:** Insert a **manual approval gate** (Wait/approval node) before any write to CRM, finance, or customer comms.\n- **Action 4:** On approval, the standalone **MCP Client node** executes the write; log the run for auditability. \n\nKeep human review steps for sensitive automations such as HR, finance, or customer communications.\n\n**Source:** christopheralarcon.com — https://christopheralarcon.com/blog/n8n-ai-agent-tutorial\n\n---\n\n*Note: several rumored models (e.g., \"Sonnet 5.5 'Fennec'\" / \"Opus 6\") are recirculating this week with* \n\nno corroborating evidence in any leaked API string, Cursor model-picker sighting, or reporting from established trackers—the same pattern as the original six-month-old Fennec mix-up.\n\n *Treat as noise.*",
+      "sources": [
+        {
+          "title": "What's the Next Claude Model? Anthropic's New Roadmap (August 2026) - AIToolsReview",
+          "url": "https://aitoolsreview.co.uk/insights/next-claude-model"
+        },
+        {
+          "title": "Claude Updates by Anthropic - August 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Claude Features 2026: Projects, Artifacts, Memory, Computer Use, Skills, MCP - Suprmind",
+          "url": "https://suprmind.ai/hub/claude/features/"
+        },
+        {
+          "title": "Claude Code Changelog (August 2026)",
+          "url": "https://www.gradually.ai/en/changelogs/claude-code/"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - August 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Anthropic Release Notes - August 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "Every Claude Model: Complete Guide from Claude 3 to Opus 5",
+          "url": "https://claudefa.st/blog/models"
+        },
+        {
+          "title": "Claude expands tool connections using MCP - Help Net Security",
+          "url": "https://www.helpnetsecurity.com/2026/01/27/anthropic-claude-mcp-integration/"
+        },
+        {
+          "title": "MCP 2026-07-28 spec: stateless core, coming to Claude | Claude by Anthropic",
+          "url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude"
+        },
+        {
+          "title": "Best Claude MCP Plugins: Top 7 Tools for 2026 | Fastio",
+          "url": "https://fast.io/resources/claude-mcp-plugins/"
+        },
+        {
+          "title": "Official Meta Ads MCP for Claude: Complete Guide to All 29 Tools (April 2026)",
+          "url": "https://pasqualepillitteri.it/en/news/1707/official-meta-ads-mcp-claude-29-tools-2026"
+        },
+        {
+          "title": "Introducing advanced tool use on the Claude Developer Platform \\ Anthropic",
+          "url": "https://www.anthropic.com/engineering/advanced-tool-use"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - August 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Claude Desktop can now browse the internet and manage files on your computer — here's what's new",
+          "url": "https://www.tomsguide.com/ai/claude-desktop-can-now-browse-the-internet-and-manage-files-on-your-computer-heres-whats-new"
+        },
+        {
+          "title": "How do I enable advanced tool use with Claude Opus 4.5?",
+          "url": "https://milvus.io/ai-quick-reference/how-do-i-enable-advanced-tool-use-with-claude-opus-45"
+        },
+        {
+          "title": "Programmatic tool calling - Claude Platform Docs",
+          "url": "https://platform.claude.com/docs/en/agents-and-tools/tool-use/programmatic-tool-calling"
+        },
+        {
+          "title": "Introducing advanced tool use on the Claude Developer ...",
+          "url": "https://www.anthropic.com/engineering/advanced-tool-use?939688b5_page=2&ss_ad_code=m_FB"
+        },
+        {
+          "title": "Support Tool Search and Programmatic Tool Use betas for reduced token consumption · Issue #12836 · anthropics/claude-code",
+          "url": "https://github.com/anthropics/claude-code/issues/12836"
+        },
+        {
+          "title": "claude-code-docs/docs/docs__en__agents-and-tools__tool-use__programmatic-tool-calling.md at main · seanGSISG/claude-code-docs",
+          "url": "https://github.com/seanGSISG/claude-code-docs/blob/main/docs/docs__en__agents-and-tools__tool-use__programmatic-tool-calling.md"
+        },
+        {
+          "title": "Anthropic Programmatic Tool Calling | liteLLM",
+          "url": "https://docs.litellm.ai/docs/providers/anthropic_programmatic_tool_calling"
+        },
+        {
+          "title": "Advanced Tool Use in Claude API: Three New Features That Change A lot",
+          "url": "https://claude-blog.setec.rs/blog/advanced-tool-use-claude-api"
+        },
+        {
+          "title": "DEV Community",
+          "url": "https://dev.to/sauravkumar8178/beyond-function-calling-introducing-advanced-tool-orchestration-on-the-claude-developer-platform-5g69"
+        },
+        {
+          "title": "Context Engineering: What It Is + How to Do It (2026) | Taskade Blog",
+          "url": "https://www.taskade.com/blog/context-engineering"
+        },
+        {
+          "title": "The 7 Design Patterns Every AI Agent Developer Should Know in 2026 | by Muhammed Mukthar | Towards AI",
+          "url": "https://pub.towardsai.net/the-7-design-patterns-every-ai-agent-developer-should-know-in-2026-c77f28b51565"
+        },
+        {
+          "title": "Context Engineering: Agent Reliability Playbook 2026",
+          "url": "https://www.digitalapplied.com/blog/context-engineering-agent-reliability-playbook-2026"
+        },
+        {
+          "title": "Context Engineering: A Practical Guide for AI Agents (2026) | Sourcegraph",
+          "url": "https://sourcegraph.com/blog/context-engineering"
+        },
+        {
+          "title": "Context Engineering AI: How To Build Smarter LLM Agents In 2026",
+          "url": "https://mem0.ai/blog/context-engineering-ai-agents-guide"
+        },
+        {
+          "title": "Context Engineering: The 2026 Playbook for AI Agents",
+          "url": "https://cruxdigits.nl/blog/context-engineering-ai-agents-2026/"
+        },
+        {
+          "title": "6 Multi-Agent Orchestration Patterns for Production (2026)",
+          "url": "https://beam.ai/agentic-insights/multi-agent-orchestration-patterns-production"
+        },
+        {
+          "title": "Claude Updates: What's Changed in Claude (2026 Guide) - 9x",
+          "url": "https://go9x.com/blog/claude-updates"
+        },
+        {
+          "title": "Claude Code News | August, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/claude-code-news-august-2026/"
+        },
+        {
+          "title": "Claude Design News | August, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/claude-design-news-august-2026/"
+        },
+        {
+          "title": "I spent six months not shipping. So I built a Claude skill to fix it. | by Yvonnesykes | Medium",
+          "url": "https://medium.com/@yvonnesykes789/i-spent-six-months-not-shipping-so-i-built-a-claude-skill-to-fix-it-50caeac8570a"
+        },
+        {
+          "title": "Best Claude Skills to Install in 2026 | MoClaw Blog",
+          "url": "https://moclaw.ai/blog/best-claude-skills"
+        },
+        {
+          "title": "Claude Code Skills in 2026: The Complete Guide (vs Hooks, vs Subagents, vs MCP) - Totalum Blog",
+          "url": "https://www.totalum.app/blog/claude-code-skills-totalum"
+        },
+        {
+          "title": "Top 10 Claude Code Skills, Plugins & CLIs for 2026 | Engr Mejba Ahmed",
+          "url": "https://www.mejba.me/blog/top-10-claude-code-skills-plugins-clis-2026"
+        },
+        {
+          "title": "Self-hosted environments quickstart - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/self-hosted-environments-quickstart"
+        },
+        {
+          "title": "How to use self-hosted-runner and its pitfalls - Running Claude Code sessions on your own machine｜テック太郎",
+          "url": "https://note.com/ai_eng_tech/n/nb653b2c15a80?hl=en"
+        },
+        {
+          "title": "Claude Code Can Now Run on Your Own Infrastructure — Enterprise DNA",
+          "url": "https://enterprisedna.co/resources/news/anthropic-claude-code-self-hosted-runner-enterprise-2026/"
+        },
+        {
+          "title": "Self-hosted environments for Claude Code | Claude by Anthropic",
+          "url": "https://claude.com/blog/run-claude-code-sessions-on-your-own-compute"
+        },
+        {
+          "title": "Claude Code 2.1.224: Cloud Sessions on Your Own Machine | Clauding",
+          "url": "https://clauding.de/en/posts/claude-code-2-1-224-self-hosted-runner"
+        },
+        {
+          "title": "Claude Code Self-Hosted Runner: Own Infra Guide | Claude Code Blog",
+          "url": "https://claudcod.com/blog/claude-code-self-hosted-runner/"
+        },
+        {
+          "title": "Claude Code Self-Hosted Environment Feature Arrives: Trying an EC2 Instance as the Execution Environment | DevelopersIO",
+          "url": "https://dev.classmethod.jp/en/articles/claude-code-self-hosted-runner/"
+        },
+        {
+          "title": "Best 9 n8n AI agent workflow automation examples in 2026 | Jotform Blog",
+          "url": "https://www.jotform.com/ai/agents/n8n-ai-agent-workflow-example/"
+        },
+        {
+          "title": "What Is n8n? Workflow Automation & AI Agent Guide (2026)",
+          "url": "https://nextgrowth.ai/what-is-n8n/"
+        },
+        {
+          "title": "We need to re-learn what AI agent development tools are in 2026 – n8n Blog",
+          "url": "https://blog.n8n.io/we-need-re-learn-what-ai-agent-development-tools-are-in-2026/"
+        },
+        {
+          "title": "N8N AI Agents Features 2026: The Complete Founder's Guide",
+          "url": "https://chronexa.io/blog/n8n-ai-agent-features-2026"
+        },
+        {
+          "title": "How to Build AI Agents and Automate Workflows with n8n (2026 Guide)",
+          "url": "https://www.entrans.ai/blog/build-ai-agents-automate-workflows-n8n"
+        },
+        {
+          "title": "n8n AI Agent Tutorial: Node, Workflow, Tools, and Approval",
+          "url": "https://christopheralarcon.com/blog/n8n-ai-agent-tutorial"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "The UK bill picture is contested across sources, so I'll favor the well-documented China, EU, and Gulf stories. Here is the briefing.\n\n# This Week in AI: US & International Briefing\n\n## 1. China's open-weight models push scale and slash prices in the same week\nTwo Chinese labs made competing moves that together define where the country's AI industry is heading. \n\nAlibaba unveiled Qwen3.8-Max on August 3, calling it its largest and most capable AI model to date, as DeepSeek's low-cost V4-Flash intensified competition over the price of running advanced AI systems.\n\n \n\nUnlike U.S. companies such as OpenAI, Anthropic and Google, which keep details of their flagship models private, Chinese developers have increasingly embraced open-weight models, allowing developers to download and adapt the underlying model weights.\n\n The strategic significance goes beyond one release: \n\nin almost every month of 2026, the largest and most performant open model released by a Chinese lab was larger than anything released by an American lab, with China's monthly ceiling ranging from 754 billion to 2.78 trillion parameters, while America's ceiling stayed below 130 billion in five of the seven months.\n\n For a media company, this matters because cheap, downloadable, adaptable models make in-house AI tooling far more affordable and lessen dependence on a handful of US vendors.\n**Region:** China | **Source:** Digitimes — https://www.digitimes.com/news/a20260804VL205/alibaba-deepseek-cost-anthropic-claude.html\n\n## 2. EU AI Act enforcement moves from theory to reality on August 2\nA key deadline in the EU's landmark law has passed, shifting compliance from planning to active enforcement. \n\nThe theoretical era of AI compliance ended on August 2; the European Union's AI Act is now actively enforced for high-risk systems.\n\n The transparency rules are especially relevant to publishers: \n\nsystems must be designed to explicitly inform users that they are interacting with an AI, generated audio, video, and text must embed machine-readable markers, and explicit disclosures are required for deepfakes.\n\n Enforcement carries real financial weight, as \n\nmaximum penalties reach EUR 35 million or 7% of global annual turnover, whichever is higher.\n\n Any media organization producing or distributing AI-generated or AI-assisted content to EU audiences now faces concrete labeling and disclosure obligations, not future ones.\n**Region:** EU | **Source:** Cubbbix — https://cubbbix.com/blog/ai-regulation-august-2026-global-update/\n\n## 3. Databricks raises a record $5 billion, underscoring the concentration of AI money\nThe largest deal of the week reflects how AI capital is pooling into a few very large companies rather than spreading widely. \n\nDatabricks hauled in a record-breaking $5 billion at a $190 billion valuation, led by Coatue, Blackstone, MGX, T. Rowe Price, and new backer Sixth Street Growth, underscoring that enterprises remain willing to bankroll AI-first data platforms.\n\n \n\nThe infusion may spur consolidation, as smaller data startups will struggle to compete for talent and mindshare against a cash-rich giant, and Databricks noted plans to invest in \"critical infrastructure\" in the U.S. and Europe.\n\n This fits a broader 2026 pattern: \n\nthe drop in deal count tells the real story — fewer startups are receiving funding, but those that do are getting significantly larger checks, as investors concentrate capital into companies they believe can scale to billion-dollar outcomes.\n\n Note that MGX, one of the backers, is an Abu Dhabi vehicle, showing how Gulf sovereign money now sits inside marquee US rounds.\n**Region:** US (with Gulf backing) | **Source:** Tech Startups — https://techstartups.com/2026/08/13/venture-capital-startup-funding-roundup-august-13-2026-blackstone-coatue-founders-fund-sequoia-capital-thiel-capital-more/\n\n## 4. China issues its first fines under new companion-AI rules\nChina has begun enforcing a novel category of AI regulation, moving quickly from rulemaking to penalties. \n\nChina activated its companion AI and emotional support AI regulations on July 15, and the Cyberspace Administration of China (CAC) did not wait long to act.\n\n \n\nIn the first week of enforcement, 12 companies received fines totaling 4.2M RMB.\n\n This reflects China's distinctive regulatory style — \n\nChina enacts narrowly targeted regulations at speed\n\n — as opposed to the EU's broad, horizontal law. For media and creator platforms, the takeaway is that jurisdictions are beginning to regulate specific AI product categories (companions, agents, generative content) individually, so companies operating internationally can no longer assume one compliance approach fits all markets.\n**Region:** China | **Source:** Cubbbix — https://cubbbix.com/blog/ai-regulation-august-2026-global-update/\n\n## 5. Gulf sovereign funds keep buying into the AI frontier, tying compute to their soil\nThe Gulf states continue to convert oil wealth into stakes in leading AI companies, and this week's Databricks round is one more data point. The pattern is consistent and deliberate: \n\nunlike venture capital, sovereign wealth comes with conditions that almost always involve building AI infrastructure on the investing country's own soil, and MGX (UAE) has a stake in OpenAI, Anthropic, and xAI/SpaceX.\n\n \n\nSaudi Arabia is targeting AI to contribute 12% to its GDP by the end of the decade and the UAE is aiming for 40% by 2031, viewing it as a central plank of their economic diversification strategies.\n\n The strategy has limits, though: \n\nSaudi Arabia and the UAE are investing tens of billions into sovereign AI infrastructure, but software moats and U.S. export controls keep them tied to Nvidia.\n\n For a media company, this signals that the AI supply chain and its funding are increasingly geopolitical, which shapes which tools and data centers will be available in which regions.\n**Region:** Gulf (UAE, Saudi Arabia) | **Source:** Rest of World — https://restofworld.org/2026/spacex-ipo-gulf-money-ai/\n\n---\n*Note: Several items draw on secondary trackers and aggregators rather than primary company or government sources; for regulatory specifics (EU deadlines, China fines, UK status) the underlying official texts and filings would be worth confirming directly, as some third-party summaries conflicted on details.*",
+      "sources": [
+        {
+          "title": "LLM News Today (August 2026) – AI Model Releases",
+          "url": "https://llm-stats.com/ai-news"
+        },
+        {
+          "title": "New AI Model Releases News | August, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/new-ai-model-releases-news-august-2026/"
+        },
+        {
+          "title": "AI Updates Today (August 2026) – Latest AI Model Releases",
+          "url": "https://llm-stats.com/llm-updates"
+        },
+        {
+          "title": "New AI Model Releases — August 2026 Timeline | LLM Gateway",
+          "url": "https://llmgateway.io/timeline"
+        },
+        {
+          "title": "AI Model Releases: August 2026 Tracker and Dated Ledger",
+          "url": "https://www.digitalapplied.com/blog/ai-model-releases-august-2026-tracker"
+        },
+        {
+          "title": "New Models Today — AI & LLM Releases Last 24 Hours | Price Per Token",
+          "url": "https://pricepertoken.com/news/model-releases"
+        },
+        {
+          "title": "Latest AI Model Releases — August 2026",
+          "url": "https://aireleasetracker.com/latest"
+        },
+        {
+          "title": "AI Regulation in China, the US, and the EU: Not Just Who Is Stricter, But Three Governance Philosophies",
+          "url": "https://yage.ai/share/ai-regulation-three-philosophies-en-20260803.html"
+        },
+        {
+          "title": "AI Regulations Around the World: Full 2026 Breakdown",
+          "url": "https://app.stationx.net/articles/ai-regulations-around-the-world"
+        },
+        {
+          "title": "AI Regulation News August 2026: The Enforcement Era Begins, US Gridlock, and 15 Countries Update — Cubbbix Tools",
+          "url": "https://cubbbix.com/blog/ai-regulation-august-2026-global-update/"
+        },
+        {
+          "title": "AI Regulation in 2026: What Just Changed - and What It Means for Every AI Team",
+          "url": "https://eveaicore.com/blog/ai-regulation-2026-what-changed"
+        },
+        {
+          "title": "AI Regulation News Today: The US, EU, UK, Japan, and China Frameworks Reshaping the Industry in 2026",
+          "url": "https://theaiforest.com/ai-regulation-news-2026-us-eu-global-updates/"
+        },
+        {
+          "title": "The 2026 global AI regulation landscape | RAIL",
+          "url": "https://responsibleailabs.ai/knowledge-hub/articles/global-ai-regulation-2026"
+        },
+        {
+          "title": "AI Regulation Compared: EU, US, UK, China (2026) - Legalithm",
+          "url": "https://www.legalithm.com/en/blog/ai-regulation-comparison-eu-us-uk-china-global"
+        },
+        {
+          "title": "News & Analysis as of",
+          "url": "https://www.jdsupra.com/topics/artificial-intelligence/new-regulations/regulatory-oversight"
+        },
+        {
+          "title": "AI Startup Funding News | August, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/ai-startup-funding-news-august-2026/"
+        },
+        {
+          "title": "Funding Round of the Month News | August, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/funding-round-of-the-month-news-august-2026/"
+        },
+        {
+          "title": "Venture Capital & Startup Funding Roundup, August 13, 2026: Blackstone, Coatue, Founders Fund, Sequoia Capital, Thiel Capital & More - Tech Startups",
+          "url": "https://techstartups.com/2026/08/13/venture-capital-startup-funding-roundup-august-13-2026-blackstone-coatue-founders-fund-sequoia-capital-thiel-capital-more/"
+        },
+        {
+          "title": "North American Startup Funding Shattered Records In First Half Of 2026, Driven By AI",
+          "url": "https://news.crunchbase.com/venture/na-startup-funding-ma-shattered-records-ai-q2-2026/"
+        },
+        {
+          "title": "AI Startups That Raised Funding in August 2026: Big Rounds",
+          "url": "https://thebusinessperspective.com/ai-startups-that-raised-funding-in-august-2026/"
+        },
+        {
+          "title": "Top 100 AI Startup Funding & Investment Statistics (Aug, 2026) | Second Talent",
+          "url": "https://www.secondtalent.com/resources/ai-startup-funding-investment/"
+        },
+        {
+          "title": "After a Rocky Year, Newsrooms Push Deeper Into AI",
+          "url": "https://www.thewrap.com/media-platforms/journalism/ai-in-newsrooms-2026/"
+        },
+        {
+          "title": "How will AI reshape the news in 2026? Forecasts by 17 experts from around the world | Reuters Institute for the Study of Journalism",
+          "url": "https://reutersinstitute.politics.ox.ac.uk/news/how-will-ai-reshape-news-2026-forecasts-17-experts-around-world"
+        },
+        {
+          "title": "AI Media Pack 2026",
+          "url": "https://www.acquisition-international.com/issues/ai-media-pack/"
+        },
+        {
+          "title": "World's No.1 Monthly AI Magazine | AI Magazine",
+          "url": "https://aimagazine.com/magazines"
+        },
+        {
+          "title": "AI News | Latest News | Insights Powering AI-Driven Business Growth",
+          "url": "https://www.artificialintelligence-news.com/"
+        },
+        {
+          "title": "Publishers prepare to be “squeezed” by AI and creators in 2026 | Nieman Journalism Lab",
+          "url": "https://www.niemanlab.org/2026/01/publishers-prepare-to-be-squeezed-by-ai-and-creators-in-2026/"
+        },
+        {
+          "title": "AI and the Future of News 2026: what we learnt about its impact on newsrooms, fact-checking and news coverage | Reuters Institute for the Study of Journalism",
+          "url": "https://reutersinstitute.politics.ox.ac.uk/news/ai-and-future-news-2026-what-we-learnt-about-its-impact-newsrooms-fact-checking-and-news"
+        },
+        {
+          "title": "International AI Safety Report",
+          "url": "https://en.wikipedia.org/wiki/International_AI_Safety_Report"
+        },
+        {
+          "title": "The AIBs",
+          "url": "https://en.wikipedia.org/wiki/The_AIBs"
+        },
+        {
+          "title": "Alibaba unveils its largest, most capable AI model yet as DeepSeek launches ultra-low-cost rival",
+          "url": "https://americanbazaaronline.com/2026/08/03/alibaba-unveils-its-largest-most-capable-ai-model-485698/"
+        },
+        {
+          "title": "China's AI Giants Alibaba and DeepSeek Redefine Industry Standards with Record-Breaking Model Launches",
+          "url": "https://influencermagazine.uk/2026/08/chinas-ai-giants-alibaba-and-deepseek-redefine-industry-standards-with-record-breaking-model-launches/"
+        },
+        {
+          "title": "Alibaba unveils biggest Qwen model as DeepSeek deepens China's AI price war",
+          "url": "https://www.digitimes.com/news/a20260804VL205/alibaba-deepseek-cost-anthropic-claude.html"
+        },
+        {
+          "title": "Alibaba And DeepSeek Rewrite The AI Race With Cheaper And Powerful Models",
+          "url": "https://stratnewsglobal.com/world-news/alibaba-and-deepseek-rewrite-the-ai-race-with-cheaper-and-powerful-models/"
+        },
+        {
+          "title": "Alibaba’s open-source AI model Qwen overtakes Meta, Google to claim top spot globally: report - Global Times",
+          "url": "https://www.globaltimes.cn/page/202608/1368313.shtml"
+        },
+        {
+          "title": "China's AI competition intensifies as Alibaba unveils its biggest model and DeepSeek drives costs lower | CTech",
+          "url": "https://www.calcalistech.com/ctechnews/article/rjfsc3phfl"
+        },
+        {
+          "title": "Alibaba, DeepSeek push China’s AI model race towards lower costs",
+          "url": "https://www.artificialintelligence-news.com/news/china-ai-model-race-alibaba-deepseek-costs/"
+        },
+        {
+          "title": "HUGE: China’s AI Ecosystem Surges As DeepSeek & Alibaba Release Next-Gen Models - YouTube",
+          "url": "https://www.youtube.com/watch?v=eZVIz3DZ3uM"
+        },
+        {
+          "title": "New on Yahoo",
+          "url": "https://tech.yahoo.com/ai/deals/articles/alibabas-qwen-chatbot-exceeds-10-093000025.html"
+        },
+        {
+          "title": "Renewed Indications of U.S.-Gulf AI Alignment - AGSI",
+          "url": "https://agsi.org/analysis/renewed-indications-of-u-s-gulf-ai-alignment/"
+        },
+        {
+          "title": "The Middle East’s Big Bet on Artificial Intelligence and Data Security | Crowell & Moring LLP",
+          "url": "https://www.crowell.com/en/insights/client-alerts/the-middle-easts-big-bet-on-artificial-intelligence-and-data-security"
+        },
+        {
+          "title": "Why Saudi, UAE are becoming the world’s next AI heavyweights",
+          "url": "https://gulfbusiness.com/en/2026/artificial-intelligence/why-saudi-uae-are-becoming-the-worlds-next-ai/"
+        },
+        {
+          "title": "The Gulf has billions to spend on AI. It still needs Nvidia",
+          "url": "https://restofworld.org/2026/gulf-ai-investment-nvidia-monopoly-blackwell/"
+        },
+        {
+          "title": "Gulf investors risk funding AI race while value flows elsewhere | AGBI",
+          "url": "https://www.agbi.com/analysis/ai/2026/08/gulf-investors-risk-funding-ai-race-while-value-flows-elsewhere/"
+        },
+        {
+          "title": "What the SpaceX IPO reveals about Gulf money in AI - Rest of World",
+          "url": "https://restofworld.org/2026/spacex-ipo-gulf-money-ai/"
+        },
+        {
+          "title": "The Gulf states are betting big on AI: who’s investing where? | Fortune",
+          "url": "https://fortune.com/2026/06/09/gulf-states-betting-big-on-ai-investment/"
+        },
+        {
+          "title": "heavy ai investments middle east led by uae saudi arabia risk iran war 361668",
+          "url": "https://www.emarketer.com/chart/c/361668/heavy-ai-investments-middle-east-led-by-uae-saudi-arabia-risk-iran-war-361668"
+        },
+        {
+          "title": "Arabian Gulf Investment and Green Harbor Investment ink $500M deal to boost AI and robotics",
+          "url": "https://gulfnews.com/business/corporate-news/arabian-gulf-investment-and-green-harbor-investment-ink-500m-deal-to-boost-ai-and-robotics-1.500373751"
+        },
+        {
+          "title": "AI regulation in the UK: Debate on the need for cross-sector legislation - House of Lords Library",
+          "url": "https://lordslibrary.parliament.uk/ai-regulation-in-the-uk-debate-on-the-need-for-cross-sector-legislation/"
+        },
+        {
+          "title": "AI regulation in the UK - The House of Commons Library",
+          "url": "https://commonslibrary.parliament.uk/research-briefings/cbp-10003/"
+        },
+        {
+          "title": "Artificial intelligence | UK Regulatory Outlook May 2026 | Osborne Clarke",
+          "url": "https://www.osborneclarke.com/insights/regulatory-outlook-may-2026-artificial-intelligence"
+        },
+        {
+          "title": "AI in the Kings Speech 2026 Regulating for Growth Bill announced - Bird & Bird",
+          "url": "https://www.twobirds.com/en/insights/2026/ai-in-the-kings-speech-2026-regulating-for-growth-bill-announced"
+        },
+        {
+          "title": "AI Regulation Bill - Hansard - UK Parliament",
+          "url": "https://hansard.parliament.uk/Lords/2026-06-04/debates/0A1BCBAE-E906-4071-AA92-BCE005D57121/AIRegulationBill"
+        },
+        {
+          "title": "Is There a UK AI Act? UK AI Regulation in 2026",
+          "url": "https://bratby.law/uk-ai-regulation-what-the-law-says/"
+        },
+        {
+          "title": "Artificial Intelligence (Regulation) Bill [HL] - Parliamentary Bills - UK Parliament",
+          "url": "https://bills.parliament.uk/bills/3942"
+        },
+        {
+          "title": "Artificial Intelligence (Regulation) Bill [HL] [AS INTRODUCED] CONTENTS 1",
+          "url": "https://bills.parliament.uk/publications/59353/documents/6094"
+        }
+      ]
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "# Cross-Spectrum Political Briefing — Week of August 11–17, 2026\n\nThree stories dominated the week, all with direct 2026 midterm relevance. Note on dates: the Minnesota primary (Aug. 11) and the vaccine executive order (Aug. 10) are genuinely this-week developments. The National Guard extension was confirmed in mid-July but hit its one-year anniversary this week (Aug. 11–12), which generated a fresh wave of assessment coverage — that's the recent hook used below.\n\n---\n\n## Story 1: Trump signs executive order narrowing the childhood vaccine schedule\n\n**What actually happened (factual anchor):**\n\nOn August 10, 2026, President Trump signed an executive order aimed at reshaping the federal government's approach toward childhood vaccines, proposing to reduce the total number of immunizations recommended for children in their earliest years and dividing the childhood vaccine schedule into three categories.\n\n \n\nThe order recommends dropping the list of diseases that all children should be vaccinated against from 18 to 11, with other shots recommended for high-risk groups or subject to \"shared clinical decision-making\" between parents and doctors.\n\n \n\nIt also states that the MMR vaccine should be administered in three separate single-disease shots once such products are domestically available.\n\n \n\nThe White House said free vaccines provided through the Vaccines for Children program would not be affected because, by law, that program relies on guidance from the CDC's vaccine advisory committee.\n\n Note: the claim that vaccines cause autism, which the President referenced at the signing, is not supported by scientific evidence and has been repeatedly refuted by the medical research community.\n\n**PROGRESSIVE framing**\n*CNN — news reporting — https://www.cnn.com/2026/08/10/politics/trump-vaccine-autism-rfk*\n\nCNN reports Trump signed the order insisting infants should receive fewer immunizations over a longer period despite little scientific evidence supporting such sweeping changes.\n\n \n\nIt notes the MMR-splitting recommendation goes against broad scientific consensus.\n\n The framing centers on the absence of new evidence and the medical establishment's opposition.\n\n**NEUTRAL framing**\n*NBC News — news reporting — https://www.nbcnews.com/health/kids-health/trump-order-fewer-childhood-vaccines-rcna591774*\n\nNBC reports the proposed changes, in theory, would not prohibit access to vaccines or limit insurance coverage; rather, Kennedy said they are meant to give parents choices.\n\n \n\nIt also quotes a legal expert noting the order may encourage some red states to alter their vaccine recommendations or school requirements, and a public health concern that the US is \"about to lose our measles elimination status.\"\n\n**CONSERVATIVE framing**\n*Conservative Ladies of America (Substack) — opinion/analysis — https://conservativeladiesofamerica.substack.com/p/the-vaccine-battle-has-shifted-but*\nThis piece is notable because it is skeptical from the right. \n\nIt acknowledges the order changes federal recommendations and directs agencies to support parental-rights challenges, but argues it does not override state mandates, create a nationwide exemption, or give parents an enforceable right to keep a child in school after declining a required vaccine.\n\n The broader conservative case for the order — made by officials like NIH Director Jay Bhattacharya — is that \n\nthe directive is designed to restore parental autonomy and repair the relationship between parents and public health.\n\n*Steel-man note:* The strongest conservative argument is about parental choice and aligning with some European schedules — a legitimate values/priority disagreement. However, any framing that presents the order as resting on a vaccine-autism link is relying on a factually false claim and should not be treated as a valid basis. Even prominent Republicans pushed back: \n\nSen. Bill Cassidy said it \"will increase hesitancy and make children less safe,\" and that parents should listen to their child's pediatrician rather than an inaccurate executive order.\n\n---\n\n## Story 2: Progressive Peggy Flanagan wins Minnesota Democratic Senate primary\n\n**What actually happened (factual anchor):**\n\nOn August 11, 2026, Lt. Gov. Peggy Flanagan won the Democratic primary for the open US Senate seat in Minnesota, defeating Rep. Angie Craig in the race to succeed retiring Sen. Tina Smith.\n\n \n\nFlanagan secured 59% of the vote compared to Craig's 39%.\n\n \n\nFlanagan, endorsed by Sens. Bernie Sanders and Elizabeth Warren, was the latest progressive to win a primary, following epidemiologist Abdul El-Sayed's Senate nomination win in Michigan the prior week.\n\n \n\nShe will face Republican former NFL reporter Michele Tafoya, who won the GOP primary, in November.\n\n**PROGRESSIVE framing**\n*Minnesota Reformer / Civic Media — news reporting — https://minnesotareformer.com/2026/08/11/peggy-flanagan-wins-democratic-senate-primary-in-minnesota-in-victory-for-progressive-flank/*\n\nThe framing is that Flanagan's commanding win provides fuel to the progressive argument that the party's base demands an uncompromising response to the second Trump administration and a bold policy agenda to address the rising cost of living.\n\n \n\nIt emphasizes that Craig and her allies spent nearly $20 million on the airwaves versus $4.7 million for Flanagan's side\n\n — the \"many versus the money\" theme.\n\n**NEUTRAL framing**\n*PBS NewsHour (AP) — news reporting — https://www.pbs.org/newshour/politics/peggy-flanagan-wins-senate-primary-in-minnesota-notching-another-victory-for-progressive-democrats*\n\nThe AP reports Flanagan won in the latest victory for an insurgent progressive over the party's establishment, defeating centrist Rep. Craig with a pledge to fight the influence of corporations and confront Trump.\n\n \n\nIt also carries Craig's concession framing that Tafoya \"would be nothing more than a rubber stamp\" to Trump's agenda.\n\n**CONSERVATIVE framing**\n*NBC News / general reporting reflects the GOP line — news reporting — https://www.nbcnews.com/politics/2026-election/progressive-peggy-flanagan-wins-minnesota-democratic-senate-primary-rcna591627*\nThe conservative angle centers on electability and the fraud issue. \n\nCraig criticized Flanagan over Minnesota's handling of fraud in social services programs, suggesting Republicans would be eager to use the issue against Flanagan in the fall.\n\n Republicans argue that a nominee tied to the Walz administration's oversight record, and running to the left, is more beatable in a state Democrats must hold. (Note: Fox News framing this week emphasized a similar theme — e.g., Sen. Tim Scott arguing progressive nominees are \"making it easier\" for the GOP.)\n\n---\n\n## Story 3: National Guard's DC deployment hits one year; extension through 2029 in focus\n\n**What actually happened (factual anchor):**\n\nAugust 11, 2026 marked one year since President Trump declared a crime emergency in Washington, DC and deployed National Guard troops to patrol city streets.\n\n \n\nThe Department of Defense has confirmed the National Guard will remain deployed through Inauguration Day 2029.\n\n \n\nThe current cost is more than $3 million per day, according to a Congressional Budget Office estimate.\n\n \n\nA study by the Niskanen Center found the deployment produced a roughly 24 percent reduction in property crimes such as theft and vehicle break-ins, but concluded it led to no discernible decrease in violent crime.\n\n**PROGRESSIVE framing**\n*MSNBC (ms.now) — news/analysis — https://www.ms.now/news/trump-national-guard-deployment-washington-dc-2029*\n\nThe framing is that Trump is extending the National Guard's presence — the longest such deployment in US history — even as a new study finds it has done little to curb the crime it was sent to fight.\n\n \n\nIt also raises the politicization of the military, noting this summer's surge was bolstered by contingents from Democratic-governor states that later reversed course.\n\n**NEUTRAL framing**\n*NPR / Houston Public Media — news reporting — https://www.npr.org/2026/07/14/nx-s1-5892498/national-guard-deployment-dc-2029*\n\nNPR reports the Guard will remain deployed through Inauguration Day 2029 as part of Trump's anti-crime mission, unless the president deems otherwise, per the Pentagon.\n\n \n\nIt presents both findings: that studies found the presence had little to no effect on violent crime, and that the recent drop in crime would likely have happened regardless of the troops.\n\n**CONSERVATIVE framing**\n*Fox News — opinion/editorial — https://www.foxnews.com/opinion/trumps-use-national-guard-dc-model-saving-americas-cities*\n\nThis opinion piece argues that as crime ravages America's cities, Trump is delivering a bold, standardized solution by deploying National Guard troops to save the capital from chaos.\n\n \n\nIt presents DC as a national model that could be applied to cities like Cincinnati, Chicago, or Oakland.\n\n The evidentiary anchor conservatives cite is \n\nthe claim that DC homicides dropped roughly 44% after the crackdown and Guard deployment.\n\n*Steel-man note:* Both sides accept a genuine fact — crime, including homicides, did fall over the year. The real disagreement is over **causation**. \n\nThe nonpartisan Niskanen Center's own researcher noted the Guard was introduced into an environment where crime rates were already trending downward, and that the administration has pointed to the year-over-year decline without clarifying that the decline was already happening.\n\n So the conservative claim of a crime drop is factually accurate; the contested claim is that the Guard caused it. A framing that presents the homicide decline as *proven* to be Guard-driven overstates what the evidence supports.\n\n---\n\n### One caveat for your reader\nThe Texas redistricting fight (a federal panel blocking the GOP map, then a Supreme Court stay) surfaced in some \"this week",
+      "sources": [
+        {
+          "title": "News – The White House",
+          "url": "https://www.whitehouse.gov/news/"
+        },
+        {
+          "title": "Politics and Government News",
+          "url": "https://www.cnbc.com/politics/"
+        },
+        {
+          "title": "2026 United States House of Representatives election in Alaska",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_Alaska"
+        },
+        {
+          "title": "The Nation",
+          "url": "https://www.thenation.com/"
+        },
+        {
+          "title": "Politics : NPR",
+          "url": "https://www.npr.org/sections/politics/"
+        },
+        {
+          "title": "2026 United States Senate special election in Florida",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida"
+        },
+        {
+          "title": "2026 Florida elections",
+          "url": "https://en.wikipedia.org/wiki/2026_Florida_elections"
+        },
+        {
+          "title": "2026 United States Senate election in Minnesota",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_election_in_Minnesota"
+        },
+        {
+          "title": "Politics News: Latest on Trump Administration, Congress, Elections and More | NBC News",
+          "url": "https://www.nbcnews.com/politics"
+        },
+        {
+          "title": "Presidential Actions – The White House",
+          "url": "https://www.whitehouse.gov/presidential-actions/"
+        },
+        {
+          "title": "2026 midterm election: Latest updates, news and commentary about the midterms",
+          "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/"
+        },
+        {
+          "title": "2026 Midterms: Latest News, Updates and Results of the Midterm Elections | NBC News",
+          "url": "https://www.nbcnews.com/politics/2026-election"
+        },
+        {
+          "title": "Election 2026: Results, news and analysis | CNN Politics",
+          "url": "https://www.cnn.com/election/2026"
+        },
+        {
+          "title": "United States Congress elections, 2026 - Ballotpedia",
+          "url": "https://ballotpedia.org/United_States_Congress_elections,_2026"
+        },
+        {
+          "title": "Watch CBS News",
+          "url": "https://www.cbsnews.com/video/what-early-polls-are-projecting-as-politicians-look-ahead-to-2026-midterm-elections"
+        },
+        {
+          "title": "Watch CBS News",
+          "url": "https://www.cbsnews.com/video/democrats-take-more-aggressive-approach-as-2026-midterm-elections-come-into-focus"
+        },
+        {
+          "title": "2026 election",
+          "url": "https://www.pbs.org/newshour/classroom/tag/2026-election"
+        },
+        {
+          "title": "LIVE UPDATES",
+          "url": "https://www.foxnews.com/elections/2022/midterm-results/state/connecticut"
+        },
+        {
+          "title": "LIVE UPDATES",
+          "url": "https://www.foxnews.com/elections/2020/primary-results"
+        },
+        {
+          "title": "LIVE UPDATES",
+          "url": "https://www.foxnews.com/elections/2022/midterm-results/voter-analysis?year=2018"
+        },
+        {
+          "title": "National Guard deployment in D.C. extended until 2029 : Trump's Terms : NPR",
+          "url": "https://www.npr.org/2026/07/15/nx-s1-5894757/national-guard-deployment-in-d-c-extended-until-2029"
+        },
+        {
+          "title": "Trump’s National Guard deployment in D.C. has been extended until 2029",
+          "url": "https://wamu.org/story/26/07/14/trump-national-guard-deployment-d-c-extended-2029/"
+        },
+        {
+          "title": "Trump's National Guard deployment in D.C. has been extended until 2029 | NPR & Houston Public Media",
+          "url": "https://www.houstonpublicmedia.org/npr/2026/07/14/nx-s1-5892498/trumps-national-guard-deployment-in-d-c-has-been-extended-until-2029/"
+        },
+        {
+          "title": "Trump's National Guard deployment in D.C. has been extended until 2029",
+          "url": "https://www.npr.org/2026/07/14/nx-s1-5892498/national-guard-deployment-dc-2029"
+        },
+        {
+          "title": "Trump's National Guard deployment in D.C. has been extended until 2029 | KPBS Public Media",
+          "url": "https://www.kpbs.org/news/politics/2026/07/14/trumps-national-guard-deployment-in-d-c-has-been-extended-until-2029"
+        },
+        {
+          "title": "National Guard continuing DC deployment through Inauguration '29",
+          "url": "https://www.nbcwashington.com/news/local/national-guard-continuing-dc-deployment-through-inauguration-29/4130525/"
+        },
+        {
+          "title": "National Guard deployment in DC extended until next presidential inauguration",
+          "url": "https://thehill.com/policy/defense/5967829-national-guard-deployment-in-dc-extended-until-next-presidential-inauguration/"
+        },
+        {
+          "title": "Pentagon to keep National Guard activated in D.C. through Inauguration Day 2029",
+          "url": "https://cbs4local.com/news/nation-world/national-guard-washington-dc-pentagon-donald-trump-dc-safe-and-beautiful-mission-metropolitan-police-department-mpd-anti-crime-freedom-250-crime-federal-law-enforcement-emergency-executive-order-7news-district-of-columbia"
+        },
+        {
+          "title": "Trump extends National Guard deployment in Washington into 2029",
+          "url": "https://www.ms.now/news/trump-national-guard-deployment-washington-dc-2029"
+        },
+        {
+          "title": "Trump signs order seeking to upend childhood vaccine schedule | Healthcare Dive",
+          "url": "https://www.healthcaredive.com/news/trump-executive-order-childhood-vaccine-schedule-autism/827529/"
+        },
+        {
+          "title": "Trump signs executive order aimed at reducing number of recommended childhood vaccines | CNN Politics",
+          "url": "https://www.cnn.com/2026/08/10/politics/trump-vaccine-autism-rfk"
+        },
+        {
+          "title": "Trump signs order seeking to upend childhood vaccine schedule | BioPharma Dive",
+          "url": "https://www.biopharmadive.com/news/trump-executive-order-childhood-vaccine-schedule-autism/827510/"
+        },
+        {
+          "title": "Trump demands major changes to childhood vaccine recommendations - The Washington Post",
+          "url": "https://www.washingtonpost.com/politics/2026/08/10/trump-administration-order-would-upend-nations-childhood-vaccine-schedule/"
+        },
+        {
+          "title": "Trump order aims to cut number of diseases all children should be vaccinated against from 18 to 11",
+          "url": "https://www.nbcnews.com/health/kids-health/trump-order-fewer-childhood-vaccines-rcna591774"
+        },
+        {
+          "title": "What Trump’s executive order means for vaccinations this fall | CNN",
+          "url": "https://www.cnn.com/2026/08/10/health/executive-order-vaccines-what-it-means"
+        },
+        {
+          "title": "Delivering Gold Standard Childhood Vaccine Recommendations for Americans – The White House",
+          "url": "https://www.whitehouse.gov/presidential-actions/2026/08/delivering-gold-standard-childhood-vaccine-recommendations-for-americans/"
+        },
+        {
+          "title": "Press Release",
+          "url": "https://www.gillibrand.senate.gov/?p=38321"
+        },
+        {
+          "title": "CDC Acts on Presidential Memorandum to Update Childhood Immunization Schedule",
+          "url": "https://www.cdc.gov/media/releases/2026/2026-cdc-acts-on-presidential-memorandum-to-update-childhood-immunization-schedule.html"
+        },
+        {
+          "title": "rep nancy mace applauds president trumps vaccine reform",
+          "url": "https://mace.house.gov/media/press-releases/rep-nancy-mace-applauds-president-trumps-vaccine-reform"
+        },
+        {
+          "title": "Federal court blocks Texas from using new congressional map for 2026 elections - CBS News",
+          "url": "https://www.cbsnews.com/news/texas-congressional-map-2026-judge-blocks/"
+        },
+        {
+          "title": "Federal judges block Texas from using its new US House map in the 2026 midterms - ABC7 Los Angeles",
+          "url": "https://abc7.com/post/federal-judges-block-texas-using-new-us-house-map-2026-midterms/18170342/"
+        },
+        {
+          "title": "Texas GOP House map blocked by federal judges",
+          "url": "https://thehill.com/regulation/court-battles/5611065-texas-republican-redistricting-challenge/"
+        },
+        {
+          "title": "Federal Court Blocks Texas Gerrymander - Democracy Docket",
+          "url": "https://www.democracydocket.com/news-alerts/federal-court-blocks-texas-gerrymander/"
+        },
+        {
+          "title": "Federal judges block Texas from using redrawn congressional map",
+          "url": "https://www.foxnews.com/politics/federal-judges-block-texas-from-using-redrawn-congressional-map.amp"
+        },
+        {
+          "title": "Federal court blocks Texas from using new congressional gerrymander in 2026 midterms",
+          "url": "https://www.yahoo.com/news/articles/federal-court-blocks-texas-using-180858247.html"
+        },
+        {
+          "title": "federal judges block texas congressional map drawn to help gop in 2026 midterms",
+          "url": "https://www.pbs.org/newshour/amp/politics/federal-judges-block-texas-congressional-map-drawn-to-help-gop-in-2026-midterms"
+        },
+        {
+          "title": "federal judges block texas congressional map drawn to help gop in 2026 midterms",
+          "url": "https://www.pbs.org/newshour/politics/federal-judges-block-texas-congressional-map-drawn-to-help-gop-in-2026-midterms"
+        },
+        {
+          "title": "federal court blocks texas redrawn congressional map rcna244673",
+          "url": "https://www.nbcnews.com/politics/elections/federal-court-blocks-texas-redrawn-congressional-map-rcna244673"
+        },
+        {
+          "title": "fletcher.house.gov",
+          "url": "https://fletcher.house.gov/news/documentquery.aspx?Page=4"
+        },
+        {
+          "title": "Progressive Peggy Flanagan wins Democratic Senate primary in Minnesota : NPR",
+          "url": "https://www.npr.org/2026/08/11/nx-s1-5927473/2026-minnesota-senate-primary-election-peggy-flanagan"
+        },
+        {
+          "title": "Peggy Flanagan wins Democratic Senate primary in Minnesota in victory for progressive flank - Civic Media",
+          "url": "https://civicmedia.us/news/2026/08/12/peggy-flanagan-wins-democratic-senate-primary-in-minnesota-in-victory-for-progressive-flank"
+        },
+        {
+          "title": "Progressive Lt. Gov. Peggy Flanagan wins Minnesota Democratic Senate primary",
+          "url": "https://www.nbcnews.com/politics/2026-election/progressive-peggy-flanagan-wins-minnesota-democratic-senate-primary-rcna591627"
+        },
+        {
+          "title": "Progressive lieutenant governor wins Minnesota Senate primary after making immigration a top issue",
+          "url": "https://www.deseret.com/politics/2026/08/12/progressive-candidate-peggy-flanagan-wins-minnesota-democratic-senate-primary-after-making-immigration-top-issue/"
+        },
+        {
+          "title": "Peggy Flanagan wins Senate primary in Minnesota, notching another victory for progressive Democrats | PBS News",
+          "url": "https://www.pbs.org/newshour/politics/peggy-flanagan-wins-senate-primary-in-minnesota-notching-another-victory-for-progressive-democrats"
+        },
+        {
+          "title": "Peggy Flanagan wins Democratic Senate primary in Minnesota in victory for progressive flank • Minnesota Reformer",
+          "url": "https://minnesotareformer.com/2026/08/11/peggy-flanagan-wins-democratic-senate-primary-in-minnesota-in-victory-for-progressive-flank/"
+        },
+        {
+          "title": "The Vaccine Battle Has Shifted, but Parents Still Don’t Have the Final Say",
+          "url": "https://conservativeladiesofamerica.substack.com/p/the-vaccine-battle-has-shifted-but"
+        },
+        {
+          "title": "Trump signs executive order to break up measles, mumps, rubella vaccine | CIDRAP",
+          "url": "https://www.cidrap.umn.edu/childhood-vaccines/trump-signs-executive-order-break-measles-mumps-rubella-vaccine"
+        },
+        {
+          "title": "Trump’s Executive Order on Vaccines — What Does It Mean? Experts Weigh In • Children's Health Defense",
+          "url": "https://childrenshealthdefense.org/defender/trumps-executive-order-vaccines-what-does-it-mean-experts-weigh-in/"
+        },
+        {
+          "title": "What Trump’s executive order means for vaccinations this fall | CNN",
+          "url": "https://www.cnn.com/2026/08/10/health/executive-order-vaccines-what-it-means"
+        },
+        {
+          "title": "Trump signs executive order that would roll back some recommended childhood vaccines",
+          "url": "https://www.ms.now/news/trump-signs-executive-order-rolling-back-required-childhood-vaccines"
+        },
+        {
+          "title": "steube.house.gov",
+          "url": "https://steube.house.gov/?p=6898"
+        },
+        {
+          "title": "rep nancy mace applauds president trumps vaccine reform",
+          "url": "https://mace.house.gov/media/press-releases/rep-nancy-mace-applauds-president-trumps-vaccine-reform"
+        },
+        {
+          "title": "Trump’s executive order disappoints religious conservatives",
+          "url": "https://news.yahoo.com/trumps-executive-order-disappoints-religious-conservatives-194316034.html"
+        },
+        {
+          "title": "Tuesday marks one year since National Guard deployment in DC | FOX 5 DC",
+          "url": "https://www.fox5dc.com/news/one-year-later-mixed-reviews-dc-national-guard-deployment-amid-crime-emergency"
+        },
+        {
+          "title": "Right-wing media insist DC residents “are very happy” with the National Guard deployment | Media Matters for America",
+          "url": "https://www.mediamatters.org/fox-news/right-wing-media-insist-dc-residents-are-very-happy-national-guard-deployment"
+        },
+        {
+          "title": "The National Guard Has Been Deployed to DC for a Year. What Has It Accomplished? - Washingtonian",
+          "url": "https://washingtonian.com/2026/08/11/the-national-guard-has-been-deployed-to-dc-for-a-year-what-has-it-accomplished/"
+        },
+        {
+          "title": "One Year Later, Washington, D.C. Is a Safer Place Thanks to the National Guard – PJ Media",
+          "url": "https://pjmedia.com/michael-a-letts/2026/08/13/one-year-later-washington-dc-is-a-safer-place-thanks-to-the-national-guard-n4956120"
+        },
+        {
+          "title": "Washington, DC, homicides drop 44% after National Guard deployed, data shows | Fox News",
+          "url": "https://www.foxnews.com/us/trumps-dc-crime-crackdown-working-city-sees-homicides-plummet-43-since-2025-slain-interns-mom"
+        },
+        {
+          "title": "Did Trump’s DC Takeover Cut Crime? What One Year of Data Shows - Newsweek",
+          "url": "https://www.newsweek.com/did-trump-dc-takeover-cut-crime-what-one-year-data-shows-12304162"
+        },
+        {
+          "title": "DC residents debate safety gains a year into Trump’s Guard deployment | Crime News | Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/8/11/dc-residents-debate-safety-gains-a-year-into-trumps-guard-deployment"
+        },
+        {
+          "title": "New evidence undercuts Trump’s claims about crime, National Guard deployments in D.C.",
+          "url": "https://www.ms.now/rachel-maddow-show/maddowblog/national-guard-washington-dc-deployment-trump-crime"
+        },
+        {
+          "title": "Hecklers confront Vance, Hegseth during visit to thank National Guard troops in DC",
+          "url": "https://www.foxnews.com/opinion/trumps-use-national-guard-dc-model-saving-americas-cities"
+        }
+      ]
+    }
+  ]
+}
