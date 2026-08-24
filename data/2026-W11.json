@@ -1,0 +1,909 @@
+{
+  "id": "2026-W11",
+  "year": 2026,
+  "week": 11,
+  "generatedAt": "2026-08-24T13:50:04.293Z",
+  "dateLabel": "August 24, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "# AI Product Management Briefing — For Vocal Media's AI Content & Creator Tooling\n\n## 1. Judgment is the scarce skill when building gets cheap (Framework)\nAs AI drops the cost of producing output, the hard part shifts to deciding what's worth building and knowing when to stop. \n\nWhen AI compresses the cost of producing output, the scarce skill is no longer production. It is judgment: deciding what is worth building, proving it worked, and knowing when to stop.\n\n**Why it matters:** For AI content pipelines and creator tooling, you can spin up features fast — the value you add is killing low-return work early. \n\nThe advantage will not go to the teams that build the most. It will go to the teams that learn fastest, stop earliest, and fund the clearest value.\n\n Applied to Vocal, this means being willing to sunset an audience-automation experiment the moment evidence points elsewhere, rather than defending it.\n\n**Source:** Metis Strategy — https://www.metisstrategy.com/product-management-ai-value-measurement/\n\n## 2. Measure the workflow outcome, not the model output (Metrics)\nA polished AI draft means nothing if a Vocal editor still has to rework it. The right question is whether the creator or editor actually got their job done. \n\nOutput metrics answer: how good is the response? Outcome metrics answer: did the user get the job done? AI product metrics prioritize outcome measurement because value is created at the workflow level, not at the response level.\n\n**Why it matters:** Because AI systems are probabilistic, users often do extra work to fix outputs — so track that hidden cost. \n\nAI product metrics address this gap by incorporating signals such as verification effort, correction behavior, and workflow completion.\n\n For editorial tooling, watch acceptance rate closely: \n\nhow often users accept, apply, or act on AI suggestions. If your AI generates recommendations that users consistently ignore, you don't have a model problem—you have a value problem.\n\n**Source:** Prayer's Newsletter / Institute of Product Management — https://newsletter.iamprayerson.com/p/ai-product-metrics-for-product-managers\n\n## 3. How Anthropic's team ships AI features in days (Real shipped-product story)\nAnthropic compressed feature timelines dramatically by lowering the commitment barrier and tightening handoffs. \n\nAnthropic reduced feature timelines from six months to one week or one day by creating a standing \"evergreen launch room\" where engineers post completed features, triggering same-day turnaround from docs, PMM, and DevRel.\n\n A key move: \n\nlabeling releases as \"Research Preview\" removes the commitment barrier, allowing the team to ship rough versions within days and iterate based on real user feedback rather than internal speculation.\n\n**Why it matters:** The \"research preview\" label is directly transferable to Vocal's creator and audience-automation features — you can put rough tools in front of real creators and learn fast without over-promising. Note also that \n\nvague goals create paralysis on AI-native teams\n\n, so pair speed with sharp, narrow goal-setting.\n\n**Source:** Lenny's Podcast (Cat Wu, Anthropic), via SignalCast summary — https://www.lennysnewsletter.com/p/how-anthropics-product-team-moves\n\n## 4. AI PM roles are being scoped around real ownership, not buzzwords (Role scoping)\nThe industry is converging on named, concrete AI PM archetypes rather than generic \"senior PM + AI\" postings. \n\nAn AI product manager job description should name the exact model-powered surface the hire owns, the evaluation and data responsibilities, the cross-functional partners, and a visible comp band.\n\n The strongest hires cluster earlier in their careers than people expect: \n\nthe people doing this work are concentrated in years three through seven. Price and scope for where the talent actually is, which in 2026 means treating a PM with one shipped production model feature and a real eval-set story as the strong hire.\n\n**Why it matters:** This tells you what \"good\" looks like for your own growth — own a specific AI surface (a content pipeline, a creator tool) end to end, and build a real eval-set track record. Expect to need practical data fluency: \n\nsampling, basic distributions, precision and recall, ROC and AUC, calibration. Not at the depth of a data scientist. Past the depth of a PM who took one stats class in business school.\n\n**Source:** KORE1 — https://www.kore1.com/how-to-hire-ai-product-manager-2026/\n\n## 5. Blurring roles: engineers with product taste ship end-to-end (Role scoping / how teams organize)\nAnthropic's hiring reflects a structural shift in how AI teams staff up. As Cat Wu describes: \n\nI think all of the roles are merging. PMs are doing some engineering work. Engineers are doing PM work. Designers are PMing and also landing code.\n\n On her team, \n\nthere are many engineers who are fully able to end to end go from see user feedback on Twitter through to like ship a product at the end of the week with almost no product involvement.\n\n**Why it matters:** As a new AI PM, your leverage isn't gatekeeping specs — it's product taste, prioritization, and removing friction so builders can move. For Vocal's creator and editorial tooling, get close enough to the pipeline that you can prototype and evaluate yourself, not just write requirements and wait.\n\n**Source:** Roger Wong (analysis of Cat Wu / Lenny's interview) — https://rogerwong.me/2026/05/cat-wu-anthropic-product-hiring\n\n## 6. Run a 30-minute eval on one AI feature this week (Tactic she can apply now)\nStop relying on gut checks for AI output quality. \n\n\"Vibe-checking\" your AI outputs isn't enough. You need structure, repeatability, and specific criteria to truly evaluate if AI-generated content works for your product needs.\n\n Start small: pick one feature, review each interaction, and ask \n\n\"Did the AI successfully accomplish what the user requested?\"\n\n**How to run it this week:** Define your target creators/editors and map concrete prompts — this becomes your \"golden dataset.\" \n\nBefore you can eval anything, you need to know what you're building for. The first step is defining your ideal use cases and personas, what becomes your \"golden dataset.\"\n\n Keep scoring simple: \n\nbinary decisions provide more clarity than more complex scales. Enhance those binary judgements with detailed critiques.\n\n The payoff is that \n\n\"I think it's better\" becomes \"we tested 200 cases and accuracy improved 5% without regressing tone.\"\n\n This turns brand-voice and editorial-quality debates into evidence — exactly what you need for Vocal's content pipelines.\n\n**Sources:** Braintrust — https://www.braintrust.dev/blog/evals-for-pms · PMPrompt — https://pmprompt.com/blog/pm-ai-evals\n\n---\n**One thread across all six:** In AI content and creator tooling, your edge is judgment plus measurement — decide what's worth building, ship rough previews fast, and prove quality with real evals rather than opinions.",
+      "sources": [
+        {
+          "title": "Product Management in 2026: From Experimentation to the Reckoning - Metis Strategy",
+          "url": "https://www.metisstrategy.com/product-management-ai-value-measurement/"
+        },
+        {
+          "title": "AI Product Management in 2026: The AI Native Product Loop",
+          "url": "https://www.productleadership.com/blog/ai-product-management-ai-native-loop/"
+        },
+        {
+          "title": "AI in Product Management Guide for 2026 for Product Leaders | Gocious",
+          "url": "https://gocious.com/blog/ai-in-product-management-guide-for-2026-for-product-leaders"
+        },
+        {
+          "title": "Product Management Trends: 11 Shifts Shaping 2026",
+          "url": "https://productschool.com/blog/product-fundamentals/product-management-trends"
+        },
+        {
+          "title": "AI for Product Managers: Ultimate 2026 Guide to AI-Powered PM",
+          "url": "https://www.chatprd.ai/learn/ai-for-product-managers"
+        },
+        {
+          "title": "How Should Product Managers Use AI in 2026? The Methodology-Driven Guide | Ainna",
+          "url": "https://ainna.ai/resources/faq/ai-product-management"
+        },
+        {
+          "title": "AI Product Management Roadmap & Frameworks: Step-by-Step Guide",
+          "url": "https://voltagecontrol.com/articles/ai-product-management-roadmap-frameworks-step-by-step-guide/"
+        },
+        {
+          "title": "Toward Pre-Deployment Assurance for Enterprise AI Agents: Ontology-Grounded Simulation and Trust Certification",
+          "url": "https://arxiv.org/pdf/2606.04037"
+        },
+        {
+          "title": "The AI Product Management Workflows Every PM Needs In 2026 | Productside",
+          "url": "https://productside.com/the-ai-product-management-workflows-2026/"
+        },
+        {
+          "title": "AI Product Management in 2026: A Complete Guide to the New Playbook | Tosea.ai",
+          "url": "https://tosea.ai/blog/ai-product-management-2026-playbook"
+        },
+        {
+          "title": "ai product metrics for product managers: how to measure ai systems",
+          "url": "https://newsletter.iamprayerson.com/p/ai-product-metrics-for-product-managers"
+        },
+        {
+          "title": "Evaluation Metrics for AI Products That Drive Trust",
+          "url": "https://productschool.com/blog/artificial-intelligence/evaluation-metrics"
+        },
+        {
+          "title": "20 AI Performance Metrics to Follow in Software Development",
+          "url": "https://axify.io/blog/ai-performance-metrics"
+        },
+        {
+          "title": "KPIs for gen AI: Measuring your AI success | Google Cloud Blog",
+          "url": "https://cloud.google.com/transform/gen-ai-kpis-measuring-ai-success-deep-dive"
+        },
+        {
+          "title": "AI Agent Evaluation Metrics: A 2026 Guide",
+          "url": "https://aiagentsquare.com/blog/ai-agent-evaluation-metrics"
+        },
+        {
+          "title": "How to Answer AI Product Evaluation and Metrics Questions | 2026 AI PM Interview Guide",
+          "url": "https://www.crackpminterview.com/p/answer-ai-product-evaluation-metrics-questions"
+        },
+        {
+          "title": "The AI Product Success Metrics Interview: Your Complete Guide",
+          "url": "https://www.news.aakashg.com/p/ai-success-metrics-interview"
+        },
+        {
+          "title": "AI Product Metrics That Actually Matter | Complete Guide 2025",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-product-metrics"
+        },
+        {
+          "title": "How Anthropic’s product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code) - Lenny's Podcast: Product | Career | Growth | Podcast on Spotify",
+          "url": "https://open.spotify.com/episode/7wTqD5zwl8ZitUeplapvBG"
+        },
+        {
+          "title": "How Anthropic’s product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code) - Whatfinger Startup And Small Business",
+          "url": "https://startup.whatfinger.com/2026/04/23/how-anthropics-product-team-moves-faster-than-anyone-else-cat-wu-head-of-product-claude-code/"
+        },
+        {
+          "title": "AI Product Cycles Compress to Days at Anthropic as the PM Role Transforms — BigGo Finance",
+          "url": "https://finance.biggo.com/news/43548268410a1f3b"
+        },
+        {
+          "title": "Cat Wu: The evolving role of product managers in AI, why rapid iteration is essential for success, and the importance of metrics for team alignment | Lenny's Podcast",
+          "url": "https://cryptobriefing.com/cat-wu-the-evolving-role-of-product-managers-in-ai-why-rapid-iteration-is-essential-for-success-and-the-importance-of-metrics-for-team-alignment-lennys-podcast/"
+        },
+        {
+          "title": "Anthropic’s Product Team Speed & Strategy with Cat Wu | AI Radar",
+          "url": "https://ai-radar.merimerimeri.com/episodes/410-anthropics-product-team-speed-strategy-with-cat-wu/"
+        },
+        {
+          "title": "How Anthropic’s product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code)",
+          "url": "https://www.lennysnewsletter.com/p/how-anthropics-product-team-moves"
+        },
+        {
+          "title": "How Anthropic’s product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code) - YouTube",
+          "url": "https://www.youtube.com/watch?v=PplmzlgE0kg&vl=en-US"
+        },
+        {
+          "title": "How Anthropic's product team moves faster than anyone else | Cat Wu (Head of Product, Claude Code) - Roger Wong",
+          "url": "https://rogerwong.me/2026/05/cat-wu-anthropic-product-hiring"
+        },
+        {
+          "title": "How Anthropic's product team moves faster than anyone else",
+          "url": "https://riffon.com/pod/pd_m9s23gy3z40q/ep_friozppw74zp"
+        },
+        {
+          "title": "Cat Wu — Lenny's Summary - SignalCast",
+          "url": "https://www.signalcast.app/episode/lennys-podcast/how-anthropics-product-team-moves-faster-than-anyone-else-cat-wu-head-of-product-claude-code"
+        },
+        {
+          "title": "AI Product Manager Job Description: Roles, Skills & Pay 2026",
+          "url": "https://interviewkickstart.com/job-description/ai-product-manager"
+        },
+        {
+          "title": "AI Product Manager Job Description [Updated for 2026]",
+          "url": "https://interviewguy.com/ai-product-manager-job-description/"
+        },
+        {
+          "title": "What Is an AI Product Manager? Role Overview, Skills & How to Hire One (May 2026)",
+          "url": "https://www.paraform.com/blog/what-is-ai-product-manager"
+        },
+        {
+          "title": "What is the Scope of Product Management With AI in 2026?",
+          "url": "https://www.masaischool.com/blog/what-is-the-scope-of-product-management-with-ai-in-2026/"
+        },
+        {
+          "title": "AI Product Managers Are the PMs That Matter in 2026",
+          "url": "https://productschool.com/blog/artificial-intelligence/guide-ai-product-manager"
+        },
+        {
+          "title": "AI Product Manager: Key Skills & Responsibilities in 2026 | Second Talent",
+          "url": "https://www.secondtalent.com/occupations/ai-product-manager/"
+        },
+        {
+          "title": "AI Product Manager Job Description Template (2026) - KORE1",
+          "url": "https://www.kore1.com/ai-product-manager-job-description-template/"
+        },
+        {
+          "title": "How to Hire an AI Product Manager: 2026 Guide - KORE1",
+          "url": "https://www.kore1.com/how-to-hire-ai-product-manager-2026/"
+        },
+        {
+          "title": "Evals for PMs: A practical guide to AI product quality - Blog - Braintrust",
+          "url": "https://www.braintrust.dev/blog/evals-for-pms"
+        },
+        {
+          "title": "AI Evals for Product Managers: Building Better Feedback Loops for AI Products | Productboard",
+          "url": "https://www.productboard.com/blog/ai-evals-for-product-managers/"
+        },
+        {
+          "title": "PM’s 30-Minute AI Evals: A Lightweight, Repeatable Recipe",
+          "url": "https://sidsaladi.substack.com/p/pms-30-minute-ai-evals-a-lightweight"
+        },
+        {
+          "title": "A guide on implementing effective AI evaluations",
+          "url": "https://www.mindtheproduct.com/how-to-implement-effective-ai-evaluations/"
+        },
+        {
+          "title": "Mastering AI Evals: A Complete Guide for PMs",
+          "url": "https://www.productcompass.pm/p/ai-evals"
+        },
+        {
+          "title": "A Product Manager’s Guide to AI Evals: How I Build Reliable, Safe, and High-Quality AI Features | by Anubhav Goyal | Medium",
+          "url": "https://medium.com/@anubhavgoyal0011/a-product-managers-guide-to-ai-evals-how-i-build-reliable-safe-and-high-quality-ai-features-cfd9ce2fecb6"
+        },
+        {
+          "title": "Unlock Better AI Outputs with Evals: The Missing Step for PMs Using AI",
+          "url": "https://pmprompt.com/blog/pm-ai-evals"
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "# This Week in Claude & AI Automation\n\n## 1. Concise output style: stop Claude Code from writing you a novel\nClaude Code v2.1.237 shipped a built-in \"Concise\" output style that leads with the result, drops preamble and step-by-step narration, and keeps working just as thoroughly underneath. \n\nIt cuts narration and preamble only; the engineering work stays as thorough, and it preserves error reports, security warnings and destructive-action confirmations in full.\n\n**Try this:** Confirm you're on v2.1.237+ (`/update` if not), then either run `/config` → **Output style** → **Concise**, or add this to your settings file and start a fresh session:\n```json\n{ \"outputStyle\": \"Concise\" }\n```\n\nAn output style change takes effect after /clear or the start of a new session, since it's part of the system prompt Claude Code reads once at session start.\n\n Note the scoping gotcha: \n\nClaude Code writes the choice to .claude/settings.local.json at the project level, so it only affects that project unless you set it elsewhere.\n\n**Source:** explainx.ai — https://explainx.ai/blog/claude-code-concise-output-style-config-august-2026\n\n---\n\n## 2. `/design` skill: draft editable UI artboards before you write code\nA research-preview skill released Aug 17 turns a brief, screenshot, or existing design into editable artboards without leaving the terminal. \n\nThe /design skill brings Claude Design's artboard workflow into the CLI and Claude Code Desktop, built on artifacts. Run it with a brief and Claude publishes a canvas of editable artboards for your UI. Pick one, tweak it, then have Claude implement it.\n\n**Try this:** On v2.1.233+ (Pro/Max/Team/Enterprise), type in Claude Code:\n```\n/design a settings page for a webhook manager: list of endpoints, per-endpoint enable toggle, retry count field, and a \"test delivery\" button. Give me 3 layout options.\n```\n\nClaude prints a link to the published canvas. Open it, pick an artboard, and tell Claude which option to implement.\n\n The best use is upstream: \n\nask for several options for a screen before you commit to one.\n\n**Source:** Claude Code Docs, Week 34 — https://code.claude.com/docs/en/whats-new/2026-w34\n\n---\n\n## 3. Auto mode is now the default — so write your deny rules deliberately\nAs of Aug 14, auto mode became the starting permission mode for new sessions on Pro/Max/Team. That moves security from clicking Approve to policy you author. \n\nMaking auto mode the default moves security responsibility from clicking approve to writing the policy. Anyone who has not written their rules is running on the built-ins alone — a decision that should be made deliberately, not by silence.\n\n The critical nuance: only deny is a real boundary. \n\nA developer's local allow entry can override an organization's soft_deny, so the combination is additive, not a hard policy boundary. A rule that must hold across your company belongs in managed settings, evaluated before the classifier runs at all.\n\n**Try this:** Drop hard boundaries into the `permissions` block of your settings file (managed settings for org-wide rules):\n```json\n{\n  \"permissions\": {\n    \"allow\": [\"Bash(npm run *)\", \"Bash(git status)\"],\n    \"ask\": [\"Edit(src/billing/**)\"],\n    \"deny\": [\"Bash(git push *)\", \"Bash(rm:*)\"]\n  }\n}\n```\n\nDeny rules and explicit ask rules are evaluated before the classifier and still block or prompt in every mode.\n\n**Source:** Origami — https://origami.sa/en/blog/claude-code-august-2026/\n\n---\n\n## 4. Fork subagents: run parallel agents at ~10% of the token cost\nSubagent forking now ships on by default, and it changes the economics of fan-out work by sharing the parent's cached prefix instead of rebuilding it per child. \n\nCLAUDE_CODE_FORK_SUBAGENT=1 lets parallel child agents share their parent's prompt cache prefix, cutting input token costs by up to 90% for children 2-N.\n\n Concretely: \n\nfive agents in parallel without fork spend roughly 243,500 tokens on shared context; with fork you spend ~48,700 for child one plus ~20,200 for children two through five. The cache does the rest.\n\n**Try this:** For a parallel audit or migration, set the env var (at pipeline level for CI) and dispatch in one prompt:\n```bash\nexport CLAUDE_CODE_FORK_SUBAGENT=1\n```\nThen: `Research the authentication, database, and API modules in parallel using separate sub-agents; each returns a summary of risks only.` Two cost traps worth pinning: \n\nsubagents inherit the lead's current model unless you set the model field in the definition — a triage subagent will silently run on Opus if the lead is on Opus. Pin a cheap model like claude-haiku-4-5 for lightweight work and reserve stronger models for the subagents that need them.\n\n**Source:** Build This Now — https://www.buildthisnow.com/blog/guide/mechanics/claude-code-fork-subagent\n\n---\n\n## 5. MCP tunnels: expose internal tools to Claude with no public endpoint\nThe new MCP 2026-07-28 spec (stateless core) is rolling into Claude, and the practically useful piece for daily users is tunnels. \n\nMCP tunnels connect Claude to MCP servers inside a private network without exposing them to the public internet. Teams can bring internal tools to Claude with no inbound firewall rules, no public endpoints, and no IP allowlisting on the origin.\n\n Because the protocol went stateless, \n\nMCP moves from a bidirectional stateful protocol to a request/response model, so servers can now deploy on serverless and edge infrastructure.\n\n**Try this (security checklist before shipping any MCP server):** the leading new threat is prompt injection via retrieved content, so lock these down before production. \n\nIndirect prompt injection — adversarial content embedded in a retrieved summary that redirects agent behavior — is the leading risk; access control drift is second, where server permissions accumulate and an agent gets broader access than any individual user. User-scoped OAuth, least-privilege tool definitions, input validation, and output sandboxing are required controls before any production deployment.\n\n Enforce OAuth at the data layer, not query time.\n\n**Source:** Claude by Anthropic — https://claude.com/blog/bringing-mcp-2026-07-28-to-claude\n\n---\n\n## 6. (Non-Claude) The hybrid automation pattern: deterministic core, agentic surface\nThe mistake experienced builders still make is wrapping predictable logic in an agent. The 2026 consensus across n8n, Make, and Zapier is to split the workflow. \n\nA deterministic core for reliability, with an agentic surface for the ambiguous parts: validation, routing, and transforms stay as plain steps; classification, summarization, and reasoning go to the agent. All three support this pattern in one flow.\n\n The reason to be disciplined about it: \n\nwrapping a deterministic task in an agent does not make it smarter — it makes it slower, costlier, and harder to debug.\n\n**Try this (concrete n8n lead-qualification flow):**\n- **Trigger:** website contact form → n8n webhook\n- **Deterministic steps:** validate required fields → dedupe against CRM → normalize company/email\n- **Agentic step:** pass the cleaned payload to a Claude/GPT node to score by company size, service interest, and message content\n- **Deterministic steps:** IF score ≥ threshold → route to Slack + create CRM record; else → nurture queue\n\nA common n8n workflow: a website contact form triggers an n8n webhook, which passes the lead data to the Claude or GPT-4o node for qualification scoring based on company size, service interest, and message content.\n\n When migrating an existing zap to an agent, set your kill switch first: \n\nset an explicit rollback trigger before week one — a disagreement rate, an error rate, a cost-per-run ceiling — and write down who is allowed to pull it without convening a meeting.\n\n**Source:** IV Consulting — https://ivconsulting.in/blogs/zapier-agents-vs-make-ai-agents-vs-n8n-for-smbs-2026/",
+      "sources": [
+        {
+          "title": "What's New in Claude Code — August 2026: Design in the Terminal, Shorter Answers, Permissions You Write as Sentences",
+          "url": "https://origami.sa/en/blog/claude-code-august-2026/"
+        },
+        {
+          "title": "What's new - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        },
+        {
+          "title": "Claude Updates by Anthropic - August 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "ClaudeLog - Claude Code Docs, Guides, Tutorials & Best Practices",
+          "url": "https://claudelog.com/claude-news/"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - August 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Claude Developer Platform Updates by Anthropic - August 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+        },
+        {
+          "title": "Claude Platform release notes - Claude Platform Docs",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "title": "Anthropic Release Notes - August 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "MCP 2026-07-28 spec: stateless core, coming to Claude | Claude by Anthropic",
+          "url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude"
+        },
+        {
+          "title": "How to Power Claude Agents with Conversation Data Using MCP (August 2026 Guide)",
+          "url": "https://www.spinach.ai/blog/claude-mcp-meeting-data-setup"
+        },
+        {
+          "title": "Claude Updates by Anthropic - August 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - August 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Anthropic Release Notes - August 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "MCP 2026-07-28 final spec ships, Claude breaks a post-quantum standard, voice gets extended thinking — This Week in Claude | Claude Code Marketplace",
+          "url": "https://www.claudemarketplace.net/digest/aug-03-2026"
+        },
+        {
+          "title": "Best Claude Code setups for ai & agent development (August 2026) | Claude Directory",
+          "url": "https://www.claudedirectory.org/for/ai-agent-development"
+        },
+        {
+          "title": "Claude Code Subagents: A 2026 Practical Guide - Tembo.io",
+          "url": "https://www.tembo.io/blog/claude-code-subagents"
+        },
+        {
+          "title": "Claude Code Subagents and Multi-Agent Workflows: Complete Guide 2026 | explainx.ai Blog | explainx.ai",
+          "url": "https://explainx.ai/blog/claude-code-subagents-multi-agent-workflows-2026"
+        },
+        {
+          "title": "Claude Code Sub-Agents: Run Multiple Tasks in Parallel (2026 Guide) | Blink Blog",
+          "url": "https://blink.new/blog/claude-code-subagents-parallel"
+        },
+        {
+          "title": "Claude Code Subagents and Multi-Agent Orchestration Guide - Delegation, Parallel Fan-Out, and Custom Agent Definitions | hidekazu-konishi.com",
+          "url": "https://hidekazu-konishi.com/entry/claude_code_subagents_and_orchestration_guide.html"
+        },
+        {
+          "title": "Fork Subagents in Claude Code | Build This Now",
+          "url": "https://www.buildthisnow.com/blog/guide/mechanics/claude-code-fork-subagent"
+        },
+        {
+          "title": "Claude Code 2.1.232: Subagent Forking is On by Default",
+          "url": "https://www.joinnextdev.com/blog/claude-code-21232-subagent-forking-is-on-by-default"
+        },
+        {
+          "title": "Claude Code subagents: the 2026 production playbook (with examples) - Totalum Blog",
+          "url": "https://www.totalum.app/blog/claude-code-subagents-totalum"
+        },
+        {
+          "title": "Daily AI Agent News - August 2026",
+          "url": "https://aiagentstore.ai/ai-agent-news/2026-august"
+        },
+        {
+          "title": "Top 5 Prompt Orchestration Platforms for AI Agents in 2026",
+          "url": "https://www.getmaxim.ai/articles/top-5-prompt-orchestration-platforms-for-ai-agents-in-2026/"
+        },
+        {
+          "title": "AI Agent Landscape 2025–2026: A Technical Deep Dive | by Tao An | Medium",
+          "url": "https://tao-hpu.medium.com/ai-agent-landscape-2025-2026-a-technical-deep-dive-abda86db7ae2"
+        },
+        {
+          "title": "Agentic AI News — August 2026 Launches, Models & Research | Agentic.ai",
+          "url": "https://agentic.ai/news"
+        },
+        {
+          "title": "ChatGPT Work: OpenAI's Agent That Ships Finished Work",
+          "url": "https://www.digitalapplied.com/blog/chatgpt-work-openai-agent-launch-2026"
+        },
+        {
+          "title": "The AI Agentic Workflow Patterns That Actually Matter in 2026 | by Sathish Raju | Medium",
+          "url": "https://medium.com/@sathishkraju/the-ai-agentic-workflow-patterns-that-actually-matter-in-2026-08955ac6f398"
+        },
+        {
+          "title": "Prompt Engineering for AI Agents: 2026 Guide | Inflectra",
+          "url": "https://www.inflectra.com/Ideas/Topic/AI-Agent-Prompt-Engineering.aspx"
+        },
+        {
+          "title": "Building the agentic cloud: everything we launched during Agents Week 2026 | Cloudflare Blog",
+          "url": "https://blog.cloudflare.com/agents-week-in-review/"
+        },
+        {
+          "title": "Week 34 · August 17–21, 2026 - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/whats-new/2026-w34"
+        },
+        {
+          "title": "What's New in Claude Code — August 2026: Design in the Terminal, Shorter Answers, Permissions You Write as Sentences",
+          "url": "https://origami.sa/en/blog/claude-code-august-2026/"
+        },
+        {
+          "title": "Claude Code Concise Output Style: How to Enable It | explainx.ai Blog | explainx.ai",
+          "url": "https://explainx.ai/blog/claude-code-concise-output-style-config-august-2026"
+        },
+        {
+          "title": "Best Claude Code Skills in 2026 (Tested + How to Build)",
+          "url": "https://www.taskade.com/blog/claude-code-skills"
+        },
+        {
+          "title": "Claude Code Output Styles Guide (2026) | Like One",
+          "url": "https://likeone.ai/blog/claude-code-output-styles-guide-2026/"
+        },
+        {
+          "title": "ClaudeDevs: You can now set Claude Code's output style to Concise - posts.design",
+          "url": "https://posts.design/claudedevs-you-can-now-set-claude-code-s-2026-08-20"
+        },
+        {
+          "title": "Claude Code Output Styles: Concise Mode Explained | Claude Code Blog",
+          "url": "https://claudcod.com/blog/claude-code-output-styles/"
+        },
+        {
+          "title": "Claude Code Output Styles: All 5, Including Concise | Get Claude Skills",
+          "url": "https://www.getclaudeskills.com/blog/claude-code-output-styles-explained"
+        },
+        {
+          "title": "Claude Code adds a new \"Concise\" output style",
+          "url": "https://cthcommunity.com/en/news/claude-code-concise-output-style/"
+        },
+        {
+          "title": "Choose a permission mode - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/permission-modes"
+        },
+        {
+          "title": "Claude Code Permission Modes and Rule Syntax: Complete Guide (2026) — The Prompt Shelf",
+          "url": "https://thepromptshelf.dev/blog/claude-code-permission-modes-complete-guide-2026/"
+        },
+        {
+          "title": "Claude Code Permissions: Safe vs Fast Development Modes",
+          "url": "https://claudefa.st/blog/guide/development/permission-management"
+        },
+        {
+          "title": "Claude Code Permissions (2026): Allow Lists, Deny Rules, and Sandboxing Explained | Claude Directory",
+          "url": "https://www.claudedirectory.org/blog/claude-code-permissions-guide"
+        },
+        {
+          "title": "Claude Code Permissions and Auto Mode: The 44 KB Rulebook You Can't Print · Highflame",
+          "url": "https://www.highflame.com/blog/the-44kb-of-claude-codes-rulebook-you-cant-print/"
+        },
+        {
+          "title": "Claude Code Auto Mode Explained: Permissions Without the Prompts - Developers Digest",
+          "url": "https://www.developersdigest.tech/blog/claude-code-auto-mode-explained"
+        },
+        {
+          "title": "Claude Code Permissions: A Practical settings.json Guide for Allow, Deny, and Ask Rules - Developers Digest",
+          "url": "https://www.developersdigest.tech/blog/claude-code-permissions-settings-guide"
+        },
+        {
+          "title": "[Claude Code] Permission System for AI Agents",
+          "url": "https://codepointer.substack.com/p/claude-code-permission-system-for"
+        },
+        {
+          "title": "Marketing Automation AI Agents: Make vs Zapier vs n8n",
+          "url": "https://www.digitalapplied.com/blog/marketing-automation-ai-agents-make-zapier-n8n-2026"
+        },
+        {
+          "title": "What Is n8n? Workflow Automation & AI Agents Explained 2026",
+          "url": "https://www.taskade.com/blog/n8n-workflow-automation-history"
+        },
+        {
+          "title": "Automate Everything using AI Agents [n8n and Zapier] - 2026",
+          "url": "https://www.udemy.com/course/ultimate-beginners-guide-to-ai-agents-n8n-and-zapier/"
+        },
+        {
+          "title": "n8n 2026: The New Features That Matter (Self-Host or Get Help?)",
+          "url": "https://www.softomatesolutions.com/blog/n8n-updates-2026-whats-new/"
+        },
+        {
+          "title": "Make vs n8n vs Zapier for AI Automation (2026)",
+          "url": "https://www.ayautomate.com/blog/make-vs-n8n-vs-zapier"
+        },
+        {
+          "title": "From Zapier Zaps to Real Agents: A Migration Playbook",
+          "url": "https://www.digitalapplied.com/blog/zapier-n8n-to-agent-migration-playbook-2026"
+        },
+        {
+          "title": "Zapier Agents vs Make AI Agents vs n8n: Which to Use in 2026",
+          "url": "https://ivconsulting.in/blogs/zapier-agents-vs-make-ai-agents-vs-n8n-for-smbs-2026/"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "# This Week in AI: Global Briefing\n\n## 1. Alibaba raises $10 billion to fund its AI push — Hong Kong's biggest-ever follow-on sale\n**Region: China / International**\n\nAlibaba raised HK$80 billion ($10.2 billion) in Hong Kong's biggest follow-on offering, underscoring its willingness to amass and spend vast sums to take the lead in global artificial intelligence.\n\n \n\nThe company said it intends to use 100% of the net proceeds to invest in its \"full stack\" AI capabilities, a category that includes chips, infrastructure and the development and deployment of AI models.\n\n The raise matters because it signals how aggressively Chinese tech giants are matching Western capital spending, even under financial strain — \n\nnet profit fell 75% in the June quarter\n\n as AI investment weighed on results. Notably, \n\nits stock slumped 8.5% Monday, the most since early 2025\n\n, showing investors remain wary about how and when these bets will pay off.\n**Source:** Bloomberg — https://www.bloomberg.com/news/articles/2026-08-23/alibaba-to-raise-10-billion-by-selling-shares-for-ai-expansion\n\n## 2. EU AI Act enforcement begins, with new transparency rules for chatbots and deepfakes\n**Region: EU**\n\nFrom 2 August 2026, the European Commission's AI Office, together with national authorities, began enforcing the Artificial Intelligence (AI) Act. On the same date, new transparency rules started to apply, requiring certain AI systems to tell users when they are interacting with AI and when content has been generated or altered by it.\n\n In practice, \n\nchatbots and other interactive AI systems will have to tell users they are dealing with AI, deepfakes will have to be labelled, and AI-generated or altered content will have to carry machine-readable marks so it can be detected more easily.\n\n This is the shift from law-on-paper to active enforcement, and it has direct implications for media companies: any AI-assisted content or synthetic media aimed at EU audiences now faces labelling obligations. The reach is broad — \n\nthe law applies to any provider or deployer whose automated outputs are used within the European market, regardless of whether the company maintains a physical office there\n\n, so non-EU publishers are also affected.\n**Source:** European Commission — https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august\n\n## 3. India warns Meta on AI-content moderation as Google commits $15B to a data-center hub\n**Region: India**\nTwo developments this week underscore India's dual role as both a fast-growing AI market and a tightening regulator. \n\nIndia has warned Meta to strengthen AI-content moderation and comply with 3-hour takedown rules, especially for deepfakes, misinformation and illegal content\n\n — a signal directly relevant to media and platform operators about how aggressively New Delhi intends to police synthetic content. At the same time, \n\nGoogle is investing $15B in Andhra Pradesh to build its largest overseas AI data centre hub, combining AI compute, subsea cables and fibre networks targeted for 2028, though the project faces water and environmental concerns including proximity to a wildlife sanctuary.\n\n Together they show India positioning itself as critical AI infrastructure ground while asserting content-governance authority over foreign platforms.\n**Source:** AI4India Weekly (Substack) — https://ai4indiaweekly.substack.com/p/ai-for-india-summit-2026-reframing\n\n## 4. Publisher AI licensing broadens to smaller outlets — but leverage stays concentrated\n**Region: US / International (media & publishing)**\nThe publisher-AI licensing market keeps evolving in ways that matter for any media business. \n\nThe News/Media Alliance is giving its 2,200 members an opt-in AI licensing agreement with a 50/50 revenue share\n\n, an attempt to extend deals beyond the marquee names. But the structural reality is stark: \n\nthe entire licensing market, by structural necessity, pays only the brand-name corpus with genuine negotiating leverage, and every serious 2026 industry analysis concludes the long tail of small and mid-size publishers will see no meaningful revenue from this at all.\n\n The logic is about scarcity — \n\nan AI company pays for exclusive or near-exclusive access to sources like the WSJ or AP, whereas a smaller publisher's content usually overlaps with dozens of others, and that redundancy strips away negotiating leverage.\n\n For a media company, the takeaway is that licensing is a viable revenue line only for those with distinctive, hard-to-replicate reporting.\n**Source:** Magazine Manager — https://magazinemanager.com/resources/blogs/publishers-moving-forward-with-ai-licensing-deals\n\n## 5. Chinese models keep closing the gap on US labs, raising questions about chip sanctions\n**Region: China**\nA steady stream of competitive model launches from China is reshaping the global race. \n\nAlibaba became the latest in a parade of Chinese debuts hitting the top of global benchmarks with its Qwen3.8-Max, its most advanced model to date that appeared to match or exceed Anthropic's flagship Fable 5.\n\n Just before that, \n\nMoonshot AI's Kimi K3 showed performance comparable to the priciest US options built on a much humbler budget, sparking fresh questions over the effectiveness of US chip sanctions intended to slow China's tech ascent.\n\n The broader pattern is a pricing and speed war: \n\na flurry of model launches from China's AI sector is rapidly narrowing the gap with Silicon Valley and creating what's been described as a death zone for anyone without frontier-pushing technology or market-breaking pricing.\n\n For media firms choosing AI vendors, this means more capable, cheaper open-weight options — but also new questions about data governance and provenance.\n**Source:** Bloomberg — https://www.bloomberg.com/news/articles/2026-08-04/china-s-ai-blitz-creates-death-zone-for-rival-us-model-makers\n\n---\n\n*Note: The Alibaba, EU enforcement, and India items are the freshest and most concrete this week; the Chinese-model and publisher-licensing items reflect trends that developed over the past few weeks. Several benchmark comparisons (e.g., model-vs-model claims) come from press reporting rather than independent verification.*",
+      "sources": [
+        {
+          "title": "New AI Model Releases News | August, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/new-ai-model-releases-news-august-2026/"
+        },
+        {
+          "title": "LLM News Today (August 2026) – AI Model Releases",
+          "url": "https://llm-stats.com/ai-news"
+        },
+        {
+          "title": "AI Updates Today (August 2026) – Latest AI Model Releases",
+          "url": "https://llm-stats.com/llm-updates"
+        },
+        {
+          "title": "New AI Model Releases — August 2026 Timeline | LLM Gateway",
+          "url": "https://llmgateway.io/timeline"
+        },
+        {
+          "title": "AI Model Releases: August 2026 Tracker and Dated Ledger",
+          "url": "https://www.digitalapplied.com/blog/ai-model-releases-august-2026-tracker"
+        },
+        {
+          "title": "AI News August 2026: OpenAI 1B Users, Astra Launch & Major Price Cuts [Updated] | Kraviona Tech Solutions",
+          "url": "https://kraviona.com/blog/latest-ai-news-august-2026"
+        },
+        {
+          "title": "Latest AI Model Releases — August 2026",
+          "url": "https://aireleasetracker.com/latest"
+        },
+        {
+          "title": "Artificial intelligence (AI): Latest News and Updates | South China Morning Post",
+          "url": "https://www.scmp.com/topics/artificial-intelligence"
+        },
+        {
+          "title": "China’s AI Blitz Creates ‘Death Zone’ for Rival US Model Makers - Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-04/china-s-ai-blitz-creates-death-zone-for-rival-us-model-makers"
+        },
+        {
+          "title": "Chinese AI Models Gain on US Rivals in a Cascade of Debuts - Bloomberg",
+          "url": "https://www.bloomberg.com/news/newsletters/2026-08-04/chinese-ai-models-gain-on-us-rivals-in-a-cascade-of-debuts"
+        },
+        {
+          "title": "China AI News — AI Trends, Updates & Tracker | AI Weekly",
+          "url": "https://aiweekly.co/ai-news-today/china-ai-news"
+        },
+        {
+          "title": "Nvidia to launch cheaper AI chip for China: sources",
+          "url": "https://www.facebook.com/Reuters/videos/nvidia-to-launch-cheaper-ai-chip-for-china-sources/1156037089546007/"
+        },
+        {
+          "title": "Weekly China AI News from August 19, 2024 to August 25, 2024",
+          "url": "https://recodechinaai.substack.com/p/chinas-humanoid-robot-former-huawei/comments"
+        },
+        {
+          "title": "Weekly China AI News from July 1st, 2024 to July 14th, 2024",
+          "url": "https://recodechinaai.substack.com/p/inside-chinas-largest-ai-show-self/comments"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/xiaomi-unveils-remarkably-cheaper/comments"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/bytedance-unveils-chatgpt-rival-baidu/comments"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/sensetime-files-for-ipo-meet-efficient/comments"
+        },
+        {
+          "title": "A timeline of the major deals between publishers and AI tech companies in 2025",
+          "url": "https://digiday.com/media/a-timeline-of-the-major-deals-between-publishers-and-ai-tech-companies-in-2025/"
+        },
+        {
+          "title": "News generative AI deals revealed: Who is suing, who is signing?",
+          "url": "https://pressgazette.co.uk/platforms/news-publisher-ai-deals-lawsuits-openai-google/"
+        },
+        {
+          "title": "50/50 And Fair: Publishers Moving Forward With AI Licensing Deals",
+          "url": "https://magazinemanager.com/resources/blogs/publishers-moving-forward-with-ai-licensing-deals"
+        },
+        {
+          "title": "Every AI Content Licensing Deal, Mapped (2023-2026) - LLM Pulse",
+          "url": "https://llmpulse.ai/blog/ai-content-licensing-deals/"
+        },
+        {
+          "title": "The Billion-Dollar Bailout: A Running Tracker of Every Publisher AI Licensing Deal — Who Took the Money, Who's Holding Out, and What the Terms Actually Are - PR News",
+          "url": "https://everything-pr.com/ai-licensing-tracker"
+        },
+        {
+          "title": "AI Content Licensing in 2026: Why Most Publishers Will Never See a Deal, and What to Do Instead",
+          "url": "https://notioncue.com/blog/ai-content-licensing-training-data-deals-publishers-2026"
+        },
+        {
+          "title": "AI Music Licensing Deals 2026: Every Label Deal Tracked | Chartlex",
+          "url": "https://www.chartlex.com/blog/business/ai-music-licensing-deals-tracker-2026"
+        },
+        {
+          "title": "News Corp signs deal with OpenAI to share content, journalistic expertise",
+          "url": "https://seekingalpha.com/news/4109628-news-corp-signs-deal-with-openai-to-share-content-journalistic-expertise"
+        },
+        {
+          "title": "AI Act | Shaping Europe’s digital future",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+        },
+        {
+          "title": "The EU Artificial Intelligence (AI) Act | FAQs",
+          "url": "https://puntersouthall.law/insights/the-eu-artificial-intelligence-act/"
+        },
+        {
+          "title": "Commission starts enforcing AI Act rules and new transparency requirements on 2 August",
+          "url": "https://ec.europa.eu/commission/presscorner/detail/en/ip_26_1714"
+        },
+        {
+          "title": "Commission starts enforcing AI Act rules and new transparency requirements on 2 August | Shaping Europe’s digital future",
+          "url": "https://digital-strategy.ec.europa.eu/en/news/commission-starts-enforcing-ai-act-rules-and-new-transparency-requirements-2-august"
+        },
+        {
+          "title": "AI Regulation News August 2026: The Enforcement Era Begins, US Gridlock, and 15 Countries Update — Cubbbix Tools",
+          "url": "https://cubbbix.com/blog/ai-regulation-august-2026-global-update/"
+        },
+        {
+          "title": "AI Laws in Asia & Gulf 2026: China, Korea, Japan, UAE, Saudi | MaboaSoft",
+          "url": "https://maboasoft.com/blog/ai-regulation-asia-gulf/"
+        },
+        {
+          "title": "Europe's AI Rulebook Moves from Law to Action: A New Phase of AI Regulation Begins on 2 August 2026 with the Artificial Intelligence (AI) Act",
+          "url": "https://www.eij.news/post/europe-s-ai-rulebook-moves-from-law-to-action-a-new-phase-of-ai-regulation-begins-on-2-august-2026"
+        },
+        {
+          "title": "News & Analysis as of",
+          "url": "https://www.jdsupra.com/topics/innovative-technology/artificial-intelligence/eu"
+        },
+        {
+          "title": "India AI Impact Summit 2026",
+          "url": "https://impact.indiaai.gov.in/home/pre-summit-events"
+        },
+        {
+          "title": "India Deploys Homegrown AI at Red Fort, Pledges AI Training for Ten Million Youth",
+          "url": "https://www.techtimes.com/articles/324582/20260815/india-deploys-homegrown-ai-red-fort-pledges-ai-training-ten-million-youth.htm"
+        },
+        {
+          "title": "India-AI Impact Summit 2026",
+          "url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/india-ai-impact-summit-2026-2"
+        },
+        {
+          "title": "India’s AI Impact Summit 2026 to focus on democratising AI, bridging global divide",
+          "url": "https://ddnews.gov.in/en/indias-ai-impact-summit-2026-to-focus-on-democratising-ai-bridging-global-divide/"
+        },
+        {
+          "title": "India AI Impact Summit 2026",
+          "url": "https://en.wikipedia.org/wiki/India_AI_Impact_Summit_2026"
+        },
+        {
+          "title": "AI for India Summit 2026: Reframing India's AI Story",
+          "url": "https://ai4indiaweekly.substack.com/p/ai-for-india-summit-2026-reframing"
+        },
+        {
+          "title": "Indian Artificial Intelligence: Vision, ecosystem and the IndiaAI mission",
+          "url": "https://organiser.org/2026/01/03/333328/bharat/indian-artificial-intelligence-vision-ecosystem-and-the-indiaai-mission/"
+        },
+        {
+          "title": "India AI Mission and Emerging AI Ecosystem",
+          "url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/indiaai-mission-and-emerging-ai-ecosystem"
+        },
+        {
+          "title": "AI Updates August 2026: 15 Explosive Stories to Know",
+          "url": "https://imfounder.com/science-tech/ai/ai-updates-august-2026-openai-astra-deepmind/"
+        },
+        {
+          "title": "AI Startup Funding News | August, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/ai-startup-funding-news-august-2026/"
+        },
+        {
+          "title": "The Week Ahead in AI: Nvidia Earnings, AI Backlash, Alibaba $10B AI Funding, Plus Upcoming Earnings & Events",
+          "url": "https://theaiinsider.tech/2026/08/24/the-week-ahead-in-ai-nvidia-earnings-ai-backlash-alibaba-10b-ai-funding-plus-upcoming-earnings-events/"
+        },
+        {
+          "title": "Latest AI Startup Funding News and VC Investment Deals - 2026 | News",
+          "url": "https://www.crescendo.ai/news/latest-vc-investment-deals-in-ai-startups"
+        },
+        {
+          "title": "The Week’s 10 Biggest Funding Rounds: No Summer Doldrums As Dollars Still Flow To AI",
+          "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-ai-defense-fintech-robotics/"
+        },
+        {
+          "title": "The Week’s 10 Biggest Funding Rounds: Defense Tech, AI Tools And Infrastructure Lead The Way",
+          "url": "https://news.crunchbase.com/venture/biggest-funding-rounds-defense-tech-ai-infrastructure-castelion/"
+        },
+        {
+          "title": "AI Startup Funding News Today – Latest Deals & Rounds 2026",
+          "url": "https://aifundingtracker.com/ai-startup-funding-news-today/"
+        },
+        {
+          "title": "North American Startup Funding Shattered Records In First Half Of 2026, Driven By AI",
+          "url": "https://news.crunchbase.com/venture/na-startup-funding-ma-shattered-records-ai-q2-2026/"
+        },
+        {
+          "title": "Funding News - AI Startup Funding Updates | AI Market Watch",
+          "url": "https://www.ai-market-watch.com/news/category/funding"
+        },
+        {
+          "title": "AI Funding Tracker 2026: 1,426 Rounds | AI Funding",
+          "url": "https://aifunding.me/deals"
+        },
+        {
+          "title": "Recently Funded Startups Aug 2026 | Fundup AI",
+          "url": "https://fundup.ai/recently-funded-startups"
+        },
+        {
+          "title": "Alibaba to raise $10bn via new Hong Kong shares to fund AI investments - Nikkei Asia",
+          "url": "https://asia.nikkei.com/business/technology/alibaba-to-raise-10bn-via-new-hong-kong-shares-to-fund-ai-investments"
+        },
+        {
+          "title": "Alibaba Raises $10 Billion for AI in Record Hong Kong Share Sale",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-23/alibaba-to-raise-10-billion-by-selling-shares-for-ai-expansion"
+        },
+        {
+          "title": "Alibaba plans $10 billion Hong Kong share placement to fund AI spending By Reuters",
+          "url": "https://www.investing.com/news/stock-market-news/alibaba-proposes-hong-kong-share-placement-worth-10-billion-4872416"
+        },
+        {
+          "title": "Alibaba plans record $10.2 billion Hong Kong share sale to fund AI By Investing.com",
+          "url": "https://www.investing.com/news/company-news/alibaba-plans-record-102-billion-hong-kong-share-sale-to-fund-ai-4872426"
+        },
+        {
+          "title": "Alibaba Proposes $10 Billion Share Placement to Fund Global AI Drive",
+          "url": "https://chinaglobalsouth.com/2026/08/23/alibaba-share-sale-global-ai-investment/"
+        },
+        {
+          "title": "Alibaba strikes hard: 10 billion dollars to storm the AI revolution",
+          "url": "https://www.cointribune.com/en/10-billion-to-accelerate-ai-alibaba-embraces-a-full-stack-strategy"
+        },
+        {
+          "title": "Alibaba Raises $10 Billion for AI in Hong Kong's Largest-Ever Share Sale - Seoul Economic Daily",
+          "url": "https://en.sedaily.com/international/2026/08/24/alibaba-raises-10-billion-for-ai-in-hong-kongs-largest-ever"
+        },
+        {
+          "title": "alibaba announces major investment in ai and cloud infrastructure",
+          "url": "https://www.tipranks.com/news/company-announcements/alibaba-announces-major-investment-in-ai-and-cloud-infrastructure"
+        }
+      ]
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "# Cross-Spectrum Political Briefing — Week of August 17–24, 2026\n\nFour stories with clear election-season relevance. For each: three framings (progressive / neutral / conservative), each labeled news or opinion, plus a nonpartisan factual anchor.\n\n---\n\n## 1. Cook Political Report moves Texas and Iowa Senate races to \"Toss Up\"\n\n**What actually happened (factual anchor):** \n\nOn August 20, the Cook Political Report — a nonpartisan election handicapper — shifted the open U.S. Senate races in Texas and Iowa from \"Lean Republican\" to \"Toss Up.\"\n\n \n\nIt also moved the Texas governor's race from \"solid Republican\" to \"likely Republican\" and the Iowa governor's race from \"toss-up\" to \"lean Democrat.\"\n\n Trump carried both states by double-digit margins in 2024. Republicans retain a structural advantage in the Senate map; Democrats would need to win nearly all key races to take the majority.\n\n**Progressive framing**\nOutlet: Spectrum News (*news reporting*) — https://spectrumlocalnews.com/us/snplus/politics/2026/08/20/senate-toss-up-midterms-cook-political-report\nThis coverage foregrounds Democratic optimism. \n\nSenate Minority Leader Chuck Schumer used the ratings shift to argue Democrats are \"on the path to victory\" and have \"blown the map wide open,\" competing in purple and even red states.\n\n The frame connects the shift to cost-of-living pressures and dissatisfaction with Trump, presenting the ratings as validation that Democratic themes are landing even in hostile terrain.\n\n**Neutral framing**\nOutlet: Bloomberg (*news reporting*) — https://www.bloomberg.com/news/articles/2026-08-20/senate-races-in-texas-iowa-are-now-toss-ups-cook-report-says\nWire-style reporting states the facts without projecting an outcome. \n\nTwo key Senate races now look like toss-ups instead of leaning Republican, according to the nonpartisan Cook Political Report; in Texas, the contest between Democrat James Talarico and Republican Ken Paxton is a dead heat, though Texas hasn't had a Democratic senator in more than 30 years.\n\n The emphasis is on the analytical basis for the change rather than either party's spin.\n\n**Conservative framing**\nOutlet: Washington Examiner (*news reporting*) — https://www.washingtonexaminer.com/news/campaigns/congressional/4694781/texas-iowa-senate-races-shift-democrat-cook-political-report/\nThis coverage acknowledges the tightening but stresses the steep hill Democrats still face and highlights structural realities. \n\nIt notes Democrats need to flip four Republican-held seats while defending Michigan, New Hampshire and Georgia, and points out that Michigan defense \"might have taken a dent\" after progressive Abdul El-Sayed beat the more centrist Rep. Haley Stevens in the primary.\n\n The frame casts candidate quality and Democratic factionalism, not a broad wave, as the operative variables.\n\n*Cross-cutting note:* Cook itself frames this carefully. \n\nRepublicans still retain a structural advantage given the partisan challenges of the map, and Democrats still need almost every key race to break their way.\n\n \"Toss Up\" is not a prediction of a Democratic win — a point some progressive readings underweight and some conservative readings overweight.\n\n---\n\n## 2. FBI seizes former Rep. Eric Swalwell's devices in sexual misconduct probe\n\n**What actually happened (factual anchor):** \n\nThe FBI searched former Rep. Eric Swalwell's Washington, D.C., home and seized his electronic devices over the weekend in connection with an investigation into sexual misconduct allegations; agents stopped him at the San Francisco airport Saturday evening, and the warrant listed an iPhone and a MacBook Pro.\n\n \n\nSwalwell has repeatedly denied all allegations of sexual assault.\n\n \n\nHe resigned from Congress and dropped his California gubernatorial bid in April after reporting from CNN and the San Francisco Chronicle detailed the allegations.\n\n No charges have been filed.\n\n**Progressive framing**\nOutlet: NPR (*news reporting*) — https://www.npr.org/2026/08/21/nx-s1-5940542/federal-agents-seize-eric-swalwell-sexual-misconduct-probe\nLeft-leaning outlets largely carried the straight AP account without amplification, treating it as an active law-enforcement matter. \n\nThe reporting notes Swalwell resigned in April following allegations that he had sexually assaulted a woman twice, and that CNN also reported three other women alleged various kinds of misconduct.\n\n The frame keeps focus on the underlying allegations and the ongoing nature of the probe rather than on partisan targeting.\n\n**Neutral framing**\nOutlet: PBS NewsHour / Associated Press (*news reporting*) — https://www.pbs.org/newshour/politics/ap-report-federal-agents-seize-devices-from-ex-rep-eric-swalwell-in-sexual-misconduct-probe\nThe AP account attributes carefully and includes the accusers' perspective. \n\nAn attorney for Swalwell was contacted for comment, and Swalwell has denied allegations of sexual assault and misconduct; he announced his resignation in April following allegations that he had sexually assaulted a woman twice, including when she worked for him.\n\n The reporting confines itself to what sources and court filings establish.\n\n**Conservative framing**\nOutlet: CBS News (*news reporting*, widely cited on the right) — https://www.cbsnews.com/news/swalwell-fbi-search-warrants-devices-sexual-misconduct-investigation/\nRight-leaning coverage emphasizes the criminal exposure and the parallel release of older files. \n\nSources said one potential charge under review is Section 242 of Title 18, which criminalizes willfully depriving a person of a constitutional right while acting under color of law.\n\n Some conservative accounts pair this with the administration's release of declassified documents about Swalwell's past.\n\n*Factual guardrail:* The declassified files are a separate matter and should not be conflated with the current probe. \n\nOn Monday the White House released 97 pages on the FBI's investigation into Swalwell's 2015 relationship with Christine Fang, a suspected Chinese intelligence operative — but many details were already publicly known, and Swalwell was never charged in that matter.\n\n Any framing that treats the Fang files as new evidence in the sexual-misconduct case is factually inaccurate.\n\n---\n\n## 3. Trump threatens $5 billion lawsuit against Center for American Progress over crime report\n\n**What actually happened (factual anchor):** \n\nTrump threatened to sue the Center for American Progress, a left-leaning think tank, unless it retracted a report saying his National Guard deployments did not reduce crime as he claimed; a letter gave the group until end of business Friday to retract or face a $5 billion lawsuit, and the center declined.\n\n \n\nThe report, published July 13, argued the administration took credit for a drop in violent crime that was already underway.\n\n Underlying data: \n\nWashington, D.C. Metropolitan Police figures show violent offenses fell after peaking in 2023 and hit their lowest level in 30 years in 2024, continue to fall in preliminary 2025 data, and violent crime overall is down 26% this year versus the same point in 2024.\n\n**Progressive framing**\nOutlet: MS NOW / MaddowBlog (*opinion/analysis*) — https://www.ms.now/rachel-maddow-show/maddowblog/trump-crime-dc-threat-center-american-progress-intimidation\nThis frames the threat as an intimidation campaign against critics. It quotes CAP head Neera Tanden and characterizes the president's D.C. crime narrative as a personal \"experiment.\" \n\nAs the president sees it, the piece argues, crime in the capital is \"a riddle he has solved\" through deportations and National Guard deployments, which he has described as a local \"renaissance.\"\n\n The frame: the suit is meant to chill speech, not vindicate facts.\n\n**Neutral framing**\nOutlet: Associated Press (via Press Democrat) (*news reporting*) — https://www.pressdemocrat.com/2026/08/21/trump-lawsuit-threat/\nThe AP lays out the mechanics and the disputed factual core. \n\nIt notes the report's contested line — that the president \"is exploiting the fact that violent crime and murder were already declining in the cities his administration targeted\" — and that failure to retract would leave Trump seeking remedies for alleged \"financial and reputational harm.\"\n\n The reporting presents the crime-trend dispute as the heart of the matter.\n\n**Conservative framing**\nOutlet: The Daily Caller (via AOL) (*opinion-leaning news*) — https://www.aol.com/dc-sues-trump-admin-trying-151223500.html\nConservative coverage stresses that crime is falling under the deployment and casts critics as playing timeline games. \n\nIt argues D.C.'s attorney general cited statistics released under the Biden DOJ on Jan. 3 — weeks before Trump's second term — including a DOJ statement that 2024 violent crime was down 35% from 2023 and the lowest in over 30 years.\n\n The implication: the decline is real, but Trump-era enforcement is extending it.\n\n*Factual guardrail:* The empirical record supports that violent crime in D.C. was already declining before the 2026 Guard deployment, and has continued to decline since. Both are true simultaneously. A framing claiming the deployment single-handedly created the drop overstates causation; a framing claiming crime rose or that the deployment had no measurable effect goes beyond what current data establish. The honest description is a pre-existing downward trend that has continued.\n\n---\n\n## 4. Democratic Party's internal direction fight intensifies as democratic socialists win primaries\n\n**What actually happened (factual anchor):** \n\nFlorida Democrat Angie Nixon, a progressive who recently joined the Democratic Socialists of America, won the party's U.S. Senate primary in an upset, defeating retired Lt. Col. Alex Vindman, and will face Republican Ashley Moody in November.\n\n \n\nThis followed epidemiologist Abdul El-Sayed defeating Rep. Haley Stevens for the Michigan Senate Democratic nomination.\n\n \n\nIn neighboring Florida districts, Rep. Jared Moskowitz and newcomer Pia Dandiya",
+      "sources": [
+        {
+          "title": "PBS News Hour live episode, August 21, 2026",
+          "url": "https://www.pbs.org/newshour/"
+        },
+        {
+          "title": "Meet the Press – August 23, 2026",
+          "url": "https://www.nbcnews.com/meet-the-press/transcripts/meet-press-august-23-2026-rcna593995"
+        },
+        {
+          "title": "News – The White House",
+          "url": "https://www.whitehouse.gov/news/"
+        },
+        {
+          "title": "Video. Latest news bulletin | August 23rd, 2026 – Morning | Euronews",
+          "url": "https://www.euronews.com/video/2026/08/23/latest-news-bulletin-august-23rd-2026-morning"
+        },
+        {
+          "title": "Politics : NPR",
+          "url": "https://www.npr.org/sections/politics/"
+        },
+        {
+          "title": "2026 United States Senate special election in Florida",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_Senate_special_election_in_Florida"
+        },
+        {
+          "title": "Politics News: Latest on Trump Administration, Congress, Elections and More | NBC News",
+          "url": "https://www.nbcnews.com/politics"
+        },
+        {
+          "title": "Presidential Actions – The White House",
+          "url": "https://www.whitehouse.gov/presidential-actions/"
+        },
+        {
+          "title": "shero on sunday 348",
+          "url": "https://shero.substack.com/p/shero-on-sunday-348"
+        },
+        {
+          "title": "2026 Midterms: Latest News, Updates and Results of the Midterm Elections | NBC News",
+          "url": "https://www.nbcnews.com/politics/2026-election"
+        },
+        {
+          "title": "United States Congress elections, 2026 - Ballotpedia",
+          "url": "https://ballotpedia.org/United_States_Congress_elections,_2026"
+        },
+        {
+          "title": "When Are the 2026 Midterm Elections? And What is Their Purpose? | U.S. Vote Foundation",
+          "url": "https://www.usvotefoundation.org/when-are-2026-midterm-elections-and-what-their-purpose"
+        },
+        {
+          "title": "Election 2026: Results, news and analysis | CNN Politics",
+          "url": "https://www.cnn.com/election/2026"
+        },
+        {
+          "title": "Watch CBS News",
+          "url": "https://www.cbsnews.com/video/what-early-polls-are-projecting-as-politicians-look-ahead-to-2026-midterm-elections"
+        },
+        {
+          "title": "Watch CBS News",
+          "url": "https://www.cbsnews.com/video/democrats-take-more-aggressive-approach-as-2026-midterm-elections-come-into-focus"
+        },
+        {
+          "title": "Watch CBS News",
+          "url": "https://www.cbsnews.com/video/2026-midterm-races-risk-flipping-house-seats"
+        },
+        {
+          "title": "LIVE UPDATES",
+          "url": "https://www.foxnews.com/elections/2020/primary-results/external"
+        },
+        {
+          "title": "LIVE UPDATES",
+          "url": "https://www.foxnews.com/elections/2022/midterm-results/state/connecticut"
+        },
+        {
+          "title": "LIVE UPDATES",
+          "url": "https://www.foxnews.com/elections/2022/midterm-results/voter-analysis?year=2018"
+        },
+        {
+          "title": "Federal court blocks Texas from using new congressional map for 2026 elections - CBS News",
+          "url": "https://www.cbsnews.com/news/texas-congressional-map-2026-judge-blocks/"
+        },
+        {
+          "title": "Federal Court Blocks Texas Gerrymander - Democracy Docket",
+          "url": "https://www.democracydocket.com/news-alerts/federal-court-blocks-texas-gerrymander/"
+        },
+        {
+          "title": "Federal judges block Texas from using redrawn congressional map",
+          "url": "https://www.foxnews.com/politics/federal-judges-block-texas-from-using-redrawn-congressional-map.amp"
+        },
+        {
+          "title": "Federal court blocks Texas from using new congressional gerrymander in 2026 midterms",
+          "url": "https://www.yahoo.com/news/articles/federal-court-blocks-texas-using-180858247.html"
+        },
+        {
+          "title": "federal judges block texas congressional map drawn to help gop in 2026 midterms",
+          "url": "https://www.pbs.org/newshour/amp/politics/federal-judges-block-texas-congressional-map-drawn-to-help-gop-in-2026-midterms"
+        },
+        {
+          "title": "federal court blocks texas redrawn congressional map rcna244673",
+          "url": "https://www.nbcnews.com/politics/elections/federal-court-blocks-texas-redrawn-congressional-map-rcna244673"
+        },
+        {
+          "title": "federal judges block texas congressional map drawn to help gop in 2026 midterms",
+          "url": "https://www.pbs.org/newshour/politics/federal-judges-block-texas-congressional-map-drawn-to-help-gop-in-2026-midterms"
+        },
+        {
+          "title": "texas redistricting 2025",
+          "url": "https://texastribune.org/series/texas-redistricting-2025"
+        },
+        {
+          "title": "FBI seizes Swalwell's devices, executes search warrants in sexual misconduct probe - CBS News",
+          "url": "https://www.cbsnews.com/news/swalwell-fbi-search-warrants-devices-sexual-misconduct-investigation/"
+        },
+        {
+          "title": "AP report: Federal agents seize devices from ex-Rep. Eric Swalwell in sexual misconduct probe | PBS News",
+          "url": "https://www.pbs.org/newshour/politics/ap-report-federal-agents-seize-devices-from-ex-rep-eric-swalwell-in-sexual-misconduct-probe"
+        },
+        {
+          "title": "FBI raids former Rep. Eric Swalwell’s home, seizes devices in probe tied to sexual assault claims | CNN Politics",
+          "url": "https://www.cnn.com/2026/08/20/politics/eric-swalwell-fbi-raid-sexual-assault-claims-invs"
+        },
+        {
+          "title": "Feds seize Eric Swalwell’s devices, search home as part of sexual assault inquiry - The Washington Post",
+          "url": "https://www.washingtonpost.com/national-security/2026/08/20/feds-seize-eric-swalwells-devices-search-home-part-sexual-assault-inquiry/"
+        },
+        {
+          "title": "Federal agents seize devices from ex-Rep. Eric Swalwell in sexual misconduct probe, AP source says : NPR",
+          "url": "https://www.npr.org/2026/08/21/nx-s1-5940542/federal-agents-seize-eric-swalwell-sexual-misconduct-probe"
+        },
+        {
+          "title": "FBI seizes devices from former Rep. Eric Swalwell at San Francisco airport, raids DC home in probe tied to sexual assault claims - ABC7 Los Angeles",
+          "url": "https://abc7.com/post/fbi-seizes-devices-former-rep-eric-swalwell-san-francisco-airport-raids-dc-home-probe-tied-sexual-assault-claims/19708341/"
+        },
+        {
+          "title": "Federal agents seize devices from ex-Rep. Eric Swalwell in sexual misconduct probe, AP source says | NPR & Houston Public Media",
+          "url": "https://www.houstonpublicmedia.org/npr/2026/08/21/nx-s1-5940542/federal-agents-seize-devices-from-ex-rep-eric-swalwell-in-sexual-misconduct-probe-ap-source-says/"
+        },
+        {
+          "title": "FBI seizes devices from former Rep. Eric Swalwell at San Francisco airport, raids DC home in probe tied to sexual assault claims - ABC7 San Francisco",
+          "url": "https://abc7news.com/post/fbi-seizes-devices-former-rep-eric-swalwell-san-francisco-airport-raids-dc-home-probe-tied-sexual-assault-claims/19708341/"
+        },
+        {
+          "title": "FBI searches former Rep. Eric Swalwell’s home, seizes his electronic devices",
+          "url": "https://www.nbcnews.com/politics/justice-department/fbi-searches-former-rep-eric-swalwells-home-seizes-electronic-devices-rcna593574"
+        },
+        {
+          "title": "Cook Political Report shifts Senate races in Texas, Iowa leftward to ‘Toss Up’ - The Washington Post",
+          "url": "https://www.washingtonpost.com/politics/2026/08/20/cook-political-report-shifts-senate-races-texas-iowa-leftward-toss-up/"
+        },
+        {
+          "title": "Texas, Iowa Senate Races Now Toss-Ups, Cook Political Report Finds - Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-08-20/senate-races-in-texas-iowa-are-now-toss-ups-cook-report-says"
+        },
+        {
+          "title": "Cook Political Report moves Texas, Iowa Senate races to toss-ups",
+          "url": "https://spectrumlocalnews.com/us/snplus/politics/2026/08/20/senate-toss-up-midterms-cook-political-report"
+        },
+        {
+          "title": "Texas and Iowa Senate Races Move to Toss Up; Races for Governor Also Move in Democrats’ Direction | Cook Political Report",
+          "url": "https://www.cookpolitical.com/analysis/senate/senate-overview/texas-and-iowa-senate-races-move-toss-races-governor-also-move"
+        },
+        {
+          "title": "The Cook Political Report just shifted its Texas and Iowa Senate ratings to toss ups. Here’s why. | CNN Politics",
+          "url": "https://www.cnn.com/2026/08/20/politics/video/new-cook-political-senate-ratings-iowa-texas-ip"
+        },
+        {
+          "title": "Texas and Iowa Senate races shift toward Democrats: Cook Political Report",
+          "url": "https://www.washingtonexaminer.com/news/campaigns/congressional/4694781/texas-iowa-senate-races-shift-democrat-cook-political-report/"
+        },
+        {
+          "title": "Texas, Iowa Senate races shift to toss-ups: Cook Political Report",
+          "url": "https://thehill.com/homenews/campaign/6041660-cook-political-report-texas-iowa-senate-races/"
+        },
+        {
+          "title": "Texas and Iowa Senate races tighten in midterm elections - Axios San Antonio",
+          "url": "https://www.axios.com/local/san-antonio/2026/08/20/texas-iowa-senate-election-races-midterms-close"
+        },
+        {
+          "title": "Cook Report SHIFTS Texas and Iowa Senate races to TOSS-UPS - YouTube",
+          "url": "https://www.youtube.com/watch?v=K9bb7nzexP8"
+        },
+        {
+          "title": "Cook Political Report unveils 18 toss-up House races for 2026",
+          "url": "https://www.yahoo.com/news/cook-political-report-unveils-18-181159564.html"
+        },
+        {
+          "title": "Trump threatens lawsuit against nonprofit that questioned whether National Guard plan lessened crime - The Washington Post",
+          "url": "https://www.washingtonpost.com/politics/2026/08/21/trump-threat-national-guard-american-progress/4ebb1eac-9dae-11f1-9cc4-2dc9b46e2d5c_story.html"
+        },
+        {
+          "title": "Trump threatens lawsuit against nonprofit that questioned whether National Guard plan lessened crime",
+          "url": "https://www.pressdemocrat.com/2026/08/21/trump-lawsuit-threat/"
+        },
+        {
+          "title": "Trump threatens lawsuit against nonprofit that questioned whether National Guard plan lessened crime | PBS News",
+          "url": "https://www.pbs.org/newshour/amp/politics/trump-threatens-lawsuit-against-nonprofit-that-questioned-whether-national-guard-plan-lessened-crime"
+        },
+        {
+          "title": "Trump threatens think tank over D.C. crime report, extending intimidation campaign",
+          "url": "https://www.ms.now/rachel-maddow-show/maddowblog/trump-crime-dc-threat-center-american-progress-intimidation"
+        },
+        {
+          "title": "DC sues Trump administration over National Guard deployment",
+          "url": "https://www.yahoo.com/news/articles/dc-sues-trump-administration-over-000101214.html"
+        },
+        {
+          "title": "dc sues trump administration illegal deployment national guard rcna228913",
+          "url": "https://www.nbcnews.com/politics/politics-news/dc-sues-trump-administration-illegal-deployment-national-guard-rcna228913"
+        },
+        {
+          "title": "www.mexc.com",
+          "url": "https://www.mexc.com/news/85419"
+        },
+        {
+          "title": "Washington DC sues Trump administration over National Guard deployment",
+          "url": "https://feeds.bbci.co.uk/news/articles/cvg0eqw9pl7o"
+        },
+        {
+          "title": "DC Sues Trump Admin For Trying To Clean Up Their Crime Problem",
+          "url": "https://www.aol.com/dc-sues-trump-admin-trying-151223500.html"
+        },
+        {
+          "title": "Democrats Split on Party’s Future as Democratic Socialists Earn Key Primary Wins | The Epoch Times",
+          "url": "https://www.theepochtimes.com/article/democrats-split-on-partys-future-as-democratic-socialists-make-key-primary-wins-6075179"
+        },
+        {
+          "title": "Democratic Socialist Angie Nixon's Surprise Primary Win in Florida",
+          "url": "https://capitalbnews.org/angie-nixon-democratic-senate-primary/"
+        },
+        {
+          "title": "Primaries takeaways: Progressives score big wins and turn to November - ABC News",
+          "url": "https://abcnews.com/Politics/primaries-takeaways-progressives-score-big-wins-turn-november/story?id=135392899"
+        },
+        {
+          "title": "Democratic socialist Angie Nixon won Tuesday's primary in Florida. Can she win in November?",
+          "url": "https://www.wusf.org/politics-issues/2026-08-20/democratic-socialist-angie-nixon-won-florida-primary-can-she-win-in-november"
+        },
+        {
+          "title": "Fueled by angry base, Democrats set for competitive 2026 primaries",
+          "url": "https://www.aol.com/articles/fueled-angry-democrats-set-competitive-100808263.html"
+        },
+        {
+          "title": "Progressive powerhouses launch primary war against Democratic establishment ahead of 2026 elections",
+          "url": "https://www.aol.com/articles/progressive-powerhouses-launch-primary-war-110040411.html"
+        }
+      ]
+    }
+  ]
+}
