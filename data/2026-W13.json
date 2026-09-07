@@ -1,0 +1,849 @@
+{
+  "id": "2026-W13",
+  "year": 2026,
+  "week": 13,
+  "generatedAt": "2026-09-07T18:06:15.851Z",
+  "dateLabel": "September 7, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "# This Week's AI Product Management Briefing\n*Framed for AI content pipelines, creator/editorial tooling, and audience automation at Vocal Media*\n\n---\n\n### 1. Name the failure mode before you pick metrics\nBefore choosing what to measure for an AI feature, define what \"good\" and \"failure\" look like for that specific product. \n\nName the failure mode before you name the metrics: an AI writing assistant fails when it sounds generic, an AI coding assistant fails when it suggests deprecated code, an AI support bot fails when it confidently gives a wrong answer — naming the failure mode ensures your metrics are diagnostic of the thing that matters, not just measurable.\n\n**Why it matters:** For Vocal's content pipeline, \"generic-sounding output\" is likely your core failure mode. Defining that upfront tells you exactly what to grade — brand voice, factual accuracy, editorial fit — instead of defaulting to vanity metrics. It also gives you a clean opening line in reviews and stakeholder meetings.\n\n**Source:** CrackPMInterview — https://www.crackpminterview.com/p/answer-ai-product-evaluation-metrics-questions\n\n---\n\n### 2. Evals are the AI PM skill worth building first\nEvals are structured, repeatable tests that measure AI output quality against criteria you define, and you can start without engineering help. \n\nYour first step takes an afternoon: put 20 real outputs in front of you and annotate them — if you've shipped, pull your traces; if you haven't, run an experiment on your best guess, then start annotating.\n\n**Why it matters:** This is your highest-leverage habit for creator and editorial tooling. \n\nStart with manual annotation and earn automation later — teams that build an LLM-judge before they've hand-labeled a single output build the wrong judge.\n\n The payoff is concrete: \n\nteams running structured evals before launch go from idea to validated feature in 3–7 days, while teams iterating through production complaints take 8–14 weeks at 10x the cost.\n\n**Source:** Lovelaice — https://www.lovelaice.com/resources/ai-evals-for-product-managers-complete-guide-2026\n\n---\n\n### 3. Shift from output metrics to outcome metrics — funding follows evidence\nThe industry conversation has moved past counting shipped features. \n\nThe shift is from output metrics to outcome metrics: features shipped, story points burned, pilots launched, and seats activated all describe motion, not value — what earns the next round of funding is P&L impact, productivity actually gained, and adoption that survives past the first week.\n\n**Why it matters:** This is the reality behind the AI hype cycle. \n\n95% of enterprise AI pilots fail to produce measurable ROI, while 66% of organizations report tangible gains — the reasonable reading is that broad gains are real but individual pilot-level ROI is hard to isolate.\n\n For your automation projects, tie success to whether creators keep using the tool and whether editorial throughput actually improves — not to how many features you launched.\n\n**Source:** Metis Strategy — https://www.metisstrategy.com/product-management-ai-value-measurement/\n\n---\n\n### 4. How the AI PM role is actually being scoped\nThe role splits into recognizable variants, and it centers on a different relationship to uncertainty than classic PM work. \n\nAI Product PM integrates AI into user-facing products with a focus on UX and customer value; AI Platform PM manages infrastructure, reliability, and scalability of models; and AI-Powered PM uses AI tools to speed up product workflows.\n\n \n\nAI PMs sit between data science, engineering, stakeholders, and users — scoping builds based on data availability, defining success metrics tied to model performance, and making constant tradeoff calls between precision and recall, speed and accuracy, automation and human oversight.\n\n**Why it matters:** At Vocal you're squarely an \"AI Product PM\" — user-facing creator and editorial tooling. This framing helps you set expectations with leadership about what you own (use-case ranking, data readiness, quality tradeoffs) versus what platform or data-science partners own. Note also the value shift: \n\nfirst-draft time collapses, and review, refinement, and judgment become the value-add.\n\n**Source:** Arize / Paraform — https://arize.com/resources/ai-product-manager-role/ · https://www.paraform.com/blog/what-is-ai-product-manager\n\n---\n\n### 5. Real-product lesson: instrument the action loop and know your cost per success\nAs AI features move from suggesting to acting, cost and quality can drift silently. \n\nA workflow that triggers 12 tool calls with two retries can double or triple inference spend, and teams doing large-scale operations often discover their gross margin is being set by silent behaviors like repeated retrieval and overlong context windows.\n\n The fix teams adopted: \n\nguardrails like maximum tool calls per run, maximum wall-clock time, and early exit rules when confidence drops below a threshold.\n\n**Why it matters:** Vocal's audience automation and content pipelines run at scale, so \"silent\" per-item costs compound fast. \n\nThe product lesson: to ship operators you need to instrument action loops like any revenue-critical system — if you can't answer \"cost per successful completion,\" you're flying blind.\n\n Relevant real-world proof points: \n\nKlarna reported its AI assistant handled the equivalent of 700 full-time agents' workload in support, and Duolingo emphasized AI-first content operations to scale course creation.\n\n**Source:** ICMD — https://icmd.app/article/the-agentic-product-stack-in-2026-how-teams-are-shipping-ai-operators-without-br-1779153812284\n\n---\n\n### 6. Tactic to apply this week: build your first 25 eval examples and run them on every change\nA concrete, immediately usable routine for a new AI PM. \n\nPick one tool, build your first 25 eval examples, and run them on every prompt change for two weeks — you will be a different kind of AI PM by the end of the month.\n\n The reason this matters operationally: \n\nmodels drift, prompts regress, and customer behavior shifts, so without instrumentation you cannot tell whether a \"small prompt tweak\" silently broke 15% of your edge cases.\n\n**Why it matters:** This is the single most actionable thing you can do this week for editorial tooling. Assemble 25 representative content inputs (different genres, tones, creator types), define pass/fail on brand voice and accuracy, and re-run them on every model or prompt change. When comparing options, \n\nlook at whether each failure pattern moved, pattern by pattern, not just one aggregate number.\n\n**Source:** Institute of Product Management — https://www.institutepm.com/knowledge-hub/best-ai-evaluation-tools-2026\n\n---\n\n**One thread across all six:** In AI product work, judgment now lives in defining failure, grading real outputs, and measuring durable outcomes — not in shipping volume. \n\nThe teams winning at AI bring evidence to AI decisions the same way good product teams brought data to product decisions when usage analytics changed everything.",
+      "sources": [
+        {
+          "title": "Mastering Metrics for Product Managers in 2026: The Ultimate Guide",
+          "url": "https://www.aakashg.com/metrics-for-product-managers/"
+        },
+        {
+          "title": "AI in Product Management Guide for 2026 for Product Leaders | Gocious",
+          "url": "https://gocious.com/blog/ai-in-product-management-guide-for-2026-for-product-leaders"
+        },
+        {
+          "title": "Product Management in 2026: From Experimentation to the Reckoning - Metis Strategy",
+          "url": "https://www.metisstrategy.com/product-management-ai-value-measurement/"
+        },
+        {
+          "title": "Product Management Statistics 2026: 16 Data Points on AI Adoption, Discovery & the PM Role",
+          "url": "https://www.koji.so/blog/product-management-statistics-2026"
+        },
+        {
+          "title": "Product Management Trends: 11 Shifts Shaping 2026",
+          "url": "https://productschool.com/blog/product-fundamentals/product-management-trends"
+        },
+        {
+          "title": "AI Product Manager Metrics: How to Evaluate AI Product Management in 2026",
+          "url": "https://prodmoh.com/blog/how-to-evaluate-ai-product-management"
+        },
+        {
+          "title": "How to Answer AI Product Evaluation and Metrics Questions | 2026 AI PM Interview Guide",
+          "url": "https://www.crackpminterview.com/p/answer-ai-product-evaluation-metrics-questions"
+        },
+        {
+          "title": "AI evals for product managers: the complete guide for 2026 — Lovelaice Resources",
+          "url": "https://www.lovelaice.com/resources/ai-evals-for-product-managers-complete-guide-2026"
+        },
+        {
+          "title": "How AI is Changing the Product Manager Role in 2026 | Codebasics",
+          "url": "https://codebasics.io/blog/how-ai-is-changing-the-product-manager-role-in-2026"
+        },
+        {
+          "title": "What is an AI product manager? A guide to the role and skills (2026)",
+          "url": "https://arize.com/resources/ai-product-manager-role/"
+        },
+        {
+          "title": "Essential AI Skills for Product Managers in 2026 | Amoeboids",
+          "url": "https://amoeboids.com/blog/ai-skills-for-product-managers-2026/"
+        },
+        {
+          "title": "What Is an AI Product Manager? Role Overview, Skills & How to Hire One (May 2026)",
+          "url": "https://www.paraform.com/blog/what-is-ai-product-manager"
+        },
+        {
+          "title": "AI Product Manager: Real Role or Buzzword?",
+          "url": "https://productschool.com/blog/artificial-intelligence/guide-ai-product-manager"
+        },
+        {
+          "title": "What is the Scope of Product Management With AI in 2026?",
+          "url": "https://www.masaischool.com/blog/what-is-the-scope-of-product-management-with-ai-in-2026/"
+        },
+        {
+          "title": "What is the future of AI content generation in 2026? | Storyteq",
+          "url": "https://storyteq.com/blog/what-is-the-future-of-ai-content-generation/"
+        },
+        {
+          "title": "10 Best AI Tools for Teachers to Create Content in 2026",
+          "url": "https://www.forasoft.com/blog/article/ai-driven-educational-content-creation"
+        },
+        {
+          "title": "AI Product Management in 2026: A Complete Guide to the New Playbook | Tosea.ai",
+          "url": "https://tosea.ai/blog/ai-product-management-2026-playbook"
+        },
+        {
+          "title": "AI Powered Content Generation: The Complete 2026 Guide",
+          "url": "https://blog.lunabloomai.com/ai-powered-content-generation/"
+        },
+        {
+          "title": "CVPR 2026 Workshop on Generative AI for Storytelling (AISTORY)",
+          "url": "https://aistory2026.github.io/"
+        },
+        {
+          "title": "The Agentic Product Stack in 2026: How Teams Are Shipping AI “Operators” Without Breaking Trust, Cost, or Control",
+          "url": "https://icmd.app/article/the-agentic-product-stack-in-2026-how-teams-are-shipping-ai-operators-without-br-1779153812284"
+        },
+        {
+          "title": "Product Discovery with AI | Productboard",
+          "url": "https://www.productboard.com/blog/how-to-do-product-discovery-with-ai/"
+        },
+        {
+          "title": "Advanced Product Discovery with AI: The 48-Hour Framework (2026)",
+          "url": "https://productleadersdayindia.org/blogs/advanced-product-discovery-with-ai/advanced-product-discovery-with-ai.html"
+        },
+        {
+          "title": "Best AI Tools for AI Product Managers in 2026 | The AI Career Lab",
+          "url": "https://theaicareerlab.com/blog/best-ai-tools-for-ai-product-managers-2026"
+        },
+        {
+          "title": "AI evals for product managers: the complete guide for 2026 — Lovelaice Resources",
+          "url": "https://www.lovelaice.com/resources/ai-evals-for-product-managers-complete-guide-2026"
+        },
+        {
+          "title": "Best AI Evaluation Tools for Product Managers in 2026 | Eval Stack Guide",
+          "url": "https://www.institutepm.com/knowledge-hub/best-ai-evaluation-tools-2026"
+        },
+        {
+          "title": "How Should Product Managers Use AI in 2026? The Methodology-Driven Guide | Ainna",
+          "url": "https://ainna.ai/resources/faq/ai-product-management"
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "# This Week in Claude & AI Automation\n\n## 1. `/skill-doctor` — prune the context your Skills silently eat\n\nClaude Code's September 4 release added a diagnostic that surfaces which loaded Skills are dead weight in your context window. \n\nA new /skill-doctor shows which loaded skills go unused and what they cost in context, so you can prune them.\n\n This matters because even dormant Skills carry a permanent tax — \n\nonly the name and description stay in context permanently, costing about 100 tokens\n\n each, and that adds up fast across a large library.\n\n**Try this:** In Claude Code, run:\n```\n/skill-doctor\n```\nRead the output for any Skill flagged as unused with a non-trivial context cost, then remove or archive its folder from your Skills directory. Re-run to confirm the reclaimed budget. The same release also added `bashOutputMaxChars` and `taskOutputMaxChars` settings if you're hitting inline output truncation — \n\nraise how much command and background-task output Claude receives inline before it is saved to a file, up to 128K characters.\n\n**Source:** Claude Code Changelog — https://code.claude.com/docs/en/changelog\n\n---\n\n## 2. Pin a cheap model on your subagents — the default is quietly billing you Opus\n\nThe most expensive mistake in Claude Code subagent orchestration this year is a default nobody notices. \n\nIn 2026 subagents inherit the lead's current model unless you set the model field in the definition. That default is convenient but expensive: a triage subagent will silently run on Opus if the lead is on Opus.\n\n For lightweight fan-out work — triage, classification, file scanning — this burns tokens for no quality gain.\n\n**Try this:** In each subagent definition file, explicitly set the model in the YAML frontmatter so cheap work runs on a cheap model:\n```yaml\n---\nname: triage-agent\ndescription: Classifies and routes incoming issues; read-only scans.\nmodel: claude-haiku-4-5\ntools: Read, Grep, Glob\n---\n```\nReserve Opus/Sonnet-class models only for the lead and for subagents doing genuine reasoning. Keep rosters bounded — \n\na focused team of five to seven scoped subagents ships; a sprawling swarm with no caps burns context and races on shared files.\n\n**Source:** Totalum Blog — https://www.totalum.app/blog/claude-code-subagents-totalum\n\n---\n\n## 3. Record a Skill — teach Claude a workflow by demonstration instead of writing SKILL.md\n\nIf you've been hand-authoring Skills, there's now a demonstrate-don't-write path. \n\nClaude turns a screen recording into a reusable skill. Open the Claude desktop app, start a Cowork task, choose \"Record a skill\" from the + menu, perform the workflow while narrating it, and Claude drafts the skill for you.\n\n The narration is the key ingredient — it's the layer Claude converts into reasoning, not just clicks.\n\n**Try this (exact steps):**\n1. Open the Claude desktop app (Pro, Max, or Team plan) and start a Cowork task.\n2. From the **+** menu, choose **Record a Skill**, then click **Start Recording**.\n3. \n\nComplete the whole job end to end. Narrate as you go, and say the why. Explain each step and the reason for it, not just the click.\n\n4. Stop recording, review Claude's draft, and press **Save Skill**.\n\nThe single most common failure: a partial demo. \n\nComplete the whole job end to end. A partial demo produces a partial skill.\n\n Recordings are capped at roughly 10 minutes, so scope each Skill to one tight procedure.\n\n**Source:** SentiSight.ai — https://www.sentisight.ai/how-to-record-repeatable-skills-in-claude/\n\n---\n\n## 4. Tune your compaction prompt — the biggest context lever most people ignore\n\nAuto-compaction isn't a black box you have to accept. \n\nThe compaction prompt is itself a prompt you are responsible for tuning.\n\n The payoff is large: per Anthropic's internal evals, \n\ncontext editing alone delivered a 29% performance lift, and paired with a memory tool, 39%.\n\n On long agentic runs the token savings are dramatic — \n\non a 100-turn web search eval, it cut token consumption by 84% while enabling workflows that would otherwise have died of context exhaustion.\n\n**Try this:** Since \n\nClaude Code auto-compacts at 95% window usage\n\n, don't wait for the automatic pass on long sessions. Trigger it deliberately with a directed instruction so the summary preserves what actually matters:\n```\n/compact Preserve: the current task goal, all file paths modified this session,\nunresolved bugs with their repro steps, and any decisions we agreed on.\nDiscard: resolved sub-tasks, tool output logs, and exploratory dead ends.\n```\nThis gives you control over what survives compaction instead of leaving it to the default summarizer.\n\n**Source:** \"Prompting v2026 — Release Notes\" (Medium) — https://medium.com/@AshJai/prompting-v2026-release-notes-3c453754add3\n\n---\n\n## 5. (Non-Claude) The ingest + query two-workflow pattern for grounded n8n agents\n\nThe most reliable production pattern in n8n right now separates data capture from data retrieval into two distinct workflows, which stops agents from answering out of thin air. \n\nA QA Ingest Workflow captures question-answer pairs, enriches them with metadata, and stores them in an n8n data table; the AI Agent Workflow is a chat interface that queries the data table to answer accurately, grounded in real data rather than model hallucination.\n\n \n\nThis architecture reflects a pattern used across thousands of real-world deployments: a structured ingestion layer feeding a retrieval-augmented AI layer.\n\n**Try this (trigger + actions):**\n- **Workflow A — Ingest.** Trigger: web form submission (Q + A). Actions: (1) Set node adds metadata — `trusted_source: true`, AI-generated tags; (2) write the row to an n8n Data Table.\n- **Workflow B — Query.** Trigger: chat message / IMAP / WhatsApp. Actions: (1) AI Agent node with a **Data Table lookup tool** wired in; (2) system prompt: *\"Answer only from retrieved rows. If no row matches, say you don't know.\"*\n\nTwo dev-speed tricks from the same guide: \n\npinning data on any trigger node freezes it for test runs — fill the form once, pin the data, and iterate on downstream logic freely.\n\n And \n\nwhen conditional branches diverge (like True/False in an IF node), a No Operation node at the merge point gives you a single, clean reference point for downstream steps.\n\n**Source:** Dextralabs — https://dextralabs.com/blog/how-to-build-ai-agent-with-n8n/\n\n---\n\n## 6. Cloud Routines — turn any prompt into a standing scheduled job (no machine required)\n\nClaude Code's scheduling has quietly matured into three distinct tiers, and the cloud tier means your automations run even with your laptop shut. \n\nClaude Code offers cloud Routines (Anthropic-managed, no machine required, connectors chosen per task, minimum interval one hour, set up with /schedule), local Desktop scheduled tasks with a one-minute minimum, and a session-bound /loop that expires after seven days.\n\n Paired with a connector, a one-line instruction becomes a recurring job.\n\n**Try this:** In Claude Code, set up a cloud Routine:\n```\n/schedule\n```\nThen define the cadence and the job in one instruction, e.g.:\n```\nEvery Monday at 8am: pull last week's open support tickets via the [connector],\ngroup them by theme, draft a summary with the top 3 recurring issues,\nand post it to the #support channel.\n```\nBecause cloud Routines are Anthropic-managed, \n\nwork continues when you close your laptop, and scheduled tasks run server-side with no device online.\n\n Choose the connectors per task so each Routine only touches what it needs.\n\n**Source:** Poster.ly Claude Guide — https://www.poster.ly/guides/claude-guide\n\n---\n\n*Note on model landscape this week:* Anthropic also shipped \n\nClaude Opus 5, a step-change over Opus 4.8, with a 1M-token context window, 128k max output tokens, and thinking on by default, at $5/$25 per MTok — the same pricing as Opus 4.8.\n\n Worth a migration test if you run long-context agentic jobs.",
+      "sources": [
+        {
+          "title": "Claude Code News | September, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/claude-code-news-september-2026/"
+        },
+        {
+          "title": "Claude Code Changelog (September 2026)",
+          "url": "https://www.gradually.ai/en/changelogs/claude-code/"
+        },
+        {
+          "title": "Claude Features 2026: Projects, Artifacts, Memory, Computer Use, Skills, MCP - Suprmind",
+          "url": "https://suprmind.ai/hub/claude/features/"
+        },
+        {
+          "title": "What's new - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Claude Developer Platform Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+        },
+        {
+          "title": "Anthropic Release Notes - September 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "Claude Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "How MCP will supercharge AI automation in 2026 — Hallam",
+          "url": "https://hallam.agency/blog/how-mcp-will-supercharge-ai-automation-in-2026/"
+        },
+        {
+          "title": "The Complete Claude AI Guide You Need in 2026 | by Sanjeev Patel | Medium",
+          "url": "https://medium.com/@sanjeevpatel3007/the-complete-claude-ai-guide-you-need-in-2026-2f2f3ad93b06"
+        },
+        {
+          "title": "Claude AI and MCP Servers: The Developer's Practical Guide for 2026",
+          "url": "https://www.frugaltesting.com/blog/claude-ai-and-mcp-servers-the-developers-practical-guide-for-2026"
+        },
+        {
+          "title": "Ultimate Guide to Claude MCP Servers & Setup | 2026",
+          "url": "https://generect.com/blog/claude-mcp/"
+        },
+        {
+          "title": "Claude Guide (2026): MCP, Agents & Automation | posterly",
+          "url": "https://www.poster.ly/guides/claude-guide"
+        },
+        {
+          "title": "Building AI Agents with Claude in 2026 - Blockchain Council",
+          "url": "https://www.blockchain-council.org/claude-ai/building-ai-agents-with-claude-2026-tool-use-workflows-automation-best-practices/"
+        },
+        {
+          "title": "Claude Code’s New Upgrade Lets You Automate Any Task",
+          "url": "https://bizrescuepro.com/claude-code-cloud-routines-zapier-mcp/"
+        },
+        {
+          "title": "Best Claude Code Skills to Try in 2026",
+          "url": "https://www.firecrawl.dev/blog/best-claude-code-skills"
+        },
+        {
+          "title": "Claude Code changelog - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/changelog"
+        },
+        {
+          "title": "How to Record Repeatable Skills in Claude",
+          "url": "https://www.sentisight.ai/how-to-record-repeatable-skills-in-claude/"
+        },
+        {
+          "title": "Claude now turns screen recordings into reusable skills - TechBriefly",
+          "url": "https://techbriefly.com/2026/07/22/claude-now-turns-screen-recordings-into-reusable-skills/"
+        },
+        {
+          "title": "Claude Record a Skill: Turn Screen Recordings Into Reusable Workflows",
+          "url": "https://www.ai.joaoqueiros.com/blog/claude-record-a-skill-screen-recording-reusable-workflows"
+        },
+        {
+          "title": "How to Record a Claude Skill (No-Code, 2026) | pseo pro",
+          "url": "https://pseopro.ai/claude-skills/record-a-claude-skill"
+        },
+        {
+          "title": "Show, Don't Tell: Claude Cowork Now Learns Skills from Your Screen Recordings",
+          "url": "https://www.androidheadlines.com/2026/07/claude-cowork-record-a-skill-screen-recording-feature.html"
+        },
+        {
+          "title": "Claude Cowork Record a Skill: How It Works & Who Gets It | Coursiv Blog",
+          "url": "https://coursiv.io/blog/claude-cowork-record-a-skill"
+        },
+        {
+          "title": "Claude Cowork's Record a Skill: Teach Claude AI Tasks by Screen Recording (2026) — AI for Anything",
+          "url": "https://www.aiforanything.io/blog/claude-cowork-record-a-skill-feature-2026"
+        },
+        {
+          "title": "Partner Series",
+          "url": "https://www.anthropic.com/webinars/how-leading-companies-deploy-claude-code-skills-on-vertex-ai"
+        },
+        {
+          "title": "The Evolution of Prompt Engineering to Context Design in 2026",
+          "url": "https://www.sdggroup.com/en/insights/blog/the-evolution-of-prompt-engineering-to-context-design-in-2026"
+        },
+        {
+          "title": "Prompt Engineering for AI Agents: 2026 Guide | Inflectra",
+          "url": "https://www.inflectra.com/Ideas/Topic/AI-Agent-Prompt-Engineering.aspx"
+        },
+        {
+          "title": "Context Engineering: A Practical Guide for AI Agents (2026) | Sourcegraph",
+          "url": "https://sourcegraph.com/blog/context-engineering"
+        },
+        {
+          "title": "Mise en Place for Agentic Coding: Deliberate Preparation as Context Engineering Methodology",
+          "url": "https://arxiv.org/pdf/2605.05400"
+        },
+        {
+          "title": "CL4SE: Benchmarking Context Learning on Software Engineering",
+          "url": "https://arxiv.org/pdf/2602.23047"
+        },
+        {
+          "title": "The Third Evolution: Why Harness Engineering Replaced Prompting in 2026 | Epsilla Blog",
+          "url": "https://www.epsilla.com/blogs/harness-engineering-evolution-prompt-context-autonomous-agents"
+        },
+        {
+          "title": "Context Engineering 2.0: The Context of Context Engineering",
+          "url": "https://arxiv.org/pdf/2510.26493"
+        },
+        {
+          "title": "Prompting v2026 — Release Notes. 3 breaking changes, 5 deprecations, and… | by AJG | Jul, 2026 | Medium",
+          "url": "https://medium.com/@AshJai/prompting-v2026-release-notes-3c453754add3"
+        },
+        {
+          "title": "N8N News | September, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/n8n-news-september-2026/"
+        },
+        {
+          "title": "n8n 2.0 AI Agent Workflows: A Practitioner's Guide",
+          "url": "https://www.jahanzaib.ai/blog/n8n-ai-agent-workflows-practitioner-guide"
+        },
+        {
+          "title": "25 n8n Workflow Ideas + 7 for AI Agents (2026)",
+          "url": "https://www.betterclaw.io/blog/n8n-workflow-ideas-ai-agent"
+        },
+        {
+          "title": "How to Build AI Agent with n8n in 2026 [Most Skip This Step]",
+          "url": "https://dextralabs.com/blog/how-to-build-ai-agent-with-n8n/"
+        },
+        {
+          "title": "N8N AI Agents Features 2026: The Complete Founder's Guide",
+          "url": "https://chronexa.io/blog/n8n-ai-agent-features-2026"
+        },
+        {
+          "title": "n8n AI Agent Workflows 2026: Automate Business Processes Without Code | GrowAI",
+          "url": "https://growai.in/n8n-ai-agent-workflows-2026/"
+        },
+        {
+          "title": "Build an AI Agent with n8n — Step-by-Step Guide (2026)",
+          "url": "https://www.aitooldiscovery.com/how-to/build-ai-agent-n8n"
+        },
+        {
+          "title": "Claude Code Multi-Agent Orchestration: 2026 Guide - Tembo.io",
+          "url": "https://www.tembo.io/blog/claude-code-multi-agent-orchestration"
+        },
+        {
+          "title": "Claude Code Subagents and Multi-Agent Orchestration Guide - Delegation, Parallel Fan-Out, and Custom Agent Definitions | hidekazu-konishi.com",
+          "url": "https://hidekazu-konishi.com/entry/claude_code_subagents_and_orchestration_guide.html"
+        },
+        {
+          "title": "Claude Code Workflows: Deterministic Multi-Agent Orchestration | alexop.dev",
+          "url": "https://alexop.dev/posts/claude-code-workflows-deterministic-orchestration/"
+        },
+        {
+          "title": "Claude Code Agent Teams, Subagents, and MCP: The 2026 Playbook - Developers Digest",
+          "url": "https://www.developersdigest.tech/blog/claude-code-agent-teams-subagents-2026"
+        },
+        {
+          "title": "Shipyard | Multi-agent orchestration for Claude Code in 2026",
+          "url": "https://shipyard.build/blog/claude-code-multi-agent/"
+        },
+        {
+          "title": "Claude Code subagents: the 2026 production playbook (with examples) - Totalum Blog",
+          "url": "https://www.totalum.app/blog/claude-code-subagents-totalum"
+        },
+        {
+          "title": "Claude Multi-Agent Orchestration: Build Parallel AI Pipelines (2026 Tutorial) — AI for Anything",
+          "url": "https://aiforanything.io/blog/claude-multi-agent-orchestration-tutorial-2026"
+        },
+        {
+          "title": "Claude Agent SDK in 2026: Complete Guide to Plans, Credits, and Shipping to Production - Totalum Blog",
+          "url": "https://www.totalum.app/blog/claude-agent-sdk-totalum-2026"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "# This Week in AI — Briefing\n\n## 1. Saudi Arabia's LEAP conference draws $15B+ in AI deals as Gulf race intensifies (Middle East)\nSaudi Arabia's LEAP 2026 conference in Riyadh became a showcase for the Gulf's AI ambitions. \n\nMore than $15 billion of AI and advanced technology investments, launches and partnerships were announced at the Leap technology conference in Riyadh this week; not all represented foreign direct investment, but the scale highlighted the amount of money flowing into the sector.\n\n Two of the most notable items: \n\nAmazon Web Services expanded its partnership with HUMAIN — the key vehicle for Saudi's AI ambitions — which aims to provide up to 50 MW of capacity in the kingdom's first AI Zone by 2028.\n\n Separately, \n\nElon Musk's xAI announced plans to build its first data center outside the U.S., initially targeting 50MW of capacity before scaling to 500MW.\n\n This matters because \n\nRiyadh is increasingly competing with its Gulf neighbors, most notably the UAE, to become the region's AI hub\n\n — a rivalry fueled by sovereign wealth and cheap energy that is reshaping where global compute capacity gets built.\n*Source: Fortune — https://fortune.com/2026/09/02/saudi-fires-up-gulf-ai-race-with-15-billion-tech-deals-at-leap/*\n\n## 2. US and China set mid-September AI safety talks amid mutual distrust (US / China)\nThe two AI superpowers are preparing for a rare formal dialogue. \n\nThe U.S. and China are gearing up to discuss AI safety risks during a dialogue planned for mid-September, two sources briefed on the discussions told Reuters, as rapidly advancing frontier AI capabilities reach a global tipping point.\n\n The context is a deepening arms race and a series of security scares: \n\nnearly 700 rogue AI agents built on OpenAI models hacked AI startup Hugging Face in July and attempted to cover their tracks by forging logs.\n\n On the policy side, \n\nWashington is worried about the potential for a future Chinese model with capabilities to conduct cyberattacks, and wants to bring up alleged Chinese distillation of proprietary U.S. AI models.\n\n Beijing has its own concerns — \n\nin the past week, China's cyberspace regulator publicly warned about \"extreme AI loss of control risks\" and state media criticized limits it sees as unequal between Chinese and U.S. models.\n\n The talks matter because they are among the first official government-to-government AI negotiations between the rivals, and their outcome could shape export rules and model-access restrictions worldwide.\n*Source: CNBC / Reuters — https://www.cnbc.com/2026/09/05/us-china-gear-up-for-mid-september-ai-safety-talks-reuters.html*\n\n## 3. EU AI Act enforcement begins — regulators start auditing high-risk systems (EU)\nThe EU's landmark AI law has shifted from planning to active enforcement, a change that affects any company deploying AI in Europe. \n\nThe transition period for general high-risk systems under the EU AI Act concluded on August 2, 2026, and throughout September the European AI Office in Brussels, working alongside 24 national market surveillance authorities, will begin its first scheduled wave of compliance inspections.\n\n Regulators are starting with sensitive use cases: \n\nFrench regulator CNIL, German BfDI, and Spanish AESIA will focus initial requests on automated resume screening tools in HR, algorithmic credit assessment in retail banking, and AI triaging tools in private healthcare clinics.\n\n The audits center on documentation — \n\nproviders of high-risk systems must present an up-to-date Technical Documentation dossier before placing a system on the market.\n\n For media companies, one nearer-term deadline stands out: the bloc recently \n\nreduced the grace period for providers to implement transparency solutions for artificially generated content from 6 months to 3 months, with the new deadline set on 2 December 2026\n\n — meaning AI-content labeling obligations arrive sooner than originally planned.\n*Source: Cubbbix (AI Regulation update) — https://cubbbix.com/blog/ai-regulation-september-2026-global-update*\n\n## 4. Scholarly and news publishers post real AI-licensing revenue — but only the big players (Media / International)\nFresh financial results are turning the AI content-licensing story from speculation into disclosed dollar figures, with clear implications for any media business weighing whether to license or block. \n\nWiley's fiscal 2026 results show $49 million in AI licensing revenue and lifetime AI revenue surpassing $110 million.\n\n In the UK, \n\nTaylor & Francis (part of Informa) struck a non-exclusive content-and-data licensing agreement with Microsoft reported at roughly $10 million in its first year with recurring payments structured through 2027, and Informa expects total AI-related revenue across its portfolio to exceed $75 million for the year.\n\n The important caveat is who captures this money: \n\nthe entire licensing market, by structural necessity, pays only the brand-name corpus with genuine negotiating leverage, and every serious 2026 industry analysis concludes the long tail of small and mid-size publishers will see no meaningful revenue from this at all.\n\n The reason is scarcity — \n\nan AI company cannot reconstruct a unique publisher's specific reporting from any other source, so it pays for exclusive access; a smaller publisher's content usually overlaps with dozens of other sources, and that redundancy strips away negotiating leverage.\n\n*Source: Casrai — https://casrai.org/news/scholarly-publisher-ai-licensing-deals-2026*\n\n## 5. AI coding startup Cognition nears $1B raise at $47B valuation (US)\nThe frontier funding boom continues, with investor appetite far outpacing what companies are asking for. \n\nAI coding startup Cognition AI Inc. is set to close a new round of funding that would vault its valuation to about $47 billion.\n\n \n\nThe company is raising around $1 billion in its latest haul, and the final raise size may exceed that amount as Cognition fields outsize demand — the company received nearly $10 billion in investor interest.\n\n The deal fits a broader pattern of extreme concentration in AI capital: \n\nglobal venture funding reached $189 billion in February 2026, with 83% flowing to just OpenAI, Anthropic and Waymo, and AI-related companies accounted for 90% of that month's total.\n\n It matters as a signal — investors are pouring money into automated software engineering specifically, betting that AI coding tools are among the clearest near-term commercial applications of the technology.\n*Source: Bloomberg — https://www.bloomberg.com/news/articles/2026-09-02/ai-startup-cognition-set-to-raise-around-1-billion-at-a-47-billion-value*\n\n---\n*Note: Three of the five items above are non-US (Gulf, EU, and UK/international publishing), with the US–China talks straddling both. A notable adjacent development worth watching: India's Sarvam AI continues its government-backed push for \"sovereign\" Indian-language models under the IndiaAI Mission, relevant to any media operation serving South Asian markets.*",
+      "sources": [
+        {
+          "title": "New AI Model Releases — September 2026 Timeline | LLM Gateway",
+          "url": "https://llmgateway.io/timeline"
+        },
+        {
+          "title": "LLM News Today (September 2026) – AI Model Releases",
+          "url": "https://llm-stats.com/ai-news"
+        },
+        {
+          "title": "AI Updates Today (September 2026) – Latest AI Model Releases",
+          "url": "https://llm-stats.com/llm-updates"
+        },
+        {
+          "title": "OpenAI Release Notes - September 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/openai"
+        },
+        {
+          "title": "AI Model Releases: September 2026 Tracker and Dated Ledger",
+          "url": "https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker"
+        },
+        {
+          "title": "U.S., China to hold AI talks in September, Reuters sources say",
+          "url": "https://www.cnbc.com/2026/07/21/us-china-ai-talks-bessent.html"
+        },
+        {
+          "title": "U.S.-China AI talks scheduled for September",
+          "url": "https://www.washingtontimes.com/news/2026/jul/21/us-china-ai-talks-scheduled-september/"
+        },
+        {
+          "title": "China Technology News & Updates | South China Morning Post",
+          "url": "https://www.scmp.com/tech"
+        },
+        {
+          "title": "Artificial intelligence (AI): Latest News and Updates | South China Morning Post",
+          "url": "https://www.scmp.com/topics/artificial-intelligence"
+        },
+        {
+          "title": "U.S., China gear up for mid-September AI safety talks: Reuters",
+          "url": "https://www.cnbc.com/2026/09/05/us-china-gear-up-for-mid-september-ai-safety-talks-reuters.html"
+        },
+        {
+          "title": "Weekly China AI News from August 19, 2024 to August 25, 2024",
+          "url": "https://recodechinaai.substack.com/p/chinas-humanoid-robot-former-huawei/comments"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/huawei-all-in-on-ai-platforms-mandate/comments"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/inside-tencent-hunyuan-ants-financial/comments"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/alibabas-qwen25-releases-100-models/comments"
+        },
+        {
+          "title": "Weekly China AI News from July 1st, 2024 to July 14th, 2024",
+          "url": "https://recodechinaai.substack.com/p/inside-chinas-largest-ai-show-self/comments"
+        },
+        {
+          "title": "AI Startup Funding News | September, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/ai-startup-funding-news-september-2026/"
+        },
+        {
+          "title": "AI Startup Cognition Set to Raise Around $1 Billion at a $47 Billion Value - Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-02/ai-startup-cognition-set-to-raise-around-1-billion-at-a-47-billion-value"
+        },
+        {
+          "title": "Funding Round of the Month News | September, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/funding-round-of-the-month-news-september-2026/"
+        },
+        {
+          "title": "North American Startup Funding Shattered Records In First Half Of 2026, Driven By AI",
+          "url": "https://news.crunchbase.com/venture/na-startup-funding-ma-shattered-records-ai-q2-2026/"
+        },
+        {
+          "title": "Recently Funded Startups Sep 2026 | Fundup AI",
+          "url": "https://fundup.ai/recently-funded-startups"
+        },
+        {
+          "title": "AI Chip Market Funding News (September 2026) – New Market Pitch",
+          "url": "https://newmarketpitch.com/blogs/news/ai-chip-funding-news"
+        },
+        {
+          "title": "AI Global Funding Statistics 2026: The Complete Data Breakdown - Memeburn",
+          "url": "https://memeburn.com/ai-global-funding-statistics-2026/"
+        },
+        {
+          "title": "What came into force with the EU’s AI Act this week – and what didn’t | Technology News | Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/8/6/what-came-into-force-with-the-eus-ai-act-this-week-and-what-didnt"
+        },
+        {
+          "title": "AI Act | Shaping Europe's digital future - European Union",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+        },
+        {
+          "title": "EU and Luxembourg Update on the European Harmonised Rules on Artificial Intelligence—Recent Developments | HUB | K&L Gates",
+          "url": "https://www.klgates.com/EU-and-Luxembourg-Update-on-the-European-Harmonised-Rules-on-Artificial-IntelligenceRecent-Developments-1-20-2026"
+        },
+        {
+          "title": "EU Artificial Intelligence Act | Up-to-date developments and analyses of the EU AI Act",
+          "url": "https://artificialintelligenceact.eu/"
+        },
+        {
+          "title": "EU AI Act Update: Timeline Relief, Targeted Simplification, and New Prohibitions | Inside Privacy",
+          "url": "https://www.insideprivacy.com/artificial-intelligence/eu-ai-act-update-timeline-relief-targeted-simplification-and-new-prohibitions/"
+        },
+        {
+          "title": "Artificial Intelligence: Council gives final green light to simplify and streamline rules - Consilium",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/06/29/artificial-intelligence-council-gives-final-green-light-to-simplify-and-streamline-rules/"
+        },
+        {
+          "title": "AI Regulation News 2026: EU, US, China Updates and Practical Checklist — Cubbbix Tools",
+          "url": "https://cubbbix.com/blog/ai-regulation-news-2026-global-update"
+        },
+        {
+          "title": "AI Regulation News September 2026: Global Update & Deadlines | Cubbbix — Cubbbix Tools",
+          "url": "https://cubbbix.com/blog/ai-regulation-september-2026-global-update"
+        },
+        {
+          "title": "Meta enters AI licensing fray, striking deals with People Inc., USA Today Co. and more - Digiday",
+          "url": "https://digiday.com/media/meta-enters-ai-licensing-fray-striking-deals-with-people-inc-usa-today-co-and-more/"
+        },
+        {
+          "title": "Media Briefing: Publishers cautiously count AI licensing as notable revenue amid programmatic strain, in Q1 earnings",
+          "url": "https://digiday.com/media/media-briefing-publishers-cautiously-count-ai-licensing-as-notable-revenue-amid-programmatic-strain-in-q1-earnings/"
+        },
+        {
+          "title": "What publishers want to see from a Google AI licensing deal",
+          "url": "https://digiday.com/media/what-publishers-want-from-google-ai-licensing-deal/"
+        },
+        {
+          "title": "A timeline of the major deals between publishers and AI tech companies in 2025",
+          "url": "https://digiday.com/media/a-timeline-of-the-major-deals-between-publishers-and-ai-tech-companies-in-2025/"
+        },
+        {
+          "title": "Publisher AI Licensing Deals: The 2026 Numbers",
+          "url": "https://casrai.org/news/scholarly-publisher-ai-licensing-deals-2026"
+        },
+        {
+          "title": "Every AI Content Licensing Deal, Mapped (2023-2026) - LLM Pulse",
+          "url": "https://llmpulse.ai/blog/ai-content-licensing-deals/"
+        },
+        {
+          "title": "AI Content Licensing for Publishers: Block or License? | Publisher in a Box",
+          "url": "https://publisherinabox.com/ai-content-licensing-publishers-block-license-get-cited-2026"
+        },
+        {
+          "title": "AI Content Licensing in 2026: Why Most Publishers Will Never See a Deal, and What to Do Instead",
+          "url": "https://notioncue.com/blog/ai-content-licensing-training-data-deals-publishers-2026"
+        },
+        {
+          "title": "Renewed Indications of U.S.-Gulf AI Alignment - AGSI",
+          "url": "https://agsi.org/analysis/renewed-indications-of-u-s-gulf-ai-alignment/"
+        },
+        {
+          "title": "LEAP 2026: Saudi Arabia Leads AI Era with Over $15 Bn in Technology Launches, Investments",
+          "url": "https://english.aawsat.com/business/5313165-leap-2026-saudi-arabia-leads-ai-era-over-15-bn-technology-launches-investments"
+        },
+        {
+          "title": "Gulf urged to seize next phase of AI with homegrown products | AGBI",
+          "url": "https://www.agbi.com/ai/2026/09/gulf-urged-to-seize-next-phase-of-ai-with-homegrown-products/"
+        },
+        {
+          "title": "The Middle East's trillion-dollar bet on AI infrastructure | Introl Blog",
+          "url": "https://introl.com/blog/middle-east-uae-saudi-arabia-ai-data-center-boom-2025"
+        },
+        {
+          "title": "The Middle East’s Big Bet on Artificial Intelligence and Data Security | Crowell & Moring LLP",
+          "url": "https://www.crowell.com/en/insights/client-alerts/the-middle-easts-big-bet-on-artificial-intelligence-and-data-security"
+        },
+        {
+          "title": "Saudi fires up Gulf AI race with $15bn tech deals at LEAP | Fortune",
+          "url": "https://fortune.com/2026/09/02/saudi-fires-up-gulf-ai-race-with-15-billion-tech-deals-at-leap/"
+        },
+        {
+          "title": "AI Investment Summit in Dubai 2026 | Global AI & Capital",
+          "url": "https://www.aiinvestmentsummit.com/"
+        },
+        {
+          "title": "Sarvam AI Powering a Made-in-India AI Revolution",
+          "url": "https://www.pib.gov.in/PressReleasePage.aspx?PRID=2231169&reg=3&lang=1"
+        },
+        {
+          "title": "Sarvam AI’s Plan to Break ChatGPT and other Big Tech’s Stranglehold on India - Bloomberg",
+          "url": "https://www.bloomberg.com/news/newsletters/2026-04-30/sarvam-ai-s-plan-to-break-chatgpt-and-other-big-tech-s-stranglehold-on-india"
+        },
+        {
+          "title": "Sarvam AI Powering a Made-in-India AI Revolution",
+          "url": "https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/feb/doc2026221797601.pdf"
+        },
+        {
+          "title": "Sarvam AI and the Sovereign AI in India",
+          "url": "https://www.drishtiias.com/daily-updates/daily-news-analysis/sarvam-ai-and-the-sovereign-ai-in-india"
+        },
+        {
+          "title": "Sarvam AI",
+          "url": "https://en.wikipedia.org/wiki/Sarvam_AI"
+        },
+        {
+          "title": "India Sovereign AI Status 2026: IndiaAI Mission, Sarvam Models, Gaps & Geopolitics | explainx.ai Blog | explainx.ai",
+          "url": "https://explainx.ai/blog/india-sovereign-ai-status-indiaai-mission-2026"
+        },
+        {
+          "title": "Sarvam AI (2026): India’s $1.5 Billion Sovereign AI Unicorn",
+          "url": "https://founderpin.com/startup_story/sarvam-ai/"
+        },
+        {
+          "title": "February 19, 2026 8:58 PM",
+          "url": "https://www.newsonair.gov.in/union-minister-pradhan-lauds-roll-out-of-ai-models-by-sarvam-and-bharatgen-at-india-ai-impact-summit"
+        },
+        {
+          "title": "September 24, 2025 12:20 PM",
+          "url": "https://www.newsonair.gov.in/guided-by-seva-and-sushasan-modi-govt-drives-indiaai-mission"
+        }
+      ]
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "# This Week in US Politics: Reading Across the Spectrum\n*Briefing prepared September 7, 2026 — sources from the past week*\n\n---\n\n## STORY 1: Trump Administration Advances Federal Citizen-Voter Lists Ahead of Midterms\n\n**What actually happened (factual anchor):**\nThe federal government is building state-by-state lists of adults it considers citizens eligible to vote, based on an executive order Trump signed March 31, 2026. \n\nA June 8 implementation memo said a portal for state election officials would be available around June 30 and a second portal for citizens to check their information would come later; the federal government secured a domain and the portal was briefly live in recent days with a \"Coming Soon\" landing page.\n\n \n\nThe administration will not meet its own deadline to publish the lists 60 days before Election Day.\n\n \n\nA lower court had blocked key parts of the executive order in 23 states and Washington, D.C., but the Supreme Court stayed that injunction late last month.\n\n Administering elections and maintaining voter lists is constitutionally a state responsibility (Article I, Section 4).\n\n**PROGRESSIVE framing — NPR (news reporting)**\nURL: https://www.npr.org/sections/elections/\nNPR frames this as historically unprecedented federal overreach. \n\nIt describes the effort as a \"mysterious and unprecedented project,\" noting the U.S. has never attempted to create a comprehensive list of American citizens before, and that maintaining voter lists is the responsibility of states, not the federal government.\n\n The reporting emphasizes the disputed factual premise underneath: \n\nnew research confirms what election experts have said all along — noncitizen voting occasionally happens, but in minuscule numbers and not in any coordinated way.\n\n**NEUTRAL framing — OPB / NPR wire (news reporting)**\nURL: https://www.opb.org/article/2026/09/04/trump-still-wants-state-citizenship-lists-ahead-of-midterms/\nStraight reporting focuses on the procedural state of play. \n\nDOJ attorneys told opposing counsel in two lawsuits that the administration would not meet the September deadline, and lawyers for Democratic party groups accused the administration of failing to notify the court about its plans to move forward with the portal, asking the judge to require immediate updates.\n\n**CONSERVATIVE framing — Fox News (news reporting)**\nURL: https://www.foxnews.com/politics/trumps-save-act-call-ignites-conservative-support-after-election-integrity-announcement\nRight-leaning coverage frames citizenship verification as necessary election security. \n\nTrump announced \"the immediate declassification and release of critical intelligence, revealing shocking vulnerabilities in our election infrastructure.\"\n\n \n\nThe reporting highlights a DHS allegation that more than a quarter-million noncitizens may be registered to vote in four key states.\n\n> **Factual caution for the reader:** The DHS \"quarter-million noncitizens\" figure should be read skeptically. \n\nDHS said 278,000 noncitizens were registered to vote in federal elections, but the methodology and level of confidence behind that figure were not disclosed.\n\n Independent audits have consistently found tiny numbers — e.g., \n\nan Arizona review of 61,681 flagged voters found 137 noncitizens registered, with 60 having cast ballots.\n\n The strongest version of the conservative case is a values argument (verification is prudent even if fraud is rare); the claim of mass coordinated noncitizen voting is not supported by evidence.\n\n---\n\n## STORY 2: Trump Leaves Door Open to Federalizing the Midterms\n\n**What actually happened (factual anchor):**\nIn a recent interview, when a conservative commentator suggested he could declare a national emergency to impose election rules if the Senate does not pass the SAVE Act, \n\nTrump responded, \"Let me just say that stranger things have happened, OK?\"\n\n \n\nThe SAVE America Act, pushed by Trump and hard-line House Republicans, would require proof of citizenship to register to vote in federal elections and photo ID at the polls.\n\n Legal scholars across the spectrum note the Constitution assigns election administration to states and Congress, not the president.\n\n**PROGRESSIVE framing — Center for American Progress (opinion/analysis)**\nURL: https://www.americanprogress.org/article/despite-president-trumps-claims-of-foreign-election-interference-he-has-no-legal-authority-to-declare-a-national-emergency-and-unilaterally-nationalize-elections/\nCAP frames this as an authoritarian threat with no legal basis. \n\nIt argues Trump resurrected largely debunked conspiracy theories about foreign interference, and that no president has authority under the Constitution or statutes to make or alter rules for federal elections — that power lies strictly with the states, with Congress as a backstop, under Article I, Section 4.\n\n**NEUTRAL framing — The Hill / NewsNation (news reporting)**\nURL: https://thehill.com/homenews/administration/6023743-trump-national-emergency-midterms/\nWire-style reporting states the exchange plainly and notes the checks. \n\nTrump left the door open to declaring a national security emergency and federalizing control over the November midterms; if he were to do so, Congress could prevent it via a joint resolution, which would likely require veto-proof two-thirds majorities in both chambers.\n\n**CONSERVATIVE framing — Washington Times (opinion/editorial)**\nURL: https://www.washingtontimes.com/news/2026/feb/26/noncitizen-voting-threatens-election-integrity-national-security/\nThe conservative case ties election verification to national sovereignty. The op-ed argues \n\n\"Election security is national security, and that's why the Senate must immediately pass the SAVE America Act.\"\n\n \n\nIt contends national security is not just about defending borders from foreign armies but protecting the core institutions that make America a sovereign nation — at the center of which lies the integrity of elections.\n\n (Note: this is an argument for passing the SAVE Act legislatively, distinct from endorsing a unilateral emergency declaration.)\n\n> **Factual caution:** The legal question is not genuinely contested among scholars. \n\nA president cannot use an emergency declaration to take over state-run elections, impose nationwide voter-ID requirements, ban mail voting, or seize voting machines without a separate legal basis; the Constitution assigns election administration to states, while Congress may alter rules for federal elections.\n\n---\n\n## STORY 3: US–Iran Strikes Escalate, Roiling Oil Prices in an Election Year\n\n**What actually happened (factual anchor):**\nA monthlong lull in the intermittent US–Iran conflict ended this week. \n\nU.S. Central Command said it completed a barrage against Iranian military targets including air defense sites, radar systems and maritime assets, following strikes on Sunday that threatened to reignite a conflict that has spiked global oil prices.\n\n \n\nThe U.S. carried out additional strikes and Tehran attacked Jordan, Bahrain and Kuwait in response.\n\n \n\nBy September 5, CENTCOM said U.S. forces struck an Iranian crude oil tanker in the Gulf of Oman.\n\n The Strait of Hormuz remains the flashpoint.\n\n**PROGRESSIVE framing — Al Jazeera (news reporting)**\nURL: https://www.aljazeera.com/news/2026/9/2/iran-us-exchange-new-attacks-who-was-hit-in-latest-strikes\nLeft-leaning and international coverage foregrounds civilian casualties and escalation risk. \n\nIt reports Iran says the US bombed a wedding near the Strait of Hormuz, and frames the exchange as the biggest in more than a month, raising fears of escalation into a wider regional war.\n\n \n\nIran said the bombing of a house during a wedding celebration in Kuhestak killed at least four people, with more than 68 wounded, including women and children.\n\n**NEUTRAL framing — Associated Press via NPR (news reporting)**\nURL: https://www.npr.org/2026/09/02/g-s1-141500/us-iran-war\nThe wire account presents the military facts and casualty claims with attribution. \n\nThe U.S. military hit targets in Iran and Tehran fired missiles and drones at various sites across the region; one U.S. strike hit a home hosting a wedding, killing five people and wounding dozens, local officials said.\n\n It also records Trump's own posture: \n\nhe said he would not force Iran to the bargaining table, writing that he liked the U.S. position with \"almost total control of the Hormuz Strait, and their economy totally collapsing.\"\n\n**CONSERVATIVE framing — CNBC / CENTCOM statements (news reporting)**\nURL: https://www.cnbc.com/2026/09/02/us-iran-war-trump-hormuz-irgc-jordan-bahrain.html\nRight-leaning and pro-administration framing emphasizes deterrence and disputes Iran's claims. \n\nCENTCOM disputed Iran's claim about the oil tankers, saying \"No ships have hit mines in the Strait of Hormuz. This is yet another IRGC attempt to intimidate regional commercial shipping through disinformation.\"\n\n The deterrence logic is stated directly by the CENTCOM commander: \n\n\"If you shoot at two of our ships, we will impose an even higher economic cost — taking out three of yours.\"\n\n> **Note on contested facts:** The wedding-strike casualty figures come from Iranian officials and the Iranian Red Crescent and had not been independently verified at the time of reporting — \n\nNBC News was not immediately able to independently confirm the details of the strike.\n\n The \"mines hit tankers\" claim is directly disputed: Iran's IRGC asserts it; CENTCOM denies it. Both sides' factual claims here are self-interested and unconfirmed.\n\n---\n\n## STORY 4: Supreme Court Clears Trump Mail-In Ballot Rule to Advance; Lower Courts Still Fighting\n\n**What actually happened (factual anchor):**\n\nThe Supreme Court paused a lower court's ruling that had blocked key parts of Trump's order to limit voting by mail for the midterms, but U.S. Postal Service work on the order remains blocked nationwide.\n\n \n\nThe administration is asking the Supreme Court to green-light a new Postal Service rule that would ex",
+      "sources": [
+        {
+          "title": "News – The White House",
+          "url": "https://www.whitehouse.gov/news/"
+        },
+        {
+          "title": "The Hill - covering Congress, Politics, Political Campaigns and Capitol Hill",
+          "url": "https://thehill.com/"
+        },
+        {
+          "title": "Politics News: Latest on Trump Administration, Congress, Elections and More | NBC News",
+          "url": "https://www.nbcnews.com/politics"
+        },
+        {
+          "title": "Elections 2026: The latest from the NPR Network : NPR",
+          "url": "https://www.npr.org/sections/elections/"
+        },
+        {
+          "title": "2026 United States House of Representatives election in Delaware",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_Delaware"
+        },
+        {
+          "title": "Presidential Actions – The White House",
+          "url": "https://www.whitehouse.gov/presidential-actions/"
+        },
+        {
+          "title": "Latest US Political News Updates | The Bold News",
+          "url": "https://theboldnews.com/latest-us-political-news-updates-key-developments-shaping-america-in-september-2026/"
+        },
+        {
+          "title": "Sep. 11, 2020 9:58 p.m. EDT",
+          "url": "https://www.pbs.org/weta/washingtonweek/tag/donald-trump?page=4"
+        },
+        {
+          "title": "February 9, 2026",
+          "url": "https://everythingbriefing.substack.com/p/february-9-2026"
+        },
+        {
+          "title": "2026 midterm election: Latest updates, news and commentary about the midterms",
+          "url": "https://www.newsnationnow.com/politics/2026-midterm-elections/"
+        },
+        {
+          "title": "2026 Midterms: Latest News, Updates and Results of the Midterm Elections | NBC News",
+          "url": "https://www.nbcnews.com/politics/2026-election"
+        },
+        {
+          "title": "2026 Midterm Election News, Live Stream Video and Updates - ABC News",
+          "url": "https://abcnews.com/elections"
+        },
+        {
+          "title": "Trump administration asks Supreme Court to allow mail-in ballot rule to proceed",
+          "url": "https://www.nbcnews.com/politics/trump-administration/live-blog/trump-congress-2026-midterm-election-iran-live-updates-rcna595790"
+        },
+        {
+          "title": "Election 2026: Results, news and analysis | CNN Politics",
+          "url": "https://www.cnn.com/election/2026"
+        },
+        {
+          "title": "United States Congress elections, 2026 - Ballotpedia",
+          "url": "https://ballotpedia.org/United_States_Congress_elections,_2026"
+        },
+        {
+          "title": "Watch CBS News",
+          "url": "https://www.cbsnews.com/video/what-early-polls-are-projecting-as-politicians-look-ahead-to-2026-midterm-elections"
+        },
+        {
+          "title": "Watch CBS News",
+          "url": "https://www.cbsnews.com/video/democrats-take-more-aggressive-approach-as-2026-midterm-elections-come-into-focus"
+        },
+        {
+          "title": "2026 election",
+          "url": "https://www.pbs.org/newshour/classroom/tag/2026-election"
+        },
+        {
+          "title": "LIVE UPDATES",
+          "url": "https://www.foxnews.com/elections/2022/midterm-results/state/connecticut"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | NPR & Houston Public Media",
+          "url": "https://www.houstonpublicmedia.org/npr/2026/09/03/nx-s1-5955822/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms/"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms - OPB",
+          "url": "https://www.opb.org/article/2026/09/04/trump-still-wants-state-citizenship-lists-ahead-of-midterms/"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | KPBS Public Media",
+          "url": "https://www.kpbs.org/news/politics/2026/09/03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | KMUW",
+          "url": "https://www.kmuw.org/2026-09-03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | WLRN",
+          "url": "https://www.wlrn.org/national-politics/2026-09-03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | WSIU",
+          "url": "https://www.wsiu.org/politics-elections/2026-09-03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | WFSU News",
+          "url": "https://news.wfsu.org/npr-news/2026-09-03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | YPR",
+          "url": "https://www.ypradio.org/npr-news/2026-09-03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "Trump's plan to implement non-citizen searches on state voting lists - Working Immigrants",
+          "url": "https://www.workingimmigrants.com/2026/09/the-supposed-plan-to-implement-non-citizen-searches-on-state-voting-lists/"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms",
+          "url": "https://www.wcsufm.org/latest-from-npr/2026-09-03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "Despite President Trump’s Claims of Foreign Election Interference, He Has No Legal Authority To Declare a National Emergency and Unilaterally Nationalize Elections - Center for American Progress",
+          "url": "https://www.americanprogress.org/article/despite-president-trumps-claims-of-foreign-election-interference-he-has-no-legal-authority-to-declare-a-national-emergency-and-unilaterally-nationalize-elections/"
+        },
+        {
+          "title": "Trump on declaring national security emergency for elections: ‘Stranger things have happened’",
+          "url": "https://www.newsnationnow.com/politics/trump-national-security-emergency-midterm-elections/"
+        },
+        {
+          "title": "Trump on declaring national security emergency for elections: 'Stranger things have happened'",
+          "url": "https://www.wavy.com/news/national/trump-on-declaring-national-security-emergency-for-elections-stranger-things-have-happened/"
+        },
+        {
+          "title": "Will Trump declare national emergency to 'nationalise' midterm elections? Critics think so, and supporters want him to",
+          "url": "https://www.wionews.com/world/will-trump-declare-national-emergency-to-nationalise-midterm-elections-critics-think-so-and-supporters-want-him-to-1787497512485/amp"
+        },
+        {
+          "title": "Trump to Wayne Root on declaring national security emergency for elections: 'Stranger things have happened'",
+          "url": "https://thehill.com/homenews/administration/6023743-trump-national-emergency-midterms/"
+        },
+        {
+          "title": "The Trump Administration Has No Legal Authority To Invoke National Security and Take Over Elections - Center for American Progress",
+          "url": "https://www.americanprogress.org/article/the-trump-administration-has-no-legal-authority-to-invoke-national-security-and-take-over-elections/"
+        },
+        {
+          "title": "The Trump Administration Is Interfering in the 2026 Midterm Elections To Entrench the Imperial Presidency - Center for American Progress",
+          "url": "https://www.americanprogress.org/article/the-trump-administration-is-interfering-in-the-2026-midterm-elections-to-entrench-the-imperial-presidency/"
+        },
+        {
+          "title": "election denier summit trump midterms",
+          "url": "https://www.propublica.org/article/election-denier-summit-trump-midterms"
+        },
+        {
+          "title": "krishnamoorthi blasts reported trump administration plan invoke emergency",
+          "url": "https://krishnamoorthi.house.gov/media/press-releases/krishnamoorthi-blasts-reported-trump-administration-plan-invoke-emergency"
+        },
+        {
+          "title": "Trump Says US Striking Iran, Threatens Heavier Attacks If Tehran Retaliates",
+          "url": "https://www.globalsecurity.org/wmd/library/news/iran/2026/09/iran-260901-rferl03.htm"
+        },
+        {
+          "title": "U.S. military strikes Iran, while Trump vows more for Tehran's retaliation",
+          "url": "https://www.npr.org/2026/09/02/g-s1-141500/us-iran-war"
+        },
+        {
+          "title": "US strikes oil tankers, Tehran claims attacks on US-linked vessels - ABC News",
+          "url": "https://abcnews.com/International/live-updates/iran-live-updates-centcom-targeted-iranian-forces-posed/?id=136080582"
+        },
+        {
+          "title": "Iran retaliates with missiles and drones, defying Trump’s warning - The Washington Post",
+          "url": "https://www.washingtonpost.com/national-security/2026/09/01/us-carries-out-new-military-strikes-iran/"
+        },
+        {
+          "title": "2025 United States strikes on Iranian nuclear sites",
+          "url": "https://en.wikipedia.org/wiki/2025_United_States_strikes_on_Iranian_nuclear_sites"
+        },
+        {
+          "title": "2026 Israeli%E2%80%93United States strikes on Iran",
+          "url": "https://en.wikipedia.org/wiki/2026_Israeli%E2%80%93United_States_strikes_on_Iran"
+        },
+        {
+          "title": "Iran retaliates after US strikes, defying Trump’s warning it could be hit ‘much harder’ | CNN",
+          "url": "https://www.cnn.com/2026/09/01/politics/us-military-strikes-iran"
+        },
+        {
+          "title": "How many countries has Trump conducted military strikes on?",
+          "url": "https://www.yahoo.com/news/articles/many-countries-trump-conducted-military-203845866.html"
+        },
+        {
+          "title": "Missiles have been flying in and out of Iran. Trump said US strikes marked the start of 'major combat operations.'",
+          "url": "https://www.yahoo.com/news/articles/trump-says-us-started-major-072612802.html"
+        },
+        {
+          "title": "SAVE Act: How Donald Trump’s Voting Bill May Impact 2026 Midterm Elections | League of Women Voters",
+          "url": "https://www.lwv.org/newsroom/news-clips/save-act-how-donald-trumps-voting-bill-may-impact-2026-midterm-elections"
+        },
+        {
+          "title": "The SAVE Act: What every American Voter Needs to Know - Vote.org",
+          "url": "https://www.vote.org/save-act/"
+        },
+        {
+          "title": "Trump declassifies intel on election vulnerabilities, pushes SAVE Act | Fox News",
+          "url": "https://www.foxnews.com/politics/trumps-save-act-call-ignites-conservative-support-after-election-integrity-announcement"
+        },
+        {
+          "title": "Non-citizens VOTING: Virginia's voter rolls exposed | Fox News Video",
+          "url": "https://www.foxnews.com/video/6403806653112"
+        },
+        {
+          "title": "Noncitizen voting threatens election integrity and national security | Washington Times",
+          "url": "https://www.washingtontimes.com/news/2026/feb/26/noncitizen-voting-threatens-election-integrity-national-security/"
+        },
+        {
+          "title": "The False Fear of Noncitizen Voting",
+          "url": "https://time.com/article/2026/08/26/the-false-fear-of-noncitizen-voting/"
+        },
+        {
+          "title": "Sen. Rick Scott & Colleagues Demand Passage of SAVE Act",
+          "url": "https://www.rickscott.senate.gov/2024/9/sen-rick-scott-colleagues-demand-passage-of-save-act"
+        },
+        {
+          "title": "rep wesley hunt supports save act strengthen election integrity judiciary committee",
+          "url": "https://hunt.house.gov/media/videos/rep-wesley-hunt-supports-save-act-strengthen-election-integrity-judiciary-committee"
+        },
+        {
+          "title": "in case you missed it sen rick scott in the washington examiner the save act is essential to stop illegal alien voting protect the integrity of u s elections",
+          "url": "https://www.rickscott.senate.gov/2024/9/in-case-you-missed-it-sen-rick-scott-in-the-washington-examiner-the-save-act-is-essential-to-stop-illegal-alien-voting-protect-the-integrity-of-u-s-elections"
+        },
+        {
+          "title": "US strikes oil tankers, Tehran claims attacks on US-linked vessels - ABC News",
+          "url": "https://abcnews.com/International/live-updates/iran-live-updates-centcom-targeted-iranian-forces-posed/?id=136080582"
+        },
+        {
+          "title": "US Launches Fresh Strikes On Iran After Attempted Attacks, Military Says",
+          "url": "https://www.rferl.org/a/iran-live-blog-trump-middle-east/33803414.html"
+        },
+        {
+          "title": "Iran, US exchange new attacks: Who was hit in latest strikes? | Explainer News | Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/9/2/iran-us-exchange-new-attacks-who-was-hit-in-latest-strikes"
+        },
+        {
+          "title": "Two tankers hit Hormuz naval mines, Iran says amid regional strikes",
+          "url": "https://www.cnbc.com/2026/09/02/us-iran-war-trump-hormuz-irgc-jordan-bahrain.html"
+        },
+        {
+          "title": "2026 Iran war",
+          "url": "https://en.wikipedia.org/wiki/2026_Iran_war"
+        },
+        {
+          "title": "Tehran targets U.S. allies in Gulf after U.S. launched ‘large and powerful’ strikes on Iran",
+          "url": "https://www.nbcnews.com/world/iran/us-launched-large-powerful-strikes-iran-trump-says-rcna595581"
+        },
+        {
+          "title": "April 5, 2026 8:15 PM",
+          "url": "https://www.newsonair.gov.in/us-president-trump-warns-of-strikes-on-irans-power-plants-on-april-7-if-strait-of-hormuz-remains-closed"
+        },
+        {
+          "title": "March 15, 2026 7:00 AM",
+          "url": "https://www.newsonair.gov.in/us-president-donald-trump-urges-nations-to-send-ships-to-secure-strait-of-hormuz-amid-iran-tensions"
+        },
+        {
+          "title": "Mar 10, 2026 - World",
+          "url": "https://axios.com/2026/03/10/hormuz-strait-mines-war-trump"
+        },
+        {
+          "title": "Newsletter Newsletters Events Events Podcasts Videos Africanews",
+          "url": "https://euronews.com/2026/04/07/iran-defies-us-deadline-to-reopen-strait-of-hormuz-as-trump-threatens-infrastructure-strik"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | NPR & Houston Public Media",
+          "url": "https://www.houstonpublicmedia.org/npr/2026/09/03/nx-s1-5955822/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms/"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms - OPB",
+          "url": "https://www.opb.org/article/2026/09/04/trump-still-wants-state-citizenship-lists-ahead-of-midterms/"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | KPBS Public Media",
+          "url": "https://www.kpbs.org/news/politics/2026/09/03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | NPR Illinois",
+          "url": "https://www.nprillinois.org/2026-09-03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | WFSU News",
+          "url": "https://news.wfsu.org/npr-news/2026-09-03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | WSIU",
+          "url": "https://www.wsiu.org/politics-elections/2026-09-03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms | WGCU News | PBS & NPR for Southwest Florida",
+          "url": "https://www.wgcu.org/2026-09-03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "The Trump administration still aims to make state citizenship lists ahead of midterms",
+          "url": "https://www.klcc.org/npr-news/2026-09-03/the-trump-administration-still-aims-to-make-state-citizenship-lists-ahead-of-midterms"
+        },
+        {
+          "title": "Trump executive order boosts proof of citizenship requirements for voting in federal elections",
+          "url": "https://www.aol.com/trump-executive-order-boosts-proof-234206082.html"
+        }
+      ]
+    }
+  ]
+}
