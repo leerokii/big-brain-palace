@@ -1,0 +1,985 @@
+{
+  "id": "2026-W15",
+  "year": 2026,
+  "week": 15,
+  "generatedAt": "2026-09-21T18:28:31.969Z",
+  "dateLabel": "September 21, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "# This Week's AI Product Management Briefing\n### For the AI Automations PM at Vocal Media — content pipelines, creator/editorial tooling, and audience automation\n\n---\n\n## 1. Evals are the new A/B test — and defining \"good\" is your job, not engineering's\n**Braintrust — \"Evals for PMs: A practical guide to AI product quality\"**\n\nEvals measure whether your AI system's outputs are actually good, across dimensions like accuracy, tone, and relevance that binary pass/fail testing can't capture. \n\nScorers define how you measure quality — the most important principle is to break \"good\" into specific dimensions and score each one independently; a response might need to be correct, empathetic, concise, and compliant, and if you lump them into a single score you'll accidentally optimize the wrong thing.\n\n**Why it matters:** For Vocal's content pipelines, this is the difference between \"the AI draft feels off\" and a fixable problem. \n\nEvals give PMs three things they've never had for AI features: coverage, so you're testing hundreds of scenarios instead of a handful; tradeoff visibility, so you can see when improving one dimension hurts another; and version comparison, so you can prove the new approach actually beats the old one.\n\n \n\nThis matters because AI quality is a product decision, not just an engineering one — you're the person who knows what customers care about and what \"good\" looks like for your use case. Engineers build the systems; PMs define the success criteria.\n\n**Source:** Braintrust — https://www.braintrust.dev/blog/evals-for-pms\n\n---\n\n## 2. Measure three levels of success — and write them down before you build\n**Product Management with Mani — \"AI Evaluation: Metrics That Matter\"**\n\nThis piece attacks the most common trap: teams measure what's easy (model accuracy) instead of what matters (whether users are better off). \n\nModel accuracy on the test set is 91%, adoption looks fine, then someone asks: are users actually better off? Nobody has a clean answer — that meeting happens because the team measured what was easy, not what mattered.\n\n**Why it matters:** The discipline forces clarity you can apply to any Vocal feature spec. \n\nIf your team cannot write one paragraph defining measurable success before building, the feature is not ready to be specced — vague criteria like \"improve UX\" cannot be tested, which means the feature can never be wrong; specific criteria are falsifiable, and that is the point.\n\n A key reason this is hard with AI: \n\nAI output is variable — a confident wrong answer and a confident right one look identical to the user in the short term.\n\n**Source:** Product Management with Mani — https://productmanagementwithmani.substack.com/p/ai-evaluation-metrics-that-matter\n\n---\n\n## 3. Ship before it's ready — and validate in real, messy environments\n**Hex — \"Bitter lessons building AI products\"**\n\nA shipped-product story from a data-tooling team, directly relevant to creator and editorial tooling. Their core operating change: \n\na core principle now is \"get it to users before it's ready\" — when they show a feature to early beta customers it's no longer a \"demo,\" they just ask customers to use it directly; if the call feels more like a bug bash, they know they haven't built something that works, because real product validation happens in messy, complex customer environments.\n\n**Why it matters:** This mirrors how you'd want to test AI editorial tools with real Vocal creators rather than in a controlled demo. It pairs well with the enterprise rollout pattern several teams use: \n\ndeploy one agent against one well-defined workflow, measure for four to six weeks against the business goals, and expand if the signal is good.\n\n**Source:** Hex — https://hex.tech/blog/bitter-lessons-building-ai-in-hex-product-management/\n\n---\n\n## 4. 2026 is the \"year of proof\" — report value, not activity\n**Metis Strategy — \"Product management in 2026: from experimentation to the reckoning\"**\n\nThe funding climate has shifted sharply toward evidence. \n\nMIT's NANDA initiative found that roughly 95% of enterprise generative AI pilots delivered no measurable impact on the P&L — a gap traced not to model quality but to weak workflow integration and the absence of systems that learn over time.\n\n The framing lesson: \n\nthe lesson is not that AI underdelivers — it is that experimentation without measurement is theater.\n\n**Why it matters:** How you report on Vocal's AI automations will determine whether they get funded. \n\nThe shift is from output metrics to outcome metrics — features shipped, pilots launched, and seats activated all describe motion, not value; what earns the next round of funding is P&L impact, productivity actually gained, and adoption that survives past the first week.\n\n The sharpest reframe for audience automation: \n\nthe better standard is absorption, not adoption — a login is not value; work that changes because of the tool is.\n\n**Source:** Metis Strategy — https://www.metisstrategy.com/product-management-ai-value-measurement/\n\n---\n\n## 5. Know which AI PM archetype your role is — and where boundaries blur\n**Tosea.ai (lessons from Anthropic's Cat Wu) + Aman Khan on AI PM archetypes**\n\nTwo useful lenses on how the role is being scoped. On the shift in what the job actually is: \n\nthat does not mean product managers disappear — it means the valuable part of product work moves upstream: deciding what is worth building, what should be shipped first, what should be ignored, and how quickly real users can test it.\n\n \n\nProduct cycles inside AI teams have compressed sharply, features that used to take months can now move in weeks or days, and roles shift: PMs do some engineering, engineers do product work, and designers may also write code.\n\nOn archetypes, one useful split: \n\nthe Core Product PM lives and breathes the end-user experience, obsessing over form factor, packaging, and how AI integrates to solve real problems — they are the voice of the customer.\n\n**Why it matters:** At Vocal, you're almost certainly the Core Product PM archetype (creator/editorial experience) rather than a platform or model-research PM — so your leverage is user judgment and defining quality, not model internals. The eval work is where these meet: \n\nthe PM takes the lead in defining what to measure, translating the user story into a rubric — owning the \"golden set,\" defining quality dimensions (accuracy, tone, safety, helpfulness), and prioritizing which failure modes are unacceptable outcomes to prevent.\n\n**Sources:** Tosea.ai — https://tosea.ai/blog/ai-product-management-2026-playbook · Aman Khan — https://amankhan1.substack.com/p/how-ai-pms-and-ai-engineers-collaborate\n\n---\n\n## 6. TACTIC FOR THIS WEEK: Build a small \"golden set\" for one AI feature\n**Braintrust + Statsig — building golden datasets**\n\nPick one Vocal AI feature (say, headline generation or draft summarization) and build a tiny reference set of inputs paired with ideal outputs. Start small: \n\nfive to ten examples representing your main persona is enough to begin — the goal is reaching the eval phase fast, because running evals exposes weaknesses and drives actions.\n\n Cover the right mix: \n\na dataset is a collection of inputs that represent how real people interact with your product; it should cover golden standards you absolutely need to get right, edge cases that are unusual but important, and failure modes you've already seen in production.\n\n**Why it matters:** This is the single highest-leverage habit for a new AI PM, and it's yours to own. \n\nPair every input with a reference answer and a short rationale, and pull prompts and scenarios from production logs and support tickets\n\n — for Vocal, that means real creator drafts and real editorial edits. Keep it living, not static: \n\nkeep datasets small and fresh rather than maintaining a massive static collection that grows stale, curate targeted sets for each new issue, and ten to two hundred examples is usually enough to identify and fix patterns.\n\n One caution worth knowing: keep few-shot prompt examples and your eval cases in strictly separate pools, since \n\ndata leakage happens when information from your evaluation set bleeds into the thing you are evaluating, so your scores look great and mean nothing.\n\n**Sources:** Braintrust — https://www.braintrust.dev/blog/evals-for-pms · Statsig — https://www.statsig.com/perspectives/golden-datasets-evaluation-standards",
+      "sources": [
+        {
+          "title": "AI Product Managers Are the PMs That Matter in 2026",
+          "url": "https://productschool.com/blog/artificial-intelligence/guide-ai-product-manager"
+        },
+        {
+          "title": "Measuring What Matters: A Quantitative UX Evaluation Framework for AI-Assisted Home Search",
+          "url": "https://arxiv.org/pdf/2606.21663"
+        },
+        {
+          "title": "AI in Product Management Guide for 2026 for Product Leaders | Gocious",
+          "url": "https://gocious.com/blog/ai-in-product-management-guide-for-2026-for-product-leaders"
+        },
+        {
+          "title": "AI Evaluation : Metrics That Matter",
+          "url": "https://productmanagementwithmani.substack.com/p/ai-evaluation-metrics-that-matter"
+        },
+        {
+          "title": "AI Product Management Roadmap & Frameworks: Step-by-Step Guide",
+          "url": "https://voltagecontrol.com/articles/ai-product-management-roadmap-frameworks-step-by-step-guide/"
+        },
+        {
+          "title": "Product Management Trends: 11 Shifts Shaping 2026",
+          "url": "https://productschool.com/blog/product-fundamentals/product-management-trends"
+        },
+        {
+          "title": "Towards Apples to Apples for AI Evaluations: From Real-World Use Cases to Evaluation Scenarios",
+          "url": "https://arxiv.org/pdf/2605.07986"
+        },
+        {
+          "title": "Product management in 2026: from experimentation to the reckoning - Metis Strategy",
+          "url": "https://www.metisstrategy.com/product-management-ai-value-measurement/"
+        },
+        {
+          "title": "AI Product Manager Metrics (2026 Evaluation Framework)",
+          "url": "https://prodmoh.com/blog/how-to-evaluate-ai-product-management"
+        },
+        {
+          "title": "Beyond vibe checks: A PM’s complete guide to evals",
+          "url": "https://www.lennysnewsletter.com/p/beyond-vibe-checks-a-pms-complete"
+        },
+        {
+          "title": "Mastering Evals as an AI Product Manager",
+          "url": "https://maven.com/p/e55ece/mastering-evals-as-an-ai-product-manager"
+        },
+        {
+          "title": "Evals for PMs: A practical guide to AI product quality - Blog - Braintrust",
+          "url": "https://www.braintrust.dev/blog/evals-for-pms"
+        },
+        {
+          "title": "Evaluation Metrics for AI Products That Drive Trust",
+          "url": "https://productschool.com/blog/artificial-intelligence/evaluation-metrics"
+        },
+        {
+          "title": "AI evals for product managers: A beginner’s guide to getting started",
+          "url": "https://amplitude.com/blog/ai-evals-for-product-managers"
+        },
+        {
+          "title": "A guide on implementing effective AI evaluations",
+          "url": "https://www.mindtheproduct.com/how-to-implement-effective-ai-evaluations/"
+        },
+        {
+          "title": "AI Evals for Product Managers: Building Better Feedback Loops for AI Products | Productboard",
+          "url": "https://www.productboard.com/blog/ai-evals-for-product-managers/"
+        },
+        {
+          "title": "AI Evals: A Hands-On Guide for Product Teams",
+          "url": "https://www.producttalk.org/ai-evals/"
+        },
+        {
+          "title": "How to Answer AI Product Evaluation and Metrics Questions | 2026 AI PM Interview Guide",
+          "url": "https://www.crackpminterview.com/p/answer-ai-product-evaluation-metrics-questions"
+        },
+        {
+          "title": "How AI PMs and AI Engineers Collaborate on Evals",
+          "url": "https://amankhan1.substack.com/p/how-ai-pms-and-ai-engineers-collaborate"
+        },
+        {
+          "title": "The Biggest AI Stories Weren’t Features. They Were Dependency - DEV Community",
+          "url": "https://dev.to/therabbithole/the-biggest-ai-stories-werent-features-they-were-dependency-42jf"
+        },
+        {
+          "title": "Rethinking Build-Measure-Learn in 2026 When Everyone Can Ship",
+          "url": "https://userpilot.com/blog/build-measure-learn/"
+        },
+        {
+          "title": "Product management in 2026: from experimentation to the reckoning - Metis Strategy",
+          "url": "https://www.metisstrategy.com/product-management-ai-value-measurement/"
+        },
+        {
+          "title": "Product Management Trends: 11 Shifts Shaping 2026",
+          "url": "https://productschool.com/blog/product-fundamentals/product-management-trends"
+        },
+        {
+          "title": "The 2026 AI product strategy guide: How to plan, budget, and build without buying into the hype",
+          "url": "https://www.mindtheproduct.com/the-2026-ai-product-strategy-huide-how-to-plan-budget-and-build-without-buying-into-the-hype/"
+        },
+        {
+          "title": "AI Product Management in 2026: A Complete Guide to the New Playbook | Tosea.ai",
+          "url": "https://tosea.ai/blog/ai-product-management-2026-playbook"
+        },
+        {
+          "title": "Bitter lessons building AI products | Hex",
+          "url": "https://hex.tech/blog/bitter-lessons-building-ai-in-hex-product-management/"
+        },
+        {
+          "title": "AI Product Strategy 2026: Roadmap for Founders & Startups",
+          "url": "https://wearepresta.com/ai-product-strategy-2026-the-founders-guide-to-ai-native-growth/"
+        },
+        {
+          "title": "How Product is Changing in 2026 — Ant Murphy",
+          "url": "https://www.antmurphy.me/newsletter/how-product-is-changing-in-2026"
+        },
+        {
+          "title": "AI Product Manager Job Description: Roles, Skills & Pay 2026",
+          "url": "https://interviewkickstart.com/job-description/ai-product-manager"
+        },
+        {
+          "title": "AI Product Manager: Role, Skills, Salary & Career Path (2026)",
+          "url": "https://futurense.com/blog/ai-product-manager"
+        },
+        {
+          "title": "What Is an AI Product Manager? Role Overview, Skills & How to Hire One (May 2026)",
+          "url": "https://www.paraform.com/blog/what-is-ai-product-manager"
+        },
+        {
+          "title": "AI Product Manager: Key Skills & Responsibilities in 2026 | Second Talent",
+          "url": "https://www.secondtalent.com/occupations/ai-product-manager/"
+        },
+        {
+          "title": "How to Hire an AI Product Manager: 2026 Guide - KORE1",
+          "url": "https://www.kore1.com/how-to-hire-ai-product-manager-2026/"
+        },
+        {
+          "title": "What is the Scope of Product Management With AI in 2026?",
+          "url": "https://www.masaischool.com/blog/what-is-the-scope-of-product-management-with-ai-in-2026/"
+        },
+        {
+          "title": "AI Product Manager Job Description, Salary & Career Outlook | JobDescription.org",
+          "url": "https://jobdescription.org/jobs/artificial-intelligence/ai-product-manager"
+        },
+        {
+          "title": "AI Product Manager Job Description [Updated for 2026]",
+          "url": "https://interviewguy.com/ai-product-manager-job-description/"
+        },
+        {
+          "title": "2026 How to Become an AI Product Manager: Education, Salary, and Job Outlook | Research.com",
+          "url": "https://research.com/advice/how-to-become-an-ai-product-manager-education-salary-and-job-outlook"
+        },
+        {
+          "title": "Evals for PMs: A practical guide to AI product quality - Blog - Braintrust",
+          "url": "https://www.braintrust.dev/blog/evals-for-pms"
+        },
+        {
+          "title": "Golden datasets: Creating evaluation standards",
+          "url": "https://www.statsig.com/perspectives/golden-datasets-evaluation-standards"
+        },
+        {
+          "title": "Golden Dataset: Role In Custom LLM Evals - Arize AI",
+          "url": "https://arize.com/resource/golden-dataset/"
+        },
+        {
+          "title": "Building a “Golden Dataset” for AI Evaluation: A Step-by-Step Guide",
+          "url": "https://www.getmaxim.ai/articles/building-a-golden-dataset-for-ai-evaluation-a-step-by-step-guide/"
+        },
+        {
+          "title": "AI Evals, Part 3: Golden Datasets That Dont Lie - DEV Community",
+          "url": "https://dev.to/mrviduus/ai-evals-part-3-golden-datasets-that-dont-lie-3fog"
+        },
+        {
+          "title": "How to Build Golden Datasets for Content Moderation | Musubi",
+          "url": "https://musubilabs.ai/post/how-to-build-golden-datasets-for-content-moderation"
+        },
+        {
+          "title": "How to Build a Golden Dataset for LLM Evaluation | QASkills.sh",
+          "url": "https://qaskills.sh/blog/golden-dataset-llm-evaluation-guide"
+        },
+        {
+          "title": "Datasets, Golden Sets, and Scenario Design for AI Evals",
+          "url": "https://vikasgoyal.github.io/agentic/observe/data-design-evals.html"
+        },
+        {
+          "title": "build an evaluation dataset in under",
+          "url": "https://weichen221.substack.com/p/build-an-evaluation-dataset-in-under"
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "# This Week's AI Automation Digest — Sept 21, 2026\n\n## 1. `claude plugin eval` — regression tests for your skills and plugins\nClaude Code 2.1.269 added a command that runs a plugin against a suite of test cases and scores the result against a no-plugin baseline. \n\nClaude Code 2.1.269 adds plugin evals, baseline comparisons, JSON and HTML reports, and CI gates — the command runs a plugin against a suite of cases, scores what happened, compares it with a no-plugin baseline, and writes JSON plus an HTML report, so plugins can now have regression tests that measure behavior, not only syntax.\n\n This is the missing piece for anyone whose skills silently degrade after a model or tooling change.\n\n**Try this** (requires Claude Code v2.1.269+):\n```\n# From inside your plugin's directory, generate a suite via interview:\nclaude plugin eval new\n# It reads the plugin, proposes cases and graders, pilots them, and writes the files.\n\n# Then run the suite against a no-plugin baseline:\nclaude plugin eval --report\n\n# For CI gating, rely on exit codes:\n#   0 = every case met threshold\n#   1 = a failing case / load error / untrusted plugin dir\n#   2 = partial run\n```\n\nRun claude plugin eval --help for the complete set, including --case, --tag, --output-dir, --report, --allow-real-servers, --keep-temp, and --verbose. The command exits 0 when every case meets the threshold, 1 on a failing case, a load error, or an untrusted plugin directory, 2 on a partial run.\n\n**Source:** Claude Code Plugins reference / Developers Digest — https://code.claude.com/docs/en/plugins-reference\n\n---\n\n## 2. Richer subagent frontmatter: per-agent effort, turn caps, and context isolation\nThe subagent config surface expanded meaningfully this month. Beyond the old `name/description/tools/model`, you can now set effort, memory, worktrees, and turn caps per agent. \n\nThe subagent frontmatter surface: effort, memory, omitClaudeMd, worktrees, turn caps.\n\n Combined with skill context forking, this lets you pin cheap models to bounded work and reserve high-effort reasoning for planning.\n\n**Try this** — save as `.claude/agents/reviewer.md`:\n```markdown\n---\nname: code-reviewer\ndescription: Reviews latest commits for correctness and security. Use after any code change.\ntools: Read, Grep, Glob, Bash\nmodel: haiku\neffort: low\nturnCap: 8\nomitClaudeMd: true\n---\nYou are a senior code reviewer. Analyze the latest commits.\nReport only: (1) correctness bugs, (2) security issues, (3) scope violations.\nDo not suggest style changes.\n```\nFor a task you want isolated from the main context window, set `context: fork` on a skill so it runs in its own subagent. \n\nBy default, skills execute in the main session with its existing context. If you explicitly set context: fork, a skill can instead run in an isolated subagent.\n\n**Source:** code-copilot-team GitHub / aibuilders.blog — https://github.com/gosha70/code-copilot-team/issues/363\n\n---\n\n## 3. Scheduled Cowork tasks now run in the cloud — no machine awake required\nCowork's scheduling moved off your desktop. \n\nTo schedule a task, click \"Scheduled\" in the left sidebar to view, create, and manage your scheduled tasks; scheduled tasks run in the cloud, so they don't need your computer to be awake or the desktop app open.\n\n This turns Cowork into a genuine unattended automation runner for recurring synthesis work.\n\n**Try this** — set up a Monday-morning status digest:\n1. Open Cowork (desktop or claude.ai sidebar) and enter a Project so it has persistent memory and a folder. \n\nWith projects, you can organize related tasks into persistent, self-contained workspaces with their own files, links, instructions, and memory.\n\n2. In a new task, type `/schedule` and press enter.\n3. Paste this as the task instruction:\n```\nEvery Monday at 8:00am, write a one-page status summary from last week's\nSlack and Linear activity. Group by: shipped, in-progress, blocked.\nFlag anything waiting on me. Save it as status-YYYY-MM-DD.md in this folder.\n```\n4. Confirm the schedule; it runs in the cloud without your app open.\n\n**Source:** Claude Help Center — https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork\n\n---\n\n## 4. Managed Agents `auto` permission mode + session budgets\nTwo production-hardening controls landed on the Developer Platform. \n\nClaude Managed Agents permission policies now include auto: the server evaluates each agent or MCP tool call and runs it, denies it, or pauses for your approval.\n\n Paired with hard spend caps, you can run agents unattended without a runaway bill. \n\nYou can now set a budget on a Claude Managed Agents session: a hard cap on the session's spend, priced at public list rates — a session that reaches its budget pauses with the budget_reached stop reason instead of starting new model requests; changing or removing the budget resumes it.\n\n**Try this** — attach to a running session live from your terminal (ant CLI v1.32.0+):\n```\nant beta:sessions connect <session-id>\n# Follow the session live, send messages, approve/deny pending tool calls.\n\n# Prefer the visual viewer? Serve it locally:\nant beta:sessions connect <session-id> --web\n```\n\nVersion 1.32.0 of the ant CLI adds ant beta:sessions connect, which attaches your terminal to a Claude Managed Agents session — you can follow the session live, send messages, and allow or deny tool calls that are waiting for approval. Pass --web to serve the Claude Console's session viewer locally and open the session there instead.\n\n**Source:** Claude Developer Platform release notes — https://platform.claude.com/docs/en/release-notes/overview\n\n---\n\n## 5. Constraint-negotiation prompting: make Claude challenge your framing, not just execute\nA prompting pattern shipping in production this year inverts the usual flow — instead of specifying everything upfront, you hand Claude your constraints and ask it to pressure-test them. \n\nThis inverts the traditional prompt flow — instead of you doing the heavy lifting upfront, Claude interviews you to surface requirements you may not have consciously considered, and the resulting outputs are denser, more tailored, and require far fewer revision rounds.\n\n Useful when you suspect a self-imposed constraint is arbitrary.\n\n**Try this** — copyable prompt:\n```\nI'm working with these constraints: [list them].\nIdentify which ones are hard blockers, which are flexible, and propose a\ncreative solution that maximizes the outcome within the flexible ones.\nChallenge any constraint that seems arbitrary — tell me why and what\nyou'd do instead if I dropped it.\n```\nThis is drawn nearly verbatim from the technique as documented. \n\nI'm working with these constraints: [list]. Identify which ones are hard blockers, which are flexible, and propose a creative solution that maximizes outcome within the flexible ones. Challenge any constraint that seems arbitrary.\n\n**Source:** PromptRefinery — https://promptrefinery.ai/claude-prompt-techniques-2026/\n\n---\n\n## 6. (Non-Claude) n8n now exposes agent testing and MCP registry search as tools\nFrom the broader automation world: n8n's September release wired its assistant into the agent-building loop itself. \n\nCore: Expose agent test execution through MCP; Expose MCP registry search to the assistant as a tool; Extend n8n Connect to Agent Builder node tools; Persist agent session timelines during execution.\n\n The persisted session timelines matter for debugging multi-step agent runs after the fact.\n\n**Try this** — the \"grounded agent\" two-workflow pattern that holds up in production:\n- **Workflow A (Ingest):** Trigger = a web form. Action steps: capture question-answer pairs → enrich with metadata (trusted-source flag, tags) → store in an n8n data table. \n\nThe QA Ingest Workflow: A web form that captures question-answer pairs submitted by users, enriches them with metadata (trusted source flag, AI-generated tags) and stores them in an n8n data table.\n\n- **Workflow B (Query):** Trigger = a chat message. Action steps: AI Agent node queries that data table before answering, so responses are grounded in your data instead of model guesses. \n\nThe AI Agent Workflow: A chat interface powered by an AI agent that queries the data table to answer user questions accurately, grounded in real data rather than model hallucination.\n\nTwo build tips that prevent most failures: pin trigger data during development so you fill the form once and iterate downstream freely, and write tool descriptions carefully. \n\nPinning data on any trigger node freezes it for test runs. This is essential for development speed – you fill the form once, pin the data, and iterate on downstream logic freely.\n\n \n\nTool node descriptions are more important than the tools themselves: vague descriptions cause more failures than bad code.\n\n**Source:** n8n release notes (Releasebot) / Dextralabs — https://releasebot.io/updates/n8n",
+      "sources": [
+        {
+          "title": "Claude Features 2026: Projects, Artifacts, Memory, Computer Use, Skills, MCP - Suprmind",
+          "url": "https://suprmind.ai/hub/claude/features/"
+        },
+        {
+          "title": "What's new - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        },
+        {
+          "title": "Anthropic Release Notes - September 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "Claude Platform release notes - Claude Platform Docs",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "title": "Claude Code Changelog (September 2026)",
+          "url": "https://www.gradually.ai/en/changelogs/claude-code/"
+        },
+        {
+          "title": "Claude Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Claude Developer Platform Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Claude (language model)",
+          "url": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+        },
+        {
+          "title": "Claude Code Changelog (September 2026)",
+          "url": "https://www.gradually.ai/en/changelogs/claude-code/"
+        },
+        {
+          "title": "Claude Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Claude Developer Platform Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+        },
+        {
+          "title": "Claude Platform release notes - Claude Platform Docs",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "title": "Claude (language model)",
+          "url": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+        },
+        {
+          "title": "Claude Mythos",
+          "url": "https://en.wikipedia.org/wiki/Claude_Mythos"
+        },
+        {
+          "title": "Anthropic Release Notes - September 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "From single call to agents: five new Claude capabilities now available in Microsoft Foundry | Microsoft Foundry Blog",
+          "url": "https://devblogs.microsoft.com/foundry/five-new-claude-capabilities-now-available-in-foundry/"
+        },
+        {
+          "title": "Anthropic Claude News | September, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/anthropic-claude-news-september-2026/"
+        },
+        {
+          "title": "Code with Claude 2026: 5 New Agent Features Anthropic Just Shipped | MindStudio",
+          "url": "https://www.mindstudio.ai/blog/code-with-claude-2026-new-agent-features"
+        },
+        {
+          "title": "Dynamic Workflows for PMs: Orchestrate AI Agents in Claude Code",
+          "url": "https://www.productcompass.pm/p/claude-code-dynamic-workflows"
+        },
+        {
+          "title": "Claude Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Effective Claude Code Workflows in 2026: What Changed and What Works Now | by Sean Moran | Data Science Collective | Medium",
+          "url": "https://medium.com/data-science-collective/effective-claude-code-workflows-in-2026-what-changed-and-what-works-now-c93ebc6f8f50"
+        },
+        {
+          "title": "Claude Prompt Techniques That Work in 2026 | PromptRefinery",
+          "url": "https://promptrefinery.ai/claude-prompt-techniques-2026/"
+        },
+        {
+          "title": "Prompt Engineering Best Practices 2026 | Thomas Wiegold Blog",
+          "url": "https://thomas-wiegold.com/blog/prompt-engineering-best-practices-2026/"
+        },
+        {
+          "title": "AI Prompting in 2026: A Crash Course | The AI Agent Factory",
+          "url": "https://agentfactory.panaversity.org/docs/ai-prompting-2026"
+        },
+        {
+          "title": "Prompting best practices - Claude Platform Docs",
+          "url": "https://platform.claude.com/docs/en/build-with-claude/prompt-engineering/claude-prompting-best-practices"
+        },
+        {
+          "title": "Adopt what is worth adopting from the 2026-09 Claude Code release (proposals) · Issue #363 · gosha70/code-copilot-team",
+          "url": "https://github.com/gosha70/code-copilot-team/issues/363"
+        },
+        {
+          "title": "agents/plugins/plugin-eval at main · wshobson/agents",
+          "url": "https://github.com/wshobson/agents/tree/main/plugins/plugin-eval"
+        },
+        {
+          "title": "GitHub - VoltAgent/awesome-claude-code-subagents: A collection of 100+ specialized Claude Code subagents covering a wide range of development use cases · GitHub",
+          "url": "https://github.com/VoltAgent/awesome-claude-code-subagents"
+        },
+        {
+          "title": "Plugins reference - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/plugins-reference"
+        },
+        {
+          "title": "GitHub - wshobson/agents: Multi-harness agentic plugin marketplace for Claude Code, Codex, Cursor, OpenCode, GitHub Copilot, Google Antigravity, and Pi · GitHub",
+          "url": "https://github.com/wshobson/agents"
+        },
+        {
+          "title": "Claude Code Plugin Evals Make Agent Extensions Testable - Developers Digest",
+          "url": "https://www.developersdigest.tech/blog/claude-code-plugin-evals-ci"
+        },
+        {
+          "title": "How to build a Claude plugin marketplace with evals",
+          "url": "https://www.aibuilders.blog/p/how-to-build-a-claude-plugin-marketplace-evals"
+        },
+        {
+          "title": "code-patterns - Claude Code Plugin",
+          "url": "https://agentskill.sh/plugins/devnogari/code-patterns"
+        },
+        {
+          "title": "Claude Code 2.1.269 Adds Plugin Evals, Agent Map and Workflow Concurrency Controls | AiCybr Blog",
+          "url": "https://aicybr.com/blog/claude-code-2-1-269-plugin-evals-agent-map-workflow-controls"
+        },
+        {
+          "title": "n8n Release Notes - September 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/n8n"
+        },
+        {
+          "title": "25 n8n Workflow Ideas + 7 for AI Agents (2026)",
+          "url": "https://www.betterclaw.io/blog/n8n-workflow-ideas-ai-agent"
+        },
+        {
+          "title": "n8n 2.0 AI Agent Workflows: A Practitioner's Guide",
+          "url": "https://www.jahanzaib.ai/blog/n8n-ai-agent-workflows-practitioner-guide"
+        },
+        {
+          "title": "Agentic commerce",
+          "url": "https://en.wikipedia.org/wiki/Agentic_commerce"
+        },
+        {
+          "title": "How to Build AI Agents and Automate Workflows with n8n (2026 Guide)",
+          "url": "https://www.entrans.ai/blog/build-ai-agents-automate-workflows-n8n"
+        },
+        {
+          "title": "Build Custom AI Agents With Logic & Control | n8n Automation Platform",
+          "url": "https://n8n.io/ai-agents/"
+        },
+        {
+          "title": "How to Build AI Agent with n8n in 2026 [Most Skip This Step]",
+          "url": "https://dextralabs.com/blog/how-to-build-ai-agent-with-n8n/"
+        },
+        {
+          "title": "Local Agentic AI in n8n [2026 Tested]. Until then, keep (With Real Failure Fixes).",
+          "url": "https://aithinkerlab.com/local-agentic-ai-workflows-n8n/"
+        },
+        {
+          "title": "Build an AI Agent with n8n — Step-by-Step Guide (2026)",
+          "url": "https://www.aitooldiscovery.com/how-to/build-ai-agent-n8n"
+        },
+        {
+          "title": "Get started in Claude Cowork in three steps · Claude Academy",
+          "url": "https://academy.claude.com/tutorials/get-started-in-claude-cowork-in-three-steps"
+        },
+        {
+          "title": "How to Set Up a Claude Cowork Project: A Step-by-Step Guide | HackerNoon",
+          "url": "https://hackernoon.com/how-to-set-up-a-claude-cowork-project-a-step-by-step-guide"
+        },
+        {
+          "title": "Get started with Claude Cowork | Claude Help Center",
+          "url": "https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork"
+        },
+        {
+          "title": "Introduction to Claude Cowork · Claude Academy",
+          "url": "https://academy.claude.com/courses/introduction-to-claude-cowork"
+        },
+        {
+          "title": "Organize your tasks with projects in Claude Cowork | Claude Help Center",
+          "url": "https://support.claude.com/en/articles/14116274-organize-your-tasks-with-projects-in-claude-cowork"
+        },
+        {
+          "title": "How to Use Claude Cowork: 11 Steps, 75 Min [2026]",
+          "url": "https://tech-insider.org/au/how-to-use-claude-cowork-2026/"
+        },
+        {
+          "title": "How to Use Claude Cowork: A Getting-Started Walkthrough (2026) | The AI Career Lab",
+          "url": "https://theaicareerlab.com/blog/how-to-use-claude-cowork-getting-started"
+        },
+        {
+          "title": "How to Use Claude Cowork: Complete Tutorial & Setup Guide [2025] | Claude Cowork Guide",
+          "url": "https://claudecowork.im/tutorial"
+        },
+        {
+          "title": "How to Use Claude to Create and Manage a Project: Step-by-Step Guide for New Users",
+          "url": "https://its.syr.edu/?p=4919"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "# This Week in AI: Industry Briefing\n\n## 1. US and China propose a direct \"AI incident\" hotline ahead of Trump–Xi summit\n**Region: US / China (International)**\n\nUS Treasury Secretary Scott Bessent and Chinese Vice Premier He Lifeng concluded talks in New York on Sunday, with the US side proposing a new AI safety notification mechanism for Presidents Trump and Xi Jinping to consider at their summit this week, with particular emphasis on national security concerns and a notification system covering AI-related incidents that rise to a national-security level.\n\n The framing matters: rather than binding rules, this is a communication channel between the world's two largest AI powers, and \n\nBessent said that companies, not the government, are primarily responsible for keeping the fast-growing technology in check.\n\n Notably, \n\nUS officials said advanced-chip export controls were not part of the proposed AI mechanism talks\n\n—leaving the thorniest issue off the table. \n\nOfficials plan to reconvene in Shenzhen in two months to continue discussions.\n\n If it holds, this would be the first standing US–China channel specifically for AI risk, arriving as both sides look to steady relations.\nSource: CNN Business — https://www.cnn.com/2026/09/20/business/us-china-trade-talks-ai-intl-hnk\n\n## 2. Alibaba open-weights Qwen-Image-2.1, a small model aimed at content creators\n**Region: China (International, media/creator-relevant)**\n\nAlibaba's Qwen team released Qwen-Image-2.1, an open-weight model for image generation and editing whose visual component has just 7 billion parameters yet, the team claims, beats most closed models on Qwen's own benchmark—though independent benchmarks are still pending—and runs on consumer GPUs like a 3090.\n\n For media and creator workflows, the practical hooks are specific: \n\nthe model natively generates and edits transparent (RGBA) images, letting users isolate objects or change text on transparent layers, and handles up to ten reference images at once for group portraits, virtual try-ons, or room design.\n\n The catch for commercial teams is licensing: \n\nQwen-Image-2.1 ships under the Qwen Research License Agreement, which bars commercial use, so businesses must apply separately for a grant.\n\n It fits a broader pattern of Chinese labs shipping compact, downloadable models that push capable image editing out to ordinary hardware.\nSource: The Decoder — https://the-decoder.com/alibabas-open-weight-qwen-image-2-1-claims-to-beat-closed-models-in-image-generation-with-just-7-billion-parameters/\n\n## 3. Publishers vent frustration over \"opaque\" AI licensing deals as search traffic dries up\n**Region: US (media/publishing)**\n\nAt the Digiday Publishing Summit in Miami, \n\npublishers accepted that search traffic from Google is not returning, but remained frustrated by opaque AI licensing deals and lack a clear path to replace the declining programmatic revenue model.\n\n The core grievance is a lack of transparency: \n\nexecutives described a market where AI companies offer inconsistent, confidential contracts that prevent publishers from benchmarking fair value for their content.\n\n One executive complained that \n\nbuyers want to cut a deal that no one other than that publisher has visibility into, and \"it feels like we're being picked off one by one.\"\n\n This matters because the deals themselves are real money—\n\nAI licensing deals with Meta, signed in December 2025, are starting to produce \"meaningful\" revenue for some publishers for the first time\n\n—yet the secrecy leaves each outlet negotiating blind against far larger counterparties.\nSource: Digiday — https://digiday.com/media/media-briefing-overheard-at-the-digiday-publishing-summit-sept-26-google-zero-edition/\n\n## 4. EU AI Act enters its \"prove it\" phase for businesses\n**Region: EU (regulation)**\n\nThe EU AI Act has shifted from principle to practice this month. \n\nThe biggest change is from theory to proof: buyers and regulators now want evidence that companies know what AI they use, how it affects people, who reviews outputs, and what happens when something goes wrong—a simple policy page is no longer enough.\n\n Crucially, this reaches beyond big model labs: \n\nfounders, SaaS companies, agencies, and freelancers can all fall under the Act as providers, deployers, importers, or distributors.\n\n There is also a transparency layer directly relevant to media: \n\nthe Act requires providers to disclose when individuals are communicating with an AI system such as a chatbot rather than a human, and deployers to disclose when content has been artificially generated or manipulated to depict real people or events.\n\n The takeaway for a media company operating in Europe is that AI compliance is now a live commercial gating factor, not a distant policy story.\nSource: Mean CEO Blog (EU AI Act tracker) — https://blog.mean.ceo/eu-ai-act-news-september-2026/\n\n## 5. Gulf states pivot from AI infrastructure to homegrown products—with Indian startups as build partners\n**Region: Gulf states / India (International)**\n\nGulf economies are entering a new stage of their AI push. \n\nAn Accenture executive said the region went through a first phase of building foundations and is now moving into a second phase of building end-user products across sectors, with the next opportunity on the \"application side\" of AI.\n\n But there is a candid gap: \n\n60% of surveyed executives described their countries' approach to AI sovereignty as \"highly sovereign,\" yet 62% said local sovereign AI offerings lag those from global hyperscalers.\n\n That gap is drawing in outside talent—\n\nthe UAE and Saudi Arabia have spent two years pouring billions into AI infrastructure, and Indian AI startups are increasingly emerging as key partners, gaining enterprise customers across banking, healthcare, retail and energy.\n\n The strategic dependency to watch remains hardware, since the Gulf's compute still runs largely on US-approved chips subject to export licenses.\nSource: AGBI — https://www.agbi.com/ai/2026/09/gulf-urged-to-seize-next-phase-of-ai-with-homegrown-products/\n\n*Note: Of the five items, three are non-US (China, EU, Gulf/India) plus one joint US–China story, keeping international coverage well above the minimum.*",
+      "sources": [
+        {
+          "title": "New AI Model Releases — September 2026 Timeline | LLM Gateway",
+          "url": "https://llmgateway.io/timeline"
+        },
+        {
+          "title": "Apertus (LLM)",
+          "url": "https://en.wikipedia.org/wiki/Apertus_(LLM)"
+        },
+        {
+          "title": "LLM News Today (September 2026) – AI Model Releases",
+          "url": "https://llm-stats.com/ai-news"
+        },
+        {
+          "title": "AI Agents News Brief: September 20, 2026 - Anthropic, OpenAI, Google, Meta",
+          "url": "https://aiagentsdirectory.com/news/ai-agents-news-brief-september-20-2026"
+        },
+        {
+          "title": "New Models Today — AI & LLM Releases Last 24 Hours | Price Per Token",
+          "url": "https://pricepertoken.com/news/model-releases"
+        },
+        {
+          "title": "AI Model Releases: September 2026 Tracker and Dated Ledger",
+          "url": "https://www.digitalapplied.com/blog/ai-model-releases-september-2026-tracker"
+        },
+        {
+          "title": "AI Updates Today (September 2026) – Latest AI Model Releases",
+          "url": "https://llm-stats.com/llm-updates"
+        },
+        {
+          "title": "Google Gemini",
+          "url": "https://en.wikipedia.org/wiki/Google_Gemini"
+        },
+        {
+          "title": "Alice AI (AI model family)",
+          "url": "https://en.wikipedia.org/wiki/Alice_AI_(AI_model_family)"
+        },
+        {
+          "title": "U.S. and China open communication line over alarming AI incidents",
+          "url": "https://www.washingtontimes.com/news/2026/sep/21/us-china-open-communication-line-alarming-ai-incidents/"
+        },
+        {
+          "title": "US, China Agree to Launch AI Dialogue, Advance Trade Talks Ahead of Summit - Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-21/bessent-hails-very-successful-china-talks-on-ai-threats-trade"
+        },
+        {
+          "title": "Bessent proposes AI safety notifications in talks with China ahead of Xi-Trump meeting | CNN Business",
+          "url": "https://www.cnn.com/2026/09/20/business/us-china-trade-talks-ai-intl-hnk"
+        },
+        {
+          "title": "Artificial intelligence (AI): Latest News and Updates | South China Morning Post",
+          "url": "https://www.scmp.com/topics/artificial-intelligence"
+        },
+        {
+          "title": "US proposes AI safety notification mechanism in talks with China | Donald Trump News | Al Jazeera",
+          "url": "https://www.aljazeera.com/economy/2026/9/20/us-china-open-high-level-talks-ahead-of-trump-xi-summit"
+        },
+        {
+          "title": "Baichuan",
+          "url": "https://en.wikipedia.org/wiki/Baichuan"
+        },
+        {
+          "title": "The Week Ahead in AI: U.S.-China Talk AI Safety, AI's Turbulence, Jensen Huang Speaks Out, Plus Upcoming AI Hearings & Events",
+          "url": "https://theaiinsider.tech/2026/09/21/the-week-ahead-in-ai-u-s-china-talk-ai-safety-ais-turbulence-jensen-huang-speaks-out-plus-upcoming-ai-hearings-events/"
+        },
+        {
+          "title": "Weekly China AI News from August 19, 2024 to August 25, 2024",
+          "url": "https://recodechinaai.substack.com/p/chinas-humanoid-robot-former-huawei/comments"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/huawei-all-in-on-ai-platforms-mandate/comments"
+        },
+        {
+          "title": "Meta enters AI licensing fray, striking deals with People Inc., USA Today Co. and more - Digiday",
+          "url": "https://digiday.com/media/meta-enters-ai-licensing-fray-striking-deals-with-people-inc-usa-today-co-and-more/"
+        },
+        {
+          "title": "AI and Publishing: FAQ for Writers | Jane Friedman",
+          "url": "https://janefriedman.com/ai-and-publishing-faq-for-writers/"
+        },
+        {
+          "title": "Overheard at the Digiday Publishing Summit, September 2026",
+          "url": "https://digiday.com/media/media-briefing-overheard-at-the-digiday-publishing-summit-sept-26-google-zero-edition/"
+        },
+        {
+          "title": "Meta signs AI licensing deals | NYT and Chicago Tribune sue Perplexity",
+          "url": "https://pressgazette.substack.com/p/meta-signs-ai-licensing-deals-nyt"
+        },
+        {
+          "title": "Media Briefing: Publishers cautiously count AI licensing as notable revenue amid programmatic strain, in Q1 earnings",
+          "url": "https://digiday.com/media/media-briefing-publishers-cautiously-count-ai-licensing-as-notable-revenue-amid-programmatic-strain-in-q1-earnings/"
+        },
+        {
+          "title": "Every AI Content Licensing Deal, Mapped (2023-2026) - LLM Pulse",
+          "url": "https://llmpulse.ai/blog/ai-content-licensing-deals/"
+        },
+        {
+          "title": "The Billion-Dollar Bailout: A Running Tracker of Every Publisher AI Licensing Deal — Who Took the Money, Who's Holding Out, and What the Terms Actually Are - PR News",
+          "url": "https://everything-pr.com/ai-licensing-tracker"
+        },
+        {
+          "title": "A new global push would make AI companies pay for news - Poynter",
+          "url": "https://www.poynter.org/business-work/2026/ai-pay-for-news-statutory-licensing/"
+        },
+        {
+          "title": "Publishers call AI licensing deals a 'new fresh hell' as Google search traffic fades",
+          "url": "https://completeaitraining.com/news/publishers-call-ai-licensing-deals-a-new-fresh-hell-as/"
+        },
+        {
+          "title": "EU AI Act News | September, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/eu-ai-act-news-september-2026/"
+        },
+        {
+          "title": "What came into force with the EU’s AI Act this week – and what didn’t | Technology News | Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/8/6/what-came-into-force-with-the-eus-ai-act-this-week-and-what-didnt"
+        },
+        {
+          "title": "TLT's AI Brief: September 2026 | TLT LLP",
+          "url": "https://www.tlt.com/insights-and-events/insight/tlts-ai-brief-september-2026"
+        },
+        {
+          "title": "EU Artificial Intelligence Act | Up-to-date developments and analyses of the EU AI Act",
+          "url": "https://artificialintelligenceact.eu/"
+        },
+        {
+          "title": "AI Act | Shaping Europe's digital future - European Union",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+        },
+        {
+          "title": "AI Act Update: EU Resolves to Change Rules and Extend Deadlines",
+          "url": "https://www.lw.com/en/insights/ai-act-update-eu-resolves-to-change-rules-and-extend-deadlines"
+        },
+        {
+          "title": "AI Regulation in the EU and UK: 2026 Status Update | AI Conference London 2026",
+          "url": "https://aiconference.london/news/ai-regulation-in-the-eu-and-uk-2026-status-update-20260520-07"
+        },
+        {
+          "title": "EU AI Act 2026: Penalties, Risk Tiers & New Deadlines",
+          "url": "https://decodethefuture.org/en/eu-ai-act-explained/"
+        },
+        {
+          "title": "AI Regulation News September 2026: Global Update & Deadlines | Cubbbix — Cubbbix Tools",
+          "url": "https://cubbbix.com/blog/ai-regulation-september-2026-global-update"
+        },
+        {
+          "title": "Gulf urged to seize next phase of AI with homegrown products | AGBI",
+          "url": "https://www.agbi.com/ai/2026/09/gulf-urged-to-seize-next-phase-of-ai-with-homegrown-products/"
+        },
+        {
+          "title": "Gulf AI infrastructure and the limits of technological sovereignty",
+          "url": "https://www.iiss.org/publications/strategic-comments/2026/06/gulf-ai-infrastructure-and-the-limits-of-technological-sovereignty/"
+        },
+        {
+          "title": "Renewed Indications of U.S.-Gulf AI Alignment - AGSI",
+          "url": "https://agsi.org/analysis/renewed-indications-of-u-s-gulf-ai-alignment/"
+        },
+        {
+          "title": "The Middle East’s Big Bet on Artificial Intelligence and Data Security | Crowell & Moring LLP",
+          "url": "https://www.crowell.com/en/insights/client-alerts/the-middle-easts-big-bet-on-artificial-intelligence-and-data-security"
+        },
+        {
+          "title": "Middle East Artificial Intelligence News | AGBI",
+          "url": "https://www.agbi.com/sectors/ai/"
+        },
+        {
+          "title": "AI, the Gulf, and the US: A Primer - Middle East Institute",
+          "url": "https://mei.edu/report/ai-the-gulf-and-the-us-a-primer/"
+        },
+        {
+          "title": "As the Gulf pours USD bns into AI, Indian startups are becoming its go-to build partners - MENA India Corridor",
+          "url": "https://enterpriseam.com/mena-india/2026/07/20/as-the-gulf-pours-usd-bns-into-ai-indian-startups-are-becoming-its-go-to-build-partners/"
+        },
+        {
+          "title": "UAE & Saudi AI 2026: G42, HUMAIN, Stargate Explained | explainx.ai Blog | explainx.ai",
+          "url": "https://www.explainx.ai/blog/uae-saudi-arabia-ai-landscape-g42-humain-2026"
+        },
+        {
+          "title": "Dubai’s Burj Khalifa lights up with PM Modi's image for India AI Impact Summit 2026",
+          "url": "https://gulfnews.com/uae/government/dubais-burj-khalifa-lights-up-with-pm-modis-image-for-india-ai-impact-summit-2026-1.500449351"
+        },
+        {
+          "title": "Qwen",
+          "url": "https://en.wikipedia.org/wiki/Qwen"
+        },
+        {
+          "title": "Alibaba unveils Qwen3.5 as China’s chatbot race shifts to AI agents",
+          "url": "https://www.cnbc.com/2026/02/17/china-alibaba-qwen-ai-agent-latest-model.html"
+        },
+        {
+          "title": "Qwen 4: Release Date, What's Confirmed, and How to Prepare (2026) | Yotta Labs",
+          "url": "https://www.yottalabs.ai/post/qwen-4-release-date-what-is-known-how-to-prepare-2026"
+        },
+        {
+          "title": "Alibaba shares rally after unveiling its 'most powerful' AI model as U.S.-China competition heats up",
+          "url": "https://www.cnbc.com/2026/08/03/alibaba-ai-model-qwen-rival-anthropic.html"
+        },
+        {
+          "title": "Kimi (chatbot)",
+          "url": "https://en.wikipedia.org/wiki/Kimi_(chatbot)"
+        },
+        {
+          "title": "Alibaba unveils new Qwen model, custom chips in bid to become China’s AI factory",
+          "url": "https://www.scmp.com/tech/big-tech/article/3354212/alibaba-unveils-new-qwen-model-custom-chips-bid-become-chinas-ai-factory"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/alibabas-qwen25-releases-100-models/comments"
+        },
+        {
+          "title": "Alibaba releases image generating AI model",
+          "url": "https://seekingalpha.com/news/4463331-alibaba-releases-image-generating-ai-model"
+        },
+        {
+          "title": "Alibaba’s Qwen launches new and more powerful AI models",
+          "url": "https://seekingalpha.com/news/4399165-alibabas-qwen-launches-new-and-more-powerful-ai-models"
+        },
+        {
+          "title": "Qwen-Image-2.1 Becomes the Top Open-Source Image Generator with Enhanced Editing and Transparency | KuCoin",
+          "url": "https://www.kucoin.com/news/flash/qwen-image-2-1-becomes-top-open-source-image-generator-with-enhanced-editing-and-transparency"
+        },
+        {
+          "title": "Alibaba's open-weight Qwen-Image-2.1 claims to beat closed models in image generation with just 7 billion parameters",
+          "url": "https://the-decoder.com/alibabas-open-weight-qwen-image-2-1-claims-to-beat-closed-models-in-image-generation-with-just-7-billion-parameters/"
+        },
+        {
+          "title": "GitHub - QwenLM/Qwen-Image-2.1: Qwen's most powerful open-source image generation model · GitHub",
+          "url": "https://github.com/QwenLM/Qwen-Image-2.1"
+        },
+        {
+          "title": "Alibaba's Open-Weight Qwen-Image-2.1 Claims to Beat ...",
+          "url": "https://ground.news/article/qwen-image-21-model-released-open-source-with-7-billion-parameters-for-image-generation-and-editing"
+        },
+        {
+          "title": "Qwen-Image-2.1 generates transparent images from open weights, ...",
+          "url": "https://mixed-news.com/en/qwen-image-2-1-transparent-rgba-7b-open-weights-research-licence/"
+        },
+        {
+          "title": "Alibaba’s Qwen open-sources Qwen-Image-2.1 for unified image generation and editing · TechNode",
+          "url": "https://technode.com/2026/09/21/alibabas-qwen-open-sources-qwen-image-2-1-for-unified-image-generation-and-editing/"
+        },
+        {
+          "title": "Alibaba Opens Qwen-Image-2.1: 7B Gen-and-Edit Model With Native RGBA - Pandaily",
+          "url": "https://pandaily.com/alibaba-qwen-image-2-1-7b-rgba-open-weight"
+        },
+        {
+          "title": "Qwen-Image-2.1: 7B Open Weights You Cannot Ship | CellCog",
+          "url": "https://cellcog.ai/blog/qwen-image-2-1/"
+        },
+        {
+          "title": "Qwen-Image-2.1: Alibaba Ships 7B Open Image Model [2026]",
+          "url": "https://tech-insider.org/qwen-image-2-1-7b-open-weight-alibaba-2026/"
+        }
+      ]
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "# Cross-Spectrum Briefing — Week of September 21, 2026\n\nFour stories are dominating US politics this week, all playing out 43 days before the November 3 midterms. Each entry below gives the factual anchor plus three framings.\n\n---\n\n## Story 1 — Trump bans CNN, MS NOW, and Politico from the White House\n\n**What actually happened (factual anchor):** On Friday, September 18, President Trump announced on Truth Social a ban on three news organizations — CNN, MS NOW, and Politico — from the White House, citing their coverage. \n\nOn Saturday, MS NOW reporter Akayla Gardner, CNN reporter Betsy Klein and Politico reporter Cheyenne Haslett each tried to enter the White House grounds and were denied entry by the Secret Service, which seized their press passes.\n\n \n\nOn Monday, September 21, the three outlets sued Trump and several officials, alleging the ban is viewpoint discrimination that violates the First Amendment, and asked a federal judge in Washington, D.C., to immediately block the ban and restore access.\n\n \n\nThe case was assigned to U.S. District Judge Timothy J. Kelly, a Trump appointee who presided over CNN's 2018 lawsuit over Jim Acosta's credentials.\n\n**PROGRESSIVE framing — MS NOW (news report), https://www.ms.now/news/ms-now-cnn-politico-lawsuit-trump-media-ban**\nThe framing centers on constitutional violation and retaliation. \n\nThe outlets' lawsuit alleges that the ban violates the First Amendment by retaliating against protected newsgathering as punishment for unfavorable coverage.\n\n The emphasis is that the affected outlet is itself reporting on being targeted, and that the ban is presented as an escalating threat to all press. Note: MS NOW is a party to the lawsuit, so it is reporting on a matter in which it has a direct interest.\n\n**NEUTRAL framing — CNBC (news report), https://www.cnbc.com/2026/09/18/trump-white-house-ban-msnow-cnn-politico.html**\n\nPresident Trump said he is banning MS NOW, CNN and Politico from the White House over their coverage of him, and the attempt to block access could draw a legal challenge over violations of the First Amendment.\n\n \n\nTrump said in a Truth Social post that those outlets \"shouldn't be able to constantly write or report FICTION and LIES\" when covering the president.\n\n Wire-style coverage notes the dispute is likely to head to court and situates it against Trump's earlier attempt to bar Associated Press journalists.\n\n**CONSERVATIVE framing — The Hill / Fox News contributors (news report on opinion reaction), https://thehill.com/blogs/in-the-know/6099209-fox-contributors-criticize-media-ban/**\nNotably, much of the conservative reaction opposed the ban. \n\nFox News contributor Ari Fleischer wrote that he agrees several media outlets covering the White House are biased and unfair, but that \"banning them from the WH is not the solution.\"\n\n The strongest conservative argument concedes media bias while rejecting the ban as bad precedent that could later be used against conservative outlets. Treasury Secretary Scott Bessent offered a defense of the administration's rationale: \n\nhe suggested the ban was justified, saying \"legacy media\" is unpopular with the public \"because of the perceived bias.\"\n\n**Fact check note:** Trump's stated basis — that the outlets report \"FICTION and LIES\" — is an assertion of opinion, not a documented finding. \n\nCourts have previously rejected similar attempts by Trump officials to restrict individual reporters or outlets, holding that journalists cannot be barred from covering the White House because of what they publish.\n\n---\n\n## Story 2 — The Federal Reserve raises interest rates for the first time since 2023\n\n**What actually happened (factual anchor):** \n\nThe Federal Reserve raised its benchmark interest rate by 25 basis points to a target range of 3.75%–4%, its first increase since 2023, approved unanimously by the FOMC.\n\n \n\nThe hike makes it more expensive to borrow money, grow a business or carry a credit card balance; inflation has risen amid the war in Iran, driving up gasoline and diesel prices; and the move came despite repeated pressure from President Trump to lower rates.\n\n \n\nUS headline inflation held at 3.4% year-on-year in August, while core inflation was at 2.4%.\n\n**PROGRESSIVE framing — MS NOW / MaddowBlog (opinion/analysis blog), https://www.ms.now/rachel-maddow-show/maddowblog/interest-rates-federal-reserve-kevin-warsh-inflation-consumer-prices-trump-economy**\nThe framing highlights that Trump's own appointee defied him because the data left no choice. \n\nTo the disappointment of the White House, Kevin Warsh raised rates by a quarter point — the first increase in three years — in the face of discouraging inflation data, just four months after Trump appointed him.\n\n \n\nThe piece points to a Duke University survey finding a nearly unanimous consensus among former Fed officials that a rate hike was necessary.\n\n**NEUTRAL framing — NPR (news report), https://www.npr.org/2026/09/16/nx-s1-5968724/federal-reserve-interest-rates-inflation-economy**\n\nFed Chair Kevin Warsh and colleagues raised the benchmark rate to tamp down demand and bring prices under control — the first hike in more than three years, framed as a show of determination to attack stubborn inflation.\n\n \n\nThe report notes the US war with Iran has rekindled inflation, pushing oil and gasoline higher and driving diesel to record territory, and that higher rates won't automatically lower pump prices but signal commitment to price stability.\n\n**CONSERVATIVE framing — CNBC (news report on administration position), https://www.cnbc.com/2026/09/05/trump-warsh-fed-september-rate-hike.html**\nThe administration's argument is that a rate hike is the wrong tool for supply-driven inflation. \n\nTreasury Secretary Scott Bessent noted the Fed typically doesn't raise rates during a supply shock until there are second- or third-order inflationary effects.\n\n \n\nVice President JD Vance said the Fed should be lowering interest rates, adding that the administration is doing a lot to keep rates down but \"it would be nice to have some help from the Federal Reserve.\"\n\n Some independent economists share this concern: \n\none chief economist warned the bigger question is whether the Fed risks fighting the wrong inflation battle, since a rate hike is unlikely to lower gasoline prices or tariff costs but will dampen housing demand.\n\n---\n\n## Story 3 — Supreme Court rejects Trump's mail-in voting restrictions for the midterms\n\n**What actually happened (factual anchor):** \n\nOn Monday, September 14, the Supreme Court rejected the Trump administration's plan to change how mail ballots are sent to voters nationwide, rebuffing a proposal election officials warned would have had major consequences for this year's midterms.\n\n \n\nThe underlying executive order required states to give the Postal Service, 60 days before Election Day, lists of all voters eligible to vote by mail; if a ballot didn't comply or was sent by someone not on a state list, USPS was instructed not to deliver it.\n\n \n\nEven some GOP election officials cautioned the proposal could lead to chaos and mass disenfranchisement.\n\n**PROGRESSIVE framing — CNN (news report, quoting Democratic officials), https://www.cnn.com/2026/09/14/politics/supreme-court-rejects-trump-plan-to-limit-mail-in-voting-in-midterms**\nThe framing treats the ruling as a defeat for an attempt to disrupt the election. \n\nColorado Secretary of State Jena Griswold said \"Trump's attempt to sabotage the 2026 elections has failed,\" and California Attorney General Rob Bonta called the decision a \"victory for our democracy.\"\n\n The reasoning emphasizes that the rule would have given USPS unprecedented power to withhold potentially millions of ballots.\n\n**NEUTRAL framing — NPR (news report), https://www.npr.org/2026/09/14/nx-s1-5960533/supreme-court-mail-in-voting-trump**\n\nThe Supreme Court rejected the administration's request to allow mail-in voting restrictions under a USPS plan for the midterm general election.\n\n The neutral account foregrounds the legal reasoning across the ideological spectrum: \n\nconservative Justice Brett Kavanaugh wrote that while the rule might fall within the Postal Service's authority, applying it in the 2026 elections \"would be arbitrary and capricious\" because officials lack sufficient time to implement it.\n\n \n\nJustices Alito and Thomas dissented and would have granted the administration's request.\n\n**CONSERVATIVE framing — the administration's legal position, via NBC News (news report quoting the DOJ filing), https://www.nbcnews.com/politics/trump-administration/justice-department-usps-supreme-court-action-mail-ballots-elections-rcna595924**\nThe administration frames the rule as fraud prevention. \n\nSolicitor General D. John Sauer wrote that the order aimed to address the risk that federal mails will be used to perpetrate voter fraud, \"a particularly pernicious species of fraud that dilutes the votes of lawful voters.\"\n\n**Fact check note:** The claim of widespread mail-voting fraud is not supported by evidence in the record. \n\nIn both of her rulings against USPS, the district judge noted that Trump administration lawyers provided no evidence of mail-voting fraud to support a rush to carry out new ballot requirements for this year's midterms.\n\n The framing that the rule was needed to stop large-scale fraud rests on a factual premise courts found unsubstantiated.\n\n---\n\n## Story 4 — Civil rights groups sue to block federal agents from polling places\n\n**What actually happened (factual anchor):** \n\nOn September 18, the NAACP and a coalition of groups filed a lawsuit asking a judge to prevent the Trump administration from deploying federal agents — naming DHS, ICE, the DOJ and the FBI — to polling places in November, alleging it would violate the Voting Rights Act as an intimidation tactic.\n\n \n\nTrump administration",
+      "sources": [
+        {
+          "title": "Meet the Press – September 20. 2026",
+          "url": "https://www.nbcnews.com/meet-the-press/transcripts/meet-press-september-20-2026-rcna598793"
+        },
+        {
+          "title": "'This Week' Transcript 9-20-26: Illinois Gov. JB Pritzker & House Majority Leader Rep. Steve Scalise - ABC News",
+          "url": "https://abcnews.com/Politics/week-transcript-9-20-26-illinois-gov-jb/story?id=136584944"
+        },
+        {
+          "title": "War and Finances Top U.S. Headlines -- The Sunday Political Brunch September 20, 2026 | Across America, US Patch",
+          "url": "https://patch.com/us/across-america/war-finances-top-u-s-headlines-sunday-political-brunch-september-20-2026"
+        },
+        {
+          "title": "Politics and Government News",
+          "url": "https://www.cnbc.com/politics/"
+        },
+        {
+          "title": "Politics : NPR",
+          "url": "https://www.npr.org/sections/politics/"
+        },
+        {
+          "title": "2026 United States elections",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_elections"
+        },
+        {
+          "title": "Politics - The Washington Post",
+          "url": "https://www.washingtonpost.com/politics/"
+        },
+        {
+          "title": "2026 United States House of Representatives elections",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections"
+        },
+        {
+          "title": "2026 Colorado elections",
+          "url": "https://en.wikipedia.org/wiki/2026_Colorado_elections"
+        },
+        {
+          "title": "2026 Midterms: Latest News, Updates and Results of the Midterm Elections | NBC News",
+          "url": "https://www.nbcnews.com/politics/2026-election"
+        },
+        {
+          "title": "The 2026 midterm general election season is upon us. Here's what to watch",
+          "url": "https://www.npr.org/2026/09/08/nx-s1-5960533/2026-midterm-campaign-kickoff-house-senate-trump"
+        },
+        {
+          "title": "2026 election news: Early voting begins in US midterm elections that could flip control of Congress - ABC7 San Francisco",
+          "url": "https://abc7news.com/post/2026-election-news-early-voting-begins-us-midterm-elections-could-flip-control-congress/19846626/"
+        },
+        {
+          "title": "2026 election news: Early voting begins in US midterm elections that could flip control of Congress - ABC7 New York",
+          "url": "https://abc7ny.com/post/2026-election-news-early-voting-begins-us-midterm-elections-could-flip-control-congress/19846626/"
+        },
+        {
+          "title": "2026 election news: Early voting begins in US midterm elections that could flip control of Congress - ABC7 Chicago",
+          "url": "https://abc7chicago.com/post/2026-election-news-early-voting-begins-us-midterm-elections-could-flip-control-congress/19846626/"
+        },
+        {
+          "title": "Election 2026: Results, news and analysis | CNN Politics",
+          "url": "https://www.cnn.com/election/2026"
+        },
+        {
+          "title": "2026 midterm preview: Key races in U.S. House, Senate",
+          "url": "https://www.yahoo.com/news/articles/2026-midterm-preview-key-races-153650715.html"
+        },
+        {
+          "title": "2026 election",
+          "url": "https://www.pbs.org/newshour/classroom/tag/2026-election"
+        },
+        {
+          "title": "LIVE UPDATES",
+          "url": "https://www.foxnews.com/elections/2022/midterm-results/state/connecticut"
+        },
+        {
+          "title": "Trump says he's banning MS NOW, CNN and Politico from White House",
+          "url": "https://www.cnbc.com/2026/09/18/trump-white-house-ban-msnow-cnn-politico.html"
+        },
+        {
+          "title": "CNN, MS NOW and Politico denied access to White House after Trump ban | CNN Business",
+          "url": "https://www.cnn.com/2026/09/19/media/trump-msnow-cnn-politico-white-house-ban"
+        },
+        {
+          "title": "Trump says he’s banning CNN, MS NOW and Politico from the White House",
+          "url": "https://www.nbcnews.com/business/media/trump-bans-cnn-ms-now-politico-white-house-rcna598609"
+        },
+        {
+          "title": "CNN, MS NOW and Politico sue Trump administration over White House access | CNN Politics",
+          "url": "https://www.cnn.com/2026/09/21/politics/cnn-politico-msnow-sue-white-house-access"
+        },
+        {
+          "title": "White House faces mounting legal backlash after barring journalists from CNN, MS NOW and Politico",
+          "url": "https://www.nbcnews.com/politics/white-house/ms-now-journalists-denied-access-white-house-trump-announced-ban-rcna598677"
+        },
+        {
+          "title": "MS NOW, CNN and Politico sue Trump over White House press ban",
+          "url": "https://www.ms.now/news/ms-now-cnn-politico-lawsuit-trump-media-ban"
+        },
+        {
+          "title": "MS NOW journalists denied entry to White House on day after Trump bans them in First Amendment test",
+          "url": "https://www.ms.now/news/trump-ban-ms-now-cnn-politico-white-house"
+        },
+        {
+          "title": "CNN Sues Trump Administration Over Jim Acosta White House Ban",
+          "url": "https://news.yahoo.com/cnn-files-lawsuit-against-trump-143514053.html"
+        },
+        {
+          "title": "CNN sues Trump for suspending Jim Acosta’s press pass",
+          "url": "https://www.aljazeera.com/news/2018/11/14/cnn-sues-trump-for-suspending-jim-acostas-press-pass"
+        },
+        {
+          "title": "Fed rate decision September 2026: Rates rise to 3.75%-4%",
+          "url": "https://www.cnbc.com/2026/09/16/fed-rate-decision-september-2026.html"
+        },
+        {
+          "title": "United States Fed Funds Interest Rate",
+          "url": "https://tradingeconomics.com/united-states/interest-rate"
+        },
+        {
+          "title": "The Fed raises interest rates for the first time in over three years",
+          "url": "https://www.npr.org/2026/09/16/nx-s1-5968724/federal-reserve-interest-rates-inflation-economy"
+        },
+        {
+          "title": "US Fed raises interest rates for first time in three years | Inflation News | Al Jazeera",
+          "url": "https://www.aljazeera.com/economy/2026/9/16/us-fed-raises-interest-rates-as-inflation-weighs-on-economy"
+        },
+        {
+          "title": "The Fed raises interest rates for the first time in over three years | MPR News",
+          "url": "https://www.mprnews.org/story/2026/09/16/npr-federal-reserve-interest-rates-inflation-economy"
+        },
+        {
+          "title": "Up First briefing: Fed raises interest rates; Oil prices; EU-Canada : NPR",
+          "url": "https://www.npr.org/2026/09/17/g-s1-143783/up-first-newsletter-federal-reserve-interest-rates-gas-prices-war-canada-european-union"
+        },
+        {
+          "title": "What Federal Reserve monetary policy means for investors",
+          "url": "https://www.usbank.com/investing/financial-perspectives/market-news/federal-reserve-tapering-asset-purchases.html"
+        },
+        {
+          "title": "Ever wonder how the Fed's interest rate actually works? We've got answers",
+          "url": "https://www.npr.org/2026/09/19/nx-s1-5969816/federal-reserve-interest-rate-inflation-economy"
+        },
+        {
+          "title": "Why The Fed Will Raise Rates In September Despite Cooler CPI",
+          "url": "https://www.forbes.com/sites/billconerly/2026/08/12/why-the-fed-will-raise-rates-in-september-despite-cooler-cpi/"
+        },
+        {
+          "title": "Fox News Personalities Pummel Trump’s Media Ban: ‘It Achieves Nothing and Is Exhausting’",
+          "url": "https://www.mediaite.com/media/news/fox-news-personalities-pummel-trumps-media-ban-it-achieves-nothing-and-is-exhausting/"
+        },
+        {
+          "title": "Fox News Personalities Blast Trump's Decision To Ban 3 News Outlets From White House",
+          "url": "https://www.yahoo.com/news/politics/articles/fox-news-personalities-blast-trumps-141453429.html"
+        },
+        {
+          "title": "Fox News Personalities Blast Trump's Decision To Ban 3 News Outlets From White House - Yahoo News Singapore",
+          "url": "https://sg.news.yahoo.com/fox-news-personalities-blast-trumps-141453429.html"
+        },
+        {
+          "title": "Trump didn’t break the press. They did that to themselves",
+          "url": "https://www.yahoo.com/news/politics/articles/trump-didn-t-break-press-131500085.html"
+        },
+        {
+          "title": "Fox News contributors denounce Trump’s ban on CNN, MS NOW, Politico",
+          "url": "https://thehill.com/blogs/in-the-know/6099209-fox-contributors-criticize-media-ban/"
+        },
+        {
+          "title": "Media Madness",
+          "url": "https://en.wikipedia.org/wiki/Media_Madness"
+        },
+        {
+          "title": "Fox News Personalities Blast Trump's Decision To Ban News Outlets From White House | HuffPost Latest News",
+          "url": "https://www.huffpost.com/entry/fox-news-reaction-trump-media-ban_n_6aadf986e4b03a8a58d6bb99"
+        },
+        {
+          "title": "Trump sued by MS NOW, CNN, Politico over White House media ban",
+          "url": "https://www.cnbc.com/2026/09/21/trump-lawsuit-white-house-ban-ms-now-cnn-politico.html"
+        },
+        {
+          "title": "Trump’s media ban could ‘create precedent’ that binds future administrations: Jonathan Turley | Fox News Video",
+          "url": "https://www.foxnews.com/video/6405341795112"
+        },
+        {
+          "title": "The Supreme Court rejects Trump's mail voting restrictions for this year's midterms",
+          "url": "https://www.npr.org/2026/09/14/nx-s1-5962190/supreme-court-mail-in-voting-trump"
+        },
+        {
+          "title": "Supreme Court rejects Trump’s plan to limit mail-in voting in midterms | CNN Politics",
+          "url": "https://www.cnn.com/2026/09/14/politics/supreme-court-rejects-trump-plan-to-limit-mail-in-voting-in-midterms"
+        },
+        {
+          "title": "Why the Supreme Court blocked Trump and the Postal Service from restricting mail-in voting for the midterms",
+          "url": "https://theconversation.com/why-the-supreme-court-blocked-trump-and-the-postal-service-from-restricting-mail-in-voting-for-the-midterms-291319"
+        },
+        {
+          "title": "DOJ asks Supreme Court to allow Trump’s USPS action on mail-in ballots to proceed ahead of midterm elections",
+          "url": "https://www.nbcnews.com/politics/trump-administration/justice-department-usps-supreme-court-action-mail-ballots-elections-rcna595924"
+        },
+        {
+          "title": "Mail-in voters weigh flying to vote in person and other backup plans amid uncertainty",
+          "url": "https://www.npr.org/2026/09/09/nx-s1-5946380/trump-mail-in-voting-by-mail"
+        },
+        {
+          "title": "Trump administration asks Supreme Court to clear the way for it to implement new mail-in voting rule | SCOTUSblog",
+          "url": "https://www.scotusblog.com/2026/09/trump-administration-asks-supreme-court-to-clear-the-way-for-it-to-implement-new-mail-in-voting-/"
+        },
+        {
+          "title": "www.politifact.com",
+          "url": "https://www.politifact.com/truth-o-meter/promises/maga-meter-tracking-donald-trumps-2024-promises/promise/1665/count-all-votes-on-election-night/article/3240"
+        },
+        {
+          "title": "voter rolls 1761246328",
+          "url": "https://video.wedu.org/video/voter-rolls-1761246328"
+        },
+        {
+          "title": "voter rolls 1761246328",
+          "url": "https://www.pbs.org/video/voter-rolls-1761246328"
+        },
+        {
+          "title": "Trump turns up the heat on Warsh as Fed rate hike looms",
+          "url": "https://www.cnbc.com/2026/09/05/trump-warsh-fed-september-rate-hike.html"
+        },
+        {
+          "title": "What the Fed's interest rate hike reveals about Warsh, Trump and inflation - CBS News",
+          "url": "https://www.cbsnews.com/news/fed-rate-hike-warsh-trump-inflation/"
+        },
+        {
+          "title": "Fed Rate Decision: Raises Interest Rates as Warsh Bucks Trump - Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-16/fed-raises-rates-as-warsh-bucks-trump-to-contain-inflation"
+        },
+        {
+          "title": "The Fed just delivered a unanimous rate hike, the first in three years, and no cuts through 2027 | Fortune",
+          "url": "https://fortune.com/2026/09/16/fed-rate-hike-trump-kevin-warsh/"
+        },
+        {
+          "title": "The Fed Bucks Trump and Raises Interest Rates",
+          "url": "https://foreignpolicy.com/2026/09/16/fed-interest-rate-hike-increase-trump-inflation/"
+        },
+        {
+          "title": "Four months into his new job, Kevin Warsh faces his most consequential day yet",
+          "url": "https://www.ms.now/news/fed-chair-warsh-interest-rate-decision-trump-inflation"
+        },
+        {
+          "title": "Federal Reserve raises interest rates to curb inflation despite pressure from Trump",
+          "url": "https://www.ms.now/rachel-maddow-show/maddowblog/interest-rates-federal-reserve-kevin-warsh-inflation-consumer-prices-trump-economy"
+        },
+        {
+          "title": "next fed move hike macquarie call doyle iran inflation",
+          "url": "https://fortune.com/2026/03/20/next-fed-move-hike-macquarie-call-doyle-iran-inflation"
+        },
+        {
+          "title": "heres what the appointment of warsh to the fed could mean for interest rates this year 175052674",
+          "url": "https://finance.yahoo.com/news/heres-what-the-appointment-of-warsh-to-the-fed-could-mean-for-interest-rates-this-year-175052674.html"
+        },
+        {
+          "title": "next fed move hike macquarie call doyle iran inflation",
+          "url": "https://dc.fortune.com/2026/03/20/next-fed-move-hike-macquarie-call-doyle-iran-inflation"
+        },
+        {
+          "title": "Court Cases - Federal Election Interference at the Polls Challenge (NAACP) - Democracy Docket",
+          "url": "https://www.democracydocket.com/cases/federal-election-interference-at-the-polls-challenge-naacp/"
+        },
+        {
+          "title": "NAACP Files Lawsuit To Block Federal Agents From Polling Sites",
+          "url": "https://blackamericaweb.com/2026/09/18/naacp-sues-block-federal-agents-polling-sites/"
+        },
+        {
+          "title": "NAACP sues ICE, DHS, FBI to prevent sending agents to midterm polls",
+          "url": "https://www.yahoo.com/news/politics/articles/naacp-sues-ice-dhs-fbi-144955793.html"
+        },
+        {
+          "title": "Civil rights groups sue to prevent Trump admin from sending federal agents to intimidate voters - Democracy Docket",
+          "url": "https://www.democracydocket.com/news-alerts/pro-voting-groups-sue-to-prevent-trump-admin-from-sending-federal-agents-to-intimidate-voters/"
+        },
+        {
+          "title": "It's illegal for armed federal officers to be at polls. Lawsuits seek to ensure that",
+          "url": "https://www.npr.org/2026/09/18/nx-s1-5965823/ice-polling-places-concerns-lawsuits"
+        },
+        {
+          "title": "NAACP Sues to Stop Trump From Sending Armed Agents to 'Intimidate' Minority Voters at Polls | Common Dreams",
+          "url": "https://www.commondreams.org/news/naacp-lawsuit-agents-at-polls"
+        },
+        {
+          "title": "It's illegal for armed federal officers to be at polls. Lawsuits seek to ensure that | MPR News",
+          "url": "https://www.mprnews.org/story/2026/09/18/npr-ice-polling-places-concerns-lawsuits"
+        },
+        {
+          "title": "It's illegal for armed federal officers to be at polls. Lawsuits seek to ensure that | KPBS Public Media",
+          "url": "https://www.kpbs.org/news/politics/2026/09/18/its-illegal-for-armed-federal-officers-to-be-at-polls-lawsuits-seek-to-ensure-that"
+        },
+        {
+          "title": "NAACP sues to block Trump administration from sending armed agents to polls",
+          "url": "https://thehill.com/regulation/court-battles/6099454-naacp-lawsuit-trump-armed-agents-polls/"
+        },
+        {
+          "title": "Democrats sound alarm about possible voter intimidation in midterms",
+          "url": "https://www.yahoo.com/news/articles/democrats-sound-alarm-possible-voter-185421324.html"
+        }
+      ]
+    }
+  ]
+}
