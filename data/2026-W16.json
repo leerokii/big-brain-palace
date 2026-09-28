@@ -1,0 +1,973 @@
+{
+  "id": "2026-W16",
+  "year": 2026,
+  "week": 16,
+  "generatedAt": "2026-09-28T19:59:28.763Z",
+  "dateLabel": "September 28, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "# This Week in AI Product Management — Briefing for Vocal Media\n\n*Framed for AI content pipelines, creator/editorial tooling, and audience automation. Six items covering frameworks, shipped-product stories, success measurement, role scoping, and one tactic to run this week.*\n\n---\n\n## 1. Own your evals — don't approve them\n**Framework / mindset shift.** The 2026 reframe for AI PMs is that evals are your job, not something you sign off on after engineering builds them. \n\nThe core reframe of 2026: the PM doesn't approve the eval, the PM owns it.\n\n This matters for Vocal because your editorial and content-generation surfaces have quality that only someone with domain and brand taste can judge — \n\noutsourcing the eval to engineering or QA based on acceptance criteria fails because they usually don't have the full domain expertise to spot high-impact failures beyond what's easily measurable like format.\n\n A related warning worth internalizing: \n\nvalidating on three happy-path examples means the demo shines, production breaks, and you find out from a churned customer or a lost deal.\n\n**Source:** Lovelaice — https://www.lovelaice.com/resources/ai-evals-for-product-managers-complete-guide-2026\n\n---\n\n## 2. Product decisions, not model capability, drive AI success\n**Framework with evidence.** A large study found the model is a minority of what makes an AI product win. \n\nBCG's 2025 analysis of 400 AI products found that model capability explained only 31% of the variance in product success; the remaining 69% was attributable to product factors — UX design, feedback loop architecture, evaluation frameworks, governance practices, and go-to-market strategy.\n\n For a new PM on creator tooling, this is permission to focus on the experience layer — how outputs are reviewed, edited, and fed back — rather than waiting for a better base model. The framework itself is practical: \n\nit evaluates products across twelve dimensions in four categories, each scored 1–5, for a composite from 12 to 60.\n\n**Source:** thinking.inc — https://thinking.inc/en/blue-ocean/ai-native/ai-product-evaluation-framework/\n\n---\n\n## 3. Domain expertise beats generic AI patterns (a shipped-product story)\n**Real story.** An edtech team, eSpark, learned that off-the-shelf AI search approaches broke on their real content. \n\nThe eSpark story illustrates how domain expertise shapes AI product decisions in ways generalists would miss: when they built their teacher assistant with embeddings, queries that made sense in an educational context—like \"long A\" for phonics—were too generic for embeddings and matched too many irrelevant results.\n\n The fix was editorial, not just technical: \n\nthe team realized they needed to add metadata to their educational content, and this is where their pedagogical expertise became critical.\n\n Directly relevant to Vocal — your content pipelines and audience automation will need editorial metadata and domain rules layered onto retrieval, not raw embeddings alone.\n**Source:** Product Talk — https://www.producttalk.org/learning-from-8-ai-product-teams/\n\n---\n\n## 4. Measure two layers, and put cost in the eval\n**How to measure success.** Good AI teams track outcomes and model quality together. \n\nSet dual success metrics: track both product outcomes (engagement, retention) and model evaluation metrics (precision, recall, latency) and understand what \"good enough\" looks like for each.\n\n A layered approach helps you avoid drowning in numbers: \n\neffective AI product measurement uses four layers, each serving a different purpose — think of them as a pyramid, starting at the top (user outcomes) and only digging deeper to diagnose issues.\n\n The most-forgotten metric is money, which matters enormously for high-volume content generation: \n\nif you didn't measure cost during evals, your projections are fiction — make cost part of your eval metrics, not an after-launch surprise.\n\n**Sources:** Product School — https://productschool.com/blog/artificial-intelligence/guide-ai-product-manager · Institute of PM — https://www.institutepm.com/knowledge-hub/ai-product-metrics\n\n---\n\n## 5. Know which \"AI PM\" you actually are\n**How the role is being scoped.** The title is broad, so pin down your version early. One recruiter's read: \n\nan AI product manager in 2026 is one of four working roles — the copilot PM who owns a customer-facing LLM surface, the AI platform PM who owns the internal model and tooling layer, the ML feature PM who ships model-powered features inside a non-AI product, or the AI ops PM who deploys AI to a non-engineering team.\n\n Across 12,400 postings, the emphasis is on judgment over hands-on building: \n\nit's a judgment-and-influence role, not a hands-on execution one — employers care more about the calls you made than the code you wrote.\n\n For Vocal, your work likely spans the copilot surface (creator/editorial tools) and the platform layer (content pipelines) — worth naming explicitly with your manager so scope and metrics are clear.\n**Sources:** KORE1 — https://www.kore1.com/how-to-hire-ai-product-manager-2026/ · Axial Search — https://axialsearch.com/insights/ai-product-jobs\n\n---\n\n## 6. Tactic for this week: run error analysis on 30–50 real traces\n**Apply immediately.** Before writing any new eval or metric, read your product's actual outputs and let the failures name themselves. The steps: \n\ngather a representative sample of traces; open code by reading each and writing a free-text note about the first thing that went wrong, with no predefined categories; then cluster similar observations into named failure categories.\n\n Then turn reading into a plan: \n\nlabel every trace against the taxonomy and compute failure rates per category, then for each category choose a prompt or code fix, an evaluator that catches it on future traces, or monitoring for now.\n\n A useful stopping rule and scope: \n\nno new category in the last 20 traces — around 100 total works for most apps — and once you have 30–50 notes, group them into categories.\n\n This is widely called the highest-value activity in AI work: \n\nthis bottom-up process is the single highest-ROI activity in AI development — it ensures you're solving real problems, not chasing vanity metrics.\n\n Run it this week on one Vocal surface (e.g., an AI editorial draft or audience-automation output) and bring the failure-rate chart to your first eval review.\n**Sources:** Langfuse — https://langfuse.com/blog/2025-08-29-error-analysis-to-evaluate-llm-applications · Hamel Husain — https://hamel.dev/blog/posts/evals-faq/why-is-error-analysis-so-important-in-llm-evals-and-how-is-it-performed.html\n\n---\n\n### One habit to adopt alongside these\nSet a standing weekly quality check. \n\nSchedule weekly \"eval review\" sessions with your team and ask: what broke this week?\n\n This gives your error-analysis findings a regular home and keeps quality visible to the whole content-pipeline team.",
+      "sources": [
+        {
+          "title": "Evaluation Metrics for AI Products That Drive Trust",
+          "url": "https://productschool.com/blog/artificial-intelligence/evaluation-metrics"
+        },
+        {
+          "title": "AI Evals for Product Managers: Building Better Feedback Loops for AI Products | Productboard",
+          "url": "https://www.productboard.com/blog/ai-evals-for-product-managers/"
+        },
+        {
+          "title": "AI Product Managers Are the PMs That Matter in 2026",
+          "url": "https://productschool.com/blog/artificial-intelligence/guide-ai-product-manager"
+        },
+        {
+          "title": "Towards Apples to Apples for AI Evaluations: From Real-World Use Cases to Evaluation Scenarios",
+          "url": "https://arxiv.org/pdf/2605.07986"
+        },
+        {
+          "title": "Measuring What Matters: A Quantitative UX Evaluation Framework for AI-Assisted Home Search",
+          "url": "https://arxiv.org/pdf/2606.21663"
+        },
+        {
+          "title": "AI in Product Management Guide for 2026 for Product Leaders | Gocious",
+          "url": "https://gocious.com/blog/ai-in-product-management-guide-for-2026-for-product-leaders"
+        },
+        {
+          "title": "AI Product Manager Metrics (2026 Evaluation Framework)",
+          "url": "https://prodmoh.com/blog/how-to-evaluate-ai-product-management"
+        },
+        {
+          "title": "AI Product Evaluation Framework (12 Dimensions)",
+          "url": "https://thinking.inc/en/blue-ocean/ai-native/ai-product-evaluation-framework/"
+        },
+        {
+          "title": "AI Product Metrics That Actually Matter | Complete Guide 2025",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-product-metrics"
+        },
+        {
+          "title": "AI evals for product managers: A beginner’s guide to getting started",
+          "url": "https://amplitude.com/blog/ai-evals-for-product-managers"
+        },
+        {
+          "title": "The One Skill Every AI PM Needs (That Nobody Taught You)",
+          "url": "https://www.news.aakashg.com/p/ai-evals"
+        },
+        {
+          "title": "Evaluation best practices | OpenAI API",
+          "url": "https://developers.openai.com/api/docs/guides/evaluation-best-practices"
+        },
+        {
+          "title": "Evaluation Metrics for AI Products That Drive Trust",
+          "url": "https://productschool.com/blog/artificial-intelligence/evaluation-metrics"
+        },
+        {
+          "title": "the complete guide for LLM evaluations in 2026 | Galtea Blog",
+          "url": "https://galtea.ai/blog/llm-evaluation-complete-guide"
+        },
+        {
+          "title": "AI evals for product managers: the complete guide for 2026 — Lovelaice Resources",
+          "url": "https://www.lovelaice.com/resources/ai-evals-for-product-managers-complete-guide-2026"
+        },
+        {
+          "title": "How to Answer AI Product Evaluation and Metrics Questions | 2026 AI PM Interview Guide",
+          "url": "https://www.crackpminterview.com/p/answer-ai-product-evaluation-metrics-questions"
+        },
+        {
+          "title": "How to Measure AI Product Success: Key Metrics and Methods",
+          "url": "https://theneuralbase.com/ai-product-development/qna/how-to-measure-ai-product-success/"
+        },
+        {
+          "title": "How AI evals are changing product management",
+          "url": "https://blog.calibrelabs.ai/p/ai-evals-changing-pm-craft"
+        },
+        {
+          "title": "What Is an AI Product Manager? Role Overview, Skills & How to Hire One (May 2026)",
+          "url": "https://www.paraform.com/blog/what-is-ai-product-manager"
+        },
+        {
+          "title": "How AI is Changing the Product Manager Role in 2026 | Codebasics",
+          "url": "https://codebasics.io/blog/how-ai-is-changing-the-product-manager-role-in-2026"
+        },
+        {
+          "title": "6 Product Management Trends in 2026: The PM Role Is Splitting",
+          "url": "https://userpilot.com/blog/product-management-trends/"
+        },
+        {
+          "title": "AI Product Manager Job Description: Roles, Skills & Pay 2026",
+          "url": "https://interviewkickstart.com/job-description/ai-product-manager"
+        },
+        {
+          "title": "How to Hire an AI Product Manager: 2026 Guide - KORE1",
+          "url": "https://www.kore1.com/how-to-hire-ai-product-manager-2026/"
+        },
+        {
+          "title": "What is the Scope of Product Management With AI in 2026?",
+          "url": "https://www.masaischool.com/blog/what-is-the-scope-of-product-management-with-ai-in-2026/"
+        },
+        {
+          "title": "AI/ML Product Manager: Key Skills & Responsibilities in 2026 | Second Talent",
+          "url": "https://www.secondtalent.com/occupations/ai-ml-product-manager/"
+        },
+        {
+          "title": "AI Product Management Jobs in 2026: What 12,400 Postings Reveal",
+          "url": "https://axialsearch.com/insights/ai-product-jobs"
+        },
+        {
+          "title": "The AI Product Owner Role in 2026: How It Differs from AI PM and Who Should Pursue It",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-product-owner-role-2026"
+        },
+        {
+          "title": "Educational Content Creation with AI: 2026 Build Guide",
+          "url": "https://www.forasoft.com/blog/article/ai-assisted-educational-content-creation"
+        },
+        {
+          "title": "Turning Content into Pipeline in the Age of AI: Lessons from 2026 B2BMX - Demand Gen Report",
+          "url": "https://www.demandgenreport.com/industry-news/news-brief/turning-content-into-pipeline-in-the-age-of-ai-lessons-from-2026-b2bmx/53472"
+        },
+        {
+          "title": "The PM's Playbook for Shipping AI Features That Actually Work in Production",
+          "url": "https://www.oreilly.com/radar/the-pms-playbook-for-shipping-ai-features-that-actually-work-in-production/"
+        },
+        {
+          "title": "Lessons from 9 AI Product Teams: Emerging Themes from Just Now Possible",
+          "url": "https://www.producttalk.org/learning-from-8-ai-product-teams/"
+        },
+        {
+          "title": "From Model Evaluation to Building the First AI Storytelling Pipeline… | by TanyaGupta | Data Science in Your Pocket | Jun, 2026 | Medium",
+          "url": "https://medium.com/data-science-in-your-pocket/from-model-evaluation-to-building-the-first-ai-storytelling-pipeline-edb9d2f01c59"
+        },
+        {
+          "title": "How to Improve Pipeline Through Content in 2026 | Salesmotion",
+          "url": "https://salesmotion.io/blog/how-companies-can-improve-pipeline-through-content-2026"
+        },
+        {
+          "title": "AI Product Management in 2026: A Complete Guide to the New Playbook | Tosea.ai",
+          "url": "https://tosea.ai/blog/ai-product-management-2026-playbook"
+        },
+        {
+          "title": "AI Product Management Course | Practical Product Management Course",
+          "url": "https://hellopm.co/"
+        },
+        {
+          "title": "Building AI Features Into EdTech Products: A Practical Guide | Hireplicity | Custom Software Development | APAC & Philippines",
+          "url": "https://www.hireplicity.com/blog/building-ai-features-edtech-products"
+        },
+        {
+          "title": "A pragmatic guide to LLM evals for devs",
+          "url": "https://newsletter.pragmaticengineer.com/p/evals"
+        },
+        {
+          "title": "Q: Why is “error analysis” so important in AI evals, and how is it performed? – Hamel's Blog",
+          "url": "https://hamel.dev/blog/posts/evals-faq/why-is-error-analysis-so-important-in-llm-evals-and-how-is-it-performed.html"
+        },
+        {
+          "title": "Error Analysis for LLM Applications - Langfuse",
+          "url": "https://langfuse.com/guides/cookbook/error-analysis-llm-applications"
+        },
+        {
+          "title": "Error analysis for LLM applications - GoPractice",
+          "url": "https://gopractice.io/data/error-analysis-for-llm-applications/"
+        },
+        {
+          "title": "An Empirical Study on Failures in Automated Issue Solving",
+          "url": "https://arxiv.org/pdf/2509.13941"
+        },
+        {
+          "title": "Error analysis - Langfuse",
+          "url": "https://langfuse.com/blog/2025-08-29-error-analysis-to-evaluate-llm-applications"
+        },
+        {
+          "title": "LLM Tracing & AI Tracing for Agents | MLflow AI Platform",
+          "url": "https://mlflow.org/llm-tracing"
+        },
+        {
+          "title": "Demystifying Errors in LLM Reasoning Traces: An Empirical Study of Code Execution Simulation",
+          "url": "https://arxiv.org/pdf/2512.00215"
+        },
+        {
+          "title": "Towards Understanding the Characteristics of Code Generation Errors Made by Large Language Models",
+          "url": "https://arxiv.org/pdf/2406.08731"
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "# This Week in Claude & AI Automation\n\n## 1. `/doctor prompt-audit` — lint your CLAUDE.md and skills for stale, old-model prompting\n\nClaude Code shipped a command that scans your entire config for instructions written for older models and now working against you. \n\nRun /doctor prompt-audit (or /checkup prompt-audit, both work) and it scans your CLAUDE.md files, skills, agents, and slash commands for stale paths, dead commands, contradicting instructions, and prompting patterns written for older models.\n\n This matters because \n\ncurrent Claude models follow instructions more closely and more literally than the models much of this text was written for, so the leftover text is not just wasted tokens — specific outdated instructions actively degrade behavior (over-triggering, over-planning, rigid responses in gray areas).\n\n**Try this:** Update to Claude Code v2.1.283+, then in each project run:\n```\n/doctor prompt-audit\n```\nWhen it flags findings, apply the specific rewrites Anthropic's own audit reference prescribes:\n- \n\n\"CRITICAL: You MUST use this tool when...\" becomes \"Use this tool when...\"\n\n- Replace negative constraints with positive frames: \n\n\"Never delete files without confirmation\" is a negative constraint. \"Before any destructive operation, confirm with the user\" is a positive frame.\n\n- \n\nRemove fixed interim-update cadences and numeric output ceilings (\"under 120 words\") and re-express them as audience or outcome framing.\n\nRe-run it every time a new model ships. Source: **Claude Code Changelog** — https://code.claude.com/docs/en/changelog\n\n---\n\n## 2. Fork subagents are now default — use `/subtask` to delegate with a warm cache\n\nThe delegation model changed and the keystrokes are not what your fingers remember. \n\nClaude Code fork subagents went from an opt-in experiment to the default behavior in interactive sessions with version 2.1.232.\n\n The payoff: \n\na fresh subagent has to process its own system prompt and tool definitions from scratch on its first turn. A fork skips that: because its system prompt and tools are identical to the parent's, the underlying model can reuse the parent's already-computed prompt cache.\n\n**Try this:** When you're deep in a session and want to spin off a side investigation without polluting your main context, run:\n```\n/subtask draft unit tests for the parser changes so far\n```\nKey gotchas to internalize: \n\nrun a forked subagent with /subtask, which requires v2.1.212 or later. When agent view is turned off, /subtask is not available and /fork starts the forked subagent instead. Otherwise /fork copies the whole session into a new background session.\n\n If you want fork mode on but don't want Claude spawning forks unprompted, \n\nuse CLAUDE_CODE_FORK_SUBAGENT=1 or =0 to override the default, and deny Agent(fork) in permissions.\n\n Note the ceiling: \n\nforks cannot spawn further forks, so deep delegation chains still need nested subagents instead.\n\n Source: **Claude Code Blog** — https://claudcod.com/blog/claude-code-fork-subagents/\n\n---\n\n## 3. Cowork scheduled tasks now run with zero devices online\n\nCowork's scheduled tasks graduated into genuinely unattended automation. \n\nScheduled tasks run remotely, so they run on their cadence even when your computer is asleep or the Claude Desktop app is closed.\n\n \n\nYou describe the task once and Claude handles it on your schedule — delivering finished outputs like reports, briefings, and summaries every time,\n\n and \n\nscheduled tasks have access to the same capabilities as regular Cowork tasks, including connected tools, skills, and installed plugins.\n\n It's now available beyond desktop — \n\non all paid plans (Pro, Max, Team, Enterprise).\n\n**Try this:** In Cowork, create a recurring task with a prompt like this (adapt the connectors to yours):\n\n> *\"Every weekday at 6:00 AM: pull the last 24 hours of Slack messages from #product and #incidents, my unread email threads flagged important, and my calendar for today. Build a one-page briefing doc grouping items by (1) needs a decision from me, (2) FYI, (3) waiting on others. For any external meeting today, add 3 bullets of recent news on that company. Draft — but do not send — reply emails for anything in category 1, and leave them as drafts for my review.\"*\n\nThis mirrors Anthropic's own example: \n\nset Monday's client prep for 6 am — Claude works through the email threads, transcripts, and recent news, builds the briefing doc, and leaves the follow-up email drafted but unsent.\n\n Review runs via \n\n\"Scheduled\" in the left sidebar on any surface.\n\n Source: **Claude Help Center** — https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork\n\n---\n\n## 4. \"Dispatch\" — command your desktop's local files and apps from your phone\n\nDistinct from remote/cloud Cowork, Dispatch is the pattern for driving your actual machine remotely. \n\nDispatch creates a continuous conversation between the mobile device and the computer. Users can send commands from their phone and have Claude execute them through the Desktop machine, utilizing local files, Connectors, Plugins, and installed apps.\n\n The router is smart: \n\nsoftware development tasks might be routed through Claude Code, while document handling, analysis, and general knowledge tasks go through Cowork.\n\n**Try this:** Set it up once, then delegate from anywhere:\n1. \n\nOpen Cowork on either your phone or your desktop, click \"Dispatch\" on the left side panel.\n\n2. \n\nClick \"Get started\" — on the next screen, toggle on access to your files and keep-your-computer-awake, then start messaging Claude within the \"Dispatch\" section.\n\n3. From your phone, send something only your desktop can do, e.g. *\"Pull Q3 numbers from the local spreadsheet in ~/Finance/2026-Q3.xlsx and compile a one-page summary.\"* \n\nYou can hand Claude tasks that use everything on your desktop, including things you can't open on your phone.\n\nDecision rule: \n\nif you want tasks to continue with the computer off, use Remote Cowork; if you need Claude to work through your computer's local files/apps, use Dispatch.\n\n Source: **Claude Help Center** — https://support.claude.com/en/articles/13947068-assign-tasks-from-anywhere-in-claude-cowork\n\n---\n\n## 5. Messages API compaction beta — compress server-side history on demand\n\nFor anyone building on the API, there's a new lever for long-running agent conversations. \n\nAnthropic introduced a Messages API compaction beta allowing developers to compress server-side conversation history at will. This is controlled via the new compact-2026-09-04 beta header.\n\n**Try this:** Add the beta header to your Messages API calls to opt in:\n```\nanthropic-beta: compact-2026-09-04\n```\nThen, before shipping, \n\ntest the compact-2026-09-04 header functionality — verify the compaction beta for your use cases and benchmark its impact on performance.\n\n Treat it as beta: measure output quality against your uncompacted baseline on real transcripts before wiring it into production agents. Source: **Big Hat Group / Claude Weekly** — https://www.bighatgroup.com/blog/claude-weekly-2026-09-21/\n\n---\n\n## 6. (Beyond Claude) Cursor's last-mile bots: Rollouts + Security Review\n\nThe broader-world pick: Cursor pushed agents past the PR and into deploy/security. \n\nOn September 23, 2026, Cursor launched Rollouts and Security Review — one bot watches a change after it deploys, and the other reads the pull request for exploitable bugs before merge.\n\n \n\nRollouts attaches a monitor to every pull request and watches the change as it deploys, reporting change health per environment: verified healthy, regression detected, or inconclusive.\n\n One caveat worth knowing: they do not auto-fix your deploys — \n\norganizations that expected automatic rollback will be disappointed until Cursor ships that behavior.\n\n**Try this** (Teams/Enterprise only):\n1. \n\nEnable Rollouts from the dashboard and connect source control, your deploy system, and your telemetry provider. Rollouts starts watching on the next pull request.\n\n2. When a PR opens, \n\nRollouts reads the diff and the systems it touches, then writes a monitoring plan as a PR comment\n\n — read that comment; ignoring it produces weak signal coverage.\n3. Enable Security Reviewer separately: \n\nconfigure Security Agents in Automations at the Security Agents page. Security Reviewer checks pull requests before merge, and Vulnerability Scanner scans the codebase at rest.\n\nThere's a trial window: \n\nCursor released them on September 23 with a ten-day trial period — Teams customers receive credits covering approximately 50 code changes and Enterprise customers around 500.\n\n Source: **Cursor Changelog** — https://cursor.com/changelog/rollouts-and-security-reviewer",
+      "sources": [
+        {
+          "title": "What's new - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/whats-new"
+        },
+        {
+          "title": "Anthropic Release Notes - September 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "Claude Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Claude Code Changelog (September 2026)",
+          "url": "https://www.gradually.ai/en/changelogs/claude-code/"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Claude Weekly: Messages API Beta, MCP Growth, and SDK Updates | Big Hat Group Inc.",
+          "url": "https://www.bighatgroup.com/blog/claude-weekly-2026-09-21/"
+        },
+        {
+          "title": "Claude Mythos",
+          "url": "https://en.wikipedia.org/wiki/Claude_Mythos"
+        },
+        {
+          "title": "Claude Developer Platform Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+        },
+        {
+          "title": "Release notes | Claude Help Center",
+          "url": "https://support.claude.com/en/articles/12138966-release-notes"
+        },
+        {
+          "title": "September 2026 | Databricks on AWS",
+          "url": "https://docs.databricks.com/aws/en/release-notes/product/2026/september"
+        },
+        {
+          "title": "Salesforce MCP Server: 17 Tools for Full CRM Automation",
+          "url": "https://www.arcade.dev/blog/salesforce-mcp-server-upgrade/"
+        },
+        {
+          "title": "September 08, 2026",
+          "url": "https://docs.glean.com/release-notes/releases/2026-09-08-september-release"
+        },
+        {
+          "title": "MCP tools: What they are + 7 tools to try (2026) – Celigo",
+          "url": "https://www.celigo.com/blog/mcp-tools/"
+        },
+        {
+          "title": "13 Best MCP Servers for Test Automation in 2026",
+          "url": "https://testguild.com/top-model-context-protocols-mcp/"
+        },
+        {
+          "title": "MCP protocol receives major update: more secure and production-ready - ITdaily",
+          "url": "https://itdaily.com/news/software/mcp-2026-update-specs/"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - September 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "Domo’s MCP expansion can build BI content—but most of the agent stack is still beta",
+          "url": "https://www.nl2sql.ai/news/domo-september-2026-mcp-toolkits-beta-live-boundary"
+        },
+        {
+          "title": "Top 20 MCP Tools to Supercharge Your AI Workflow in 2026",
+          "url": "https://www.browseract.com/blog/top-mcp-tools"
+        },
+        {
+          "title": "Claude Code Subagents: A 2026 Practical Guide - Tembo.io",
+          "url": "https://www.tembo.io/blog/claude-code-subagents"
+        },
+        {
+          "title": "Claude Code Subagents: The Complete Guide to AI Agent Delegation | by Sathish Raju | Medium",
+          "url": "https://medium.com/@sathishkraju/claude-code-subagents-the-complete-guide-to-ai-agent-delegation-d0a9aba419d0"
+        },
+        {
+          "title": "Let Claude workers delegate: native subagents, then explore cross-runtime spawning · Issue #21 · DavidSzczesniak/ds-mode",
+          "url": "https://github.com/DavidSzczesniak/ds-mode/issues/21"
+        },
+        {
+          "title": "Claude Code Subagents and Multi-Agent Orchestration Guide - Delegation, Parallel Fan-Out, and Custom Agent Definitions | hidekazu-konishi.com",
+          "url": "https://hidekazu-konishi.com/entry/claude_code_subagents_and_orchestration_guide.html"
+        },
+        {
+          "title": "Claude Code Subagents and Main-Agent Coordination: A Complete Guide to AI Agent Delegation Patterns | by Rick Hightower | Towards AI",
+          "url": "https://medium.com/@richardhightower/claude-code-subagents-and-main-agent-coordination-a-complete-guide-to-ai-agent-delegation-patterns-a4f88ae8f46c"
+        },
+        {
+          "title": "How Claude Code's Subagent Forking Works (2026 Guide) | Get Claude Skills",
+          "url": "https://www.getclaudeskills.com/blog/claude-code-subagent-forking"
+        },
+        {
+          "title": "Subtask vs Fork vs Background Agent in Claude Code: Which Delegation to Reach For - Start Debugging",
+          "url": "https://startdebugging.net/2026/08/subtask-vs-fork-vs-background-agent-in-claude-code/"
+        },
+        {
+          "title": "Claude Code Fork Subagents: How the New Default Works | Claude Code Blog",
+          "url": "https://claudcod.com/blog/claude-code-fork-subagents/"
+        },
+        {
+          "title": "Claude Code Tips and \"Wild\" 2026 Predictions",
+          "url": "https://aicodingdaily.substack.com/p/claude-code-tips-and-wild-2026-predictions"
+        },
+        {
+          "title": "Top 5 Prompt Orchestration Platforms for AI Agents in 2026",
+          "url": "https://www.getmaxim.ai/articles/top-5-prompt-orchestration-platforms-for-ai-agents-in-2026/"
+        },
+        {
+          "title": "Prompt Engineering for AI Agents: 2026 Guide | Inflectra",
+          "url": "https://www.inflectra.com/Ideas/Topic/AI-Agent-Prompt-Engineering.aspx"
+        },
+        {
+          "title": "Prompt Engineering: Advanced Techniques for 2026",
+          "url": "https://www.digitalapplied.com/blog/prompt-engineering-advanced-techniques-2026"
+        },
+        {
+          "title": "WhisPrompt to Launch on Kickstarter September 29 as the World's First AI Workflow Controller",
+          "url": "https://www.prnewswire.com/news-releases/whisprompt-to-launch-on-kickstarter-september-29-as-the-worlds-first-ai-workflow-controller-302887945.html"
+        },
+        {
+          "title": "10 AI Agent Prompt Frameworks That Actually Work (2026) | PromptRefinery.ai",
+          "url": "https://promptrefinery.ai/10-best-ai-agent-prompts-that-actually-work-in-2026/"
+        },
+        {
+          "title": "Prompt Engineering Best Practices 2026: Build More Reliable AI Workflows",
+          "url": "https://promptessor.com/blog/prompt-engineering-best-practices-2026"
+        },
+        {
+          "title": "Meta Prompting 2026: Step-Back Techniques for Multi-Model Orchestration",
+          "url": "https://www.bestaifor.com/blog/meta-prompting-2026-step-back-techniques-for-multi-model-orchestration"
+        },
+        {
+          "title": "Open GSD: the Git-Ship-Done loop for coding agents - Jacar",
+          "url": "https://jacar.es/en/what-is-open-gsd/"
+        },
+        {
+          "title": "Prompt Engineering Best Practices 2026 | Thomas Wiegold Blog",
+          "url": "https://thomas-wiegold.com/blog/prompt-engineering-best-practices-2026/"
+        },
+        {
+          "title": "Claude Code changelog - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/changelog"
+        },
+        {
+          "title": "Anthropic Deletes 80% of Claude Code's System Prompt for Claude 5 | AI Weekly",
+          "url": "https://aiweekly.co/alerts/anthropic-deletes-80-of-claude-codes-system-prompt-for-claude-5"
+        },
+        {
+          "title": "Add a skill/CLAUDE.md bloat-audit prompt · Issue #2656 · thomasholknielsen/claude-tweaks",
+          "url": "https://github.com/thomasholknielsen/claude-tweaks/issues/2656"
+        },
+        {
+          "title": "Diagnostic Checklist and verification list prescribe prompt patterns flagged as dated for current Claude models · Issue #72 · nidhinjs/prompt-master",
+          "url": "https://github.com/nidhinjs/prompt-master/issues/72"
+        },
+        {
+          "title": "skills/skills/claude-api/shared/prompt-audit.md at main · anthropics/skills",
+          "url": "https://github.com/anthropics/skills/blob/main/skills/claude-api/shared/prompt-audit.md"
+        },
+        {
+          "title": "Prompt-Audit for Claude: Doctoring Legacy Agent Instructions - Neura AI Blog",
+          "url": "https://blog.meetneura.ai/prompt-audit-for-claude-doctoring-legacy-agent-instructions/"
+        },
+        {
+          "title": "Claude Code Prompt Audit Command: How /doctor prompt-audit Works (2026) | Julian Goldie AI Automation Blog",
+          "url": "https://juliangoldieaiautomation.com/blog/claude-code-prompt-audit-command/"
+        },
+        {
+          "title": "Claude Code Cut 80% of Its Prompt. Yours Should Too. - AgentConn Blog",
+          "url": "https://agentconn.com/blog/claude-code-system-prompt-reduction-harness-audit-2026/"
+        },
+        {
+          "title": "Claude Code Prompt Audit: Fix Stale CLAUDE.md Files | Claude Code Blog",
+          "url": "https://claudcod.com/blog/claude-code-prompt-audit/"
+        },
+        {
+          "title": "Claude Cowork on web and mobile: hand off work anywhere | Claude by Anthropic",
+          "url": "https://claude.com/blog/cowork-web-mobile"
+        },
+        {
+          "title": "Claude on X: \"Claude Cowork is coming to mobile and web. Hand Claude a task at your desk and pick up the finished work from your phone. Close the laptop and Claude keeps going. Beta is rolling out over the next several weeks starting with the Max plan, with more plans to follow.\" / X",
+          "url": "https://x.com/claudeai/status/2074525815820169320"
+        },
+        {
+          "title": "Schedule recurring tasks in Claude Cowork | Claude Help Center",
+          "url": "https://support.claude.com/en/articles/13854387-schedule-recurring-tasks-in-claude-cowork"
+        },
+        {
+          "title": "Claude Cowork Web & Mobile Launch: 10-Day Build [2026]",
+          "url": "https://tech-insider.org/au/claude-cowork-web-mobile-launch-2026/"
+        },
+        {
+          "title": "Assign tasks from anywhere in Claude Cowork | Claude Help Center",
+          "url": "https://support.claude.com/en/articles/13947068-assign-tasks-from-anywhere-in-claude-cowork"
+        },
+        {
+          "title": "Claude Cowork on Mobile and Web (2026): What Actually Changes",
+          "url": "https://automatonagency.com/insights/claude-cowork-mobile-and-web"
+        },
+        {
+          "title": "Claude Cowork on Mobile Guide & Limitations | Superdev Academy",
+          "url": "https://www.superdevacademy.com/en/blogs/claude-cowork-mobile-update"
+        },
+        {
+          "title": "Claude (language model)",
+          "url": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+        },
+        {
+          "title": "claude cowork",
+          "url": "https://www.infoq.com/news/2026/01/claude-cowork"
+        },
+        {
+          "title": "Rollouts and Security Review · Cursor",
+          "url": "https://cursor.com/changelog/rollouts-and-security-reviewer"
+        },
+        {
+          "title": "Bots for the last mile: Rollouts, Security Review · Cursor",
+          "url": "https://cursor.com/blog/rollouts-and-security-reviewer"
+        },
+        {
+          "title": "What's New in Cursor — Latest Updates & Release Notes",
+          "url": "https://cursor.com/changelog"
+        },
+        {
+          "title": "Cursor Release Notes - September 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/cursor"
+        },
+        {
+          "title": "Cursor’s AI bots now catch security flaws and halt bad deploys",
+          "url": "https://www.martincid.com/technology-sv/cursor-rollouts-security-review-ai-bots-developers/"
+        },
+        {
+          "title": "Cursor Rollouts and Security Review: Testing Agent Deployments Without Guesswork - Neura AI Blog",
+          "url": "https://blog.meetneura.ai/cursor-rollouts-and-security-review-testing-agent-deployments-without-guesswork/"
+        },
+        {
+          "title": "Cursor Launches Rollouts and Security Review Bots",
+          "url": "https://ccleaks.com/news/cursor-rollouts-security-review-sep-2026"
+        },
+        {
+          "title": "How to Enable Cursor Rollouts on Teams and Enterprise",
+          "url": "https://ccleaks.com/news/how-to-enable-cursor-rollouts-sep-2026"
+        },
+        {
+          "title": "How to Enable Cursor Security Reviewer on Automations",
+          "url": "https://ccleaks.com/news/how-to-enable-cursor-security-reviewer-sep-2026"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "The CNN-Perplexity suit is from May, not this week, so I'll set it aside in favor of fresher items. I have enough for a strong, current briefing.\n\n# This Week in AI: A Briefing\n\n## 1. Chinese open-weight models overtake US rivals on major developer platforms\nUsage of Chinese AI models has climbed sharply in 2026, and new data shows the shift is now dramatic. \n\nChinese AI models have gone from a relatively small share of usage to a majority on two major developer platforms; on OpenRouter, they accounted for 57%-67% of tokens used in the week of Sept. 14, up from 6%-13% earlier.\n\n The driver is cost and improving quality: \n\nthe most advanced US models lead most benchmarks, but Chinese companies like DeepSeek, Z.ai and Alibaba have released new models with major performance gains in tasks such as coding.\n\n This matters because model choice for many companies is now driven by price-performance rather than national origin, and Washington worries the trend could pull countries into a Chinese technology sphere. It's directly relevant to any media firm evaluating which models to build on.\n**Region:** China / Global · **Source:** CNBC — https://www.cnbc.com/2026/09/26/china-ai-global-adoption.html\n\n## 2. Trump and Xi discuss AI at summit; two governments set up a safety hotline\nAI was a central topic when the US and Chinese leaders met this week, reflecting how quickly the technology has risen up the geopolitical agenda. \n\nAfter wrapping up a summit with Xi Jinping, Trump said he would not back off the pursuit of AI dominance over China, but the two countries did agree to set up a channel for handling AI-related safety incidents.\n\n The framing itself became a point of friction: \n\nthe White House said Trump and Xi agreed to refer to AI as \"super intelligence\" going forward, but the Chinese government's statement continued to use the term \"artificial intelligence.\"\n\n China publicly struck a more cooperative note, with \n\nXi saying the two countries \"may have competition, but they may cooperate even more\" in AI, that they can exchange views on risks and jointly prevent misuse, and that \"AI must be kept under human control.\"\n\n The safety-incident channel is a modest but notable first step toward superpower coordination on AI risk.\n**Region:** US / China · **Source:** Fox News — https://www.foxnews.com/live-news/ai-leaders-trump-xi-xinping-state-dinner-white-house\n\n## 3. Alibaba unveils \"China's most powerful AI chip\" as Beijing pushes self-reliance\nAhead of the Trump-Xi meeting, Alibaba made a hardware statement aimed at reducing dependence on US technology. \n\nChina's Alibaba unveiled new AI chip technologies and plans for more powerful models on Tuesday, including what it said was China's most powerful AI chip, days ahead of the leaders' meeting.\n\n \n\nCEO Eddie Wu said the new Zhenwu V900 chip can deliver three times the performance of the company's previous generation Zhenwu M890 chip.\n\n The context is US export controls that have blocked China from buying Nvidia's top chips: \n\nfrontier AI training in China often relies on Nvidia chips, analysts say, but Chinese-designed chips are gaining ground as Nvidia has been blocked from selling its most powerful chips there.\n\n Analysts remain skeptical the gap is closing fast, but the timing gave Beijing leverage as export-control talks continue.\n**Region:** China · **Source:** ABC News — https://abcnews.com/International/wireStory/chinas-alibaba-unveils-new-powerful-chip-ambitious-ai-136641611\n\n## 4. Europe moves to loosen its own AI Act as enforcement begins\nThe EU is rethinking parts of the landmark law even as its first major provisions take hold, a tension directly relevant to media companies operating in Europe. \n\nThe EU is giving companies more time to adapt to its new AI regulations, but experts and MEPs say they regret the rowback on rules adopted just a year ago.\n\n A further easing is on the way: \n\na digital simplification package will likely ease the burden on AI companies, Tech Commissioner Henna Virkkunen told Euronews.\n\n At the same time, the law is adding new prohibitions — \n\nthe European Parliament and Council are outlawing \"nudifier apps,\" with a ban from 2 December targeting AI systems for sexual deepfakes and users creating false intimate content of real people without consent.\n\n For publishers, the direction of travel matters: transparency and content-disclosure rules shape how AI-generated media must be labeled across the EU market.\n**Region:** EU · **Source:** Euronews — https://www.euronews.com/tag/ai-act\n\n## 5. Media licensing and litigation intensify: UMG, ElevenLabs, and a Danish standoff with OpenAI\nThe market for paying publishers and rights-holders for AI use keeps splitting into deals and lawsuits — the core story for any media business. On the deal side, \n\nUniversal Music and ElevenLabs signed a multi-year AI deal and will launch a licensed fan remix platform,\n\n part of a broader wave in which \n\nnews publishers dominate the licensing economy, with news/journalism accounting for 48 deals — far ahead of music/audio and images/video — implying AI companies value constantly refreshed, real-time text, as the market shifts from \"training data\" to \"live access.\"\n\n On the conflict side, publishers abroad are turning to courts: \n\na Danish rights body said it tried to negotiate with OpenAI to comply with Danish copyright law and secure a \"fair exchange of value,\" but that OpenAI \"declined to enter into meaningful negotiations\" and refused mediation, making court proceedings \"inevitable.\"\n\n The takeaway: large publishers are negotiating live-content feeds while smaller and non-US players increasingly litigate to establish leverage.\n**Region:** EU / Global · **Source:** Press Gazette — https://pressgazette.co.uk/platforms/news-publisher-ai-deals-lawsuits-openai-google/\n\n*Note: A few widely circulated items this week — such as reports of Nvidia acquiring Hugging Face and a rapid run of frontier model releases (OpenAI's GPT-6 line, Anthropic's Claude 5.5 family) — appear in trade coverage but warrant independent confirmation before you treat the specifics as settled.*",
+      "sources": [
+        {
+          "title": "'Model fatigue' sets in AI labs roll out new versions at ...",
+          "url": "https://www.cnbc.com/2026/09/06/meta-google-openai-anthropic-ai-model-fatigue.html"
+        },
+        {
+          "title": "AI Model Release Tracker | Evertune",
+          "url": "https://www.evertune.ai/resources/ai-model-tracker"
+        },
+        {
+          "title": "LLM News Today (September 2026) – AI Model Releases",
+          "url": "https://llm-stats.com/ai-news"
+        },
+        {
+          "title": "AI Updates Today (September 2026) – Latest AI Model Releases",
+          "url": "https://llm-stats.com/llm-updates"
+        },
+        {
+          "title": "AI Model Releases Timeline: Latest Launches, Updated Daily — PromptZone - AI Prompts, Guides and Tools for Builders",
+          "url": "https://www.promptzone.com/ai-model-releases"
+        },
+        {
+          "title": "New AI Models: Live Release Tracker (Last 24 Hours) | BenchLM",
+          "url": "https://benchlm.ai/model-updates"
+        },
+        {
+          "title": "September 2026 AI Model Updates: 20+ releases in two weeks, a 119x price spread and a new $0.10 per million token price floor",
+          "url": "https://local-ai-zone.github.io/blog/September_2026_AI_Model_Updates.html"
+        },
+        {
+          "title": "Latest AI Model Releases — September 2026",
+          "url": "https://aireleasetracker.com/latest"
+        },
+        {
+          "title": "New on Yahoo",
+          "url": "https://tech.yahoo.com/articles/anthropics-ai-model-resorted-blackmail-090000196.html"
+        },
+        {
+          "title": "Trump seeks AI dominance over China after warm meeting with Xi | Live Updates from Fox News Digital",
+          "url": "https://www.foxnews.com/live-news/ai-leaders-trump-xi-xinping-state-dinner-white-house"
+        },
+        {
+          "title": "Chinese AI models surge in global popularity — and Washington is worried",
+          "url": "https://www.cnbc.com/2026/09/26/china-ai-global-adoption.html"
+        },
+        {
+          "title": "China's Alibaba unveils new powerful chip and ambitious AI model plans - ABC News",
+          "url": "https://abcnews.com/International/wireStory/chinas-alibaba-unveils-new-powerful-chip-ambitious-ai-136641611"
+        },
+        {
+          "title": "China confirms first AI talks with U.S. have taken place, hints at trade truce extension",
+          "url": "https://www.cnbc.com/2026/09/24/china-confirms-first-ai-talks-with-us-have-taken-place-hints-at-trade-truce-extension.html"
+        },
+        {
+          "title": "Artificial intelligence (AI): Latest News and Updates | South China Morning Post",
+          "url": "https://www.scmp.com/topics/artificial-intelligence"
+        },
+        {
+          "title": "China's AI chip blitz arms Xi with a message for Trump: 'You can't choke us off'",
+          "url": "https://www.cnbc.com/2026/09/24/trump-xi-china-summit-ai-export-control-nvidia-huawei-alibaba-.html"
+        },
+        {
+          "title": "Inside China's mind on AI ahead of the Trump-Xi meeting",
+          "url": "https://www.axios.com/2026/09/24/china-ai-plan-trump-xi-visit"
+        },
+        {
+          "title": "Trump and Xi dined with AI's biggest names. Here's what we know about tech talks so far",
+          "url": "https://www.cnbc.com/2026/09/25/the-tech-download-trump-xi-ai-talks.html"
+        },
+        {
+          "title": "Weekly China AI News from August 19, 2024 to August 25, 2024",
+          "url": "https://recodechinaai.substack.com/p/chinas-humanoid-robot-former-huawei/comments"
+        },
+        {
+          "title": "AI Artifical Intelligence Act | Euronews",
+          "url": "https://www.euronews.com/tag/ai-act"
+        },
+        {
+          "title": "What came into force with the EU’s AI Act this week – and what didn’t | Technology News | Al Jazeera",
+          "url": "https://www.aljazeera.com/news/2026/8/6/what-came-into-force-with-the-eus-ai-act-this-week-and-what-didnt"
+        },
+        {
+          "title": "The EU AI Act – the current state of play | Travers Smith",
+          "url": "https://www.traverssmith.com/knowledge/knowledge-container/the-eu-ai-act-the-current-state-of-play/"
+        },
+        {
+          "title": "EU Artificial Intelligence Act | Up-to-date developments and analyses of the EU AI Act",
+          "url": "https://artificialintelligenceact.eu/"
+        },
+        {
+          "title": "EU rules on AI models become enforceable. What's going to change? | Euronews",
+          "url": "https://www.euronews.com/my-europe/2026/08/02/eu-rules-on-ai-models-become-enforceable-whats-going-to-change"
+        },
+        {
+          "title": "EU AI Act Update: Timeline Relief, Targeted Simplification, and New Prohibitions",
+          "url": "https://www.globalpolicywatch.com/2026/05/eu-ai-act-update-timeline-relief-targeted-simplification-and-new-prohibitions/"
+        },
+        {
+          "title": "AI Act | Shaping Europe's digital future - European Union",
+          "url": "https://digital-strategy.ec.europa.eu/en/policies/regulatory-framework-ai"
+        },
+        {
+          "title": "Artificial Intelligence: Council and Parliament agree to simplify and streamline rules - Consilium",
+          "url": "https://www.consilium.europa.eu/en/press/press-releases/2026/05/07/artificial-intelligence-council-and-parliament-agree-to-simplify-and-streamline-rules/"
+        },
+        {
+          "title": "News & Analysis as of",
+          "url": "https://www.jdsupra.com/topics/european-commission/technology/"
+        },
+        {
+          "title": "AI Startup Funding News | September, 2026 (STARTUP EDITION)",
+          "url": "https://blog.mean.ceo/ai-startup-funding-news-september-2026/"
+        },
+        {
+          "title": "Go.AI raises $85m Series A for on-prem AI push",
+          "url": "https://fintech.global/2026/09/22/go-ai-raises-85m-series-a-for-on-prem-ai-push/"
+        },
+        {
+          "title": "North American Startup Funding Shattered Records In First Half Of 2026, Driven By AI",
+          "url": "https://news.crunchbase.com/venture/na-startup-funding-ma-shattered-records-ai-q2-2026/"
+        },
+        {
+          "title": "Nscale",
+          "url": "https://en.wikipedia.org/wiki/Nscale"
+        },
+        {
+          "title": "Latest AI Startup Funding News and VC Investment Deals - 2026 | News",
+          "url": "https://www.crescendo.ai/news/latest-vc-investment-deals-in-ai-startups"
+        },
+        {
+          "title": "AI Startup Funding and Investment Statistics (Sep, 2026) - Second Talent",
+          "url": "https://www.secondtalent.com/resources/ai-startup-funding-investment/"
+        },
+        {
+          "title": "AI Chip Market Funding News (September 2026) – New Market Pitch",
+          "url": "https://newmarketpitch.com/blogs/news/ai-chip-funding-news"
+        },
+        {
+          "title": "AI Infrastructure Startup Funding 2025-2026 – New Market Pitch",
+          "url": "https://newmarketpitch.com/blogs/news/ai-infrastructure-funding-analysis"
+        },
+        {
+          "title": "Tech Funding News | Global technology startup funding news",
+          "url": "https://techfundingnews.com/"
+        },
+        {
+          "title": "Copyright AI News & Trends | AI Weekly",
+          "url": "https://aiweekly.co/ai-news-today/copyright-ai-news"
+        },
+        {
+          "title": "News generative AI deals revealed: Who is suing, who is signing?",
+          "url": "https://pressgazette.co.uk/platforms/news-publisher-ai-deals-lawsuits-openai-google/"
+        },
+        {
+          "title": "A new global push would make AI companies pay for news - Poynter",
+          "url": "https://www.poynter.org/business-work/2026/ai-pay-for-news-statutory-licensing/"
+        },
+        {
+          "title": "The Billion-Dollar Bailout: A Running Tracker of Every Publisher AI Licensing Deal — Who Took the Money, Who's Holding Out, and What the Terms Actually Are - PR News",
+          "url": "https://everything-pr.com/ai-licensing-tracker"
+        },
+        {
+          "title": "Every AI Content Licensing Deal, Mapped (2023-2026) - LLM Pulse",
+          "url": "https://llmpulse.ai/blog/ai-content-licensing-deals/"
+        },
+        {
+          "title": "A timeline of the major deals between publishers and AI tech companies in 2025",
+          "url": "https://digiday.com/media/a-timeline-of-the-major-deals-between-publishers-and-ai-tech-companies-in-2025/"
+        },
+        {
+          "title": "AI Content Licensing Deals: June 2026 Update - by Rob Kelly",
+          "url": "https://mediaandthemachine.substack.com/p/ai-content-licensing-deals-june-2026"
+        },
+        {
+          "title": "How AI is reshaping copyright law and what it means for the news industry | Reuters Institute for the Study of Journalism",
+          "url": "https://reutersinstitute.politics.ox.ac.uk/news/how-ai-reshaping-copyright-law-and-what-it-means-news-industry"
+        },
+        {
+          "title": "Guardian signs deal with OpenAI | Top 50 US news sites | Biggest paywalled outlets",
+          "url": "https://pressgazettefutureofmediaus.substack.com/p/guardian-signs-deal-with-openai-top"
+        },
+        {
+          "title": "Sheikh Hamdan announces Dubai AI Week 2026: Double the scale, global participation expected",
+          "url": "https://gulfnews.com/amp/story/technology/bjcu2yn-hamdan-bin-mohammed-directs-dubai-week-return-1.500106123"
+        },
+        {
+          "title": "U.S. greenlights AI chip exports to Gulf tech giants after Saudi Crown Prince's Washington visit",
+          "url": "https://www.cnbc.com/2025/11/20/us-approves-ai-chip-exports-to-gulf-after-saudi-crown-prince-visit.html"
+        },
+        {
+          "title": "Saudi fires up Gulf AI race with $15bn tech deals at LEAP | Fortune",
+          "url": "https://fortune.com/2026/09/02/saudi-fires-up-gulf-ai-race-with-15-billion-tech-deals-at-leap/"
+        },
+        {
+          "title": "Sitemap - 2026 - Middle East AI News",
+          "url": "https://www.middleeastainews.com/sitemap/2026"
+        },
+        {
+          "title": "The Middle East’s Big Bet on Artificial Intelligence and Data Security | Crowell & Moring LLP",
+          "url": "https://www.crowell.com/en/insights/client-alerts/the-middle-easts-big-bet-on-artificial-intelligence-and-data-security"
+        },
+        {
+          "title": "The Gulf states are betting big on AI: who’s investing where? | Fortune",
+          "url": "https://fortune.com/2026/06/09/gulf-states-betting-big-on-ai-investment/"
+        },
+        {
+          "title": "UAE & Saudi AI 2026: G42, HUMAIN, Stargate Explained | explainx.ai Blog | explainx.ai",
+          "url": "https://www.explainx.ai/blog/uae-saudi-arabia-ai-landscape-g42-humain-2026"
+        },
+        {
+          "title": "September 13, 2024 10:26 PM",
+          "url": "https://newsonair.gov.in/billion-dollar-dreams-india-uae-tech-alliance-is-shaping-the-future-of-innovation"
+        },
+        {
+          "title": "UAE downplays India’s fuel concern",
+          "url": "https://www.pressreader.com/uae/gulf-news/20181130/282153587342720"
+        },
+        {
+          "title": "CNN sues Perplexity over alleged AI copyright theft | CNN Business",
+          "url": "https://www.cnn.com/2026/05/28/media/cnn-sues-perplexity-ai-copyright"
+        },
+        {
+          "title": "The CNN-Perplexity Lawsuit Is Not Just Another AI Copyright Case – Center for Data Innovation",
+          "url": "https://datainnovation.org/2026/06/the-cnn-perplexity-lawsuit-is-not-just-another-ai-copyright-case/"
+        },
+        {
+          "title": "CNN Sues Perplexity, Alleging AI Company Infringed Its Copyrights",
+          "url": "https://variety.com/2026/biz/news/cnn-sues-perplexity-alleging-copyright-infringement-1236760987/"
+        },
+        {
+          "title": "CNN sues AI company Perplexity, alleging it violates copyright protections : NPR",
+          "url": "https://www.npr.org/2026/05/28/g-s1-124680/cnn-sues-ai-company-perplexity-alleging-it-violates-copyright-protections"
+        },
+        {
+          "title": "CNN sues Perplexity AI over alleged copyright infringement and content scraping - Storyboard18",
+          "url": "https://www.storyboard18.com/how-it-works/cnn-sues-perplexity-ai-over-alleged-copyright-infringement-and-content-scraping-99542.htm"
+        },
+        {
+          "title": "Rothwell Figg Files Copyright and Trademark Infringement Suit on Behalf of CNN Against Perplexity AI: Rothwell Figg IP and Technology Law Firm",
+          "url": "https://www.rothwellfigg.com/news-rothwell-figg-files-copyright-and-trademark-infringement-suit-on-behalf-of-cnn-against-perplexity-ai"
+        },
+        {
+          "title": "CNN v. Perplexity AI: What the Lawsuit Means for Your Business and Your Content - Accelerate IP",
+          "url": "https://accelerateip.com/cnn-v-perplexity-ai-what-the-lawsuit-means-for-your-business-and-your-content/"
+        },
+        {
+          "title": "Wall Street Journal sues Perplexity AI for copyright infringement",
+          "url": "https://gulfnews.com/world/americas/wall-street-journal-sues-perplexity-ai-for-copyright-infringement-1.1729574060443"
+        },
+        {
+          "title": "Perplexity AI Faces Legal Storm Amidst $500 Million Fundraising Push",
+          "url": "https://kbssidhu.substack.com/p/perplexity-ai-faces-legal-storm-amidst"
+        }
+      ]
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "# Cross-Spectrum Political Briefing — Week of September 22–28, 2026\n\nFour stories driving the final stretch before the November 3 midterms. For each: a neutral factual anchor, then progressive, neutral, and conservative reads.\n\n---\n\n## 1. Supreme Court revives Trump's SAVE voter-citizenship database\n\n**What actually happened (factual anchor):** \n\nOn September 25, the Supreme Court, divided 6-3 along ideological lines with conservatives in the majority, granted an emergency request from the government after lower courts ruled the administration's changes to the SAVE database were likely unlawful.\n\n \n\nThe decision clears the way for the administration to use the revamped SAVE system to check voter rolls for noncitizens.\n\n \n\nFederal law bans states from \"systematically\" removing voters from rolls within 90 days of a federal election,\n\n so the practical effect on the 2026 election is limited. SAVE was originally created by Congress in 1986 to verify immigration status for benefits programs, and was expanded to pull in Social Security records and allow bulk checks.\n\n**PROGRESSIVE**\n*Mother Jones — reporting/analysis — https://www.motherjones.com/politics/2026/09/supreme-court-save-database/*\nThe left frames this as the Court blessing an unreliable tool that risks disenfranchising eligible citizens on a false premise. The piece points to a track record of debunked fraud claims: \n\nfollowing Trump's July speech, DHS claimed 15,903 noncitizens were registered to vote in Nevada; a month later DHS confirmed the number was actually \"just 185 potential noncitizens,\" and Nevada officials subsequently confirmed the number was actually zero.\n\n Progressives stress the database's error rate and that \n\nthe impact could be muted because the National Voter Registration Act precludes states from removing voters ninety days before an election, making it \"too late for States to use SAVE for systematic voter-list maintenance in advance of the 2026 elections,\" as Justice Jackson wrote.\n\n**NEUTRAL**\n*Reuters (via U.S. News) — wire reporting — https://www.usnews.com/news/politics/articles/2026-09-25/supreme-court-restores-trumps-mass-voter-verification-system*\nStraight reporting lays out both sides' stakes. \n\nThe Supreme Court revived an expanded immigration database that Trump's administration said aims to combat voting by noncitizens but critics contend could disenfranchise eligible voters.\n\n \n\nThe justices granted the Justice Department's request to block a judge's order that had stopped state officials from using Social Security numbers and other information to conduct sweeping checks of citizenship status against federal records.\n\n \n\nThe ruling allows the federal government to use the database for now, but questions remain about its accuracy and how quickly states can act before the November election.\n\n**CONSERVATIVE**\n*American Greatness — reporting/opinion — https://amgreatness.com/2026/09/26/supreme-court-clears-trump-administration-to-expand-voter-citizenship-checks/*\nThe right frames this as a win for election integrity and a proper check on judicial overreach. \n\nThe Court handed the administration a victory, allowing federal officials to work with states using an expanded citizenship-verification database; the 6-3 ruling permits state officials to use the modified SAVE program to verify citizenship of registered voters, incorporating Social Security records and allowing batch checks.\n\n Conservatives cite the administration's argument that the tool is a service, not a purge: \n\n\"SAVE does not disqualify any voter; instead, it merely notifies the States whether the federal government can confirm citizenship,\" Solicitor General Sauer wrote.\n\n**Fact check for the reader:** The core conservative claim that this stops widespread noncitizen voting rests on a factual weak point. \n\nNoncitizen voting is extremely rare, all states are already required to conduct voter roll maintenance under federal law, and states already have processes to identify noncitizens who accidentally make it onto rolls.\n\n The database's documented error rate is also real and demonstrable: \n\nadvocacy groups cited a Travis County, Texas, election official who said 25% of the system's noncitizen matches there involved people who had already proven their U.S. citizenship, and news reports finding that at least 81% of the system's responses in St. Louis County, Missouri, were erroneous.\n\n---\n\n## 2. Supreme Court blocks Missouri's GOP-drawn congressional map — for the third time\n\n**What actually happened (factual anchor):** \n\nFor the third time in September, the Supreme Court blocked Missouri from using a new congressional map that favors Republicans, ending a legal fight that created major confusion around November's midterm elections in the state.\n\n \n\nCongressional elections will be held in the district lines drawn in 2022, and the court reversed Secretary of State Denny Hoskins's decision that a referendum on the plan was not allowed.\n\n Voters will decide the map's future via referendum in November. The map was redrawn mid-decade in 2025 and would have dismantled a Democratic-leaning district.\n\n**PROGRESSIVE**\n*Missouri Independent — reporting — https://missouriindependent.com/2026/09/03/missouri-supreme-court-blocks-gerrymandered-congressional-map-orders-referendum-vote/*\nProgressives frame this as voters defeating a partisan power grab. \n\nThe court ruled unanimously that Missourians will vote on the \"gerrymandered\" congressional map \"muscled through\" the Legislature in 2025, putting a congressional plan before voters for the first time since 1922.\n\n The left emphasizes the citizen mobilization: \n\nRep. Emanuel Cleaver said \"more than 305,000 Missourians demanded a say,\" and that despite \"the cynical and deeply shameful attempt to silence\" voters, \"the people fought back and won\" and \"democracy prevails.\"\n\n**NEUTRAL**\n*NBC News — reporting — https://www.nbcnews.com/politics/2026-election/missouri-supreme-court-rules-gop-drawn-map-cant-used-november-election-rcna595688*\nWire-style reporting states the facts and the stakes without loaded framing. \n\nThe Missouri Supreme Court ruled the state's redrawn congressional map cannot be used in the midterms, dealing a blow to Republicans, and that a referendum on whether the state can use the map must be on the November ballot, meaning fall elections take place under previous district lines.\n\n \n\nMissouri redrew its map in 2025 at the behest of President Trump; People Not Politicians Missouri gathered more than 300,000 signatures to force a veto referendum; and while the group exceeded the requirement, Secretary of State Hoskins refused to certify it, saying it was unconstitutional.\n\n**CONSERVATIVE**\n*Missouri Attorney General Catherine Hanaway (via NBC News) — official statement — https://www.nbcnews.com/politics/2026-election/missouri-supreme-court-rules-gop-drawn-map-cant-used-november-election-rcna595688*\nThe conservative argument centers on timing and procedure — that overturning a map after a primary is unprecedented and disruptive. \n\nHanaway vowed to appeal to the U.S. Supreme Court, arguing \"never before in American history has a court overturned a congressional map after a primary and before a general election.\"\n\n The GOP also argued the ruling itself creates chaos: \n\nHanaway said \"we are confident that the federal courts will not allow every Missouri voter to be disenfranchised — which is what today's decision does.\"\n\n*Note on balance:* Both sides used \"disenfranchise.\" The underlying dispute is genuinely one of legal interpretation — \n\nthe Missouri Constitution does not specifically say a referendum petition can be used for a congressional redistricting law, but the state Supreme Court ruled that a provision allowing a referendum on \"any act\" of the Legislature encompasses congressional redistricting.\n\n---\n\n## 3. Taxpayer-funded pro-Trump ads spark bipartisan backlash\n\n**What actually happened (factual anchor):** \n\nTelevision advertisements with a pro-Trump message and paid for by the U.S. government are expanding ahead of November's midterms, prompting bipartisan scrutiny over whether the campaign complies with federal restrictions on taxpayer-funded publicity.\n\n \n\nThe White House is airing TV ads promoting Trump and his policies that say they are \"Paid for by the U.S. Government.\"\n\n \n\nOne ad is nearly identical to an ad put out by Trump's 2024 presidential campaign, which he posted to Truth Social in January 2024.\n\n The White House calls them public service announcements.\n\n**PROGRESSIVE**\n*MS NOW / Rachel Maddow Blog — opinion — https://www.ms.now/rachel-maddow-show/maddowblog/trump-propaganda-ad-campaign-psa-congress-pushback*\nThe left frames these flatly as government-funded campaign propaganda mislabeled as public service. The piece argues a real PSA advances public safety or health, while \n\nthe 30-second ad, launched as early voting opens, \"looks like a campaign commercial because it is: The spot is filled with images and video clips of Trump and his campaign slogans.\"\n\n It concludes that \n\nthe ad serves no purpose other than to glorify the president, and that the administration began using public funds to air political propaganda.\n\n**NEUTRAL**\n*CNBC — reporting — https://www.cnbc.com/2026/09/27/trump-government-funded-ads-midterms.html*\nStraight reporting describes the ads and the legal question without endorsing either side. \n\nOne ad, backed by music repeating \"love me,\" features images of Trump saying \"America will never be a communist country,\" with campaign talking points like \"largest tax cuts in history\" flashing over the screen.\n\n \n\nThe White House compared the ads to previous administrations' PSAs about Medicare, Obamacare and Covid-19 vaccination, saying its commercials \"are very clearly not campaign ads.\"\n\n**CONSERVATIVE / BIPARTISAN CRITICISM**\n*The Washington Times — reporting — https://www.washingtontimes.com/news/2026/sep/28/white-house-faces-bipartisan-backlash-stylish-taxpayer-funded-ads/*\nNotably, this story is not split cleanly on partisan lines — a conservative-leaning outlet reports the criticism as bipartisan. \n\nThe decision to run",
+      "sources": [
+        {
+          "title": "Politics : NPR",
+          "url": "https://www.npr.org/sections/politics/"
+        },
+        {
+          "title": "Politics - The Washington Post",
+          "url": "https://www.washingtonpost.com/politics/"
+        },
+        {
+          "title": "News – The White House",
+          "url": "https://www.whitehouse.gov/news/"
+        },
+        {
+          "title": "2026 United States elections",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_elections"
+        },
+        {
+          "title": "2026 United States House of Representatives elections in Texas",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections_in_Texas"
+        },
+        {
+          "title": "2026 United States House of Representatives elections",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections"
+        },
+        {
+          "title": "2026 Colorado elections",
+          "url": "https://en.wikipedia.org/wiki/2026_Colorado_elections"
+        },
+        {
+          "title": "Politics and Government News",
+          "url": "https://www.cnbc.com/politics/"
+        },
+        {
+          "title": "2026 United States House of Representatives election in Delaware",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_Delaware"
+        },
+        {
+          "title": "The 2026 midterms are coming fast. Introducing CNN’s 20/26 Vision newsletter | CNN Politics",
+          "url": "https://www.cnn.com/2026/08/31/politics/midterm-elections-2026-vision-newsletter"
+        },
+        {
+          "title": "Elections 2026: The latest from the NPR Network : NPR",
+          "url": "https://www.npr.org/sections/elections/"
+        },
+        {
+          "title": "2026 election news: Early voting begins in US midterm elections that could flip control of Congress - ABC7 New York",
+          "url": "https://abc7ny.com/post/2026-election-news-early-voting-begins-us-midterm-elections-could-flip-control-congress/19846626/"
+        },
+        {
+          "title": "2026 United States elections",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_elections"
+        },
+        {
+          "title": "The 2026 midterm general election season is upon us. Here's what to watch",
+          "url": "https://www.npr.org/2026/09/08/nx-s1-5960533/2026-midterm-campaign-kickoff-house-senate-trump"
+        },
+        {
+          "title": "2026 United States House of Representatives elections",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_elections"
+        },
+        {
+          "title": "2026 Colorado elections",
+          "url": "https://en.wikipedia.org/wiki/2026_Colorado_elections"
+        },
+        {
+          "title": "2026 United States House of Representatives election in Delaware",
+          "url": "https://en.wikipedia.org/wiki/2026_United_States_House_of_Representatives_election_in_Delaware"
+        },
+        {
+          "title": "2026 New Hampshire gubernatorial election",
+          "url": "https://en.wikipedia.org/wiki/2026_New_Hampshire_gubernatorial_election"
+        },
+        {
+          "title": "2026 Missouri Proposition A - Wikipedia",
+          "url": "https://en.wikipedia.org/wiki/2026_Missouri_Proposition_A"
+        },
+        {
+          "title": "2025 Missouri redistricting",
+          "url": "https://en.wikipedia.org/wiki/2025_Missouri_redistricting"
+        },
+        {
+          "title": "Missouri Supreme Court blocks gerrymandered congressional map, orders referendum vote • Missouri Independent",
+          "url": "https://missouriindependent.com/2026/09/03/missouri-supreme-court-blocks-gerrymandered-congressional-map-orders-referendum-vote/"
+        },
+        {
+          "title": "2027%E2%80%932028 United States redistricting",
+          "url": "https://en.wikipedia.org/wiki/2027%E2%80%932028_United_States_redistricting"
+        },
+        {
+          "title": "Republican officials ask US Supreme Court to overturn Missouri redistricting ruling • Missouri Independent",
+          "url": "https://missouriindependent.com/2026/09/04/missouri-secretary-of-state-asks-court-to-pause-congressional-map-ruling/"
+        },
+        {
+          "title": "Supreme Court blocks Missouri congressional map favoring GOP for third time - The Washington Post",
+          "url": "https://www.washingtonpost.com/politics/2026/09/25/supreme-court-blocks-missouri-congressional-map-favoring-gop-third-time/"
+        },
+        {
+          "title": "Missouri Supreme Court rules new GOP-drawn map can’t be used for November elections",
+          "url": "https://www.nbcnews.com/politics/2026-election/missouri-supreme-court-rules-gop-drawn-map-cant-used-november-election-rcna595688"
+        },
+        {
+          "title": "Missouri court blocks Trump-backed U.S. House map and orders it to be put to a vote | PBS News",
+          "url": "https://www.pbs.org/newshour/politics/missouri-court-blocks-trump-backed-u-s-house-map-and-orders-it-to-be-put-to-a-vote"
+        },
+        {
+          "title": "Missouri court allows mid-decade redistricting",
+          "url": "https://www.axios.com/local/kansas-city/2026/03/25/missouri-court-kansas-city-congressional-map-fight"
+        },
+        {
+          "title": "Supreme Court restores Trump's mass voter verification system",
+          "url": "https://ground.news/article/supreme-court-restores-trumps-mass-voter-verification-system_288f4b"
+        },
+        {
+          "title": "Supreme Court Restores Trump's Mass Voter Verification System",
+          "url": "https://www.usnews.com/news/politics/articles/2026-09-25/supreme-court-restores-trumps-mass-voter-verification-system"
+        },
+        {
+          "title": "US Supreme Court allows Trump to use controversial voter 'verification' system - France 24",
+          "url": "https://www.france24.com/en/americas/20260925-supreme-court-restores-trump-mass-voter-verification-system-despite-outcry"
+        },
+        {
+          "title": "Supreme Court restores Trump's mass voter verification system",
+          "url": "https://www.cnbc.com/2026/09/25/supreme-court-restores-trumps-mass-voter-verification-system.html"
+        },
+        {
+          "title": "Supreme Court Lets Trump Expand Voter-Verification Database - Bloomberg",
+          "url": "https://www.bloomberg.com/news/articles/2026-09-25/supreme-court-lets-trump-expand-database-for-voter-verification"
+        },
+        {
+          "title": "Supreme Court allows Trump administration to use SAVE database to check voter citizenship for now - CBS News",
+          "url": "https://www.cbsnews.com/news/supreme-court-trump-save-database-voter-citizenship/"
+        },
+        {
+          "title": "The Supreme Court revives a controversial data system for citizenship checks",
+          "url": "https://www.npr.org/2026/09/25/nx-s1-5976804/supreme-court-trump-save-noncitizen-voting"
+        },
+        {
+          "title": "Supreme Court clears way for Trump administration to use modified voter verification database | SCOTUSblog",
+          "url": "https://www.scotusblog.com/2026/09/supreme-court-clears-way-for-trump-administration-to-use-modified-voter-verification-database/"
+        },
+        {
+          "title": "Association for Democratic Reforms v. Election Commission of India",
+          "url": "https://en.wikipedia.org/wiki/Association_for_Democratic_Reforms_v._Election_Commission_of_India"
+        },
+        {
+          "title": "White House expands taxpayer-paid ad campaign boosting Trump - The Washington Post",
+          "url": "https://www.washingtonpost.com/politics/2026/09/27/white-house-expands-taxpayer-paid-ad-campaign-boosting-trump/"
+        },
+        {
+          "title": "White House faces bipartisan backlash over stylish taxpayer-funded ads featuring Trump",
+          "url": "https://www.washingtontimes.com/news/2026/sep/28/white-house-faces-bipartisan-backlash-stylish-taxpayer-funded-ads/"
+        },
+        {
+          "title": "White House releases new taxpayer-funded ad describing ‘final battle’",
+          "url": "https://www.nbcnews.com/politics/trump-administration/white-house-releases-new-taxpayer-funded-ad-describing-final-battle-rcna600171"
+        },
+        {
+          "title": "White House says new pro-Trump ad funded by the ‘U.S. government’ is a ‘public service announcement’",
+          "url": "https://www.nbcnews.com/politics/donald-trump/white-house-trump-ad-public-service-announcement-rcna599730"
+        },
+        {
+          "title": "White House airs another government-funded ad, this time with Trump warning of ‘final battle’ | CNN Politics",
+          "url": "https://www.cnn.com/2026/09/27/politics/white-house-trump-government-funded-ad"
+        },
+        {
+          "title": "‘Love Me’: White House airs government-funded ad praising Trump | CNN Politics",
+          "url": "https://www.cnn.com/2026/09/24/politics/trump-ad-government-funded-love-me"
+        },
+        {
+          "title": "Taxpayer-funded Trump ads draw bipartisan scrutiny ahead of midterms",
+          "url": "https://www.cnbc.com/2026/09/27/trump-government-funded-ads-midterms.html"
+        },
+        {
+          "title": "White House pretends its taxpayer-financed propaganda is a ‘public service announcement’",
+          "url": "https://www.ms.now/rachel-maddow-show/maddowblog/trump-propaganda-ad-campaign-psa-congress-pushback"
+        },
+        {
+          "title": "delauro demands details 250m taxpayer funded hhs advertising campaign",
+          "url": "https://delauro.house.gov/media-center/press-releases/delauro-demands-details-250m-taxpayer-funded-hhs-advertising-campaign"
+        },
+        {
+          "title": "Gas prices and inflation could cost Republicans the 2026 midterms | Fox News",
+          "url": "https://www.foxnews.com/politics/republicans-face-brutal-midterm-headwinds-six-forces-could-help-them-defy-history"
+        },
+        {
+          "title": "The most pressing midterm issues for rural voters",
+          "url": "https://www.axios.com/2026/09/27/rural-voters-cost-of-living-midterms"
+        },
+        {
+          "title": "Republicans face brutal midterm headwinds. Six forces could help them defy history.",
+          "url": "https://www.yahoo.com/news/politics/articles/republicans-face-brutal-midterm-headwinds-090000915.html"
+        },
+        {
+          "title": "Health Care and Everyday Expenses Dominate 2026 Midterm Concerns For Rural Voters: Poll | IBTimes",
+          "url": "https://www.ibtimes.com/health-care-everyday-expenses-dominate-2026-midterm-concerns-rural-voters-poll-3807968"
+        },
+        {
+          "title": "Poll: Rural voters concerned about economy as midterms approach - LimaOhio.com",
+          "url": "https://www.limaohio.com/top-stories/2026/09/26/poll-rural-voters-concerned-about-economy-as-midterms-approach/"
+        },
+        {
+          "title": "Health Care and Everyday Expenses Dominate 2026 Midterm Concerns For Rural Voters: Poll",
+          "url": "https://www.inkl.com/news/health-care-and-everyday-expenses-dominate-2026-midterm-concerns-for-rural-voters-poll"
+        },
+        {
+          "title": "Surging diesel prices add to affordability pressures weeks before midterms",
+          "url": "https://krcrtv.com/news/connect-to-congress/surging-diesel-prices-add-to-affordability-pressures-weeks-before-midterms"
+        },
+        {
+          "title": "Gas prices are surging at the worst possible time for Republicans",
+          "url": "https://www.ms.now/news/gas-prices-surging-worst-possible-time-republicans"
+        },
+        {
+          "title": "Print Print    Close Close",
+          "url": "https://www.foxnews.com/politics/pains-pump-could-shift-midterm-outcome-election-won-lost-pump.print"
+        },
+        {
+          "title": "Supreme Court Allows Trump to Use Flawed Database to Vet Voter Citizenship – Mother Jones",
+          "url": "https://www.motherjones.com/politics/2026/09/supreme-court-save-database/"
+        },
+        {
+          "title": "Supreme Court permits states to use SAVE database for citizenship checks | CyberScoop",
+          "url": "https://cyberscoop.com/supreme-court-save-database-voter-citizenship/"
+        },
+        {
+          "title": "Supreme Court allows Trump administration to use SAVE database to check voter citizenship for now - CBS News",
+          "url": "https://www.cbsnews.com/news/supreme-court-trump-save-database-voter-citizenship/"
+        },
+        {
+          "title": "Supreme Court says states can use controversial citizenship data tool for voter audits in win for Trump | CNN Politics",
+          "url": "https://www.cnn.com/2026/09/25/politics/supreme-court-voter-roll-non-citizen-save"
+        },
+        {
+          "title": "What the Supreme Court's voter-citizenship database decision means for the midterms | PBS News",
+          "url": "https://www.pbs.org/newshour/show/what-the-supreme-courts-voter-citizenship-database-decision-means-for-the-midterms"
+        },
+        {
+          "title": "The Supreme Court revives a controversial data system for citizenship checks",
+          "url": "https://www.npr.org/2026/09/25/nx-s1-5976804/supreme-court-trump-save-noncitizen-voting"
+        },
+        {
+          "title": "Supreme Court allows Trump administration to use expanded database for potential voter purges",
+          "url": "https://www.nbcnews.com/politics/supreme-court/supreme-court-allows-trump-administration-use-expanded-database-potent-rcna596611"
+        },
+        {
+          "title": "Supreme Court Clears Trump Administration to Expand Voter Citizenship Checks › American Greatness",
+          "url": "https://amgreatness.com/2026/09/26/supreme-court-clears-trump-administration-to-expand-voter-citizenship-checks/"
+        },
+        {
+          "title": "Supreme Court greenlights Trump administration's voter citizenship database in 6-3 ruling",
+          "url": "https://heritagereview.com/supreme-court-greenlights-trump-administrations-voter-citizenship-database-in-6-3-ruling/"
+        }
+      ]
+    }
+  ]
+}
