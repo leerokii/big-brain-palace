@@ -1,0 +1,1021 @@
+{
+  "id": "2026-W17",
+  "year": 2026,
+  "week": 17,
+  "generatedAt": "2026-10-05T21:08:25.251Z",
+  "dateLabel": "October 5, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "# This Week in AI Product Management — Briefing for Vocal Media\n\nA curated set of recent thinking to sharpen your judgment as you take on AI content pipelines, creator/editorial tooling, and audience automation. Each item is framed for how it applies to your work.\n\n---\n\n## 1. Eval pipelines are the product, not a QA afterthought\n**Framework / shipped-product story**\n\nA team that shipped AI agents for support triage, internal search, and summarization over a year found that polished demos routinely fell apart in production. \n\nEvery AI agent in production has at some point hallucinated a refund, called a tool with garbage arguments, or burned token spend in a retry loop; demos are scripted on the happy path, while production is the unhappy path about 30% of the time.\n\n Their top lesson: \n\neval pipelines are not optional — they are the product, and you need one before you write the second prompt, not after launch or after the first regression.\n\n**Why it matters to you:** Your content pipelines and editorial tooling will generate outputs that look great in a demo to leadership and then embarrass the brand at scale. Build a frozen test set of real inputs early, with a scoring rubric per task, so you can prove whether a change actually improved quality.\n\n**Source:** Softronic — https://softronic.dev/blog/ai-agents-production-lessons-2026\n\n---\n\n## 2. Build a \"golden dataset\" from real traffic — your single most useful tactic this week\n**Tactic she can apply now**\n\nA golden dataset is \n\na curated collection of production inputs paired with reviewed expected outputs, versioned over time.\n\n Start small and real, not big and theoretical: \n\nbuild the dataset around failure modes — sit with two or three people who read user feedback, list how the feature fails today, and weight toward those, with a useful split of roughly 30% happy path, 50% known failure modes, and 20% adversarial or edge inputs.\n\n Keep it honest to real usage, because \n\nusers are weirder and more specific than any brainstorm — they type half-sentences, mix languages, and ask for things the product was never designed to do, so a golden set full of well-formed prompts makes evals look great while users churn.\n\n**Why it matters to you:** This week, pull 20–50 real examples from an existing Vocal content or automation workflow, label each good/bad with an editor, and you'll have a reusable benchmark. Treat it like code — \n\nversion it, write changelogs, and require review before any golden answer is modified, because a dataset that changes without a paper trail silently invalidates every historical comparison.\n\n**Source:** Golden datasets for AI testing (VGTC) — https://www.vgtc.io/insights/golden-datasets-for-ai-testing | OpenRouter — https://openrouter.ai/blog/tutorials/building-a-golden-eval-dataset-from-production-traffic/\n\n---\n\n## 3. Measure AI products across quality, effectiveness, and business impact — not just accuracy\n**Metrics / what good looks like**\n\nA useful framing evaluates AI products across four dimensions: \n\nresponse quality, conversation effectiveness, business impact and system reliability.\n\n The key discipline is tying model-level signals to business outcomes: \n\nleading metrics are your evaluation metrics — response accuracy on a curated test set, average latency, hallucination rate — and lagging metrics are the business KPIs these drive, like user satisfaction, conversion, and support ticket volume.\n\n Before measuring anything, \n\nstart with a clear rubric that defines what \"good\" means for your product (accuracy, clarity, tone, or policy compliance), then validate it by having multiple evaluators rate the same examples — and if disagreement is high, tighten the rubric before scaling.\n\n**Why it matters to you:** For creator and editorial tooling, a simple early signal is worth instrumenting. One source recommends starting with the **AI Override Rate**: \n\nit's a direct indicator of user trust — if users constantly ignore the AI's suggestions or undo its actions, something is wrong with the value proposition or reliability.\n\n That tells you if editors actually keep the AI's drafts.\n\n**Source:** Product School — https://productschool.com/blog/artificial-intelligence/evaluation-metrics | Forbes Tech Council — https://www.forbes.com/councils/forbestechcouncil/2025/12/01/the-new-success-metrics-every-ai-product-leader-needs/\n\n---\n\n## 4. A real content-into-pipeline playbook: advisory agents over raw volume\n**Shipped-product story (directly relevant to Vocal)**\n\nAt B2BMX 2026, practitioners from Salesforce and WordPress VIP shared how they use AI in content without drowning in low-quality output. The core insight: \n\nAI can crank out content fast, but volume isn't the win — build advisory agents loaded with your brand voice, tone and format rules so your team ships approved work instead of AI slop.\n\n Concretely, \n\none team built agents loaded with their tone, voice, format rules and technical guardrails, plus a grading system flagging clarity and accuracy, so writers attach a draft, get suggestions, and fix issues before the work ever reaches an editor.\n\n They also moved \n\nfrom tracking clicks to mapping keywords to buyer cohorts and tracking landing pages by influenced revenue, to prove content drives pipeline.\n\n**Why it matters to you:** This is almost exactly your domain. An \"advisory agent\" that encodes Vocal's editorial standards and gives creators feedback *before* submission is a shippable pattern — and it reframes success around audience and revenue outcomes, not output volume.\n\n**Source:** Demand Gen Report — https://www.demandgenreport.com/industry-news/news-brief/turning-content-into-pipeline-in-the-age-of-ai-lessons-from-2026-b2bmx/53472\n\n---\n\n## 5. Plan AI roadmaps around quality bars and failure modes, not features\n**Framework for AI product judgment**\n\nTraditional roadmaps end at launch, but AI products carry a maintenance surface forever. The practical shift: \n\nestimate to a quality bar, not to a feature — \"reach 90% pass rate on the eval set\" is a commitment, while \"ship the summariser\" is a wish.\n\n Failure handling can't wait: \n\nhappy-path thinking is lethal because users hit failure modes in week one — hallucinations, refusals, low-confidence outputs, latency spikes — and roadmaps that push failure handling to a later quarter ship products users stop trusting within a month.\n\n And be skeptical of the demo-to-done gap: \n\na prototype has no error handling, no cost ceiling, and no accessibility story — the last 20% of an AI feature is still 80% of the work, and a convincing demo makes that harder to explain.\n\n**Why it matters to you:** When you plan audience automation or content features, write acceptance criteria as measurable quality bars against your eval set, and reserve explicit roadmap space for drift and failure handling from the first release.\n\n**Source:** Lazarev — https://www.lazarev.agency/articles/ai-product-roadmap | Muhammad Usman Mustafa — https://muhammadusmanmustafa.info/blog/how-ai-is-changing-product-management-2026\n\n---\n\n## 6. How the AI PM role is actually being scoped — and what hiring managers screen for\n**Role scoping across the industry**\n\nThe PM role is fragmenting, and AI is the fault line. \n\nCompanies are running fewer \"General PM\" searches and shifting toward specific ones — AI PMs, API PMs, Consumer PMs — and B2B SaaS firms want specialists in subfunctions like monetization, onboarding, and AI infrastructure.\n\n After reviewing 50 AI PM job descriptions, one analysis found the bar has moved past basic literacy: \n\ncompanies are past the point where \"I understand what an LLM is\" is a differentiator — they hire people who have operated at the intersection of AI and product, operated not studied.\n\n The three skills that separate candidates: \n\nthinking through eval design, making model selection decisions, and mapping failure modes before launch — skills you build by doing, not by reading.\n\n A telling interview signal: \n\nquestions like \"How would you define done for an AI feature?\" or \"Walk me through how you would monitor this after launch.\"\n\n**Why it matters to you:** The three skills above are exactly what your role at Vocal rewards. Framing your work around eval design, model-choice reasoning, and pre-launch failure mapping both ships better products and builds the career capital that defines a strong AI PM.\n\n**Source:** Technomanagers — https://www.technomanagers.com/p/i-reviewed-50-ai-pm-job-descriptions | Userpilot — https://userpilot.com/blog/product-management-trends/\n\n---\n\n*A thread connects all six: in AI product work, evaluation is the discipline. Golden datasets, quality bars, failure-mode planning, and the right success metrics are the same skill viewed from different angles — and they're both how you ship trustworthy creator tools and how your role is judged.*",
+      "sources": [
+        {
+          "title": "AI Product Management Trends 2026: Essential PM Guide",
+          "url": "https://blog.buildbetter.ai/ai-product-management-trends-2026/"
+        },
+        {
+          "title": "AI in Product Management Guide for 2026 for Product Leaders",
+          "url": "https://gocious.com/blog/ai-in-product-management-guide-for-2026-for-product-leaders"
+        },
+        {
+          "title": "Top product management books and resources for 2026",
+          "url": "https://www.mindtheproduct.com/top-books-and-resources-in-2026-for-product-managers/"
+        },
+        {
+          "title": "Toward Pre-Deployment Assurance for Enterprise AI Agents: Ontology-Grounded Simulation and Trust Certification",
+          "url": "https://arxiv.org/pdf/2606.04037"
+        },
+        {
+          "title": "Product management in 2026: from experimentation to the reckoning - Metis Strategy",
+          "url": "https://www.metisstrategy.com/product-management-ai-value-measurement/"
+        },
+        {
+          "title": "Bridging AI Risk Frameworks: Reconciling ISO/IEC 42001, the NIST AI Risk Management Framework, and the EU AI Act into a Uni ed Governance Taxonomy",
+          "url": "https://arxiv.org/pdf/2608.07515"
+        },
+        {
+          "title": "Top 20 Product Management Tools & Frameworks (2026)",
+          "url": "https://www.masaischool.com/blog/top-product-management-tools-and-frameworks-2026/"
+        },
+        {
+          "title": "AI Product Strategy 2026: Roadmap for Founders & Startups",
+          "url": "https://wearepresta.com/ai-product-strategy-2026-the-founders-guide-to-ai-native-growth/"
+        },
+        {
+          "title": "AI Product Management Roadmap & Frameworks: Step-by-Step Guide",
+          "url": "https://voltagecontrol.com/articles/ai-product-management-roadmap-frameworks-step-by-step-guide/"
+        },
+        {
+          "title": "Measuring the Success of AI Products: Key Metrics and Frameworks",
+          "url": "https://harsha-srivatsa.medium.com/measuring-the-success-of-ai-products-key-metrics-and-frameworks-e65f49814ed2"
+        },
+        {
+          "title": "Measuring AI's Impact - by The Product Journey",
+          "url": "https://theproductjourney.substack.com/p/measuring-ais-impact"
+        },
+        {
+          "title": "Metrics for AI Product. A Step-by-Step Guide to Defining…",
+          "url": "https://medium.com/agileinsider/metrics-for-ai-product-4685d5554223"
+        },
+        {
+          "title": "Evaluation Metrics for AI Products That Drive Trust",
+          "url": "https://productschool.com/blog/artificial-intelligence/evaluation-metrics"
+        },
+        {
+          "title": "The AI Product Manager’s Guide: Metrics That Actually Matter for AI Success",
+          "url": "https://medium.com/@sunil.guduru_96470/the-ai-product-managers-guide-metrics-that-actually-matter-for-ai-success-be15db3bb4b7"
+        },
+        {
+          "title": "Key Metrics to Measure the Success of Your AI UX",
+          "url": "https://f1studioz.com/blog/key-metrics-to-measure-the-success-of-your-ai-ux/"
+        },
+        {
+          "title": "How to measure AI performance in software engineering",
+          "url": "https://getdx.com/blog/measure-ai-impact/"
+        },
+        {
+          "title": "How to Measure AI Product Success: Key Metrics and Methods",
+          "url": "https://theneuralbase.com/ai-product-development/qna/how-to-measure-ai-product-success/"
+        },
+        {
+          "title": "Council Post: The New Success Metrics Every AI Product Leader Needs",
+          "url": "https://www.forbes.com/councils/forbestechcouncil/2025/12/01/the-new-success-metrics-every-ai-product-leader-needs/"
+        },
+        {
+          "title": "6 Product Management Trends in 2026: The PM Role Is Splitting",
+          "url": "https://userpilot.com/blog/product-management-trends/"
+        },
+        {
+          "title": "What Is an AI Product Manager? Role Overview, Skills & How to Hire One (May 2026)",
+          "url": "https://www.paraform.com/insights/what-is-ai-product-manager"
+        },
+        {
+          "title": "How to Hire an AI Product Manager: 2026 Guide - KORE1",
+          "url": "https://www.kore1.com/how-to-hire-ai-product-manager-2026/"
+        },
+        {
+          "title": "How to Land a $500K AI PM Job at OpenAI (The 2026 Playbook)",
+          "url": "https://aakashgupta.medium.com/how-to-land-a-500k-ai-pm-job-at-openai-the-2026-playbook-ae074fed5b54"
+        },
+        {
+          "title": "What Does an AI Product Manager Do? Daily Responsibilities, Skills & Why Startups Need One in May 2026",
+          "url": "https://www.paraform.com/insights/what-does-ai-product-manager-do"
+        },
+        {
+          "title": "AI Product Manager Hiring: Comp and Sourcing 2026",
+          "url": "https://www.herohunt.ai/blog/ai-product-manager-hiring-comp-and-sourcing-2026/"
+        },
+        {
+          "title": "AI Project Manager: Role, Salary and Career in 2026",
+          "url": "https://em-lyon.com/en/student/guides/jobs/ai-project-manager"
+        },
+        {
+          "title": "I Reviewed 50 AI PM Job Descriptions. Here’s What Companies Actually Want in 2026.",
+          "url": "https://www.technomanagers.com/p/i-reviewed-50-ai-pm-job-descriptions"
+        },
+        {
+          "title": "The Great Reshuffling: How AI Is Polarizing the Product Manager Role in 2026",
+          "url": "https://www.institutepm.com/knowledge-hub/ai-reshaping-pm-role-2026"
+        },
+        {
+          "title": "Turning Content into Pipeline in the Age of AI: Lessons from 2026 B2BMX - Demand Gen Report",
+          "url": "https://www.demandgenreport.com/industry-news/news-brief/turning-content-into-pipeline-in-the-age-of-ai-lessons-from-2026-b2bmx/53472"
+        },
+        {
+          "title": "Educational Content Creation with AI: 2026 Build Guide",
+          "url": "https://www.forasoft.com/blog/article/ai-assisted-educational-content-creation"
+        },
+        {
+          "title": "AI product roadmap 2026: the training loop",
+          "url": "https://www.lazarev.agency/articles/ai-product-roadmap"
+        },
+        {
+          "title": "AI Agents in Production: Five Hard-Won Lessons From Shipping in 2026 · Softronic",
+          "url": "https://softronic.dev/blog/ai-agents-production-lessons-2026"
+        },
+        {
+          "title": "AI Product Launches News",
+          "url": "https://blog.mean.ceo/ai-product-launches-news-october-2026/"
+        },
+        {
+          "title": "[Decision]: Choose lesson content delivery pipeline and publication boundary · Issue #26 · nikolaytashev/ai-first-learning-app",
+          "url": "https://github.com/nikolaytashev/ai-first-learning-app/issues/26"
+        },
+        {
+          "title": "Docebo",
+          "url": "https://en.wikipedia.org/wiki/Docebo"
+        },
+        {
+          "title": "GitHub - HF-teamdev/ruvnet-brain: RuvNet Brain — a downloadable, source-grounded brain for Claude Code over Reuven Cohen's (rUv's) RuvNet stack: RuVector/RVF, Ruflo, AgentDB, RuLake, SPARC + 21 building blocks. Grounds Claude in real source via one MCP tool (search_ruvnet), so it builds with the stack instead of drifting off it.",
+          "url": "https://github.com/HF-teamdev/ruvnet-brain"
+        },
+        {
+          "title": "How AI Is Changing Product Management in 2026",
+          "url": "https://muhammadusmanmustafa.info/blog/how-ai-is-changing-product-management-2026"
+        },
+        {
+          "title": "Evals for PMs: A practical guide to AI product quality - Blog - Braintrust",
+          "url": "https://www.braintrust.dev/blog/evals-for-pms"
+        },
+        {
+          "title": "Building a Golden Eval Dataset from Production Traffic",
+          "url": "https://openrouter.ai/blog/tutorials/building-a-golden-eval-dataset-from-production-traffic/"
+        },
+        {
+          "title": "Beginner's Guide to AI Evals (Walkthrough) - by Aman Khan",
+          "url": "https://amankhan1.substack.com/p/beginners-guide-to-ai-evals-walkthrough"
+        },
+        {
+          "title": "The Role of Evaluation Datasets in AI: A Practical Guide",
+          "url": "https://mlflow.org/articles/role-of-evaluation-datasets-ai/"
+        },
+        {
+          "title": "The Evaluation Context Protocol (ECP): A Portable Contract for AI Agent Evaluation",
+          "url": "https://arxiv.org/pdf/2608.19263"
+        },
+        {
+          "title": "Pre-production LLM evaluation: datasets, synthetic data & benchmarks",
+          "url": "https://arize.com/llm-evaluation/pre-production-llm-evaluation/"
+        },
+        {
+          "title": "Golden dataset evaluation: build and maintain LLM test sets - Langfuse",
+          "url": "https://langfuse.com/resources/engineering/golden-dataset-evaluation"
+        },
+        {
+          "title": "Golden datasets for AI testing: 10 practical rules",
+          "url": "https://www.vgtc.io/insights/golden-datasets-for-ai-testing"
+        },
+        {
+          "title": "Golden Datasets for AI Agent Evaluation: How-To Guide",
+          "url": "https://www.lyzr.ai/blog/golden-datasets-ai-agent-evaluation/"
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "# This Week in Claude & AI Automation\n\n## 1. Claude Code \"mods\" — rewrite the agent's behavior in TypeScript\n\nMods landed October 1 in Claude Code 2.1.287. \n\nThese are small TypeScript functions that change how Claude Code works. A mod can rewrite a prompt, add new UI, replace a built-in feature, or add entirely new functionality — and you can write one yourself or ask Claude Code to write one for you.\n\n Unlike classic shell hooks, \n\nmods do something structurally different: a mod is a TypeScript plugin that registers event handlers directly inside the Claude Code harness — the software layer that assembles context, calls tools, and renders sessions. That in-process position is the change worth understanding.\n\n**Try this:** Update to 2.1.287+, then in an interactive Claude Code session paste Anthropic's own example prompt verbatim:\n\n```\ncreate a mod that draws my context window as a stacked bar above the prompt, one color per category like /context, toggled with /context-bar\n```\n\nClaude wrote the mod, loaded it into the running session, and /context-bar now toggles a live context bar with a legend — no more typing /context to check usage.\n\n \n\nYou don't need Node.js, a bundler, or a build step, because Claude Code loads .js and .ts files directly.\n\n**Source:** Anthropic / Claude Code Docs — https://code.claude.com/docs/en/plugins/mods/create\n\n---\n\n## 2. \"You should know\" — a built-in watchdog subagent for long tasks\n\nThe same release shipped a built-in mod that runs a second agent in parallel with your main session. \n\nIn eligible sessions, the built-in plugin uses a side agent to flag things you or Claude might miss while Claude works. You can turn it on with /plugin enable cc-plugin-you-should-know@builtin.\n\n \n\nDuring longer tasks, the side agent looks for something you might miss and displays a note above the prompt when it finds one.\n\n It's off by default and its source is a good reference template for writing your own observer mods.\n\n**Try this:** In a Claude Code session (2.1.287+, first-party with telemetry on), run:\n\n```\n/plugin enable cc-plugin-you-should-know@builtin\n```\n\nIt stays enabled for future sessions. Note the v2.1.288 refinement: \n\nthe release followed on October 2, 2026, and its notes now use \"we,\" \"the main agent,\" or \"you\" to reflect who made a decision.\n\n**Source:** Nerdschalk — https://nerdschalk.com/claude-code-you-should-know-plugin/\n\n---\n\n## 3. Docs, Slides, and Design now live inside any conversation (including Claude Code)\n\nThe separate Cowork/Design surfaces are gone — you now generate editable deliverables from any chat. \n\nClaude Docs lets you write living documents with Claude and the people you work with. Ask for a doc in any conversation, and Claude drafts it in front of you, asks clarifying questions up front, and leaves comments explaining its choices. You can edit the doc yourself, ask Claude for the next pass, and share it by link, without moving your work into another tool.\n\n For practitioners, the useful part is repo-aware output: \n\nClaude Design, Claude Slides, and Claude Docs now work inside Claude Code — point Claude at files and RFCs, ask for a design review deck or UI mockup, edit the artifact in the conversation or canvas, and share the result from a desktop or terminal session.\n\n**Try this:** In Claude Code, after a working session, run this exact request:\n\n```\nTurn this session into a shareable runbook doc: summarize the problem, the fix, the files touched, and open follow-ups. Add my teammate's review as comments.\n```\n\nOn desktop, the doc opens in the side panel; in the terminal, Claude gives you a link to open the doc on the web.\n\n You can also start any request with `/docs`, or export decks as \n\nPowerPoint file or PDF.\n\n**Source:** Anthropic Support — https://support.claude.com/en/articles/16923645-get-started-with-claude-docs\n\n---\n\n## 4. MCP 2026-07-28: stateless core changes how you deploy servers\n\nThe fifth MCP spec release is rolling out across Claude products and matters if you build or host connectors. \n\nMCP moves from a bidirectional stateful protocol to a request/response model, so servers can now deploy on serverless and edge infrastructure.\n\n Two other shifts: \n\nMCP Apps and Tasks now ship under a versioned extensions framework, giving developers a formal path to add interactive UIs and long-running work without changing the core protocol, and authorization now aligns with production OAuth 2.0 and OIDC so servers connect to enterprise identity systems like Entra or Okta without workarounds.\n\n**Try this:** If you maintain an MCP server, migrate auth off Dynamic Client Registration. \n\nDCR is officially deprecated and fully transitions to Client Metadata Documents (CIMD) — which eliminates the redirect_uri errors you hit when developing CLI clients because OAuth refused localhost redirection.\n\n Redeploy your now-stateless server to serverless/edge to drop session-management code. To consume servers in Claude, open `/plugin` and install from the directory — \n\nClaude now lists over 950 MCP servers in the connectors directory.\n\n**Source:** Anthropic — https://claude.com/blog/bringing-mcp-2026-07-28-to-claude\n\n---\n\n## 5. Context compaction prompt — keep long agent runs from degrading (not Claude-only)\n\nA reusable pattern for any SDK-based agent: when the conversation grows past a threshold, summarize the run into a compact successor context instead of letting raw history rot the window. The published approach triggers \n\nat COMPACT_THRESHOLD = 0.75 of the model context window.\n\n**Try this:** Wire a compaction step that fires when token usage crosses ~75% of your window, calling the model with this system prompt (adapted from the published pattern):\n\n```\nYou are summarising a long agent run for a successor context window.\nPreserve:\n- the original objective verbatim,\n- decisions made and their justifications,\n- pending sub-tasks,\n- the last 3 tool calls and their results verbatim.\nSummarise everything else into a numbered list of facts.\n```\n\nReplace your message array with the summary plus the preserved verbatim items, then continue the loop. This targets \n\ncontext distraction from history accumulation\n\n — one of the four standard failure modes alongside tool overload, context clash, and context poisoning.\n\n**Source:** Reactify Solutions — https://www.reactify-solutions.com/articles/context-engineering-ai-agents-2026\n\n---\n\n## 6. n8n multi-agent orchestration with a shared state object + human gate\n\nA concrete, shippable automation pattern for the no-code/low-code crowd: rather than one monolithic agent, split work across role-specific LLM calls passing a shared state object, with an approval gate before anything irreversible. \n\nMulti-agent orchestration splits a complex task across multiple LLM calls, each with a specific role, and passes a shared state object between them so the workflow does not lose context.\n\n**Try this — build this exact n8n flow:**\n- **Trigger:** Webhook or Schedule\n- \n\nState Init: Set node that creates the shared state object { \"research\": {}, \"draft\": {}, \"review\": {}, \"approved\": false }\n\n- **Research Agent:** LLM node, research-focused system prompt, writes to `research`\n- **Writer Agent:** LLM node reading `research` from state, writes to `draft`\n- **Editor Agent:** LLM node reading `draft` from state\n- **Merge Node:** combines all state fields\n- **Gate:** IF node checks `state.approved` before publishing\n\nFor the human checkpoint, \n\nuse n8n's Wait node to insert a human approval step before any irreversible action — sending external emails, processing refunds, modifying database records: the agent prepares the action, the Wait node pauses execution, and a human approves.\n\n Also name tools precisely: \n\nget_customer_by_email beats api_call, because the LLM uses the tool name and description to decide when to call it.\n\n**Source:** Synta — https://synta.io/blog/n8n-make-ai-workflows",
+      "sources": [
+        {
+          "title": "Code with Claude 2026: 5 New Agent Features Anthropic Just Shipped",
+          "url": "https://www.mindstudio.ai/blog/code-with-claude-2026-new-agent-features"
+        },
+        {
+          "title": "Product announcements Category",
+          "url": "https://claude.com/blog-category/announcements"
+        },
+        {
+          "title": "Claude Code Changelog (October 2026)",
+          "url": "https://www.gradually.ai/en/changelogs/claude-code/"
+        },
+        {
+          "title": "Claude Updates by Anthropic - October 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Claude (language model)",
+          "url": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+        },
+        {
+          "title": "Anthropic asks Claude users to share voice data for AI model training",
+          "url": "https://bleepingcomputer.com/news/artificial-intelligence/anthropic-asks-claude-users-to-share-voice-data-for-ai-model-training"
+        },
+        {
+          "title": "Claude Code changelog - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/changelog"
+        },
+        {
+          "title": "Anthropic Release Notes - October 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - October 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "MCP 2026-07-28 spec: stateless core, coming to Claude",
+          "url": "https://claude.com/blog/bringing-mcp-2026-07-28-to-claude"
+        },
+        {
+          "title": "Official Meta Ads MCP for Claude: Complete Guide to All 29 Tools (April 2026)",
+          "url": "https://pasqualepillitteri.it/en/news/1707/official-meta-ads-mcp-claude-29-tools-2026"
+        },
+        {
+          "title": "Release Notes: ActivTrak MCP for Claude (EA)",
+          "url": "https://support.activtrak.com/hc/en-us/articles/55616626310811-Release-Notes-ActivTrak-MCP-for-Claude-EA"
+        },
+        {
+          "title": "Claude (language model)",
+          "url": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+        },
+        {
+          "title": "Claude's Largest MCP Upgrade Drives Explosive Growth: Monthly Downloads Surpass 400 Million",
+          "url": "https://eu.36kr.com/en/p/3916379879861638"
+        },
+        {
+          "title": "Claude Updates by Anthropic - October 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Claude Features 2026: Projects, Artifacts, Memory, Computer Use, Skills, MCP - Suprmind",
+          "url": "https://suprmind.ai/hub/claude/features/"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - October 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "From single call to agents: five new Claude capabilities now available in Microsoft Foundry",
+          "url": "https://devblogs.microsoft.com/foundry/five-new-claude-capabilities-now-available-in-foundry/"
+        },
+        {
+          "title": "AGTP on X: \"Claude Code just got mods, a way to customize how it behaves and looks. Here's what you need to know. The ClaudeDevs account announced it on Oct 2, 2026, one day after the https://t.co/0uY6pOgayx launch. The post says you can now mod Claude Code to change how it behaves, customize the … / X",
+          "url": "https://x.com/AGTPinsights/status/2105768033419743253"
+        },
+        {
+          "title": "Claude Code Gets Mods, Plugins That Rewrite the Agent",
+          "url": "https://pasqualepillitteri.it/en/news/19871/claude-code-mods-plugins"
+        },
+        {
+          "title": "Claude Updates by Anthropic - October 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Create a mod - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/plugins/mods/create"
+        },
+        {
+          "title": "Claude Code mods: How to Install, Create, Differences from Hooks, and Supported Environments - SmartScope",
+          "url": "https://smartscope.blog/en/blog/claude-code-mods-how-to-install-create-2026/"
+        },
+        {
+          "title": "Claude Code Adds Mods Written in TypeScript",
+          "url": "https://cthcommunity.com/en/news/claude-code-mods/"
+        },
+        {
+          "title": "Claude (language model)",
+          "url": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+        },
+        {
+          "title": "Claude Code Desktop Mods: Install and Build One (2026)",
+          "url": "https://www.explainx.ai/blog/claude-code-desktop-app-mods-how-to-install-and-build-guide-2026"
+        },
+        {
+          "title": "50 Free Claude Code Mods to Install (MIT, Tested) 2026",
+          "url": "https://www.explainx.ai/blog/awesome-claude-code-mods-50-open-source-mods-install-guide-2026"
+        },
+        {
+          "title": "Claude Slides: What's New, How to Access It, and Alternatives (2026)",
+          "url": "https://powerdrill.ai/blog/claude-slides"
+        },
+        {
+          "title": "Claude Slides: how Claude makes presentations (2026)",
+          "url": "https://www.eesel.ai/blog/claude-slides"
+        },
+        {
+          "title": "Get started with Claude Docs",
+          "url": "https://support.claude.com/en/articles/16923645-get-started-with-claude-docs"
+        },
+        {
+          "title": "Anthropic's Claude can now create editable documents for you - Engadget",
+          "url": "https://www.engadget.com/2259938/anthropics-claude-can-now-create-editable-documents-for-you-cowork-chat-together/"
+        },
+        {
+          "title": "Claude Docs, Slides and Design: The Latest Massive Update from Anthropic",
+          "url": "https://go9x.com/blog/claude-docs-slides-design"
+        },
+        {
+          "title": "Claude Slides Launch Brings Editable Decks Into Every Conversation",
+          "url": "https://www.remio.ai/post/claude-slides-launch-brings-editable-decks-into-every-conversation"
+        },
+        {
+          "title": "Claude Docs and Slides: What They Can (and Can’t) Do - Serverman",
+          "url": "https://www.serverman.co.uk/ai/claude/claude-docs-and-slides-what-they-can-and-cant-do/"
+        },
+        {
+          "title": "Claude Slides: What It Is, What Plan You Need, and Who Should Use It",
+          "url": "https://christopheralarcon.com/blog/claude-slides"
+        },
+        {
+          "title": "Claude Code Design, Slides, and Docs: Anthropic Brings Artifacts Into Coding Workflows",
+          "url": "https://aicatchup.com/news/claude-code-design-slides-docs-artifacts"
+        },
+        {
+          "title": "build(deps): bump @anthropic-ai/claude-code from 2.1.286 to 2.1.287 in /evals by dependabot[bot] · Pull Request #903 · PIsberg/vibetags",
+          "url": "https://github.com/PIsberg/vibetags/pull/903"
+        },
+        {
+          "title": "Claude Code Changelog on X: \"Claude Code CLI 2.1.287 changelog: New features: • Added Claude Mods: plugins may now modify deeper behavior • Added You should know, an opt-in plugin where a side agent watches your back and flags things you or Claude might miss. Turn it on with /plugin enable cc-plug… / X",
+          "url": "https://x.com/ClaudeCodeLog/status/2105721924470878244"
+        },
+        {
+          "title": "Claude Code Mods: A Salesforce Developer's Guide to the Moddable Agent - DEV Community",
+          "url": "https://dev.to/rohanmehta/claude-code-mods-a-salesforce-developers-guide-to-the-moddable-agent-mng"
+        },
+        {
+          "title": "Claude Code Adds 'You Should Know' to Flag Missed Details",
+          "url": "https://nerdschalk.com/claude-code-you-should-know-plugin/"
+        },
+        {
+          "title": "You Can Now Mod Claude Code",
+          "url": "https://www.learnmind.ai/blog-post/you-can-now-mod-claude-code"
+        },
+        {
+          "title": "How do I enable Claude Mods and You should know in Claude Code? — claude/for",
+          "url": "https://claude-for.com/guides/how-do-i-use-claude-code-mods"
+        },
+        {
+          "title": "Claude Code Mods: What Changed, Who It Affects, How to… - Eagentix Blogs",
+          "url": "https://blogs.eagentix.com/2026/10/02/claude-code-mods-what-changed-who-it-affects-how-to/"
+        },
+        {
+          "title": "Claude Code Mods: install, use and disable them safely",
+          "url": "https://deepseekartifacts.com/guides/claude-code-mods-tutorial"
+        },
+        {
+          "title": "Anthropic Implements Built-In Plugin System \"Mods\" in Claude Code — BigGo Finance",
+          "url": "https://finance.biggo.com/news/50621d0e-7b3b-46cf-a0a1-1dce84159036"
+        },
+        {
+          "title": "Claude Code Mods: Official TS Plugins (Oct 1)",
+          "url": "https://explainx.ai/blog/claude-code-mods-typescript-plugins-guide-2026"
+        },
+        {
+          "title": "The Hitchhiker's Guide to Agentic AI: From Foundations to Systems",
+          "url": "https://arxiv.org/pdf/2606.24937"
+        },
+        {
+          "title": "Context Engineering for Production AI Agents in 2026: Beyond Prompt Engineering and Basic RAG - DEV Community",
+          "url": "https://dev.to/jasminshukla/context-engineering-for-production-ai-agents-in-2026-beyond-prompt-engineering-and-basic-rag-5564"
+        },
+        {
+          "title": "Mise en Place for Agentic Coding: Deliberate Preparation as Context Engineering Methodology",
+          "url": "https://arxiv.org/pdf/2605.05400"
+        },
+        {
+          "title": "AI Agent Landscape 2025–2026: A Technical Deep Dive",
+          "url": "https://tao-hpu.medium.com/ai-agent-landscape-2025-2026-a-technical-deep-dive-abda86db7ae2"
+        },
+        {
+          "title": "State of Context Engineering in 2026",
+          "url": "https://pub.towardsai.net/state-of-context-engineering-in-2026-cf92d010eab1?gi=4c993456db18"
+        },
+        {
+          "title": "Context Engineering: Agent Reliability Playbook 2026",
+          "url": "https://www.digitalapplied.com/blog/context-engineering-agent-reliability-playbook-2026"
+        },
+        {
+          "title": "Context engineering for AI agents in 2026: write, select, compress, isolate, and the four ways long contexts fail",
+          "url": "https://www.reactify-solutions.com/articles/context-engineering-ai-agents-2026"
+        },
+        {
+          "title": "Why Subagents Are Context Engineering for AI Agents",
+          "url": "https://www.decodingai.com/p/subagents-are-context-engineering"
+        },
+        {
+          "title": "Context Engineering: The 2026 Playbook for AI Agents",
+          "url": "https://cruxdigits.nl/blog/context-engineering-ai-agents-2026/"
+        },
+        {
+          "title": "How to Build AI Agents with n8n: Complete 2026 Guide",
+          "url": "https://strapi.io/blog/build-ai-agents-n8n"
+        },
+        {
+          "title": "n8n Guide 2026: Features & Workflow Automation Deep Dive",
+          "url": "https://hatchworks.com/blog/ai-agents/n8n-guide/"
+        },
+        {
+          "title": "Agentic commerce",
+          "url": "https://en.wikipedia.org/wiki/Agentic_commerce"
+        },
+        {
+          "title": "N8n",
+          "url": "https://en.wikipedia.org/wiki/N8n"
+        },
+        {
+          "title": "Flowable",
+          "url": "https://en.wikipedia.org/wiki/Flowable"
+        },
+        {
+          "title": "How to Make AI Workflows with n8n: 5 Real Patterns That Actually Ship (2026)",
+          "url": "https://synta.io/blog/n8n-make-ai-workflows"
+        },
+        {
+          "title": "n8n 2.0 AI Agent Workflows: A Practitioner's Guide",
+          "url": "https://www.jahanzaib.ai/blog/n8n-ai-agent-workflows-practitioner-guide"
+        },
+        {
+          "title": "n8n AI Agent Nodes Guide 2026: Build Workflows That Think and Act",
+          "url": "https://baeseokjae.github.io/posts/n8n-ai-agent-nodes-guide-2026/"
+        },
+        {
+          "title": "N8N AI Agents Features 2026: The Complete Founder's Guide",
+          "url": "https://chronexa.io/blog/n8n-ai-agent-features-2026"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "# This Week in AI: Briefing\n\n## 1. OpenAI expands into Indian news, but a lawsuit shadows the deals\nOpenAI has signed its first publicly disclosed publisher partnerships in India, with the country's two largest newspaper groups: \n\nBennett Coleman and Co Ltd, publisher of The Times of India and The Economic Times, and The Indian Express Group have both signed discovery partnerships with OpenAI.\n\n Under the terms, ChatGPT will surface summaries, excerpts, and live reporting with attribution and direct links back to the original articles, and \n\nthe deal covers live reporting and archived content across seven languages: English, Hindi, Marathi, Malayalam, Tamil, Bengali, and Gujarati.\n\n The context that matters: these agreements came just as \n\nIndia's Digital News Publisher's Association sued OpenAI at the High Court in Delhi for allegedly infringing the copyright of its members\n\n — the same carrot-and-stick dynamic (licensing deals alongside litigation) that has played out in the US and Europe. For a media company, this is a template worth watching: \n\nOpenAI has signed content partnerships with over 25 news publishers covering 160+ outlets in over 20 languages\n\n, and \n\nseveral Indian publishers are now reaching out to explore similar commercial arrangements.\n\n**Region:** India · **Source:** Press Gazette — https://pressgazette.co.uk/platforms/news-publisher-ai-deals-lawsuits-openai-google/\n\n## 2. China's Alibaba unveils \"most powerful\" domestic AI chip and trillion-parameter model plans\nAt its flagship Hangzhou conference, \n\nAlibaba unveiled new artificial intelligence chip technologies and plans for more powerful models, including what it said was China's most powerful AI chip, days ahead of a meeting between Chinese and U.S. leaders.\n\n \n\nCEO Eddie Wu said the new Zhenwu V900 chip is the \"most powerful AI chip in China today\" and can deliver three times the performance of the company's previous generation.\n\n The strategic ambition is to close the gap with US frontier labs despite export controls: \n\nAlibaba said it plans to train a new AI model at the scale of five to 10 trillion parameters, bringing it closer to the most advanced models from the U.S. Its latest Qwen3.8-Max model has 2.4 trillion parameters.\n\n This matters because Chinese open models are increasingly used worldwide, including by media and creator tools, and \n\nopen Chinese models, which are often more affordable than cutting-edge closed models from leading U.S. AI labs, have also been making inroads globally, including in the U.S.\n\n**Region:** China · **Source:** ABC News — https://abcnews.com/International/wireStory/chinas-alibaba-unveils-new-powerful-chip-ambitious-ai-136641611\n\n## 3. EU AI Act transparency rules begin to bite — a December deadline looms for existing chatbots\nEnforcement of the EU AI Act has moved from theory to practice. \n\nEurope's fight to regulate AI models moved from paper to practice on 2 August 2026, when the European Commission's AI Office and national authorities began enforcing the AI Act.\n\n The provisions most relevant to media and content businesses are transparency obligations: \n\nchatbots have to identify themselves as automated systems, deepfakes need a label, and machine-made or edited content must carry machine-readable marks so it can be detected automatically.\n\n A concrete near-term deadline is now in view — under the Digital Omnibus on AI, \n\nproviders of generative systems placed on the market before 2 August 2026 must take the necessary steps to comply with Article 50(2) by 2 December 2026.\n\n The penalties are significant: \n\ncompanies that ignore these obligations risk fines of up to €15 million or 3% of their worldwide annual turnover, whichever is higher.\n\n Note that the heavier high-risk rules were pushed back, with \n\nhigh-risk obligations now applying from 2 December 2027 for Annex III systems and 2 August 2028 for Annex I products.\n\n**Region:** EU · **Source:** Help Net Security — https://www.helpnetsecurity.com/2026/08/04/eu-ai-act-enforcement-ai-models/\n\n## 4. Abu Dhabi hosts \"AI Everything\" as the Gulf pivots from hype to deployment\nThe UAE is staging one of the year's largest AI events, framed around putting AI into actual government and industry use rather than demos. \n\nAI Everything Abu Dhabi is taking place on October 6 and 7, 2026, at the Abu Dhabi National Exhibition Centre, positioning itself as the world's largest AI-first exhibition and summit\n\n, with \n\nspeakers including Arthur Mensch, co-founder and CEO of Mistral AI, and Marc Raibert, founder of Boston Dynamics.\n\n The backdrop is an aggressive state push: \n\nAbu Dhabi aims to become the world's first AI-native government by 2027, integrating more than 40 government entities into a single AI-driven ecosystem.\n\n For media readers, the Gulf is also building creator- and media-specific programs — this week \n\nthe UAE's National Media Authority and Arab Youth Centre launched a Smart Media Agents Challenge asking participants to build AI agents for media efficiency, credibility and disinformation response\n\n, while a \n\nRiyadh Creative Summit examined AI's impact on Saudi Arabia's creative economy, bringing media, advertising, technology and film professionals together while keeping human creativity central.\n\n**Region:** Gulf (UAE/Saudi Arabia) · **Source:** Gulf News — https://gulfnews.com/uae/government/abu-dhabi-puts-ai-to-work-as-global-race-shifts-from-hype-to-deployment-1.500698086\n\n## 5. AMD buys Fei-Fei Li's World Labs for $8.2B, betting on \"spatial\" AI beyond chatbots\nIn a notable US industry move, \n\nAMD has agreed to acquire AI startup World Labs in an all-stock deal valued at $8.2 billion.\n\n The deal is as much about talent and direction as technology: \n\nAMD is buying Fei-Fei Li's startup, betting that \"spatial\" AI will be the next big computing wave beyond chatbots\n\n, and \n\nWorld Labs co-founder and CEO Fei-Fei Li will join AMD as executive vice president and chief scientist, reporting to chair and CEO Lisa Su.\n\n The reasoning is that new AI workloads create new chip demand, as \n\nWorld Labs is developing a so-called world model, which can be used to simulate 3D environments\n\n for robotics and physically grounded applications — an area where AMD is chasing Nvidia. The main caveat for anyone tracking it: \n\nthe acquisition has not closed; AMD expects it to close by the end of 2026, subject to regulatory approvals.\n\n**Region:** US · **Source:** CNBC — https://www.cnbc.com/2026/09/28/amd-fei-fei-li-world-labs.html",
+      "sources": [
+        {
+          "title": "Funding News Today, October 2",
+          "url": "https://aiweekly.co/ai-news-today/funding-ai-news"
+        },
+        {
+          "title": "Security and AI news from the week beginning 28 September 2026 -",
+          "url": "https://enterprisetimes.co.uk/2026/10/05/security-and-ai-news-from-the-week-beginning-28-september-2026"
+        },
+        {
+          "title": "AI News Today, October 4: Top Stories",
+          "url": "https://aiweekly.co/ai-news-today"
+        },
+        {
+          "title": "‘Model fatigue’ sets in as AI labs race to roll out new versions at frenetic pace",
+          "url": "https://www.cnbc.com/2026/09/06/meta-google-openai-anthropic-ai-model-fatigue.html"
+        },
+        {
+          "title": "Rapid AI Model Releases Shake Up Industry",
+          "url": "https://www.briefs.co/news/a-week-of-rapid-ai-model-releases-sends-firms-racing-to-keep/"
+        },
+        {
+          "title": "AI Agents Directory Daily Brief: Funding Surges, New Models Emerge, and Security Concerns Rise",
+          "url": "https://aiagentsdirectory.com/news/ai-agents-directory-daily-brief-funding-surges-new-models-emerge-and-security-concerns-rise"
+        },
+        {
+          "title": "Google rolls out Gemini 4 Argon, its most advanced AI model",
+          "url": "https://www.cnbc.com/2026/09/30/google-gemini-4-argon-ai.html"
+        },
+        {
+          "title": "Weekly News Roundup: Feb 23 - Mar 1, 2025",
+          "url": "https://adriennelahens.substack.com/p/weekly-news-roundup-feb-23-mar-1"
+        },
+        {
+          "title": "Generative AI News This Week - OpenAI's New Board Powers, Gemini v GPT-3 & 4, Copilot Music, Instagram, and More",
+          "url": "https://synthedia.substack.com/p/generative-ai-news-this-week-openais"
+        },
+        {
+          "title": "How a Chinese AI model put Big Tech on notice",
+          "url": "https://www.nbcnews.com/tech/tech-news/china-ai-open-source-model-kimi-moonshot-rcna588683"
+        },
+        {
+          "title": "China's Alibaba unveils new powerful chip and ambitious AI model plans - ABC News",
+          "url": "https://abcnews.com/International/wireStory/chinas-alibaba-unveils-new-powerful-chip-ambitious-ai-136641611"
+        },
+        {
+          "title": "Z.ai shares surge 8% after releasing new AI model running only on Chinese chips",
+          "url": "https://www.cnbc.com/2026/08/27/zai-shares-surge-new-ai-model-using-chinese-chips.html"
+        },
+        {
+          "title": "Does China’s latest AI model finally equal US rivals? What scientists think",
+          "url": "https://www.nature.com/articles/d41586-026-02281-2"
+        },
+        {
+          "title": "As the world debates the risks of AI, China closes the technology gap with the US - ABC News",
+          "url": "https://abcnews.com/Technology/wireStory/world-debates-risks-ai-china-closes-technology-gap-136455960"
+        },
+        {
+          "title": "Alibaba Unveils Qwen3.8-Max Model—China’s Latest AI Challenger To OpenAI And Anthropic",
+          "url": "https://www.forbes.com/sites/tylerroush/2026/08/03/alibaba-unveils-qwen38-max-model-chinas-latest-ai-challenger-to-openai-and-anthropic/"
+        },
+        {
+          "title": "china story briefing finding the",
+          "url": "https://chinacompany.substack.com/p/china-story-briefing-finding-the"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/alibabas-qwen25-releases-100-models/comments"
+        },
+        {
+          "title": "Recode China AI",
+          "url": "https://recodechinaai.substack.com/p/zhipu-ais-her-chatbot-alibabas-multimodal/comments"
+        },
+        {
+          "title": "What came into force with the EU’s AI Act this week",
+          "url": "https://www.aljazeera.com/news/2026/8/6/what-came-into-force-with-the-eus-ai-act-this-week-and-what-didnt"
+        },
+        {
+          "title": "EU begins enforcing AI Act, putting AI models under the microscope - Help Net Security",
+          "url": "https://www.helpnetsecurity.com/2026/08/04/eu-ai-act-enforcement-ai-models/"
+        },
+        {
+          "title": "AI Act Update: EU Resolves to Change Rules and Extend Deadlines",
+          "url": "https://www.lw.com/en/insights/ai-act-update-eu-resolves-to-change-rules-and-extend-deadlines"
+        },
+        {
+          "title": "EU agrees to amend AI Act, clarifies overlap with machinery rules",
+          "url": "https://iapp.org/news/a/eu-agrees-to-amend-ai-act-clarifies-overlap-with-machinery-rules"
+        },
+        {
+          "title": "AI regulation: the global situation — ActuIA",
+          "url": "https://actuia.com/en/news/ai-regulation-the-global-situation"
+        },
+        {
+          "title": "AI Act reloaded? What the latest AI Act changes mean in practice",
+          "url": "https://www.stibbe.com/publications-and-insights/ai-act-reloaded-what-the-latest-ai-act-changes-mean-in-practice"
+        },
+        {
+          "title": "EU AI Act Guide: Deadlines, Risk Tiers, Duties",
+          "url": "https://aigovernr.com/eu-ai-act"
+        },
+        {
+          "title": "AI Regulation News October 2026: EU August Reckoning & US Preemption Battle — Cubbbix Tools",
+          "url": "https://cubbbix.com/blog/ai-regulation-october-2026-global-update"
+        },
+        {
+          "title": "EU AI Act for Customer-Service Chatbots: The Article 50 Disclosure Checklist (2026)",
+          "url": "https://aliteq.com/eu-ai-act-chatbot-disclosure-checklist"
+        },
+        {
+          "title": "50/50 And Fair: Publishers Moving Forward With AI Licensing Deals",
+          "url": "https://magazinemanager.com/resources/blogs/publishers-moving-forward-with-ai-licensing-deals"
+        },
+        {
+          "title": "News/Media Alliance signs AI licensing deal to unlock recurring RAG revenue for small and mid-sized publishers",
+          "url": "https://digiday.com/media/news-media-alliance-signs-ai-licensing-deal-to-unlock-recurring-rag-revenue-for-small-and-mid-sized-publishers/"
+        },
+        {
+          "title": "A timeline of the major deals between publishers and AI tech companies in 2025",
+          "url": "https://digiday.com/media/a-timeline-of-the-major-deals-between-publishers-and-ai-tech-companies-in-2025/"
+        },
+        {
+          "title": "News Corp. strikes $50M-per-year AI licensing deal with Meta",
+          "url": "https://finance.yahoo.com/news/news-corp-strikes-50m-per-174929826.html"
+        },
+        {
+          "title": "News generative AI deals revealed: Who is suing, who is signing?",
+          "url": "https://pressgazette.co.uk/platforms/news-publisher-ai-deals-lawsuits-openai-google/"
+        },
+        {
+          "title": "Meta signs AI licensing deals",
+          "url": "https://pressgazette.substack.com/p/meta-signs-ai-licensing-deals-nyt"
+        },
+        {
+          "title": "Publishers Moving Forward With AI Licensing Deals",
+          "url": "https://magazinemanager.com/blog/publishers-moving-forward-with-ai-licensing-deals"
+        },
+        {
+          "title": "OpenAI, Perplexity secure more publisher licensing deals",
+          "url": "https://www.emarketer.com/content/openai--perplexity-secure-more-publisher-licensing-deals"
+        },
+        {
+          "title": "An illustration of Sam Altman in front of the OpenAI logo",
+          "url": "https://techcrunch.com/2024/05/25/this-week-in-ai-openai-and-publishers-are-partners-of-convenience"
+        },
+        {
+          "title": "Who's suing AI and who's signing latest: OpenAI signs first India deals",
+          "url": "https://news.google.com/read/CBMijAFBVV95cUxNbmlBOGF2YlY3cWZ0dXBrNWU2WV8yMGtJVjFCRUx2eUs3b0NNTzBsenpyOEloaVppUlpMOGxOMWtRX3BJYkcxbV9mZ1d5VzZLMmMzM1RNcXUycnRRTGpKV21FT3dJVkpuYTdQeEdJbzgwdUpJcV9kMEVwbkN3VDZKUVV1RlNEVVI5ZGN4eA?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+          "title": "Times of India publisher partners with OpenAI on news",
+          "url": "https://www.medianama.com/2026/09/223-bccl-openai-content-partnership-toi/"
+        },
+        {
+          "title": "Indian newspapers partner with OpenAI",
+          "url": "https://www.printweek.in/article/indian-newspapers-partner-with-openai/4w50y75c38nxp1xbjjc7mrxknf"
+        },
+        {
+          "title": "OpenAI's Media Partnerships News, Insights & Timeline",
+          "url": "https://www.exchange4media.com/trending-topic-ai/openais-media-partnerships.html"
+        },
+        {
+          "title": "OpenAI in talks with two more Indian publishers for partnerships - Exchange4media",
+          "url": "https://www.exchange4media.com/digital-news/openais-india-publisher-pipeline-expands-two-more-deals-in-the-works-158690.html"
+        },
+        {
+          "title": "The new news gatekeeper: Publishers taking a bet on OpenAI - Storyboard18",
+          "url": "https://www.storyboard18.com/how-it-works/indian-publishers-partner-with-openai-raising-questions-ws-l-110277.htm"
+        },
+        {
+          "title": "OpenAI’s TOI & IE deals spark wider interest among news publishers - Exchange4media",
+          "url": "https://www.exchange4media.com/digital-news/openais-toi-ie-deals-spark-wider-interest-among-news-publishers-158488.html"
+        },
+        {
+          "title": "Indian Express, Times Group partner with OpenAI, IBW News: English News, Breaking News in English, ताज़ा हिदी समाचार",
+          "url": "https://www.indianbroadcastingworld.com/indian-express-times-group/"
+        },
+        {
+          "title": "Indian Express Group Partners With OpenAI to Surface Journalism in ChatGPT",
+          "url": "https://insideai.news/news/ai-in-business/indian-express-openai-partnership/9910/"
+        },
+        {
+          "title": "AI Everything Abu Dhabi 2026: Transforming Healthcare, Government, and Industry with AI Innovation",
+          "url": "https://gulfnews.com/uae/government/abu-dhabi-puts-ai-to-work-as-global-race-shifts-from-hype-to-deployment-1.500698086"
+        },
+        {
+          "title": "Dubai launches agentic AI accelerator to transform public-facing government services",
+          "url": "https://thenationalnews.com/news/uae/2026/10/05/dubai-launches-agentic-ai-accelerator-to-transform-public-facing-government-services"
+        },
+        {
+          "title": "Dubai Future Foundation launches agentic AI accelerator for 33 government entities",
+          "url": "https://gulfnews.com/uae/government/dubai-future-foundation-launches-agentic-ai-accelerator-for-33-government-entities-1.500698845"
+        },
+        {
+          "title": "UAE Leads AI Revolution in Global Finance at Ai Everything Abu Dhabi 2026",
+          "url": "https://gulfnews.com/technology/uae-accelerates-ai-investment-as-technology-reshapes-global-finance-1.500697761"
+        },
+        {
+          "title": "AI safety and rapid rise of advanced technology key topics for Abu Dhabi summit",
+          "url": "https://thenationalnews.com/news/uae/2026/10/05/ai-safety-and-rapid-rise-of-advanced-technology-key-topics-for-abu-dhabi-summit"
+        },
+        {
+          "title": "27th Arabian Gulf Cup",
+          "url": "https://en.wikipedia.org/wiki/27th_Arabian_Gulf_Cup"
+        },
+        {
+          "title": "Qai partners with MEEZA to deploy advanced GPU infrastructure",
+          "url": "https://gccbusinessnews.com/qai-meeza-unite-for-gpu-infrastructure"
+        },
+        {
+          "title": "UAE to Shift 50% of Government Services to Autonomous AI Within Two Years, Aiming to Lead Global Agentic AI Adoption",
+          "url": "https://gulfnews.com/uae/government/uae-to-move-50-of-government-services-to-ai-within-two-years-1.500516798"
+        },
+        {
+          "title": "Latest GCC AI News",
+          "url": "https://gccainetwork.com/latest"
+        },
+        {
+          "title": "2025 in Saudi Arabia",
+          "url": "https://en.wikipedia.org/wiki/2025_in_Saudi_Arabia"
+        },
+        {
+          "title": "AMD to acquire World Labs in $8.2bn all-stock deal — Financier Worldwide",
+          "url": "https://www.financierworldwide.com/fw-news/2026/10/1/amd-to-acquire-world-labs-in-82bn-all-stock-deal"
+        },
+        {
+          "title": "AMD to acquire another AI software firm, World Labs",
+          "url": "https://www.itpro.com/business/acquisition/amd-to-acquire-another-ai-software-firm-world-labs"
+        },
+        {
+          "title": "Commentary: AMD challenges Nvidia in embodied AI as Lisa Su acquires Fei-Fei Li's World Labs",
+          "url": "https://www.digitimes.com/news/a20261001PD239/amd-acquisition-software-2026.html"
+        },
+        {
+          "title": "AMD Buys World Labs To Get Serious About Spatial AI - Finimize",
+          "url": "https://finimize.com/content/amd-buys-world-labs-to-get-serious-about-spatial-ai"
+        },
+        {
+          "title": "AMD’s next AI move: an $8.2 billion deal for a company that builds virtual worlds",
+          "url": "https://searchenginewatch.com/amds-next-ai-move-an-8-2-billion-deal-for-a-company-that-builds-virtual-worlds/"
+        },
+        {
+          "title": "AMD acquiring Fei-Fei Li's World Labs AI firm in deal worth $8.2 billion",
+          "url": "https://www.cnbc.com/2026/09/28/amd-fei-fei-li-world-labs.html"
+        },
+        {
+          "title": "AMD to acquire World Labs in deal worth $8.2 billion",
+          "url": "https://roboticsandautomationnews.com/2026/10/01/amd-to-acquire-world-labs-in-deal-worth-8-2-billion/105389/"
+        },
+        {
+          "title": "AMD to acquire World Labs for $8.2bn",
+          "url": "https://www.edtechinnovationhub.com/news/amd-makes-82bn-ai-bet-with-world-labs-acquisition-as-fei-fei-li-joins-as-chief-scientist"
+        },
+        {
+          "title": "world labs",
+          "url": "https://www.cbinsights.com/investor/world-labs"
+        }
+      ]
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "# Cross-Spectrum Briefing: This Week in US Politics\n*Week of September 29 – October 5, 2026 · ~30 days to the midterms*\n\n---\n\n## Story 1 — The Final Jobs Report Before the Midterms\n\n**What actually happened (factual anchor):** \n\nThe US economy added 29,000 jobs in September, and the unemployment rate ticked up to 4.2%. Economists had expected roughly 90,000 jobs added and unemployment to stay at 4.1%.\n\n \n\nRevisions also cut earlier figures: August's gain was reduced, and July flipped from a gain to a loss of 10,000 jobs, erasing about 60,000 jobs from earlier counts.\n\n \n\nAverage hourly earnings rose 0.1% from the prior month and 3% from a year ago — the sixth straight month of wages tracking below inflation.\n\n This was the last monthly employment report before Election Day.\n\n**PROGRESSIVE framing**\n*The Hill — news reporting* — https://thehill.com/newsletters/morning-report/6128965-2026-midterms-ddhq-donald-trump-polling-gas-prices-affordability-economy/\nLeft-leaning coverage ties the weak report to a broader affordability crisis under Trump. The reporting notes that \n\nan AP/NORC survey found 73% of American adults disapprove of the president's handling of the economy, and 65% directly blame Trump's policies for higher prices.\n\n The frame: a stalling labor market plus wages losing to inflation validates the Democratic argument that Republicans have failed working families.\n\n**NEUTRAL framing**\n*CNN — news reporting* — https://www.cnn.com/2026/10/02/economy/us-jobs-report-september-final\nWire-style coverage sticks to the data and its timing. \n\nThe US labor market hit a soft patch as the economy added just 29,000 jobs and the jobless rate rose to 4.2%; the final official snapshot before the midterms also showed recent months' hiring was weaker than previously thought and that wage growth slowed while inflation accelerated.\n\n**CONSERVATIVE framing**\n*Fox Business — news reporting* — https://www.foxbusiness.com/economy/us-jobs-report-september-2026\nRight-leaning business coverage emphasizes market reaction and Fed implications rather than political damage. It notes \n\nthe report increased the likelihood of the Federal Reserve leaving the benchmark rate unchanged at its next meeting.\n\n Supporting context across outlets: \n\nUS stocks surged as investors dialed down expectations of a Fed rate hike following the weaker-than-expected report.\n\n Trump adviser Kevin Hassett \n\nsaid he was \"not even a little bit\" disappointed in Friday's data.\n\n**Spin to flag:** The administration's \"greatest economy ever\" messaging conflicts with the official data. Separately, the \"bad-news-is-good-news\" market framing is real but narrow — it reflects interest-rate expectations, not household finances. \n\nA counterpoint cuts the other way too: the household survey looked stronger, showing 406,000 more people working and the labor force growing by 485,000, with unemployment rising partly because more people started looking for work.\n\n Both sides can cherry-pick; the wage-vs-inflation gap and the downward revisions are the hardest numbers.\n\n---\n\n## Story 2 — Latino Voters Swing Back Toward Democrats\n\n**What actually happened (factual anchor):** \n\nA new NBC News/Telemundo poll surveyed 800 registered Latino voters from Sept. 21–28. It found 69% of Latino voters disapprove of Trump's performance, and Democrats held a 24-point edge among Latino voters on which party should control Congress.\n\n \n\nThis follows the GOP making Trump's 2024 Latino gains central to its plan to keep the House, including drawing new, heavily Latino districts in Florida and Texas that looked deep red by 2024 results but are now shaping up as competitive.\n\n**PROGRESSIVE framing**\n*La Prensa — news reporting* — https://laprensa.org/poll-latinos-shift-democrats\nProgressive outlets frame this as buyer's remorse and a reversal of Trump's signature 2024 demographic breakthrough. \n\nLatino voters who moved toward Republicans and Trump in 2024 are now moving back toward Democratic congressional candidates heading into the 2026 midterms, according to several recent polls.\n\n The reasoning centers on cost-of-living pain and immigration enforcement seen as overreach.\n\n**NEUTRAL framing**\n*NBC News — news reporting* — https://www.nbcnews.com/politics/2026-election/poll-latino-voters-swing-away-trump-republicans-midterm-shift-rcna599894\nThe outlet that commissioned the poll reports both the swing and the caveats. \n\nLike the broader electorate, Latino voters are concerned about high prices and Trump's approach to immigration enforcement, and the president's approval sits at 27% among them.\n\n Importantly, it notes nuance: \n\nthe Democratic lead is double what it was at this point in 2024, though not quite the heights the party enjoyed at this time in 2018\n\n — and that \n\nthe Latino vote will not move as one bloc everywhere in the country.\n\n**CONSERVATIVE framing**\n*Fox News — news reporting* — https://www.wfmd.com/2026/10/04/latino-voters-swing-back-to-democrats-ahead-of-midterm-elections-poll/\nNotably, conservative outlets largely reported the same poll rather than disputing it, while emphasizing the GOP's longer-term baseline gains. Fox's coverage states \n\nDemocrats hold a huge advantage among Latino voters, despite Republicans making gains with the demographic in 2024,\n\n and adds historical context: \n\nin 2016 and 2018, Latino support for a GOP Congress sat at just 21% and 26% respectively.\n\n The implied argument: today's numbers still sit above the party's pre-Trump floor.\n\n**Spin to flag:** The strongest honest Republican point is the 2018/2016 baseline comparison — the GOP floor with Latinos is higher than it once was. But the claim that the 2024 realignment is holding is not supported by this week's data. The clearest factual anchor both sides accept: a 24-point Democratic edge with Latinos one month out.\n\n---\n\n## Story 3 — Supreme Court Opens Term With Big Oil Climate Case\n\n**What actually happened (factual anchor):** \n\nThe Supreme Court opened its 2026-27 term on Monday, Oct. 5, with oral arguments in Suncor Energy (U.S.A.) v. Commissioners of Boulder County — a lawsuit by a Colorado county seeking damages from oil and gas companies over their alleged role in climate change.\n\n \n\nThe core question is whether local governments can sue oil and gas companies in state court to help cover costs associated with climate change, with potentially billions of dollars at stake.\n\n \n\nJustice Alito recused himself, and eight justices heard arguments.\n\n \n\nExxonMobil and Suncor told the justices that nearly 60 state and local governments have filed similar suits.\n\n No ruling has been issued yet.\n\n**PROGRESSIVE framing**\n*Earthjustice — opinion/advocacy* — https://earthjustice.org/brief/2026/what-to-know-about-suncor-energy-v-boulder-county\nEnvironmental advocates frame this as a corporate-accountability case, not an emissions-regulation case. \n\nThey say Boulder is seeking to hold fossil fuel companies accountable for damage caused by years of public deception about their products' contribution to climate change.\n\n They warn the stakes extend beyond oil: \n\nif the Court doesn't let Boulder's case proceed to trial, the decision could effectively shield other industries — from social media giants to Big Pharma — from being brought to justice for deceiving the public about product risks.\n\n**NEUTRAL framing**\n*Roll Call — news reporting* — https://rollcall.com/2026/10/05/state-climate-suits-face-skeptical-supreme-court/\nStraight reporting on how the arguments went. \n\nA majority of the Court appeared skeptical of Boulder's effort to hold major oil producers accountable in state courts for the harms caused by climate change.\n\n \n\nAcross nearly two hours, justices raised concerns about upsetting the balance between states and the federal government, and the case may effectively decide whether several dozen lawsuits from cities and counties seeking damages under state law can move forward nationwide.\n\n**CONSERVATIVE framing**\n*Hot Air — opinion/commentary* — https://hotair.com/john-s-2/2026/10/05/supreme-court-hears-oral-arguments-in-a-major-climate-change-case-n3819644\nThe right frames this as federalism and \"lawfare.\" The piece calls it \n\nan attempt by Boulder County to sue Exxon and Suncor over the effects of climate change, warning that unless overturned it could start a nationwide trend attempting to bankrupt oil companies.\n\n The legal argument rests on precedent: \n\nthe Supreme Court ruled unanimously in AEP v. Connecticut (2011) that the Clean Air Act pre-empts similar state nuisance claims related to CO2 emissions, and Boulder is accused of trying to evade that holding by suing producers in state courts.\n\n**Spin to flag:** The two sides are genuinely arguing about different things, and both characterizations are defensible. Boulder frames the case as about *deception/marketing*; the companies frame it as backdoor *emissions regulation*. This distinction is live and contested in the Court itself — \n\neven liberal justices asked whether suing oil companies for deceptive marketing would have the same effect as ordering companies to reduce emissions.\n\n The \"bankrupt oil companies\" phrasing is advocacy, not a ruling; no decision has been made.\n\n---\n\n## Quick note on methodology\nAll sources are from the past week except where longer-range context was needed (the AEP v. Connecticut precedent; the 2016/2018 Latino baseline). Where a framing rests on a contested interpretation (the climate case) versus a false factual claim (e.g., \"greatest economy ever\" against official wage/jobs data), that distinction is flagged in each \"Spin to flag\" line rather than smoothed over.",
+      "sources": [
+        {
+          "title": "U.S. News and National Top Stories : NPR",
+          "url": "https://www.npr.org/sections/national/"
+        },
+        {
+          "title": "News: U.S. and World News Headlines : NPR",
+          "url": "https://www.npr.org/sections/news"
+        },
+        {
+          "title": "Meet the Press",
+          "url": "https://nbcnews.com/meet-the-press/transcripts/meet-press-october-4-2026-rcna601407"
+        },
+        {
+          "title": "Politics and Government News",
+          "url": "https://www.cnbc.com/politics/"
+        },
+        {
+          "title": "Nationwide opinion polling for the 2024 United States presidential election",
+          "url": "https://en.wikipedia.org/wiki/Nationwide_opinion_polling_for_the_2024_United_States_presidential_election"
+        },
+        {
+          "title": "February 9, 2026",
+          "url": "https://everythingbriefing.substack.com/p/february-9-2026"
+        },
+        {
+          "title": "news.syr.edu",
+          "url": "https://news.syr.edu/search/%2Cact/page/323"
+        },
+        {
+          "title": "news.syr.edu",
+          "url": "https://news.syr.edu/search/%2CoUl/page/142"
+        },
+        {
+          "title": "brooks capehart 1665182278",
+          "url": "https://www.pbs.org/video/brooks-capehart-1665182278"
+        },
+        {
+          "title": "Meet the Press",
+          "url": "https://nbcnews.com/meet-the-press/transcripts/meet-press-october-4-2026-rcna601407"
+        },
+        {
+          "title": "This Week in Politics",
+          "url": "https://en.wikipedia.org/wiki/This_Week_in_Politics"
+        },
+        {
+          "title": "Politics : NPR",
+          "url": "https://www.npr.org/sections/politics/"
+        },
+        {
+          "title": "Election News: Latest Results from Local and National Races",
+          "url": "https://www.nbcnews.com/politics/elections"
+        },
+        {
+          "title": "Elections 2026: The latest from the NPR Network : NPR",
+          "url": "https://npr.org/sections/elections"
+        },
+        {
+          "title": "News: U.S. and World News Headlines : NPR",
+          "url": "https://www.npr.org/sections/news/"
+        },
+        {
+          "title": "The Crazy and Insane Week In Presidential Politics",
+          "url": "https://www.nbcnews.com/meet-the-press/crazy-week-presidential-politics-n322851"
+        },
+        {
+          "title": "Wednesday's top stories",
+          "url": "https://www.axios.com/top/2024/10/30"
+        },
+        {
+          "title": "This week on \"Sunday Morning\" (September 8)",
+          "url": "https://www.cbsnews.com/amp/news/this-week-on-sunday-morning-september-8-2024"
+        },
+        {
+          "title": "U.S. job growth slowed, unemployment ticked up last month as midterms near - National",
+          "url": "https://globalnews.ca/news/12085414/us-jobs-report-september-2026/"
+        },
+        {
+          "title": "September jobs report: US economy added jobs at a slower pace amid uncertainty",
+          "url": "https://www.foxbusiness.com/economy/us-jobs-report-september-2026"
+        },
+        {
+          "title": "U.S. labor market slows with midterms on the horizon",
+          "url": "https://www.nbcnews.com/business/economy/labor-market-slowed-september-final-monthly-jobs-report-midterms-shows-rcna600497"
+        },
+        {
+          "title": "The US economy added just 29,000 jobs last month and the unemployment rate ticked up to 4.2%",
+          "url": "https://www.cnn.com/2026/10/02/economy/us-jobs-report-september-final"
+        },
+        {
+          "title": "US adds just 29,000 jobs as unemployment rises before midterm elections",
+          "url": "https://www.aljazeera.com/economy/2026/10/2/us-job-growth-slows-as-unemployment-rises-before-midterm-elections"
+        },
+        {
+          "title": "September jobs report sends unemployment to 4.2% ahead of midterms",
+          "url": "https://rollingout.com/2026/10/02/jobs-report-unemployment-midterms/"
+        },
+        {
+          "title": "US posts weak job growth data in September",
+          "url": "https://finance.yahoo.com/economy/policy/articles/us-posts-weak-job-growth-132758582.html"
+        },
+        {
+          "title": "News Release",
+          "url": "https://www.dol.gov/newsroom/releases/osec/osec20251120?lang=fr"
+        },
+        {
+          "title": "when will september jobs report be released labor market",
+          "url": "https://www.fortune.com/2025/11/15/when-will-september-jobs-report-be-released-labor-market"
+        },
+        {
+          "title": "Polls Show Latino Voters Shifting Away from GOP",
+          "url": "https://laprensa.org/poll-latinos-shift-democrats"
+        },
+        {
+          "title": "Poll: Latino voters swing away from Trump and Republicans",
+          "url": "https://www.nbcnews.com/politics/2026-election/poll-latino-voters-swing-away-trump-republicans-midterm-shift-rcna599894"
+        },
+        {
+          "title": "Buyer's remorse hits Trump's Latino voters ahead of 2026 midterms",
+          "url": "https://www.axios.com/2026/05/27/latino-voters-trump-republicans-midterms"
+        },
+        {
+          "title": "Latino voters swing back to Democrats ahead of midterm elections: poll",
+          "url": "https://www.yahoo.com/news/politics/articles/latino-voters-swing-back-democrats-163255883.html"
+        },
+        {
+          "title": "US Midterm Elections 2026: Latino Voters Shift Back Toward Democrats As Support For Trump Wanes, Polls Show",
+          "url": "https://sundayguardianlive.com/world/midterm-elections-2026-us-latino-voters-shift-back-toward-democrats-as-support-for-donald-trump-wanes-polls-politics-world-news-november-survey-298934/"
+        },
+        {
+          "title": "Latino voters swing back to Democrats ahead of midterm elections: Poll",
+          "url": "https://www.wfmd.com/2026/10/04/latino-voters-swing-back-to-democrats-ahead-of-midterm-elections-poll/"
+        },
+        {
+          "title": "New NBC News Telemundo poll shows Latino voters souring in GOP and President Trump - KYMA",
+          "url": "https://kyma.com/decision-politics/national-politics/2026/10/05/new-nbc-news-telemundo-poll-shows-latino-voters-souring-in-gop-and-president-trump/"
+        },
+        {
+          "title": "nx s1 5490046",
+          "url": "https://www.npr.org/transcripts/nx-s1-5490046"
+        },
+        {
+          "title": "Latino voters swing toward Democrats in 2025 after Trump's 2024 historic gains",
+          "url": "https://cbsnews.com/tag/exit-polls"
+        },
+        {
+          "title": "Court announces cases it will hear in October, which include significant disputes on climate change and immigration detention",
+          "url": "https://www.scotusblog.com/2026/08/court-announces-cases-it-will-hear-in-october-which-include-significant-disputes-on-climate-chan/"
+        },
+        {
+          "title": "Takeaways from Supreme Court arguments in major climate change case against Big Oil",
+          "url": "https://news.google.com/read/CBMikwFBVV95cUxOamdvb0o5SmM3NzdQSDBnb080TlU4NnRtZ2wwWng4dWVxRXRjMXF3dFJRNjQ2ckt0cG9ZZVJZakNNZUNFUmh4MG5EdkVwaVh6T25RcjNjRTZwSFA3azRlUW9xUkJfeDhqWHZlNXlKQVNuWDlsbUdCaGNfakNtZU5PNzV0dGs0X1lrRDRfNWNpeUZvWVU?hl=en-US&gl=US&ceid=US%3Aen"
+        },
+        {
+          "title": "What to Know About the Supreme Court's Big Climate Case: Suncor v. Boulder - Earthjustice",
+          "url": "https://earthjustice.org/brief/2026/what-to-know-about-suncor-energy-v-boulder-county"
+        },
+        {
+          "title": "Supreme Court Hears Oral Arguments in a Major Climate Change Case",
+          "url": "https://hotair.com/john-s-2/2026/10/05/supreme-court-hears-oral-arguments-in-a-major-climate-change-case-n3819644"
+        },
+        {
+          "title": "State climate suits face skeptical Supreme Court",
+          "url": "https://rollcall.com/2026/10/05/state-climate-suits-face-skeptical-supreme-court/"
+        },
+        {
+          "title": "Supreme Court split on making oil companies pay for climate change, oral arguments suggest",
+          "url": "https://www.bizpacreview.com/2026/10/05/supreme-court-split-on-making-oil-companies-pay-for-climate-change-oral-arguments-suggest-1661895/"
+        },
+        {
+          "title": "Sunoco v. Honolulu",
+          "url": "https://en.wikipedia.org/wiki/Sunoco_v._Honolulu"
+        },
+        {
+          "title": "Supreme Court Split On Making Oil Companies Pay For Climate Change, Oral Arguments Suggest",
+          "url": "https://dailycaller.com/2026/10/05/suncor-boulder-supreme-court-oral-arguments-exxon-climate-lawsuit/"
+        },
+        {
+          "title": "US Supreme Court opens new term with high-stakes big oil bid to toss climate suits",
+          "url": "https://www.thenews.com.pk/amp/1418700-us-supreme-court-opens-new-term-with-high-stakes-big-oil-bid-to-toss-climate-suits"
+        },
+        {
+          "title": "Reaction roundup: Experts, analysts weigh in on September jobs report By Investing.com",
+          "url": "https://www.investing.com/news/economy-news/reaction-roundup-experts-analysts-weigh-in-on-september-jobs-report-4930206"
+        },
+        {
+          "title": "Reaction roundup: Experts, analysts weigh in on September jobs report",
+          "url": "https://finance.yahoo.com/economy/policy/articles/reaction-roundup-experts-analysts-weigh-170953490.html"
+        },
+        {
+          "title": "Stock market today: Dow, S&P 500, Nasdaq rally as Fed rate-hike expectations fade, tech gains",
+          "url": "https://finance.yahoo.com/markets/live/stock-market-today-friday-october-2-dow-sp-500-nasdaq-september-jobs-report-080623878.html"
+        },
+        {
+          "title": "The US economy added just 29,000 jobs last month and the unemployment rate ticked up to 4.2%",
+          "url": "https://www.cnn.com/2026/10/02/economy/us-jobs-report-september-final"
+        },
+        {
+          "title": "September jobs report: US economy added jobs at a slower pace amid uncertainty",
+          "url": "https://www.foxbusiness.com/economy/us-jobs-report-september-2026"
+        },
+        {
+          "title": "Wall Street ends lower as solid jobs data fuels hawkish Fed bets",
+          "url": "https://www.detroitnews.com/story/business/2026/09/04/wall-street-slides-after-strong-jobs-report-bolsters-hawkish-fed-bets/91609430007/"
+        },
+        {
+          "title": "September's jobs report misses: US added just 29,000 jobs, unemployment ticked up",
+          "url": "https://finance.yahoo.com/economy/article/septembers-jobs-report-shows-the-us-added-just-29000-jobs-and-unemployment-ticked-up-195320409.html"
+        },
+        {
+          "title": "Fed rate hike odds decline after September jobs report",
+          "url": "https://www.cnbc.com/2026/10/02/fed-rate-hike-odds-decline-after-september-jobs-report.html"
+        },
+        {
+          "title": "benzinga.com",
+          "url": "https://benzinga.com/z/48974405"
+        },
+        {
+          "title": "Wall Street slips after September jobs report",
+          "url": "https://gulfnews.com/business/markets/wall-street-slips-after-september-jobs-report-1.1908718"
+        },
+        {
+          "title": "As midterms approach, House Democrats say they are fighting for affordability",
+          "url": "https://spectrumlocalnews.com/us/snplus/politics/2026/09/16/house-democrats-affordability"
+        },
+        {
+          "title": "Trump fights on home turf as Democratic midterm hopes rise",
+          "url": "https://www.cnn.com/2026/10/05/politics/trump-republicans-midterms-home-turf"
+        },
+        {
+          "title": "Donald Trump calls affordability concerns a Democratic 'con job'",
+          "url": "https://thehill.com/business/5601009-trump-affordability-inflation-2026-midterms/"
+        },
+        {
+          "title": "Where the midterms stand 30 days out, with DDHQ insight",
+          "url": "https://thehill.com/newsletters/morning-report/6128965-2026-midterms-ddhq-donald-trump-polling-gas-prices-affordability-economy/"
+        },
+        {
+          "title": "Poll: Americans Blame Trump for Higher Prices, Cost of Living",
+          "url": "https://www.breitbart.com/politics/2026/10/04/poll-americans-blame-trump-higher-prices-cost-living/"
+        },
+        {
+          "title": "Republicans are dismissing affordability. That could be a problem in November",
+          "url": "https://www.cnbc.com/2026/08/26/election-republicans-dismissing-affordability.html"
+        },
+        {
+          "title": "Trump cheers steady inflation numbers as affordability fight shapes 2026 midterm battle",
+          "url": "https://www.foxnews.com/politics/trump-cheers-steady-inflation-numbers-affordability-fight-shapes-2026-midterm-battle.amp"
+        },
+        {
+          "title": "trump economy affordability con job cost of living inflation republican voters",
+          "url": "https://fortune.com/2025/12/05/trump-economy-affordability-con-job-cost-of-living-inflation-republican-voters/"
+        },
+        {
+          "title": "Poll paints dire picture on affordability as Trump touts economy",
+          "url": "https://www.yahoo.com/news/articles/poll-paints-dire-picture-affordability-100607940.html"
+        },
+        {
+          "title": "What to Know About the Supreme Court's Big Climate Case: Suncor v. Boulder - Earthjustice",
+          "url": "https://earthjustice.org/brief/2026/what-to-know-about-suncor-energy-v-boulder-county"
+        },
+        {
+          "title": "CCI Response to Suncor v. Boulder Arguments",
+          "url": "https://www.commondreams.org/newswire/cci-response-to-suncor-v-boulder-arguments"
+        },
+        {
+          "title": "Opinion - SCOTUS must show oil companies they aren’t above local accountability",
+          "url": "https://www.yahoo.com/news/politics/articles/opinion-scotus-must-show-oil-150000273.html"
+        },
+        {
+          "title": "U.S. Supreme Court Hears Boulder Climate Case",
+          "url": "https://bouldercolorado.gov/news/us-supreme-court-hears-boulder-climate-case"
+        },
+        {
+          "title": "The surprising allies backing Boulder's climate case before the Supreme Court",
+          "url": "https://grist.org/accountability/boulder-supreme-court-climate-lawsuit-ranchers-exxon/"
+        },
+        {
+          "title": "LISTEN: Supreme Court hears case seeking damages from fossil fuel industry for climate change",
+          "url": "https://www.pbs.org/newshour/politics/listen-live-supreme-court-hears-case-seeking-damages-from-fossil-fuel-industry-for-climate-change"
+        },
+        {
+          "title": "Supreme Court weighs local governments' climate change lawsuits against oil and gas companies",
+          "url": "https://www.wsls.com/business/2026/10/05/supreme-court-weighs-local-governments-climate-change-lawsuits-against-oil-and-gas-companies/"
+        },
+        {
+          "title": "Supreme Court hears Boulder climate case as Trump administration urges court to kill it",
+          "url": "https://www.cpr.org/2026/10/05/scotust-hears-boulder-suncor-climate-case/"
+        },
+        {
+          "title": "2025 was a big year for climate in the US courts - these were the wins and losses",
+          "url": "https://www.yahoo.com/news/articles/2025-big-climate-us-courts-123008115.html"
+        }
+      ]
+    }
+  ]
+}
