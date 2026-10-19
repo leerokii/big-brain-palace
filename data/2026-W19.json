@@ -1,0 +1,437 @@
+{
+  "id": "2026-W19",
+  "year": 2026,
+  "week": 19,
+  "generatedAt": "2026-10-19T19:00:58.853Z",
+  "dateLabel": "October 19, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "# This Week's AI Product Management Briefing\n*For the AI Automations PM role at Vocal Media — content pipelines, creator/editorial tooling, and audience automation*\n\n---\n\n## 1. Evals are replacing PRDs as the AI PM's core artifact\nThe way companies are now scoping AI PM roles has shifted: \n\ndata becomes a first-class part of the roadmap, because model code is often five percent or less of a production machine-learning codebase and the rest is data collection, labeling, and evaluation, and the PM defines guardrails and target behaviors instead of step-by-step requirements.\n\n The clearest signal of this change is that \n\nevals are replacing PRDs as the AI PM's core artifact.\n\n**Why it matters:** For Vocal's content pipelines (summarization, tagging, moderation, generation), your main deliverable won't be a feature spec — it'll be a clear definition of \"good output\" plus the test set that proves it. Start thinking of your editorial and audience-automation features as behaviors with acceptance criteria, not static requirements.\n\n**Source:** HeroHunt — https://www.herohunt.ai/blog/ai-product-manager-hiring-comp-and-sourcing-2026/\n\n---\n\n## 2. Know which AI PM archetype you actually are\nThe market has split the \"AI PM\" title into distinct roles. One industry breakdown names \n\nfour working roles: the assistant or copilot PM who owns a customer-facing LLM surface, the AI platform PM who owns the internal model and tooling layer, the ML feature PM who ships specific model-powered features inside a non-AI product, or the AI ops and internal-tools PM who deploys AI to a non-engineering team.\n\n A copilot-PM role, for example, typically owns \n\nlatency targets, eval set, guardrails, prompt iteration, and the on-call rotation when a customer screenshots a bad answer on a Friday.\n\n**Why it matters:** At Vocal, you likely straddle \"ML feature PM\" (AI inside existing creator tooling) and \"AI ops PM\" (automation for editorial teams). Naming which hat you wear for each project tells you who you report to on quality and what metrics you own — and prevents the common trap of shipping an impressive internal tool while the creator-facing surface languishes.\n\n**Source:** KORE1 — https://www.kore1.com/how-to-hire-ai-product-manager-2026/\n\n---\n\n## 3. Use three metric layers, not just model accuracy\nA practical framework for measuring AI features separates signals into layers. You need \n\nthree metric layers: model quality (accuracy, hallucination rate, latency), user experience (task completion rate, override rate, time saved), and business impact (adoption, retention delta, revenue attribution).\n\n The warning for PMs is blunt: \n\ngeneric product metrics alone won't tell you what's going wrong.\n\n The same source pushes you to design the feature brief around failure first — listing \n\nthe three to five most likely failure modes, and for each, describing the user impact and your mitigation.\n\n**Why it matters:** For a Vocal summarizer or auto-tagging tool, a 90%-accurate model can still fail if editors override it constantly (UX layer) or if it never lifts publishing throughput (business layer). This gives you a ready structure for how you'll report success to leadership — and track p95 latency, not averages, so a slow tail doesn't quietly hurt creator trust.\n\n**Source:** IdeaPlan — https://www.ideaplan.io/guides/evaluating-ai-features-product-manager\n\n---\n\n## 4. A real shipped-product story: shipping ahead of customer expectations\nProductboard's account of building its AI features is one of the more honest shipped-product narratives. The team admits \n\nthey were premature given it was their first foray into generative AI, launched before quality was consistent enough to build user trust, and expectations outpaced what the technology could deliver.\n\n They recovered with \n\nrigorous evals, stricter quality gates, and systematic improvement before each release stage\n\n, using Alpha/Beta/GA quality thresholds and moving one feature \n\nfrom 40% to 85% accuracy\n\n. During beta their main signal was engagement, where they \n\nclosely monitored how participants used the product and where they dropped off, paired activation metrics with live feedback, and pivoted the roadmap until they saw consistent improvements in activation and repeat usage.\n\n**Why it matters:** This is the exact tension you'll face launching AI into creator workflows — the pressure to ship fast vs. the risk of eroding trust with inconsistent output. The staged quality-gate model (don't move to GA until evals clear a threshold) is directly reusable for Vocal's editorial tooling.\n\n**Source:** Ravi Mehta's blog — https://blog.ravi-mehta.com/p/building-ai-products-lessons-from\n\n---\n\n## 5. Common patterns from teams actually shipping AI in production\nA recent synthesis of conversations with nine production AI teams found consistent patterns: \n\nsmall, cross-functional teams are shipping fast; nobody started as an AI expert; and domain expertise drives product decisions.\n\n One team, three years in, now ships \n\ndaily curriculum updates using eval-based go/no-go decisions.\n\n The encouraging note for someone early in the role: \n\nthe learning curve is steep but achievable — these teams are now shipping sophisticated AI products, and they all started from square one.\n\n**Why it matters:** Your editorial and audience domain knowledge is a genuine asset, not a gap — domain expertise is what separates useful AI content tools from generic ones. The \"eval-based go/no-go\" habit is the discipline to adopt early: a clear bar that decides whether a model change ships.\n\n**Source:** Product Talk (Teresa Torres) — https://www.producttalk.org/learning-from-8-ai-product-teams/\n\n---\n\n## 6. Tactic for this week: validate your judge before you trust it\nIf you set up any automated quality scoring for Vocal's content output, the single most important habit is that \n\nthe judge needs its own eval.\n\n In one real case, a team \n\nset up an LLM judge to grade generated outputs at scale; the first pass looked great, but when a human reviewer scored the same outputs independently, the scores didn't match — enough that trusting the judge blind would have been a mistake.\n\n The fix is concrete: \n\npull a small set of outputs — even 20–30 — have a human score them the same way you're asking the judge to, then compare where they disagree.\n\n Design the rubric around flaws, not vibes: \n\na judge asked \"rate this from 1 to 10\" gives you noise, while a judge asked \"does this contain flaw X, flaw Y, or flaw Z, and how severe is each\" gives you something you can act on.\n\n**Why it matters this week:** Pick one AI content task Vocal already runs (say, auto-summaries or tag suggestions), write a flaw-based rubric, have a human grade 20–30 real outputs, and check whether your automated scoring agrees. If scoring minimum sizes help: a workable validation set is \n\n30-50 examples covering common and edge cases for a minimum viable set, and 100-200 for production-ready.\n\n This is a small, concrete deliverable you can complete and show results from quickly.\n\n**Source:** Manish Lad / Substack — https://manishlad.substack.com/p/ai-evals-building-your-own-judge",
+      "sources": [
+        {
+          "title": "The Ultimate AI Product Manager Roadmap (2026)",
+          "url": "https://www.productcompass.pm/p/ai-product-manager-roadmap-2026"
+        },
+        {
+          "title": "AI in Product Management Guide for 2026 for Product Leaders",
+          "url": "https://gocious.com/blog/ai-in-product-management-guide-for-2026-for-product-leaders"
+        },
+        {
+          "title": "Top product management books and resources for 2026",
+          "url": "https://www.mindtheproduct.com/top-books-and-resources-in-2026-for-product-managers/"
+        },
+        {
+          "title": "Toward Pre-Deployment Assurance for Enterprise AI Agents: Ontology-Grounded Simulation and Trust Certification",
+          "url": "https://arxiv.org/pdf/2606.04037"
+        },
+        {
+          "title": "Bridging AI Risk Frameworks: Reconciling ISO/IEC 42001, the NIST AI Risk Management Framework, and the EU AI Act into a Uni ed Governance Taxonomy",
+          "url": "https://arxiv.org/pdf/2608.07515"
+        },
+        {
+          "title": "AI Product Strategy 2026: Roadmap for Founders & Startups",
+          "url": "https://wearepresta.com/ai-product-strategy-2026-the-founders-guide-to-ai-native-growth/"
+        },
+        {
+          "title": "AI Product Management Roadmap & Frameworks: Step-by-Step Guide",
+          "url": "https://voltagecontrol.com/articles/ai-product-management-roadmap-frameworks-step-by-step-guide/"
+        },
+        {
+          "title": "6 Best AI-Powered Product Management Tools in 2026 - Blog",
+          "url": "https://onehorizon.ai/blog/best-ai-product-management-tools"
+        },
+        {
+          "title": "How Product Managers Should Use AI in 2026: A Methodology",
+          "url": "https://ainna.ai/resources/faq/ai-product-management"
+        },
+        {
+          "title": "Defining and Measuring Success in AI Products: A Guide for PMs",
+          "url": "https://medium.com/@dudabona/defining-and-measuring-success-in-ai-products-a-guide-for-pms-bf7c66b873c0"
+        },
+        {
+          "title": "Evaluation Metrics for AI Products That Drive Trust",
+          "url": "https://productschool.com/blog/artificial-intelligence/evaluation-metrics"
+        },
+        {
+          "title": "Measuring the Success of AI Products: Key Metrics and Frameworks",
+          "url": "https://harsha-srivatsa.medium.com/measuring-the-success-of-ai-products-key-metrics-and-frameworks-e65f49814ed2"
+        },
+        {
+          "title": "AI Evaluation : Metrics That Matter",
+          "url": "https://productmanagementwithmani.substack.com/p/ai-evaluation-metrics-that-matter"
+        },
+        {
+          "title": "Why AI Evaluation Is a Must-Have Skill for Product Managers",
+          "url": "https://productschool.com/blog/artificial-intelligence/ai-evals-product-managers"
+        },
+        {
+          "title": "AI Product Evaluation: Product Manager Ultimate Guide",
+          "url": "https://digitalstrategy-ai.com/2025/12/12/ai-evaluation-pm-guide/"
+        },
+        {
+          "title": "How to Answer AI Product Evaluation and Metrics Questions",
+          "url": "https://www.crackpminterview.com/p/answer-ai-product-evaluation-metrics-questions"
+        },
+        {
+          "title": "How to Measure AI Product Success: Key Metrics and Methods",
+          "url": "https://theneuralbase.com/ai-product-development/qna/how-to-measure-ai-product-success/"
+        },
+        {
+          "title": "How PMs Evaluate AI Features Before Building",
+          "url": "https://www.ideaplan.io/guides/evaluating-ai-features-product-manager"
+        },
+        {
+          "title": "What Is an AI Product Manager? Role Overview, Skills & How to Hire One (May 2026)",
+          "url": "https://www.paraform.com/insights/what-is-ai-product-manager"
+        },
+        {
+          "title": "How to Hire an AI Product Manager: 2026 Guide - KORE1",
+          "url": "https://www.kore1.com/how-to-hire-ai-product-manager-2026/"
+        },
+        {
+          "title": "The Truth About AI Product Managers In 2026",
+          "url": "https://www.mbassett.com/blog/ai-product-managers-2026/"
+        },
+        {
+          "title": "What is the Scope of Product Management With AI in 2026?",
+          "url": "https://www.masaischool.com/blog/what-is-the-scope-of-product-management-with-ai-in-2026/"
+        },
+        {
+          "title": "AI Product Manager Job Description Template (2026) - KORE1",
+          "url": "https://www.kore1.com/ai-product-manager-job-description-template/"
+        },
+        {
+          "title": "AI Product Manager Hiring: Comp and Sourcing 2026",
+          "url": "https://www.herohunt.ai/blog/ai-product-manager-hiring-comp-and-sourcing-2026/"
+        },
+        {
+          "title": "AI Product Manager Jobs: What the Role Is and Who's Hiring — jobs, skills and who's hiring — Agentic Ready",
+          "url": "https://www.getreadyforagents.com/jobs/roles/ai-product-manager/"
+        },
+        {
+          "title": "AI Product Manager Roadmap 2026: Skills, Tools, Career Path",
+          "url": "https://www.nextbyrahul.tech/blog/ai-product-manager-roadmap-2026"
+        },
+        {
+          "title": "What Is an AI Product Manager? Role, Salary & How to Hire",
+          "url": "https://www.searchsvc.com/2026/10/07/what-is-an-ai-product-manager/"
+        },
+        {
+          "title": "Bitter lessons building AI products",
+          "url": "https://hex.tech/blog/bitter-lessons-building-ai-in-hex-product-management/"
+        },
+        {
+          "title": "Lessons from 9 AI Product Teams: Emerging Themes from Just Now Possible",
+          "url": "https://www.producttalk.org/learning-from-8-ai-product-teams/"
+        },
+        {
+          "title": "I Built an Incredible AI Product That Nobody Wanted. Here’s Why.",
+          "url": "https://builtin.com/articles/ai-product-business-test"
+        },
+        {
+          "title": "Building My First AI Product: 6 Lessons from My 90-Day Deep Dive",
+          "url": "https://www.producttalk.org/ai-playbook/"
+        },
+        {
+          "title": "Eight Key Lessons for Rocket-Shipping AI Products",
+          "url": "https://unsupervisedlearning.substack.com/p/eight-key-lessons-for-rocket-shipping"
+        },
+        {
+          "title": "Building AI Products: Lessons from Productboard Spark",
+          "url": "https://blog.ravi-mehta.com/p/building-ai-products-lessons-from"
+        },
+        {
+          "title": "Building Ai Products Course: 147 Lessons",
+          "url": "https://theneuralbase.com/building-ai-products/learn/"
+        },
+        {
+          "title": "Council Post: ​Six Lessons From Two Years Of Building An AI Adoption Program",
+          "url": "https://www.forbes.com/councils/forbestechcouncil/2026/09/02/six-lessons-from-two-years-of-building-an-ai-adoption-program/"
+        },
+        {
+          "title": "ShipSet · Become an AI Product Manager in 90 Days",
+          "url": "https://shipset.app/"
+        },
+        {
+          "title": "AI Evals: Building Your Own Judge (and Why It Needs Grading Too)",
+          "url": "https://manishlad.substack.com/p/ai-evals-building-your-own-judge"
+        },
+        {
+          "title": "How to build LLM-as-a-Judge evaluators that hold up in production - Arize AI",
+          "url": "https://arize.com/blog/how-to-build-llm-as-a-judge-evaluators-that-hold-up-in-production/"
+        },
+        {
+          "title": "Using LLM-as-a-Judge For Evaluation: A Complete Guide",
+          "url": "https://hamel.dev/blog/posts/llm-judge/index.html"
+        },
+        {
+          "title": "LLM-as-a-Judge: How to Build Reliable, Scalable Evaluation for LLM Apps and Agents",
+          "url": "https://www.comet.com/site/blog/llm-as-a-judge/"
+        },
+        {
+          "title": "LLM-as-a-Judge: Guide & Pre-built Evaluators",
+          "url": "https://arize.com/guides/llm-as-a-judge/"
+        },
+        {
+          "title": "AI Evals, Part 4: LLM-as-Judge, Done Right - DEV Community",
+          "url": "https://dev.to/mrviduus/ai-evals-part-4-llm-as-judge-done-right-31eg"
+        },
+        {
+          "title": "LLM as a Judge: A 2026 Guide to Automated Model Assessment",
+          "url": "https://labelyourdata.com/articles/llm-as-a-judge"
+        },
+        {
+          "title": "LLM as a Judge: The Complete Guide",
+          "url": "https://galtea.ai/blog/llm-as-a-judge-the-complete-guide"
+        },
+        {
+          "title": "Human-on-the-Bridge: Scalable Evaluation for AI Agents",
+          "url": "https://arxiv.org/pdf/2606.16871"
+        },
+        {
+          "title": "COMPASS: The explainable agentic framework for Sovereignty, Sustainability, Compliance, and Ethics",
+          "url": "https://arxiv.org/pdf/2603.11277"
+        }
+      ]
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "# This Week in Claude & AI Automation\n\n## 1. Dynamic workflows: fan out hundreds of agents without blowing up your context window\n\nAnthropic moved dynamic workflows into public beta for Claude Managed Agents on October 9. \n\nA dynamic workflow is a JavaScript script that orchestrates subagents at scale — you describe a task, Claude writes the script, and a runtime executes it in the background, spawning dozens to hundreds of agents while your session stays responsive, so only the final answer reaches Claude's context window.\n\n The key insight for daily users: \n\nthe plan moves out of the conversation and into a script that a separate runtime executes, the sub-agents' chatter stays in the script's own memory, and only the final answer comes back.\n\n**Try this (Claude Code):** The trigger is literally a keyword. \n\nInclude the word \"workflow\" in your prompt — e.g. \"Run a workflow to audit every API route under src/ for missing auth checks\" — and Claude writes the script, shows you the planned phases, and asks for approval before anything runs.\n\n Before approving, \n\nreview the generated workflow script (Ctrl+G in the approval prompt) before running on production branches\n\n — because \n\nsubagents running inside a workflow operate in acceptEdits mode by default, so file edits apply without individual review prompts.\n\n Guardrail to set org-wide in `~/.claude/settings.json`: `CLAUDE_CODE_DISABLE_WORKFLOWS=1` to turn it off. To enable via API, \n\nset the agent's multiagent type to multiagent_20261001 with the managed-agents-2026-04-01 beta header; workflows are on by default with that type.\n\n**Source:** Awesome Claude / Anthropic blog — https://claude.com/blog/introducing-dynamic-workflows-in-claude-code\n\n---\n\n## 2. `/doctor prompt-audit` — a linter for prompt rot in your CLAUDE.md, skills, and agents\n\nIf you've accumulated instruction files across model generations, this one is worth an hour. \n\nThe command has Claude read your instruction files (CLAUDE.md, AGENTS.md, skills, commands) and look for instructions that have gone stale or contradict each other, then propose fixes — and not a single character of your files changes until you ask.\n\n \n\nIt leads with stale paths, stale commands and contradicting instruction files.\n\n**Try this (steps):**\n1. Update Claude Code: `claude update` (needs **v2.1.283+**)\n2. Open a session in your project root\n3. Run: `/doctor prompt-audit` (alias `/checkup prompt-audit` works identically)\n4. To scope to one place, pass a path: `/doctor prompt-audit .claude/skills/`\n5. Read the report, then approve or decline each finding one by one\n\nWhy it matters now: \n\nolder CLAUDE.md files tend to carry the most legacy prompting scaffolds since they predate current effort level and thinking controls\n\n — so re-run it after migrating to Opus 5.5 or Sonnet 5.5.\n\n**Source:** Claude Code Docs — https://code.claude.com/docs/en/skills\n\n---\n\n## 3. Code Review went GA — with per-repo depth tuning and a local variant most people miss\n\nAnthropic made Code Review, the multi-agent pull-request review system for Claude Code, generally available to Claude Team and Enterprise organizations on October 15, 2026.\n\n \n\nMost reviews now finish about 3x faster (~20 minutes down to 6-10 minutes) compared to during preview.\n\n The flexibility lever: \n\nadmins choose Quick, Standard (default), or Deep for each repository, so routine codebases get a quick pass and the most critical ones get a deep review.\n\n**Try this (two paths):**\n- **Org setup:** \n\nEnable Code Review in your Claude Code settings, install the GitHub App, and select repositories you'd like to run reviews on.\n\n \n\nReviews then run automatically on new pull requests once enabled.\n\n Rollout tip: \n\nadd an AI reviewer to one repository, tune REVIEW.md for a few weeks, then widen.\n\n Note the REVIEW.md gotcha — \n\nit reads REVIEW.md only from the base or default branch.\n\n- **Solo/local, no admin needed:** Inside any session run `/code-review` to review the current diff, or launch pinned to the review agents' model with `claude --model claude-code-review`. \n\nA lighter local variant runs via the /code-review slash command inside Claude Code.\n\n**Source:** Releasebot / Anthropic — https://claude.com/resources/articles/code-review-is-now-generally-available\n\n---\n\n## 4. Agent SDK now ships typed browser & computer-use toolsets — subclass, don't re-wire\n\nFor anyone building automations on the SDK, this removes a lot of glue code. \n\nThe Python and TypeScript SDKs now include classes (in beta) for the browser use tool and the computer use tool — you subclass one and write one method per tool against your own browser or desktop automation, and the SDK runs the tool loop, the URL and file policies you set for the browser, and your approval callback.\n\n Two other quiet-but-useful changes landed the same cycle: \n\nper-tool permission_policy on sdk MCP servers and reloadPlugins({ addPlugins })\n\n, and \n\na public beta that sends OpenTelemetry-formatted traces from the Claude Platform to external tools, applying to Claude Managed Agents, the Messages API, and the Claude SDK.\n\n**Try this (pattern):**\n1. Install latest: `npm i @anthropic-ai/claude-agent-sdk@latest` (TS 0.3.302) or `pip install -U claude-agent-sdk` (Python 0.2.168)\n2. Subclass the browser-use toolset class; implement one method per tool (navigate, click, type) that calls *your* existing Playwright/Puppeteer harness\n3. Set URL allowlist + file policies on the toolset, and pass an approval callback so flagged actions prompt you rather than auto-execute\n4. Set per-tool `permission_policy` to `always_ask` or `always_deny` on risky tools in your SDK MCP server config\n5. For observability, turn on OTel tracing and point it at your existing monitoring — then filter by `classifier_verdict` to separate auto-mode decisions from permission-rule decisions\n\n**Source:** Claude Platform Docs — https://platform.claude.com/docs/en/release-notes/overview\n\n---\n\n## 5. (Broader AI world) The \"approved-facts + CHECK\" prompt pattern for parallel-agent tasks\n\nOutside Claude, the operator community converged this week on a reusable pattern as ChatGPT Pro, Gemini 4 Argon, and others pushed parallel-agent features. The principle, from a widely-shared SMB operator brief: give the agent your source files and *explicitly* mark what it's allowed to treat as fact, then force it to flag anything it can't verify rather than inventing filler.\n\n**Try this — copyable prompt:**\n\n```\nWork from the files and pages I provide. Produce [specific deliverable]\nfor [reader and purpose]. Preserve these approved facts: [facts].\nUse this example for structure and tone: [example]. Mark missing or\ncontradictory information as CHECK and show where the problem occurs.\n```\n\nThis prompt — work from provided files, produce a specific deliverable for a named reader, preserve approved facts, mirror an example for structure and tone, and mark missing or contradictory information as CHECK showing where the problem occurs\n\n — generalizes across any model with parallel agents. Pair it with the permissioning discipline builders are adopting: \n\nisolate each agent in its own git worktree, driven by specs where each spec declares a file footprint, and overlapping footprints get serialized in code — not left to the model to \"remember.\"\n\n**Source:** Lilach Bullock, *AI news this week for small business* — https://lilachbullock.com/ai-news-this-week-for-small-business-18-october-2026\n\n---\n\n## 6. Haiku 5.5 + monthly API credits — the cheap workhorse for high-volume automations\n\nAnthropic announced Claude Haiku 5.5 on October 7, describing it as its fastest and most cost-effective small model to date.\n\n The same release \n\nlowered prompt cache read pricing on Sonnet 5.5 and expanded SDK and Managed Agents capabilities with new browser and computer use support plus tighter web tool controls.\n\n Plus, for heavy builders: Max and Team plans now get \n\nmonthly API credits for running your own apps and agents on the Claude Platform.\n\n**Try this:** Re-route the high-volume, low-judgment legs of your existing agent chains — classification, extraction, tagging, routing — to `claude-haiku-5-5` and reserve Sonnet/Opus for the reasoning steps. Concretely, in a dynamic workflow or subagent setup, set the discovery/fan-out agents to Haiku and the reconcile/verify agent to Sonnet 5.5; combined with the lowered Sonnet cache-read pricing, cache your shared system prompt once and let every Haiku worker read from cache. If you're on Max or Team, run this against your monthly API credits before it hits metered billing.\n\n**Source:** The Oxford AI School / Releasebot — https://releasebot.io/updates/anthropic/claude-developer-platform\n\n---\n\n*Note on availability: Dashboards and Motion also shipped this month but are gated (Motion is Team/Enterprise only), so I prioritized items you can act on today. Several items above are Team/Enterprise-gated (Code Review, Motion); the prompt-audit, local `/code-review`, SDK toolsets, and the approved-facts prompt work on any plan.*",
+      "sources": [
+        {
+          "title": "Claude’s New Features in October 2026: 15 Things Worth Trying",
+          "url": "https://alexaiupdates.substack.com/p/claudes-new-features-in-october-2026"
+        },
+        {
+          "title": "Claude (language model)",
+          "url": "https://en.wikipedia.org/wiki/Claude_(language_model)"
+        },
+        {
+          "title": "Claude Updates by Anthropic - October 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Anthropic Release Notes - October 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "Claude Developer Platform Updates by Anthropic - October 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-developer-platform"
+        },
+        {
+          "title": "Claude Dashboards and Motion: What's New, Who Gets It",
+          "url": "https://cellcog.ai/blog/claude-dashboards-motion/"
+        },
+        {
+          "title": "Claude Platform release notes - Claude Platform Docs",
+          "url": "https://platform.claude.com/docs/en/release-notes/overview"
+        },
+        {
+          "title": "Claude Code Updates by Anthropic - October 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude-code"
+        },
+        {
+          "title": "What Are the New Features of Claude? (October 2026)",
+          "url": "https://www.theoxfordaischool.com/new-features-of-claude"
+        },
+        {
+          "title": "Claude Agent SDK Changelog (October 2026)",
+          "url": "https://www.gradually.ai/en/changelogs/claude-agent-sdk/"
+        },
+        {
+          "title": "Claude Code Changelog (October 2026)",
+          "url": "https://www.gradually.ai/en/changelogs/claude-code/"
+        },
+        {
+          "title": "Claude Code changelog - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/changelog"
+        },
+        {
+          "title": "Claude Agent SDK (formerly Claude Code SDK): Python + TypeScript Install, Hooks, Subagents",
+          "url": "https://www.morphllm.com/claude-agent-sdk"
+        },
+        {
+          "title": "Anthropic Release Notes - October 2026 Latest Updates - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic"
+        },
+        {
+          "title": "Claude Agent SDK Setup With Sonnet 5.5 [2026]",
+          "url": "https://tech-insider.org/claude-agent-sdk-sonnet-5-5-setup-2026/"
+        },
+        {
+          "title": "Claude Now Supports AI Agent Action Logging with Public Beta OpenTelemetry Output｜noahs_nalog/AIツール実務レター/あなたのモチベーション",
+          "url": "https://note.com/noahs_nalog/n/nbd222b15041d?hl=en"
+        },
+        {
+          "title": "Claude Agent SDK in Late 2026: What Is New and How to Use It",
+          "url": "https://www.developersdigest.tech/blog/claude-agent-sdk-whats-new-2026"
+        },
+        {
+          "title": "Claude Agent SDK Beats OpenAI & Google [2026] - Tech Insider",
+          "url": "https://tech-insider.org/ca/claude-agent-sdk-vs-openai-agentkit-vs-google-adk-2026/"
+        },
+        {
+          "title": "How to Use Claude Code Dynamic Workflows: Spawning Hundreds of Parallel Sub-Agents",
+          "url": "https://www.mindstudio.ai/blog/claude-code-dynamic-workflows-parallel-sub-agents"
+        },
+        {
+          "title": "Claude Code Dynamic Workflows Explained · GitHub",
+          "url": "https://gist.github.com/Drizzt321/234f03be4749a8b4c012791a8a04cdfc"
+        },
+        {
+          "title": "Claude Code Dynamic Workflows: Runtime Multi-Agent Orchestration",
+          "url": "https://inventivehq.com/blog/claude-code-dynamic-workflows"
+        },
+        {
+          "title": "Introducing dynamic workflows",
+          "url": "https://claude.com/blog/introducing-dynamic-workflows-in-claude-code"
+        },
+        {
+          "title": "Claude Code Dynamic Workflows - Guide + 24 Copy-Paste Scripts - Awesome Claude",
+          "url": "https://awesomeclaude.ai/claude-code-workflows"
+        },
+        {
+          "title": "Claude Code Dynamic Workflows: The Complete Guide",
+          "url": "https://www.developersdigest.tech/blog/claude-code-dynamic-workflows-guide"
+        },
+        {
+          "title": "Claude Dynamic Workflows: 1,000 Agents per Run",
+          "url": "https://cellcog.ai/blog/claude-dynamic-workflows/"
+        },
+        {
+          "title": "Claude Code Dynamic Workflows: How to Run Hundreds of Parallel Agents (2026)",
+          "url": "https://www.aimadetools.com/blog/claude-code-dynamic-workflows-guide/"
+        },
+        {
+          "title": "Claude Code Dynamic Workflows",
+          "url": "https://www.buildthisnow.com/blog/guide/development/claude-code-dynamic-workflows"
+        },
+        {
+          "title": "AI news this week for small business 18 October 2026",
+          "url": "https://lilachbullock.com/ai-news-this-week-for-small-business-18-october-2026"
+        },
+        {
+          "title": "AI Sales Agent Statistics (2026)",
+          "url": "https://blog.mean.ceo/ai-prompt-engineering-statistics"
+        },
+        {
+          "title": "AI Agents Trends: Prompt-to-Workflow Patterns Move From Chat Boxes to Daily Operator Toolkits in Early October 2026",
+          "url": "https://insights.reinventing.ai/articles/ai-agents-prompt-to-workflow-smb-creators-2026-10-06"
+        },
+        {
+          "title": "The Prompt Stack That Still Works in 2026 (And the One You Should Upgrade)",
+          "url": "https://promptslove.substack.com/p/the-prompt-stack-that-still-works"
+        },
+        {
+          "title": "Top 30 Prompt Techniques That Actually Work in 2026",
+          "url": "https://agent-cookbook.com/tutorial/top-30-prompt-techniques-that-actually-work-in-2026"
+        },
+        {
+          "title": "AI Prompting in 2026: A Crash Course",
+          "url": "https://agentfactory.panaversity.org/docs/ai-prompting-2026"
+        },
+        {
+          "title": "Why Do My AI Automations Keep Breaking When the Prompts Look Fine?",
+          "url": "https://whitebeardstrategies.com/blog/ai-playbooks-not-prompts/"
+        },
+        {
+          "title": "List of spaceflight launches in October%E2%80%93December 2026",
+          "url": "https://en.wikipedia.org/wiki/List_of_spaceflight_launches_in_October%E2%80%93December_2026"
+        },
+        {
+          "title": "- Prompt Engineering",
+          "url": "https://coursera.org/share/0380b6c765ef18fc2e7a49a4004f181e"
+        },
+        {
+          "title": "Anthropic Makes Code Review for Claude Code Generally Available",
+          "url": "https://www.unite.ai/anthropic-makes-code-review-for-claude-code-generally-available/"
+        },
+        {
+          "title": "Anthropic makes Code Review generally available, with $50,000 in credits attached",
+          "url": "https://thenextweb.com/news/anthropic-code-review-ga-eu-residency"
+        },
+        {
+          "title": "Claude Updates by Anthropic - October 2026 - Releasebot",
+          "url": "https://releasebot.io/updates/anthropic/claude"
+        },
+        {
+          "title": "Anthropic opens automatic code reviews to Claude Team and Enterprise",
+          "url": "https://superpowerdaily.com/posts/anthropic-opens-automatic-code-reviews-to-claude-team-and-enterprise"
+        },
+        {
+          "title": "Claude Code Review GA: Which REVIEW.md It Reads (2026)",
+          "url": "https://www.memorylake.ai/en/blogs/claude-code-review-ga-review-md"
+        },
+        {
+          "title": "Claude Writes 90% of Claude Code: How Review Keeps Up",
+          "url": "https://cellcog.ai/blog/claude-code-90-percent-code-review/"
+        },
+        {
+          "title": "Code Review is now generally available for Claude Team and Enterprise plans. Reviews are now faster, catch more of the bugs that matter, and admins can pick from Quick, Standard, or Deep review levels for each repo. Personally, I couldn't imagine being productive without Claude Code Review. It runs on all of my PRs. https://claude.com/resources/articles/code-review-is-now-generally-available",
+          "url": "https://www.threads.com/@boris_cherny/post/DekKNE2GdSS/code-review-is-now-generally-available-for-claude-team-and-enterprise-plans/"
+        },
+        {
+          "title": "Claude: Code Review is now generally available",
+          "url": "https://techbytes.app/posts/claude-code-review-is-now-generally-available/"
+        },
+        {
+          "title": "How the Claude Code team does code review",
+          "url": "https://techbytes.app/posts/how-the-claude-code-team-does-code-review/"
+        },
+        {
+          "title": "Extend Claude with skills - Claude Code Docs",
+          "url": "https://code.claude.com/docs/en/skills"
+        },
+        {
+          "title": "Claude Code v2.1.283 adds `/doctor prompt-audit` (also `/checkup prompt-audit`) for older-model prom - YouTube",
+          "url": "https://www.youtube.com/shorts/J6204dhmJDY"
+        },
+        {
+          "title": "[Breaking News] 'prompt-audit' arrives in Claude Code. The era of AI automatically checking old CLAUDE.md and Skills has begun｜だいあろごす。",
+          "url": "https://note.com/dialogs_develop/n/ncb20c8764e7a?hl=en"
+        },
+        {
+          "title": "Claude Code Prompt Audit Command: How /doctor prompt-audit Works (2026)",
+          "url": "https://juliangoldieaiautomation.com/blog/claude-code-prompt-audit-command/"
+        },
+        {
+          "title": "How do I run Claude Code `/doctor prompt-audit` on CLAUDE.md and skills? — claude/for",
+          "url": "https://claude-for.com/guides/how-do-i-run-claude-code-doctor-prompt-audit"
+        },
+        {
+          "title": "Claude Code /doctor prompt-audit: how to audit CLAUDE.md, skills and agents for older-model prompting (v2.1.283)",
+          "url": "https://max.nardit.com/articles/prompt-audit-claude-md"
+        },
+        {
+          "title": "Claude Code /doctor prompt-audit: How to Use It, Real Results",
+          "url": "https://arte.itlibra.com/en/articles/claude-code-doctor-prompt-audit"
+        },
+        {
+          "title": "Claude Code Prompt Audit: /doctor prompt-audit Guide 2026",
+          "url": "https://deepseekartifacts.com/guides/claude-code-prompt-audit"
+        },
+        {
+          "title": "Claude Code Prompt Audit: Fix Stale CLAUDE.md Files",
+          "url": "https://claudcod.com/blog/claude-code-prompt-audit/"
+        }
+      ]
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "This track could not be generated this week.",
+      "sources": [],
+      "error": true
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "This track could not be generated this week.",
+      "sources": [],
+      "error": true
+    }
+  ]
+}
