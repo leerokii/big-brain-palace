@@ -1,0 +1,37 @@
+{
+  "id": "2026-W22",
+  "year": 2026,
+  "week": 22,
+  "generatedAt": "2026-11-09T22:52:07.364Z",
+  "dateLabel": "November 9, 2026",
+  "tracks": [
+    {
+      "id": "product",
+      "label": "Product Management",
+      "body": "This track could not be generated this week.",
+      "sources": [],
+      "error": true
+    },
+    {
+      "id": "automations",
+      "label": "AI Automations & Claude Craft",
+      "body": "This track could not be generated this week.",
+      "sources": [],
+      "error": true
+    },
+    {
+      "id": "world",
+      "label": "AI Tech World",
+      "body": "This track could not be generated this week.",
+      "sources": [],
+      "error": true
+    },
+    {
+      "id": "politics",
+      "label": "US Political Spectrum",
+      "body": "This track could not be generated this week.",
+      "sources": [],
+      "error": true
+    }
+  ]
+}
